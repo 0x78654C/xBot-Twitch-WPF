@@ -1,0 +1,86 @@
+1/5/2021 8:26:58 PM: x_coding - Connecting to: wss://irc-ws.chat.twitch.tv:443
+1/5/2021 8:26:59 PM: x_coding - Should be connected!
+1/5/2021 8:26:59 PM: x_coding - Joining channel: x_coding
+1/5/2021 8:26:59 PM: x_coding - Received: :tmi.twitch.tv 001 x_coding :Welcome, GLHF!
+1/5/2021 8:26:59 PM: x_coding - Received: :tmi.twitch.tv 002 x_coding :Your host is tmi.twitch.tv
+1/5/2021 8:26:59 PM: x_coding - Received: :tmi.twitch.tv 003 x_coding :This server is rather new
+1/5/2021 8:26:59 PM: x_coding - Received: :tmi.twitch.tv 004 x_coding :-
+Connected to x_coding
+1/5/2021 8:26:59 PM: x_coding - Received: :tmi.twitch.tv 375 x_coding :-
+1/5/2021 8:27:00 PM: x_coding - Received: :tmi.twitch.tv 372 x_coding :You are in a maze of twisty passages, all alike.
+1/5/2021 8:27:00 PM: x_coding - Received: :tmi.twitch.tv 376 x_coding :>
+1/5/2021 8:27:00 PM: x_coding - Received: :tmi.twitch.tv CAP * ACK :twitch.tv/membership
+1/5/2021 8:27:00 PM: x_coding - Unaccounted for: :tmi.twitch.tv CAP * ACK :twitch.tv/membership (please create a TwitchLib GitHub issue :P)
+1/5/2021 8:27:00 PM: x_coding - Received: :tmi.twitch.tv CAP * ACK :twitch.tv/commands
+1/5/2021 8:27:00 PM: x_coding - Unaccounted for: :tmi.twitch.tv CAP * ACK :twitch.tv/commands (please create a TwitchLib GitHub issue :P)
+1/5/2021 8:27:00 PM: x_coding - Received: :tmi.twitch.tv CAP * ACK :twitch.tv/tags
+1/5/2021 8:27:00 PM: x_coding - Unaccounted for: :tmi.twitch.tv CAP * ACK :twitch.tv/tags (please create a TwitchLib GitHub issue :P)
+1/5/2021 8:27:00 PM: x_coding - Received: :x_coding!x_coding@x_coding.tmi.twitch.tv JOIN #x_coding
+1/5/2021 8:27:00 PM: x_coding - Received: :x_coding.tmi.twitch.tv 353 x_coding = #x_coding :x_coding
+1/5/2021 8:27:00 PM: x_coding - Received: :x_coding.tmi.twitch.tv 366 x_coding #x_coding :End of /NAMES list
+1/5/2021 8:27:00 PM: x_coding - Finished channel joining queue.
+1/5/2021 8:27:00 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/5/2021 8:27:00 PM: x_coding - Received: @emote-only=0;followers-only=-1;r9k=0;rituals=0;room-id=503606492;slow=0;subs-only=0 :tmi.twitch.tv ROOMSTATE #x_coding
+x_codingHey, I'm xBot, a twitch bot!
+1/5/2021 8:27:00 PM: x_coding - Finished channel joining queue.
+1/5/2021 8:27:00 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/5/2021 8:28:07 PM: x_coding - Received: :abbottcostello!abbottcostello@abbottcostello.tmi.twitch.tv JOIN #x_coding
+1/5/2021 8:28:07 PM: x_coding - Received: :anotherttvviewer!anotherttvviewer@anotherttvviewer.tmi.twitch.tv JOIN #x_coding
+1/5/2021 8:28:07 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/5/2021 8:28:08 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/5/2021 8:31:11 PM: x_coding - Received: PING :tmi.twitch.tv
+1/5/2021 8:31:11 PM: x_coding - Writing: PONG
+1/5/2021 8:33:39 PM: x_coding - Received: :abbottcostello!abbottcostello@abbottcostello.tmi.twitch.tv PART #x_coding
+1/5/2021 8:33:39 PM: x_coding - Received: :anotherttvviewer!anotherttvviewer@anotherttvviewer.tmi.twitch.tv PART #x_coding
+1/5/2021 8:35:44 PM: x_coding - Received: PING :tmi.twitch.tv
+1/5/2021 8:35:44 PM: x_coding - Writing: PONG
+1/5/2021 8:35:46 PM: x_coding - Received: :abbottcostello!abbottcostello@abbottcostello.tmi.twitch.tv JOIN #x_coding
+1/5/2021 8:35:46 PM: x_coding - Received: :anotherttvviewer!anotherttvviewer@anotherttvviewer.tmi.twitch.tv JOIN #x_coding
+1/5/2021 8:35:46 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/5/2021 8:35:46 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/5/2021 8:38:26 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=c8748c1d3c547e386c1b7971f5f78b22;color=;display-name=x_Coding;emotes=;flags=;id=c3591e84-cd62-410e-a102-ac67d408f84c;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1609879243315;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :lets see if takes the SS
+1/5/2021 8:40:33 PM: x_coding - Received: PING :tmi.twitch.tv
+1/5/2021 8:40:33 PM: x_coding - Writing: PONG
+1/5/2021 8:45:10 PM: x_coding - Received: PING :tmi.twitch.tv
+1/5/2021 8:45:10 PM: x_coding - Writing: PONG
+1/5/2021 8:45:54 PM: x_coding - Received: :carinawithc!carinawithc@carinawithc.tmi.twitch.tv JOIN #x_coding
+1/5/2021 8:45:55 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/5/2021 8:49:06 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=292efe40f6b219c5344e31f0be15f0c0;color=;display-name=x_Coding;emotes=;flags=;id=6abe8a0a-d233-4529-a079-b9a209569b09;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1609879883225;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :!discord
+1/5/2021 8:49:07 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/5/2021 8:49:27 PM: x_coding - Received: PING :tmi.twitch.tv
+1/5/2021 8:49:27 PM: x_coding - Writing: PONG
+1/5/2021 8:54:27 PM: x_coding - Received: PING :tmi.twitch.tv
+1/5/2021 8:54:27 PM: x_coding - Writing: PONG
+1/5/2021 8:58:28 PM: x_coding - Received: PING :tmi.twitch.tv
+1/5/2021 8:58:28 PM: x_coding - Writing: PONG
+1/5/2021 8:59:36 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=7af51bb05d76e33f7f88e002f2ee233a;color=;display-name=x_Coding;emotes=;flags=;id=25d40ea9-8bcb-45c8-bda7-65ea039e1d8e;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1609880512753;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :and we wait for a person to pass by
+1/5/2021 9:00:45 PM: x_coding - Received: :anotherttvviewer!anotherttvviewer@anotherttvviewer.tmi.twitch.tv PART #x_coding
+1/5/2021 9:00:45 PM: x_coding - Received: :abbottcostello!abbottcostello@abbottcostello.tmi.twitch.tv PART #x_coding
+1/5/2021 9:01:51 PM: x_coding - Received: :abbottcostello!abbottcostello@abbottcostello.tmi.twitch.tv JOIN #x_coding
+1/5/2021 9:01:51 PM: x_coding - Received: :anotherttvviewer!anotherttvviewer@anotherttvviewer.tmi.twitch.tv JOIN #x_coding
+1/5/2021 9:01:51 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/5/2021 9:01:51 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/5/2021 9:03:26 PM: x_coding - Received: PING :tmi.twitch.tv
+1/5/2021 9:03:26 PM: x_coding - Writing: PONG
+1/5/2021 9:04:00 PM: x_coding - Received: @badge-info=;badges=premium/1;client-nonce=2c301cf821bd06e47456b4d82ecd5fe3;color=#FF0000;display-name=CarinawithC;emotes=1:87-88;flags=;id=338ebd0d-e2c0-4013-9279-1796a611817d;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1609880777219;turbo=0;user-id=218415427;user-type= :carinawithc!carinawithc@carinawithc.tmi.twitch.tv PRIVMSG #x_coding :maybe u could add some music and make an overlay that describes what you're working on :)
+1/5/2021 9:04:44 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=b97fa4076bdbfb6056316a27cfe7acb9;color=;display-name=x_Coding;emotes=;flags=;id=8e87900f-b8d8-4bc5-bb87-d2b119da756e;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1609880820668;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :the overlay i will make
+1/5/2021 9:04:51 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=730918885b2bb866ae082f4f44715d7b;color=;display-name=x_Coding;emotes=;flags=;id=62d4579c-dd89-4cd4-ba27-01d19fbad0fa;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1609880827565;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :mussic cannot
+1/5/2021 9:04:55 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=94058dc74cc18935cec4ae74221ebb96;color=;display-name=x_Coding;emotes=;flags=;id=2fdf8653-6d32-4afd-a941-fc6cfe8b3df2;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1609880832389;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :i stream from a server
+1/5/2021 9:04:59 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=0c4f343f10dcb12f3af92631f546df28;color=;display-name=x_Coding;emotes=;flags=;id=192fb993-5c55-407e-8a34-39083cf2d285;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1609880835613;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :and no music card
+1/5/2021 9:05:08 PM: x_coding - Received: @badge-info=;badges=premium/1;client-nonce=30d1723ac947606d7c26f41859ca12db;color=#FF0000;display-name=CarinawithC;emotes=;flags=;id=7bd500bf-119e-4e7f-9c56-133e0dd444e4;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1609880844446;turbo=0;user-id=218415427;user-type= :carinawithc!carinawithc@carinawithc.tmi.twitch.tv PRIVMSG #x_coding :ooohh I see
+1/5/2021 9:05:41 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=6e505dc07a06cb6fa32d6ee3d27f5e19;color=;display-name=x_Coding;emotes=;flags=;id=4fab2ddb-9cc7-4c35-b4a5-b1d5e70fb098;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1609880878240;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :now i try to take a screen shot with python cv2 on person detection
+1/5/2021 9:05:46 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=478dac6933fd232e9d1ca023735a65bb;color=;display-name=x_Coding;emotes=;flags=;id=3a1def01-46c3-4f94-9ee1-ce83ecebfa0f;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1609880883376;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :over a cctv camera
+1/5/2021 9:06:06 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=706e8db74f3a2689d72905ec404f5066;color=;display-name=x_Coding;emotes=;flags=;id=288ec365-f534-4557-b9ea-ec3f9be2d495;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1609880902976;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :wors
+1/5/2021 9:06:06 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=034f83e1ba3f1177bada3e5ca697b17f;color=;display-name=x_Coding;emotes=;flags=;id=27eba806-d336-45e8-97f5-4f45057b83bc;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1609880903399;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding ::d
+1/5/2021 9:06:08 PM: x_coding - Received: @badge-info=;badges=premium/1;client-nonce=654d8ec57c0ac6c9937c53af2b9ccd8b;color=#FF0000;display-name=CarinawithC;emotes=555555560:8-9;flags=;id=08b6cd8d-637e-4b1a-920b-87f49567db11;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1609880904618;turbo=0;user-id=218415427;user-type= :carinawithc!carinawithc@carinawithc.tmi.twitch.tv PRIVMSG #x_coding :ah cool :D
+1/5/2021 9:06:08 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=0b5127e4928fcf414e50f0f83336318f;color=;display-name=x_Coding;emotes=;flags=;id=e57869e9-973d-4675-bfc2-c7e55dbbeaf4;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1609880905240;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :works
+1/5/2021 9:06:26 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=9bacc654e29bd0b4959e415044d10119;color=;display-name=x_Coding;emotes=;flags=;id=f8ba330e-ae6f-4514-88d3-ce404f02f994;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1609880922784;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :i made a tool in c# that overlay a python one
+1/5/2021 9:06:41 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=ef7693ce24ad3234a3cdfc2844d254fe;color=;display-name=x_Coding;emotes=;flags=;id=17dc58f0-2540-45bd-baea-be6c1fbb7371;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1609880938218;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :wich will send me a mail notificaiton if a person is detected
+1/5/2021 9:06:52 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=366a64050c10c048b866cc37443b85fb;color=;display-name=x_Coding;emotes=;flags=;id=4f444479-782f-4f94-8c70-75aac35d1d4c;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1609880949043;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :now i want send me scren shot too
+1/5/2021 9:07:13 PM: x_coding - Received: @badge-info=;badges=premium/1;client-nonce=45318ae982707ad2cf057c6c1c26c2da;color=#FF0000;display-name=CarinawithC;emotes=;flags=;id=9688de2e-f2da-469a-a019-cb7a12b670fb;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1609880969942;turbo=0;user-id=218415427;user-type= :carinawithc!carinawithc@carinawithc.tmi.twitch.tv PRIVMSG #x_coding :neat
+1/5/2021 9:07:29 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=e149484f04ca40cdca2745370133d636;color=;display-name=x_Coding;emotes=;flags=;id=8b6a4313-9605-4787-b605-272ff3203725;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1609880985992;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :this is for today.. i just came from work
+1/5/2021 9:07:39 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=2a6ab7c557722bbd9d4a1a3b1931dd05;color=;display-name=x_Coding;emotes=;flags=;id=29141f62-fb81-4bc0-818d-38fbe5b2745f;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1609880996058;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :thank you all for watching
+1/5/2021 9:07:45 PM: x_coding - Received: PING :tmi.twitch.tv
+1/5/2021 9:07:45 PM: x_coding - Writing: PONG
+1/5/2021 9:07:54 PM: x_coding - Received: @badge-info=;badges=premium/1;client-nonce=e23b5f418fd8cc2344ac732d7f097152;color=#FF0000;display-name=CarinawithC;emotes=1:8-9;flags=;id=ff0097ac-6012-46bc-afb4-2f4b3fa5bd90;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1609881011110;turbo=0;user-id=218415427;user-type= :carinawithc!carinawithc@carinawithc.tmi.twitch.tv PRIVMSG #x_coding :see you :)
+1/5/2021 9:08:03 PM: x_coding - Disconnect Twitch Chat Client...

@@ -1,0 +1,179 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+using Core;
+
+namespace xBot_WPF
+{
+    /// <summary>
+    /// Interaction logic for settings.xaml
+    /// </summary>
+    public partial class settings : Window
+    {
+        //Declare variables
+        private static string keyName = "xBot";
+        private static string t_userName;
+        private static string t_streamKey;
+        private static string weatherKey;
+        private static string apiKey;
+        private static string joinedKey;
+       
+        //---------------------------------------------------------
+        public settings()
+        {
+            InitializeComponent();
+            //Load and display username, streamkey and dark mode control from registry
+
+            t_userName = Reg.regKey_Read(keyName, "UserName");
+
+            try
+            {
+
+                t_streamKey = Encryption._decryptData(Reg.regKey_Read(keyName, "StreamKey"));
+            }
+            catch (Exception)
+            {
+                //we bypass the error if no data found in ini for aouth key
+            }
+
+
+            weatherKey = Reg.regKey_Read(keyName, "WeatherMSG");
+            apiKey = Reg.regKey_Read(keyName, "WeatherAPIKey");
+            joinedKey = Reg.regKey_Read(keyName, "BotMSG");
+
+            streamOauthKeyTXT.Password = t_streamKey;
+            userNameTXT.Text = t_userName;
+            weatherAPIKeyTXT.Password = apiKey;
+            //---------------------------------
+
+            //load weaheter checkbox msg ar deactivate
+
+            if (weatherKey == "1")
+            {
+                weatherCKB.Content = "Activate Weather Command: ON";
+                weatherCKB.IsChecked = true;
+            }else if (weatherKey == "0")
+            {
+                weatherCKB.Content = "Activate Weather Command: OFF";
+                weatherCKB.IsChecked = false;
+            }
+            else if (weatherKey.Length <= 0)
+            {
+                weatherCKB.IsChecked = false;
+                weatherCKB.IsEnabled = false;
+            }
+            //----------------------------------------
+
+
+            //load joiend checkbox msg ar deactivate
+
+            if (joinedKey == "1")
+            {
+                joinedCKB.Content = "Display user joiend chat message: ON";
+                joinedCKB.IsChecked = true;
+            }
+            else if (joinedKey == "0")
+            {
+                joinedCKB.Content = "Display user joiend chat message: OFF";
+                joinedCKB.IsChecked = false;
+            }
+            else if (joinedKey.Length <= 0)
+            {
+                joinedCKB.IsChecked = false;
+                joinedCKB.IsEnabled = false;
+            }
+            //----------------------------------------
+        }
+        /// <summary>
+        /// Drag window with mouse
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                this.DragMove();
+        }
+
+        /// <summary>
+        /// Close lable button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void closeLBL_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
+        }
+        /// <summary>
+        /// Minimize lable button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void miniMizeLBL_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+        // helper to hide watermark hint in password field
+        private void passwordChanged_oAuth(object sender, RoutedEventArgs e)
+        {
+           //todo future work
+        }
+        /// <summary>
+        /// Save settings button    
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void saveBTN_Click(object sender, RoutedEventArgs e)
+        {
+
+            Reg.regKey_WriteSubkey(keyName, "UserName", userNameTXT.Text);//sotre username in regkey
+            Reg.regKey_WriteSubkey(keyName, "StreamKey", Encryption._encryptData(streamOauthKeyTXT.Password));//sotre oauth key in regkey
+            Reg.regKey_WriteSubkey(keyName, "WeatherAPIKey", Encryption._encryptData(weatherAPIKeyTXT.Password));//sotre weather API key in regkey
+
+            MessageBox.Show("Settings saved!");
+            this.Close();
+        }
+
+        //saveing weather keycontrol for main window check 
+        private void weatherCKB_Checked(object sender, RoutedEventArgs e)
+        {
+                Reg.regKey_WriteSubkey(keyName, "WeatherMSG", "1");
+
+                weatherCKB.Content = "Activate Weather Command: ON";
+                
+        }
+
+        private void weatherCKB_Unchecked(object sender, RoutedEventArgs e)
+        {
+            Reg.regKey_WriteSubkey(keyName, "WeatherMSG", "0");
+            weatherCKB.Content = "Activate Weather Command: OFF";
+        }
+        //-------------------------------------------------------------
+
+        //saveing user joined keycontrol for main window check 
+        private void joinedCKB_Checked(object sender, RoutedEventArgs e)
+        {
+            Reg.regKey_WriteSubkey(keyName, "BotMSG", "1");
+
+            joinedCKB.Content = "Display user joiend chat message: ON";
+        }
+
+        private void joinedCKB_Unchecked(object sender, RoutedEventArgs e)
+        {
+            Reg.regKey_WriteSubkey(keyName, "BotMSG", "0");
+
+            joinedCKB.Content = "Display user joiend chat message: OFF";
+        }
+        //----------------------------------------------------------------
+    }
+}

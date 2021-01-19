@@ -1,0 +1,426 @@
+1/19/2021 10:56:30 PM: x_coding - Connecting to: wss://irc-ws.chat.twitch.tv:443
+1/19/2021 10:56:31 PM: x_coding - Should be connected!
+1/19/2021 10:56:31 PM: x_coding - Joining channel: x_coding
+1/19/2021 10:56:32 PM: x_coding - Received: :tmi.twitch.tv 001 x_coding :Welcome, GLHF!
+1/19/2021 10:56:32 PM: x_coding - Received: :tmi.twitch.tv 002 x_coding :Your host is tmi.twitch.tv
+1/19/2021 10:56:32 PM: x_coding - Received: :tmi.twitch.tv 003 x_coding :This server is rather new
+1/19/2021 10:56:32 PM: x_coding - Received: :tmi.twitch.tv 004 x_coding :-
+Connected to x_coding
+1/19/2021 10:56:32 PM: x_coding - Received: :tmi.twitch.tv 375 x_coding :-
+1/19/2021 10:56:32 PM: x_coding - Received: :tmi.twitch.tv 372 x_coding :You are in a maze of twisty passages, all alike.
+1/19/2021 10:56:32 PM: x_coding - Received: :tmi.twitch.tv 376 x_coding :>
+1/19/2021 10:56:32 PM: x_coding - Received: :tmi.twitch.tv CAP * ACK :twitch.tv/membership
+1/19/2021 10:56:32 PM: x_coding - Unaccounted for: :tmi.twitch.tv CAP * ACK :twitch.tv/membership (please create a TwitchLib GitHub issue :P)
+1/19/2021 10:56:32 PM: x_coding - Received: :tmi.twitch.tv CAP * ACK :twitch.tv/commands
+1/19/2021 10:56:32 PM: x_coding - Unaccounted for: :tmi.twitch.tv CAP * ACK :twitch.tv/commands (please create a TwitchLib GitHub issue :P)
+1/19/2021 10:56:32 PM: x_coding - Received: :tmi.twitch.tv CAP * ACK :twitch.tv/tags
+1/19/2021 10:56:32 PM: x_coding - Unaccounted for: :tmi.twitch.tv CAP * ACK :twitch.tv/tags (please create a TwitchLib GitHub issue :P)
+1/19/2021 10:56:32 PM: x_coding - Received: :x_coding!x_coding@x_coding.tmi.twitch.tv JOIN #x_coding
+1/19/2021 10:56:32 PM: x_coding - Received: :x_coding.tmi.twitch.tv 353 x_coding = #x_coding :x_coding
+1/19/2021 10:56:32 PM: x_coding - Received: :x_coding.tmi.twitch.tv 366 x_coding #x_coding :End of /NAMES list
+1/19/2021 10:56:32 PM: x_coding - Finished channel joining queue.
+1/19/2021 10:56:32 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 10:56:32 PM: x_coding - Received: @emote-only=0;followers-only=-1;r9k=0;rituals=0;room-id=503606492;slow=0;subs-only=0 :tmi.twitch.tv ROOMSTATE #x_coding
+x_codingHey, I'm xBot, a twitch bot!
+1/19/2021 10:56:32 PM: x_coding - Finished channel joining queue.
+1/19/2021 10:56:32 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 10:57:40 PM: x_coding - Received: :anotherttvviewer!anotherttvviewer@anotherttvviewer.tmi.twitch.tv JOIN #x_coding
+1/19/2021 10:57:40 PM: x_coding - Received: :electricallongboard!electricallongboard@electricallongboard.tmi.twitch.tv JOIN #x_coding
+1/19/2021 10:57:40 PM: x_coding - Received: :feet!feet@feet.tmi.twitch.tv JOIN #x_coding
+1/19/2021 10:58:40 PM: x_coding - Received: :anotherttvviewer!anotherttvviewer@anotherttvviewer.tmi.twitch.tv PART #x_coding
+1/19/2021 10:58:40 PM: x_coding - Received: :electricallongboard!electricallongboard@electricallongboard.tmi.twitch.tv PART #x_coding
+1/19/2021 11:00:13 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=e112238ba906f7f40762c20879ccf3ad;color=;display-name=x_Coding;emotes=;flags=;id=7ad215ce-d40c-433f-b2ba-03b8501e63cb;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611097360586;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :!weather Londond
+[2021 01 20 01:00:13]Bad words check activated!
+1/19/2021 11:00:14 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:00:25 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=9b22eb92002e571c632a283b3bc19257;color=;display-name=x_Coding;emotes=;flags=;id=8b23c35c-c15d-48ab-b0b5-d9bbb5968d4e;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611097372517;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :!weather London
+[2021 01 20 01:00:25]Bad words check activated!
+1/19/2021 11:00:25 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:00:40 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=65e0690d12cb3c0b5e720a421ecfafd4;color=;display-name=x_Coding;emotes=;flags=;id=fd365e5c-aa0a-4021-af39-f3cc20017d79;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611097387865;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :!git
+[2021 01 20 01:00:40]Bad words check activated!
+1/19/2021 11:00:41 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:00:49 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=7335db75d320106b3a48dd08376ba5a3;color=;display-name=x_Coding;emotes=;flags=;id=2c17ed99-7a5a-4f50-8c6d-6983ccb5ac27;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611097396867;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :!discord
+[2021 01 20 01:00:49]Bad words check activated!
+1/19/2021 11:00:50 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:01:21 PM: x_coding - Received: PING :tmi.twitch.tv
+1/19/2021 11:01:21 PM: x_coding - Writing: PONG
+1/19/2021 11:01:42 PM: x_coding - Disconnect Twitch Chat Client...
+[2021 01 20 01:01:42] xBot Disconncted!
+1/19/2021 11:06:24 PM: x_coding - Connecting to: wss://irc-ws.chat.twitch.tv:443
+1/19/2021 11:06:25 PM: x_coding - Should be connected!
+1/19/2021 11:06:25 PM: x_coding - Joining channel: x_coding
+1/19/2021 11:06:25 PM: x_coding - Received: :tmi.twitch.tv 001 x_coding :Welcome, GLHF!
+1/19/2021 11:06:25 PM: x_coding - Received: :tmi.twitch.tv 002 x_coding :Your host is tmi.twitch.tv
+1/19/2021 11:06:25 PM: x_coding - Received: :tmi.twitch.tv 003 x_coding :This server is rather new
+1/19/2021 11:06:25 PM: x_coding - Received: :tmi.twitch.tv 004 x_coding :-
+Connected to x_coding
+1/19/2021 11:06:25 PM: x_coding - Received: :tmi.twitch.tv 375 x_coding :-
+1/19/2021 11:06:25 PM: x_coding - Received: :tmi.twitch.tv 372 x_coding :You are in a maze of twisty passages, all alike.
+1/19/2021 11:06:25 PM: x_coding - Received: :tmi.twitch.tv 376 x_coding :>
+1/19/2021 11:06:25 PM: x_coding - Received: :tmi.twitch.tv CAP * ACK :twitch.tv/membership
+1/19/2021 11:06:25 PM: x_coding - Unaccounted for: :tmi.twitch.tv CAP * ACK :twitch.tv/membership (please create a TwitchLib GitHub issue :P)
+1/19/2021 11:06:25 PM: x_coding - Received: :tmi.twitch.tv CAP * ACK :twitch.tv/commands
+1/19/2021 11:06:25 PM: x_coding - Unaccounted for: :tmi.twitch.tv CAP * ACK :twitch.tv/commands (please create a TwitchLib GitHub issue :P)
+1/19/2021 11:06:25 PM: x_coding - Received: :tmi.twitch.tv CAP * ACK :twitch.tv/tags
+1/19/2021 11:06:25 PM: x_coding - Unaccounted for: :tmi.twitch.tv CAP * ACK :twitch.tv/tags (please create a TwitchLib GitHub issue :P)
+1/19/2021 11:06:25 PM: x_coding - Received: :x_coding!x_coding@x_coding.tmi.twitch.tv JOIN #x_coding
+1/19/2021 11:06:26 PM: x_coding - Received: :x_coding.tmi.twitch.tv 353 x_coding = #x_coding :x_coding
+1/19/2021 11:06:26 PM: x_coding - Received: :x_coding.tmi.twitch.tv 366 x_coding #x_coding :End of /NAMES list
+1/19/2021 11:06:26 PM: x_coding - Finished channel joining queue.
+1/19/2021 11:06:26 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:06:26 PM: x_coding - Received: @emote-only=0;followers-only=-1;r9k=0;rituals=0;room-id=503606492;slow=0;subs-only=0 :tmi.twitch.tv ROOMSTATE #x_coding
+x_codingHey, I'm xBot, a twitch bot build entirely on a twitch steam :D !
+1/19/2021 11:06:26 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:06:26 PM: x_coding - Finished channel joining queue.
+1/19/2021 11:06:26 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:06:40 PM: x_coding - Received: :anotherttvviewer!anotherttvviewer@anotherttvviewer.tmi.twitch.tv JOIN #x_coding
+1/19/2021 11:06:40 PM: x_coding - Received: :electricallongboard!electricallongboard@electricallongboard.tmi.twitch.tv JOIN #x_coding
+1/19/2021 11:06:40 PM: x_coding - Received: :feet!feet@feet.tmi.twitch.tv JOIN #x_coding
+1/19/2021 11:06:40 PM: x_coding - Received: :lisarei!lisarei@lisarei.tmi.twitch.tv JOIN #x_coding
+1/19/2021 11:06:40 PM: x_coding - Received: :violets_tv!violets_tv@violets_tv.tmi.twitch.tv JOIN #x_coding
+1/19/2021 11:06:40 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:06:40 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:06:40 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:06:41 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:06:41 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:06:44 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=cdf9a5a9fdcf741bc143193126b09f63;color=;display-name=x_Coding;emotes=;flags=;id=95bbe8f2-e0df-4a33-8329-073e8bcf07c7;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611097751310;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :@LisaRei hey
+[2021 01 20 01:07:35]Bad words check activated!
+1/19/2021 11:07:46 PM: x_coding - Received: @badge-info=;badges=glhf-pledge/1;client-nonce=073212b245b20c4438b37a95cb6f4cce;color=#FF69B4;display-name=LisaRei;emotes=;flags=;id=c41605c6-1d11-4ab5-bc9b-c1a7c1d53cf3;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611097813641;turbo=0;user-id=178940115;user-type= :lisarei!lisarei@lisarei.tmi.twitch.tv PRIVMSG #x_coding :hows it going
+1/19/2021 11:08:04 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=5d07d2ad7ebcbf10ed59b9fd1792914c;color=;display-name=x_Coding;emotes=;flags=;id=0fb26026-fb60-4b97-9f31-bf3ed294bc33;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611097831087;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :@LisaRei slow but almost done what i wanted
+1/19/2021 11:08:08 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=9c5c959277b6b95854eca8a7f875e892;color=;display-name=x_Coding;emotes=;flags=;id=4ec82194-24bf-495b-bbf5-6e7207535290;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611097835542;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :wpf is new thing for me
+1/19/2021 11:08:23 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=6d2c448085beb776b51c40b84bd157c3;color=;display-name=x_Coding;emotes=;flags=;id=a44050d8-db32-4cce-8fc1-4be8511a06ae;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611097850885;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :first bot was going fast on developing
+1/19/2021 11:08:42 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=646dc3945262efd5d9d987ad2595be53;color=;display-name=x_Coding;emotes=;flags=;id=a64fd70a-84bf-4116-bcf7-c31a2ea4da56;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611097869215;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :the technology is old stuff for me
+1/19/2021 11:08:50 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=caf8ed74f4f38682b5ed720b72f2e8ea;color=;display-name=x_Coding;emotes=;flags=;id=0bf3daae-740c-41bd-9429-33d343ec529b;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611097877822;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :but wpf is....
+1/19/2021 11:08:54 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=93e9cac588822f40a302404ad330d3e7;color=;display-name=x_Coding;emotes=;flags=;id=6e9dca84-541d-4fe6-adbd-b4e311e24e9a;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611097881100;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :but looks nice:D
+1/19/2021 11:09:26 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=7e9fb158f1d5e53dc9c189c9eeca333f;color=;display-name=x_Coding;emotes=;flags=;id=38b903c4-46a3-42de-94e0-5652b73bd67d;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611097913510;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :i have to add shout command
+1/19/2021 11:09:30 PM: x_coding - Received: @badge-info=;badges=glhf-pledge/1;client-nonce=2831db4166fc208f94eabc3e0c814b00;color=#FF69B4;display-name=LisaRei;emotes=;flags=;id=5d680c58-77ca-4d05-9e4b-8b223d1fd344;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611097917359;turbo=0;user-id=178940115;user-type= :lisarei!lisarei@lisarei.tmi.twitch.tv PRIVMSG #x_coding :yea i can see it looks real good!!
+1/19/2021 11:09:41 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=0d6a92e789b21e1cc40cd9fbece4b383;color=;display-name=x_Coding;emotes=;flags=;id=e24fa688-cbce-4853-8e4b-433eeabb91b1;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611097928751;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :the black one was the old one
+1/19/2021 11:09:44 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=be9a58c9515b64b3958bfb5c266fdf6e;color=;display-name=x_Coding;emotes=;flags=;id=e71ca527-4456-455d-879a-e2e3ae9ce468;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611097931820;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :this is the new one
+1/19/2021 11:10:34 PM: x_coding - Disconnect Twitch Chat Client...
+[2021 01 20 01:10:34] xBot Disconncted!
+1/19/2021 11:11:21 PM: x_coding - Connecting to: wss://irc-ws.chat.twitch.tv:443
+1/19/2021 11:11:22 PM: x_coding - Should be connected!
+1/19/2021 11:11:22 PM: x_coding - Joining channel: x_coding
+1/19/2021 11:11:22 PM: x_coding - Received: :tmi.twitch.tv 001 x_coding :Welcome, GLHF!
+1/19/2021 11:11:22 PM: x_coding - Received: :tmi.twitch.tv 002 x_coding :Your host is tmi.twitch.tv
+1/19/2021 11:11:22 PM: x_coding - Received: :tmi.twitch.tv 003 x_coding :This server is rather new
+1/19/2021 11:11:22 PM: x_coding - Received: :tmi.twitch.tv 004 x_coding :-
+Connected to x_coding
+1/19/2021 11:11:23 PM: x_coding - Received: :tmi.twitch.tv 375 x_coding :-
+1/19/2021 11:11:23 PM: x_coding - Received: :tmi.twitch.tv 372 x_coding :You are in a maze of twisty passages, all alike.
+1/19/2021 11:11:23 PM: x_coding - Received: :tmi.twitch.tv 376 x_coding :>
+1/19/2021 11:11:23 PM: x_coding - Received: :tmi.twitch.tv CAP * ACK :twitch.tv/membership
+1/19/2021 11:11:23 PM: x_coding - Unaccounted for: :tmi.twitch.tv CAP * ACK :twitch.tv/membership (please create a TwitchLib GitHub issue :P)
+1/19/2021 11:11:23 PM: x_coding - Received: :tmi.twitch.tv CAP * ACK :twitch.tv/commands
+1/19/2021 11:11:23 PM: x_coding - Unaccounted for: :tmi.twitch.tv CAP * ACK :twitch.tv/commands (please create a TwitchLib GitHub issue :P)
+1/19/2021 11:11:23 PM: x_coding - Received: :tmi.twitch.tv CAP * ACK :twitch.tv/tags
+1/19/2021 11:11:23 PM: x_coding - Unaccounted for: :tmi.twitch.tv CAP * ACK :twitch.tv/tags (please create a TwitchLib GitHub issue :P)
+1/19/2021 11:11:23 PM: x_coding - Received: :x_coding!x_coding@x_coding.tmi.twitch.tv JOIN #x_coding
+1/19/2021 11:11:23 PM: x_coding - Received: :x_coding.tmi.twitch.tv 353 x_coding = #x_coding :x_coding
+1/19/2021 11:11:23 PM: x_coding - Received: :x_coding.tmi.twitch.tv 366 x_coding #x_coding :End of /NAMES list
+1/19/2021 11:11:23 PM: x_coding - Finished channel joining queue.
+1/19/2021 11:11:23 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:11:23 PM: x_coding - Received: @emote-only=0;followers-only=-1;r9k=0;rituals=0;room-id=503606492;slow=0;subs-only=0 :tmi.twitch.tv ROOMSTATE #x_coding
+x_codingHey, I'm xBot, a twitch bot build entirely on a twitch steam :D !
+1/19/2021 11:11:23 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:11:23 PM: x_coding - Finished channel joining queue.
+1/19/2021 11:11:23 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:11:30 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=021de2287162d3bc90ff27eea3189777;color=;display-name=x_Coding;emotes=;flags=;id=01e12531-da7e-4a5a-8f22-02bf94c189f1;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611098037236;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :!git
+1/19/2021 11:11:30 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:11:48 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=1be25f66d9c654a076820c7f171cffa3;color=;display-name=x_Coding;emotes=;flags=;id=27a147ee-17a6-40b4-977d-76f4e1110037;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611098055745;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :i use same account for bot:D
+1/19/2021 11:12:30 PM: x_coding - Received: :electricallongboard!electricallongboard@electricallongboard.tmi.twitch.tv JOIN #x_coding
+1/19/2021 11:12:30 PM: x_coding - Received: :feet!feet@feet.tmi.twitch.tv JOIN #x_coding
+1/19/2021 11:12:30 PM: x_coding - Received: :lisarei!lisarei@lisarei.tmi.twitch.tv JOIN #x_coding
+1/19/2021 11:12:30 PM: x_coding - Received: :violets_tv!violets_tv@violets_tv.tmi.twitch.tv JOIN #x_coding
+1/19/2021 11:12:30 PM: x_coding - Received: :anotherttvviewer!anotherttvviewer@anotherttvviewer.tmi.twitch.tv JOIN #x_coding
+1/19/2021 11:12:30 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:12:30 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:12:30 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:12:30 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:12:30 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:12:47 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=174158e22b0991cc027c1ea31a6752fa;color=;display-name=x_Coding;emotes=;flags=;id=808421de-2aac-4374-b949-8654e5616fda;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611098114511;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :!help
+1/19/2021 11:12:47 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:12:50 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=bcfde21ff85b287365d4c4483ab5e7f1;color=;display-name=x_Coding;emotes=;flags=;id=d2d0fb13-ce3f-46b6-9352-66fbf995870c;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611098117636;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :test it
+1/19/2021 11:12:52 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=b33a9519d45242bae05d09d6e6652e5d;color=;display-name=x_Coding;emote-only=1;emotes=555555560:0-1;flags=;id=8a4d7281-737f-4869-9653-e83b7cae8610;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611098119643;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding ::D
+[2021 01 20 01:12:56]Bad words check activated!
+[2021 01 20 01:12:57]Bad words check deactivated!
+1/19/2021 11:13:32 PM: x_coding - Received: :violets_tv!violets_tv@violets_tv.tmi.twitch.tv PART #x_coding
+1/19/2021 11:13:32 PM: x_coding - Received: :anotherttvviewer!anotherttvviewer@anotherttvviewer.tmi.twitch.tv PART #x_coding
+1/19/2021 11:13:32 PM: x_coding - Received: :electricallongboard!electricallongboard@electricallongboard.tmi.twitch.tv PART #x_coding
+1/19/2021 11:15:47 PM: x_coding - Received: :violets_tv!violets_tv@violets_tv.tmi.twitch.tv JOIN #x_coding
+1/19/2021 11:15:47 PM: x_coding - Received: :anotherttvviewer!anotherttvviewer@anotherttvviewer.tmi.twitch.tv JOIN #x_coding
+1/19/2021 11:15:47 PM: x_coding - Received: :electricallongboard!electricallongboard@electricallongboard.tmi.twitch.tv JOIN #x_coding
+1/19/2021 11:15:47 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:15:47 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:15:47 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:16:09 PM: x_coding - Received: PING :tmi.twitch.tv
+1/19/2021 11:16:09 PM: x_coding - Writing: PONG
+1/19/2021 11:17:47 PM: x_coding - Received: :lisarei!lisarei@lisarei.tmi.twitch.tv PART #x_coding
+1/19/2021 11:21:01 PM: x_coding - Received: PING :tmi.twitch.tv
+1/19/2021 11:21:01 PM: x_coding - Writing: PONG
+1/19/2021 11:25:30 PM: x_coding - Received: PING :tmi.twitch.tv
+1/19/2021 11:25:30 PM: x_coding - Writing: PONG
+1/19/2021 11:26:14 PM: x_coding - Disconnect Twitch Chat Client...
+[2021 01 20 01:26:14] xBot Disconncted!
+1/19/2021 11:26:40 PM: x_coding - Connecting to: wss://irc-ws.chat.twitch.tv:443
+1/19/2021 11:26:41 PM: x_coding - Should be connected!
+1/19/2021 11:26:41 PM: x_coding - Joining channel: x_coding
+1/19/2021 11:26:42 PM: x_coding - Received: :tmi.twitch.tv 001 x_coding :Welcome, GLHF!
+1/19/2021 11:26:42 PM: x_coding - Received: :tmi.twitch.tv 002 x_coding :Your host is tmi.twitch.tv
+1/19/2021 11:26:42 PM: x_coding - Received: :tmi.twitch.tv 003 x_coding :This server is rather new
+1/19/2021 11:26:42 PM: x_coding - Received: :tmi.twitch.tv 004 x_coding :-
+Connected to x_coding
+1/19/2021 11:26:42 PM: x_coding - Received: :tmi.twitch.tv 375 x_coding :-
+1/19/2021 11:26:42 PM: x_coding - Received: :tmi.twitch.tv 372 x_coding :You are in a maze of twisty passages, all alike.
+1/19/2021 11:26:42 PM: x_coding - Received: :tmi.twitch.tv 376 x_coding :>
+1/19/2021 11:26:42 PM: x_coding - Received: :tmi.twitch.tv CAP * ACK :twitch.tv/membership
+1/19/2021 11:26:42 PM: x_coding - Unaccounted for: :tmi.twitch.tv CAP * ACK :twitch.tv/membership (please create a TwitchLib GitHub issue :P)
+1/19/2021 11:26:42 PM: x_coding - Received: :tmi.twitch.tv CAP * ACK :twitch.tv/commands
+1/19/2021 11:26:42 PM: x_coding - Unaccounted for: :tmi.twitch.tv CAP * ACK :twitch.tv/commands (please create a TwitchLib GitHub issue :P)
+1/19/2021 11:26:42 PM: x_coding - Received: :tmi.twitch.tv CAP * ACK :twitch.tv/tags
+1/19/2021 11:26:42 PM: x_coding - Unaccounted for: :tmi.twitch.tv CAP * ACK :twitch.tv/tags (please create a TwitchLib GitHub issue :P)
+1/19/2021 11:26:42 PM: x_coding - Received: :x_coding!x_coding@x_coding.tmi.twitch.tv JOIN #x_coding
+1/19/2021 11:26:42 PM: x_coding - Received: :x_coding.tmi.twitch.tv 353 x_coding = #x_coding :x_coding
+1/19/2021 11:26:42 PM: x_coding - Received: :x_coding.tmi.twitch.tv 366 x_coding #x_coding :End of /NAMES list
+1/19/2021 11:26:42 PM: x_coding - Finished channel joining queue.
+1/19/2021 11:26:42 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:26:42 PM: x_coding - Received: @emote-only=0;followers-only=-1;r9k=0;rituals=0;room-id=503606492;slow=0;subs-only=0 :tmi.twitch.tv ROOMSTATE #x_coding
+x_codingHey, I'm xBot, a twitch bot build entirely on a twitch steam :D !
+1/19/2021 11:26:42 PM: x_coding - Finished channel joining queue.
+1/19/2021 11:26:43 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:26:55 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=d47916fa1ca1ac48089078b60c35254a;color=;display-name=x_Coding;emotes=;flags=;id=0b3f8578-ed5e-492d-b838-f7497d8f5ec9;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611098962832;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :!ss @LisaRei
+1/19/2021 11:26:56 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:27:05 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=e6e16b4d3e87b38dcba32358b621bf88;color=;display-name=x_Coding;emotes=;flags=;id=ff1e674e-6fe7-47c3-a88a-cb546a4bd2ef;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611098972715;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :ups
+1/19/2021 11:27:09 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=6ab339618f6efe35a1631fd39f468ac3;color=;display-name=x_Coding;emotes=;flags=;id=72d6935e-0b6b-453d-9138-43e53a71a3f1;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611098976311;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :wrong string:d
+1/19/2021 11:27:14 PM: x_coding - Received: :anotherttvviewer!anotherttvviewer@anotherttvviewer.tmi.twitch.tv JOIN #x_coding
+1/19/2021 11:27:14 PM: x_coding - Received: :electricallongboard!electricallongboard@electricallongboard.tmi.twitch.tv JOIN #x_coding
+1/19/2021 11:27:14 PM: x_coding - Received: :feet!feet@feet.tmi.twitch.tv JOIN #x_coding
+1/19/2021 11:27:14 PM: x_coding - Received: :violets_tv!violets_tv@violets_tv.tmi.twitch.tv JOIN #x_coding
+1/19/2021 11:27:14 PM: x_coding - Disconnect Twitch Chat Client...
+[2021 01 20 01:27:14] xBot Disconncted!
+1/19/2021 11:31:32 PM: x_coding - Connecting to: wss://irc-ws.chat.twitch.tv:443
+1/19/2021 11:31:33 PM: x_coding - Should be connected!
+1/19/2021 11:31:33 PM: x_coding - Joining channel: x_coding
+1/19/2021 11:31:33 PM: x_coding - Received: :tmi.twitch.tv 001 x_coding :Welcome, GLHF!
+1/19/2021 11:31:34 PM: x_coding - Received: :tmi.twitch.tv 002 x_coding :Your host is tmi.twitch.tv
+1/19/2021 11:31:34 PM: x_coding - Received: :tmi.twitch.tv 003 x_coding :This server is rather new
+1/19/2021 11:31:34 PM: x_coding - Received: :tmi.twitch.tv 004 x_coding :-
+Connected to x_coding
+1/19/2021 11:31:34 PM: x_coding - Received: :tmi.twitch.tv 375 x_coding :-
+1/19/2021 11:31:34 PM: x_coding - Received: :tmi.twitch.tv 372 x_coding :You are in a maze of twisty passages, all alike.
+1/19/2021 11:31:34 PM: x_coding - Received: :tmi.twitch.tv 376 x_coding :>
+1/19/2021 11:31:34 PM: x_coding - Received: :tmi.twitch.tv CAP * ACK :twitch.tv/membership
+1/19/2021 11:31:34 PM: x_coding - Unaccounted for: :tmi.twitch.tv CAP * ACK :twitch.tv/membership (please create a TwitchLib GitHub issue :P)
+1/19/2021 11:31:34 PM: x_coding - Received: :tmi.twitch.tv CAP * ACK :twitch.tv/commands
+1/19/2021 11:31:34 PM: x_coding - Unaccounted for: :tmi.twitch.tv CAP * ACK :twitch.tv/commands (please create a TwitchLib GitHub issue :P)
+1/19/2021 11:31:34 PM: x_coding - Received: :tmi.twitch.tv CAP * ACK :twitch.tv/tags
+1/19/2021 11:31:34 PM: x_coding - Unaccounted for: :tmi.twitch.tv CAP * ACK :twitch.tv/tags (please create a TwitchLib GitHub issue :P)
+1/19/2021 11:31:34 PM: x_coding - Received: :x_coding!x_coding@x_coding.tmi.twitch.tv JOIN #x_coding
+1/19/2021 11:31:34 PM: x_coding - Received: :x_coding.tmi.twitch.tv 353 x_coding = #x_coding :x_coding
+1/19/2021 11:31:34 PM: x_coding - Received: :x_coding.tmi.twitch.tv 366 x_coding #x_coding :End of /NAMES list
+1/19/2021 11:31:34 PM: x_coding - Finished channel joining queue.
+1/19/2021 11:31:34 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:31:34 PM: x_coding - Received: @emote-only=0;followers-only=-1;r9k=0;rituals=0;room-id=503606492;slow=0;subs-only=0 :tmi.twitch.tv ROOMSTATE #x_coding
+x_codingHey, I'm xBot, a twitch bot build entirely on a twitch steam :D !
+1/19/2021 11:31:34 PM: x_coding - Finished channel joining queue.
+1/19/2021 11:31:34 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:31:39 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=b791ef17f56311976543c4acac2e09dc;color=;display-name=x_Coding;emotes=;flags=;id=4161c315-4a08-4b54-8251-082ba9f5c609;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611099246622;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :!ss
+1/19/2021 11:32:14 PM: x_coding - Disconnect Twitch Chat Client...
+1/19/2021 11:33:28 PM: x_coding - Connecting to: wss://irc-ws.chat.twitch.tv:443
+1/19/2021 11:33:29 PM: x_coding - Should be connected!
+1/19/2021 11:33:32 PM: x_coding - Connecting to: wss://irc-ws.chat.twitch.tv:443
+1/19/2021 11:33:33 PM: x_coding - Should be connected!
+1/19/2021 11:33:33 PM: x_coding - Joining channel: x_coding
+1/19/2021 11:33:33 PM: x_coding - Received: :tmi.twitch.tv 001 x_coding :Welcome, GLHF!
+1/19/2021 11:33:33 PM: x_coding - Received: :tmi.twitch.tv 002 x_coding :Your host is tmi.twitch.tv
+1/19/2021 11:33:33 PM: x_coding - Received: :tmi.twitch.tv 003 x_coding :This server is rather new
+1/19/2021 11:33:33 PM: x_coding - Received: :tmi.twitch.tv 004 x_coding :-
+Connected to x_coding
+1/19/2021 11:33:33 PM: x_coding - Received: :tmi.twitch.tv 375 x_coding :-
+1/19/2021 11:33:33 PM: x_coding - Received: :tmi.twitch.tv 372 x_coding :You are in a maze of twisty passages, all alike.
+1/19/2021 11:33:33 PM: x_coding - Received: :tmi.twitch.tv 376 x_coding :>
+1/19/2021 11:33:33 PM: x_coding - Received: :tmi.twitch.tv CAP * ACK :twitch.tv/membership
+1/19/2021 11:33:33 PM: x_coding - Unaccounted for: :tmi.twitch.tv CAP * ACK :twitch.tv/membership (please create a TwitchLib GitHub issue :P)
+1/19/2021 11:33:33 PM: x_coding - Received: :tmi.twitch.tv CAP * ACK :twitch.tv/commands
+1/19/2021 11:33:33 PM: x_coding - Unaccounted for: :tmi.twitch.tv CAP * ACK :twitch.tv/commands (please create a TwitchLib GitHub issue :P)
+1/19/2021 11:33:33 PM: x_coding - Received: :tmi.twitch.tv CAP * ACK :twitch.tv/tags
+1/19/2021 11:33:33 PM: x_coding - Unaccounted for: :tmi.twitch.tv CAP * ACK :twitch.tv/tags (please create a TwitchLib GitHub issue :P)
+1/19/2021 11:33:33 PM: x_coding - Received: :x_coding!x_coding@x_coding.tmi.twitch.tv JOIN #x_coding
+1/19/2021 11:33:33 PM: x_coding - Received: :x_coding.tmi.twitch.tv 353 x_coding = #x_coding :x_coding
+1/19/2021 11:33:34 PM: x_coding - Received: :x_coding.tmi.twitch.tv 366 x_coding #x_coding :End of /NAMES list
+1/19/2021 11:33:34 PM: x_coding - Finished channel joining queue.
+1/19/2021 11:33:34 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:33:34 PM: x_coding - Received: @emote-only=0;followers-only=-1;r9k=0;rituals=0;room-id=503606492;slow=0;subs-only=0 :tmi.twitch.tv ROOMSTATE #x_coding
+x_codingHey, I'm xBot, a twitch bot build entirely on a twitch steam :D !
+1/19/2021 11:33:34 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:33:34 PM: x_coding - Finished channel joining queue.
+1/19/2021 11:33:40 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=632d467f4d7dd31fb0e9bc934e74ff37;color=;display-name=x_Coding;emotes=;flags=;id=1b2047e7-e895-43f5-a60d-66127c1d1718;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611099367818;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :!ss
+1/19/2021 11:35:15 PM: x_coding - Connecting to: wss://irc-ws.chat.twitch.tv:443
+1/19/2021 11:35:16 PM: x_coding - Should be connected!
+1/19/2021 11:35:17 PM: x_coding - Joining channel: x_coding
+1/19/2021 11:35:17 PM: x_coding - Received: :tmi.twitch.tv 001 x_coding :Welcome, GLHF!
+1/19/2021 11:35:17 PM: x_coding - Received: :tmi.twitch.tv 002 x_coding :Your host is tmi.twitch.tv
+1/19/2021 11:35:17 PM: x_coding - Received: :tmi.twitch.tv 003 x_coding :This server is rather new
+1/19/2021 11:35:17 PM: x_coding - Received: :tmi.twitch.tv 004 x_coding :-
+Connected to x_coding
+1/19/2021 11:35:17 PM: x_coding - Received: :tmi.twitch.tv 375 x_coding :-
+1/19/2021 11:35:17 PM: x_coding - Received: :tmi.twitch.tv 372 x_coding :You are in a maze of twisty passages, all alike.
+1/19/2021 11:35:17 PM: x_coding - Received: :tmi.twitch.tv 376 x_coding :>
+1/19/2021 11:35:17 PM: x_coding - Received: :tmi.twitch.tv CAP * ACK :twitch.tv/membership
+1/19/2021 11:35:17 PM: x_coding - Unaccounted for: :tmi.twitch.tv CAP * ACK :twitch.tv/membership (please create a TwitchLib GitHub issue :P)
+1/19/2021 11:35:17 PM: x_coding - Received: :tmi.twitch.tv CAP * ACK :twitch.tv/commands
+1/19/2021 11:35:17 PM: x_coding - Unaccounted for: :tmi.twitch.tv CAP * ACK :twitch.tv/commands (please create a TwitchLib GitHub issue :P)
+1/19/2021 11:35:17 PM: x_coding - Received: :tmi.twitch.tv CAP * ACK :twitch.tv/tags
+1/19/2021 11:35:17 PM: x_coding - Unaccounted for: :tmi.twitch.tv CAP * ACK :twitch.tv/tags (please create a TwitchLib GitHub issue :P)
+1/19/2021 11:35:17 PM: x_coding - Received: :x_coding!x_coding@x_coding.tmi.twitch.tv JOIN #x_coding
+1/19/2021 11:35:17 PM: x_coding - Received: :x_coding.tmi.twitch.tv 353 x_coding = #x_coding :x_coding
+1/19/2021 11:35:17 PM: x_coding - Received: :x_coding.tmi.twitch.tv 366 x_coding #x_coding :End of /NAMES list
+1/19/2021 11:35:17 PM: x_coding - Finished channel joining queue.
+1/19/2021 11:35:17 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:35:17 PM: x_coding - Received: @emote-only=0;followers-only=-1;r9k=0;rituals=0;room-id=503606492;slow=0;subs-only=0 :tmi.twitch.tv ROOMSTATE #x_coding
+x_codingHey, I'm xBot, a twitch bot build entirely on a twitch steam :D !
+1/19/2021 11:35:18 PM: x_coding - Finished channel joining queue.
+1/19/2021 11:35:18 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:35:27 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=82acbbb59052a2f9697dc64baff9eb7b;color=;display-name=x_Coding;emotes=;flags=;id=b1fa5a6b-d332-4ba8-bc54-d79d500ea8e2;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611099474431;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :!ss
+1/19/2021 11:36:40 PM: x_coding - Connecting to: wss://irc-ws.chat.twitch.tv:443
+1/19/2021 11:36:40 PM: x_coding - Should be connected!
+1/19/2021 11:36:40 PM: x_coding - Joining channel: x_coding
+1/19/2021 11:36:41 PM: x_coding - Received: :tmi.twitch.tv 001 x_coding :Welcome, GLHF!
+1/19/2021 11:36:41 PM: x_coding - Received: :tmi.twitch.tv 002 x_coding :Your host is tmi.twitch.tv
+1/19/2021 11:36:41 PM: x_coding - Received: :tmi.twitch.tv 003 x_coding :This server is rather new
+1/19/2021 11:36:41 PM: x_coding - Received: :tmi.twitch.tv 004 x_coding :-
+Connected to x_coding
+1/19/2021 11:36:41 PM: x_coding - Received: :tmi.twitch.tv 375 x_coding :-
+1/19/2021 11:36:41 PM: x_coding - Received: :tmi.twitch.tv 372 x_coding :You are in a maze of twisty passages, all alike.
+1/19/2021 11:36:41 PM: x_coding - Received: :tmi.twitch.tv 376 x_coding :>
+1/19/2021 11:36:41 PM: x_coding - Received: :tmi.twitch.tv CAP * ACK :twitch.tv/membership
+1/19/2021 11:36:41 PM: x_coding - Unaccounted for: :tmi.twitch.tv CAP * ACK :twitch.tv/membership (please create a TwitchLib GitHub issue :P)
+1/19/2021 11:36:41 PM: x_coding - Received: :tmi.twitch.tv CAP * ACK :twitch.tv/commands
+1/19/2021 11:36:41 PM: x_coding - Unaccounted for: :tmi.twitch.tv CAP * ACK :twitch.tv/commands (please create a TwitchLib GitHub issue :P)
+1/19/2021 11:36:41 PM: x_coding - Received: :tmi.twitch.tv CAP * ACK :twitch.tv/tags
+1/19/2021 11:36:41 PM: x_coding - Unaccounted for: :tmi.twitch.tv CAP * ACK :twitch.tv/tags (please create a TwitchLib GitHub issue :P)
+1/19/2021 11:36:41 PM: x_coding - Received: :x_coding!x_coding@x_coding.tmi.twitch.tv JOIN #x_coding
+1/19/2021 11:36:41 PM: x_coding - Received: :x_coding.tmi.twitch.tv 353 x_coding = #x_coding :x_coding
+1/19/2021 11:36:41 PM: x_coding - Received: :x_coding.tmi.twitch.tv 366 x_coding #x_coding :End of /NAMES list
+1/19/2021 11:36:41 PM: x_coding - Finished channel joining queue.
+1/19/2021 11:36:41 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:36:41 PM: x_coding - Received: @emote-only=0;followers-only=-1;r9k=0;rituals=0;room-id=503606492;slow=0;subs-only=0 :tmi.twitch.tv ROOMSTATE #x_coding
+x_codingHey, I'm xBot, a twitch bot build entirely on a twitch steam :D !
+1/19/2021 11:36:41 PM: x_coding - Finished channel joining queue.
+1/19/2021 11:36:42 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:36:46 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=ec7e659be1d91f2fa6fbe222fd7d0ac5;color=;display-name=x_Coding;emotes=;flags=;id=721c701c-234f-4585-a554-c7ffd2088eca;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611099553830;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :!!ss
+1/19/2021 11:36:47 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:36:54 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=4c032bda8c923202d88853ae75af0764;color=;display-name=x_Coding;emotes=;flags=;id=b9b66191-ac71-4a45-858a-f9ca5e9ee37b;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611099561641;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :!ss @LisaRei
+1/19/2021 11:36:54 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:37:08 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=6ab79b918244f98c1cc5aa8da1115756;color=;display-name=x_Coding;emotes=;flags=;id=cc5c870c-44b1-4a94-a15c-1580b61f4504;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611099575485;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :!ss @asd
+1/19/2021 11:37:08 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:37:22 PM: x_coding - Received: :violets_tv!violets_tv@violets_tv.tmi.twitch.tv JOIN #x_coding
+1/19/2021 11:37:22 PM: x_coding - Received: :anotherttvviewer!anotherttvviewer@anotherttvviewer.tmi.twitch.tv JOIN #x_coding
+1/19/2021 11:37:22 PM: x_coding - Received: :electricallongboard!electricallongboard@electricallongboard.tmi.twitch.tv JOIN #x_coding
+1/19/2021 11:38:12 PM: x_coding - Connecting to: wss://irc-ws.chat.twitch.tv:443
+1/19/2021 11:38:13 PM: x_coding - Should be connected!
+1/19/2021 11:38:13 PM: x_coding - Joining channel: x_coding
+1/19/2021 11:38:14 PM: x_coding - Received: :tmi.twitch.tv 001 x_coding :Welcome, GLHF!
+1/19/2021 11:38:14 PM: x_coding - Received: :tmi.twitch.tv 002 x_coding :Your host is tmi.twitch.tv
+1/19/2021 11:38:14 PM: x_coding - Received: :tmi.twitch.tv 003 x_coding :This server is rather new
+1/19/2021 11:38:14 PM: x_coding - Received: :tmi.twitch.tv 004 x_coding :-
+Connected to x_coding
+1/19/2021 11:38:14 PM: x_coding - Received: :tmi.twitch.tv 375 x_coding :-
+1/19/2021 11:38:14 PM: x_coding - Received: :tmi.twitch.tv 372 x_coding :You are in a maze of twisty passages, all alike.
+1/19/2021 11:38:14 PM: x_coding - Received: :tmi.twitch.tv 376 x_coding :>
+1/19/2021 11:38:14 PM: x_coding - Received: :tmi.twitch.tv CAP * ACK :twitch.tv/membership
+1/19/2021 11:38:14 PM: x_coding - Unaccounted for: :tmi.twitch.tv CAP * ACK :twitch.tv/membership (please create a TwitchLib GitHub issue :P)
+1/19/2021 11:38:14 PM: x_coding - Received: :tmi.twitch.tv CAP * ACK :twitch.tv/commands
+1/19/2021 11:38:14 PM: x_coding - Unaccounted for: :tmi.twitch.tv CAP * ACK :twitch.tv/commands (please create a TwitchLib GitHub issue :P)
+1/19/2021 11:38:14 PM: x_coding - Received: :tmi.twitch.tv CAP * ACK :twitch.tv/tags
+1/19/2021 11:38:14 PM: x_coding - Unaccounted for: :tmi.twitch.tv CAP * ACK :twitch.tv/tags (please create a TwitchLib GitHub issue :P)
+1/19/2021 11:38:14 PM: x_coding - Received: :x_coding!x_coding@x_coding.tmi.twitch.tv JOIN #x_coding
+1/19/2021 11:38:14 PM: x_coding - Received: :x_coding.tmi.twitch.tv 353 x_coding = #x_coding :x_coding
+1/19/2021 11:38:14 PM: x_coding - Received: :x_coding.tmi.twitch.tv 366 x_coding #x_coding :End of /NAMES list
+1/19/2021 11:38:14 PM: x_coding - Finished channel joining queue.
+1/19/2021 11:38:14 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:38:14 PM: x_coding - Received: @emote-only=0;followers-only=-1;r9k=0;rituals=0;room-id=503606492;slow=0;subs-only=0 :tmi.twitch.tv ROOMSTATE #x_coding
+x_codingHey, I'm xBot, a twitch bot build entirely on a twitch steam :D !
+1/19/2021 11:38:14 PM: x_coding - Finished channel joining queue.
+1/19/2021 11:38:15 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:38:29 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=ed9783ca697a84bfd848cb198a5c92be;color=;display-name=x_Coding;emotes=;flags=;id=3fbf07bc-7ad7-450a-83c6-b5c810306b29;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611099656324;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :!ss @LisaRei
+1/19/2021 11:38:29 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:38:56 PM: x_coding - Received: :anotherttvviewer!anotherttvviewer@anotherttvviewer.tmi.twitch.tv JOIN #x_coding
+1/19/2021 11:38:56 PM: x_coding - Received: :electricallongboard!electricallongboard@electricallongboard.tmi.twitch.tv JOIN #x_coding
+1/19/2021 11:38:56 PM: x_coding - Received: :violets_tv!violets_tv@violets_tv.tmi.twitch.tv JOIN #x_coding
+1/19/2021 11:39:26 PM: x_coding - Disconnect Twitch Chat Client...
+[2021 01 20 01:39:26] xBot Disconncted!
+1/19/2021 11:40:15 PM: x_coding - Connecting to: wss://irc-ws.chat.twitch.tv:443
+1/19/2021 11:40:16 PM: x_coding - Should be connected!
+1/19/2021 11:40:19 PM: x_coding - Connecting to: wss://irc-ws.chat.twitch.tv:443
+1/19/2021 11:40:19 PM: x_coding - Should be connected!
+1/19/2021 11:40:19 PM: x_coding - Joining channel: x_coding
+1/19/2021 11:40:20 PM: x_coding - Received: :tmi.twitch.tv 001 x_coding :Welcome, GLHF!
+1/19/2021 11:40:20 PM: x_coding - Received: :tmi.twitch.tv 002 x_coding :Your host is tmi.twitch.tv
+1/19/2021 11:40:20 PM: x_coding - Received: :tmi.twitch.tv 003 x_coding :This server is rather new
+1/19/2021 11:40:20 PM: x_coding - Received: :tmi.twitch.tv 004 x_coding :-
+Connected to x_coding
+1/19/2021 11:40:20 PM: x_coding - Received: :tmi.twitch.tv 375 x_coding :-
+1/19/2021 11:40:20 PM: x_coding - Received: :tmi.twitch.tv 372 x_coding :You are in a maze of twisty passages, all alike.
+1/19/2021 11:40:20 PM: x_coding - Received: :tmi.twitch.tv 376 x_coding :>
+1/19/2021 11:40:20 PM: x_coding - Received: :tmi.twitch.tv CAP * ACK :twitch.tv/membership
+1/19/2021 11:40:20 PM: x_coding - Unaccounted for: :tmi.twitch.tv CAP * ACK :twitch.tv/membership (please create a TwitchLib GitHub issue :P)
+1/19/2021 11:40:20 PM: x_coding - Received: :tmi.twitch.tv CAP * ACK :twitch.tv/commands
+1/19/2021 11:40:20 PM: x_coding - Unaccounted for: :tmi.twitch.tv CAP * ACK :twitch.tv/commands (please create a TwitchLib GitHub issue :P)
+1/19/2021 11:40:20 PM: x_coding - Received: :tmi.twitch.tv CAP * ACK :twitch.tv/tags
+1/19/2021 11:40:20 PM: x_coding - Unaccounted for: :tmi.twitch.tv CAP * ACK :twitch.tv/tags (please create a TwitchLib GitHub issue :P)
+1/19/2021 11:40:20 PM: x_coding - Received: :x_coding!x_coding@x_coding.tmi.twitch.tv JOIN #x_coding
+1/19/2021 11:40:20 PM: x_coding - Received: :x_coding.tmi.twitch.tv 353 x_coding = #x_coding :x_coding
+1/19/2021 11:40:20 PM: x_coding - Received: :x_coding.tmi.twitch.tv 366 x_coding #x_coding :End of /NAMES list
+1/19/2021 11:40:20 PM: x_coding - Finished channel joining queue.
+1/19/2021 11:40:20 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:40:20 PM: x_coding - Received: @emote-only=0;followers-only=-1;r9k=0;rituals=0;room-id=503606492;slow=0;subs-only=0 :tmi.twitch.tv ROOMSTATE #x_coding
+x_codingHey, I'm xBot, a twitch bot build entirely on a twitch steam :D !
+1/19/2021 11:40:20 PM: x_coding - Finished channel joining queue.
+1/19/2021 11:40:21 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:40:28 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=4dc6b3307adff003a640df6ff20d6d19;color=;display-name=x_Coding;emotes=;flags=;id=dfae8161-7910-491c-b139-6d598031201e;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611099775702;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :!ss @LisaRei
+1/19/2021 11:40:29 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:40:30 PM: x_coding - Received: :electricallongboard!electricallongboard@electricallongboard.tmi.twitch.tv JOIN #x_coding
+1/19/2021 11:40:30 PM: x_coding - Received: :feet!feet@feet.tmi.twitch.tv JOIN #x_coding
+1/19/2021 11:40:30 PM: x_coding - Received: :violets_tv!violets_tv@violets_tv.tmi.twitch.tv JOIN #x_coding
+1/19/2021 11:40:30 PM: x_coding - Received: :anotherttvviewer!anotherttvviewer@anotherttvviewer.tmi.twitch.tv JOIN #x_coding
+1/19/2021 11:41:30 PM: x_coding - Connecting to: wss://irc-ws.chat.twitch.tv:443
+1/19/2021 11:41:31 PM: x_coding - Should be connected!
+1/19/2021 11:41:32 PM: x_coding - Joining channel: x_coding
+1/19/2021 11:41:32 PM: x_coding - Received: :tmi.twitch.tv 001 x_coding :Welcome, GLHF!
+1/19/2021 11:41:32 PM: x_coding - Received: :tmi.twitch.tv 002 x_coding :Your host is tmi.twitch.tv
+1/19/2021 11:41:32 PM: x_coding - Received: :tmi.twitch.tv 003 x_coding :This server is rather new
+1/19/2021 11:41:32 PM: x_coding - Received: :tmi.twitch.tv 004 x_coding :-
+Connected to x_coding
+1/19/2021 11:41:32 PM: x_coding - Received: :tmi.twitch.tv 375 x_coding :-
+1/19/2021 11:41:32 PM: x_coding - Received: :tmi.twitch.tv 372 x_coding :You are in a maze of twisty passages, all alike.
+1/19/2021 11:41:32 PM: x_coding - Received: :tmi.twitch.tv 376 x_coding :>
+1/19/2021 11:41:32 PM: x_coding - Received: :tmi.twitch.tv CAP * ACK :twitch.tv/membership
+1/19/2021 11:41:32 PM: x_coding - Unaccounted for: :tmi.twitch.tv CAP * ACK :twitch.tv/membership (please create a TwitchLib GitHub issue :P)
+1/19/2021 11:41:32 PM: x_coding - Received: :tmi.twitch.tv CAP * ACK :twitch.tv/commands
+1/19/2021 11:41:32 PM: x_coding - Unaccounted for: :tmi.twitch.tv CAP * ACK :twitch.tv/commands (please create a TwitchLib GitHub issue :P)
+1/19/2021 11:41:32 PM: x_coding - Received: :tmi.twitch.tv CAP * ACK :twitch.tv/tags
+1/19/2021 11:41:32 PM: x_coding - Unaccounted for: :tmi.twitch.tv CAP * ACK :twitch.tv/tags (please create a TwitchLib GitHub issue :P)
+1/19/2021 11:41:33 PM: x_coding - Received: :x_coding!x_coding@x_coding.tmi.twitch.tv JOIN #x_coding
+1/19/2021 11:41:33 PM: x_coding - Received: :x_coding.tmi.twitch.tv 353 x_coding = #x_coding :x_coding
+1/19/2021 11:41:33 PM: x_coding - Received: :x_coding.tmi.twitch.tv 366 x_coding #x_coding :End of /NAMES list
+1/19/2021 11:41:33 PM: x_coding - Finished channel joining queue.
+1/19/2021 11:41:33 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:41:33 PM: x_coding - Received: @emote-only=0;followers-only=-1;r9k=0;rituals=0;room-id=503606492;slow=0;subs-only=0 :tmi.twitch.tv ROOMSTATE #x_coding
+x_codingHey, I'm xBot, a twitch bot build entirely on a twitch steam :D !
+1/19/2021 11:41:33 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:41:34 PM: x_coding - Finished channel joining queue.
+1/19/2021 11:41:42 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=33ee191fac56bc6f85d600939ce4fb6a;color=;display-name=x_Coding;emotes=;flags=;id=ff16a065-ad7b-49cd-9e30-89ef2c466e11;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611099849390;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :!ss @LisaRei
+1/19/2021 11:41:42 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:42:29 PM: x_coding - Received: :electricallongboard!electricallongboard@electricallongboard.tmi.twitch.tv JOIN #x_coding
+1/19/2021 11:42:29 PM: x_coding - Received: :feet!feet@feet.tmi.twitch.tv JOIN #x_coding
+1/19/2021 11:42:29 PM: x_coding - Received: :violets_tv!violets_tv@violets_tv.tmi.twitch.tv JOIN #x_coding
+1/19/2021 11:42:29 PM: x_coding - Received: :anotherttvviewer!anotherttvviewer@anotherttvviewer.tmi.twitch.tv JOIN #x_coding
+1/19/2021 11:43:40 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=ad3e0a120176217bd814d9a2bf84eaaa;color=;display-name=x_Coding;emotes=;flags=;id=5aa4711d-ec45-4cb2-99f7-78dfd228deb5;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611099967364;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :cya around guys
+1/19/2021 11:43:44 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=0cdf8f9a9bcd2b386384009570f28c7b;color=;display-name=x_Coding;emotes=;flags=;id=5b8d5ee4-0a11-4b45-8033-fc5bcb783e7f;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611099971950;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :thanks for passing by
+1/19/2021 11:44:01 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=88fd5a78b0161c63bd7d18e87f4f3c2e;color=;display-name=x_Coding;emotes=;flags=;id=3a0cd212-059b-4f77-9827-2687fdab50ef;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611099988623;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :i will upload on github the project
+1/19/2021 11:44:06 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=873b6c83a9d76ffe6bd41a1635fb8d55;color=;display-name=x_Coding;emotes=;flags=;id=c4e75d73-8716-458e-baa9-2fdeb1093ed6;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611099993784;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :!git
+1/19/2021 11:44:07 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:44:09 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=3b617b97f931f136f61151246bdee091;color=;display-name=x_Coding;emotes=;flags=;id=37e97d20-c691-4106-8116-2bcbfcdd35d8;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611099996079;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :!discord
+1/19/2021 11:44:09 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emote-sets=0,300238151;mod=0;subscriber=0;user-type= :tmi.twitch.tv USERSTATE #x_coding
+1/19/2021 11:44:18 PM: x_coding - Disconnect Twitch Chat Client...
+[2021 01 20 01:44:18] xBot Disconncted!
