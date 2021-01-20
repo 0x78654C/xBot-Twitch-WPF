@@ -2,6 +2,10 @@
  
 xBot - Twitch bot in csharp WPF
 
+![alt text](https://github.com/0x78654C/xBot-Twitch-WPF/blob/main/xBot_WPF/t1.png?raw=true)
+
+![alt text](https://github.com/0x78654C/xBot-Twitch-WPF/blob/main/xBot_WPF/t2.png?raw=true)
+
 using following libs:
 
 https://github.com/TwitchLib/TwitchLib (for api connect)
