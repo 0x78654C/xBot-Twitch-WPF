@@ -99,9 +99,11 @@ namespace xBot_WPF
                     while ((line = sr.ReadLine()) != null)
                     {
                         File.AppendAllText(badWordDir, line+Environment.NewLine);
+                     
                         listWordsTXT.Text = File.ReadAllText(badWordDir);
                         badWrodTXT.Clear();
                     }
+                    
                 }
             }
             else
@@ -168,6 +170,37 @@ namespace xBot_WPF
         {
             Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
+        }
+
+        /// <summary>
+        /// remove bad word function button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void removerBTN_Click(object sender, RoutedEventArgs e)
+        {
+            if (File.Exists(badWordDir))
+            {
+                string line;
+                string bFile = File.ReadAllText(badWordDir);
+                using (var sr = new StringReader(badWrodTXT.Text))
+                {
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        bFile = bFile.Replace(line, "");
+                    }
+
+                    bFile = Regex.Replace(bFile, @"^\s+$[\r\n]*", string.Empty, RegexOptions.Multiline);
+                    File.WriteAllText(badWordDir, bFile);
+                    listWordsTXT.Text = File.ReadAllText(badWordDir);
+                    badWrodTXT.Clear();
+                }
+            }
+            else
+            {
+                MessageBox.Show("File " + badWordDir + " dose not exist!");
+                this.Close();
+            }
         }
     }
 }

@@ -7,7 +7,7 @@
         mc:Ignorable="d"
       
 
-    Title="botMSG" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Height="386.916" Width="673.832" WindowStyle="None" AllowsTransparency="True" MouseDown="Window_MouseDown">
+    Title="StartUP Bot Message" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Height="386.916" Width="673.832" WindowStyle="None" AllowsTransparency="True" MouseDown="Window_MouseDown">
     <Window.Resources>
         <Style x:Key="MyWaterMarkStyle" TargetType="{x:Type TextBox}">
             <Setter Property="Template">

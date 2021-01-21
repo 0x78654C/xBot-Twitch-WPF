@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:xBot_WPF"
         mc:Ignorable="d"
-        Title="command" Height="654" Width="1107.696" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Visibility="Visible" WindowStyle="None" MouseDown="Window_MouseDown" >
+        Title="Command List Maker" Height="654" Width="1107.696" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Visibility="Visible" WindowStyle="None" MouseDown="Window_MouseDown" >
     <Window.Resources>
         <Style x:Key="MyWaterMarkStyle" TargetType="{x:Type TextBox}">
             <Setter Property="Template">
@@ -48,6 +48,6 @@
         <TextBox Name="nameTXT" Style="{StaticResource MyWaterMarkStyle}" FontSize="14" Tag="Command Name" HorizontalAlignment="Left" Height="23" Margin="17,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="281"/>
         <TextBox Name="contentTXT" Style="{StaticResource MyWaterMarkStyle}" FontSize="14" Tag="Enter command content ..." HorizontalAlignment="Left" Height="146" Margin="17,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="281"/>
         <Button Name="adderBTN" Style="{DynamicResource RoundCorner2}" Content="Add Command" Foreground="#FFE1DDE2" HorizontalAlignment="Left" Margin="100,279,0,0" VerticalAlignment="Top" Width="123" Height="29" Click="adderBTN_Click"/>
-
+        <Button Name="removerBTN" Style="{DynamicResource RoundCorner2}" Content="Delete Command" Foreground="#FFE1DDE2" HorizontalAlignment="Left" Margin="100,313,0,0" VerticalAlignment="Top" Width="123" Height="29" Click="removerBTN_Click"/>
     </Grid>
 </Window>

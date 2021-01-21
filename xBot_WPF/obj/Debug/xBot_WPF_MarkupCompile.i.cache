@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-F:\twitch\Projects\xBot_WPF\xBot_WPF\obj\Debug\
+F:\twitch\Projects\xBot-Twitch-WPF\xBot_WPF\obj\Debug\
 xBot_WPF
 none
 false
 DEBUG;TRACE
-F:\twitch\Projects\xBot_WPF\xBot_WPF\App.xaml
-51145556746
+F:\twitch\Projects\xBot-Twitch-WPF\xBot_WPF\App.xaml
+6437548046
 
-10548171672
-141-13947069
-badWords.xaml;botMSG.xaml;command.xaml;MainWindow.xaml;settings.xaml;
+11-1347373834
+141-540314558
+badWords.xaml;botMSG.xaml;command.xaml;MainWindow.xaml;settings.xaml;youtube.xaml;
 
 True
 

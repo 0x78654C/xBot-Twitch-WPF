@@ -128,6 +128,9 @@
     <Compile Include="settings.xaml.cs">
       <DependentUpon>settings.xaml</DependentUpon>
     </Compile>
+    <Compile Include="youtube.xaml.cs">
+      <DependentUpon>youtube.xaml</DependentUpon>
+    </Compile>
     <Page Include="badWords.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -153,6 +156,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="youtube.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

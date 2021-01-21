@@ -102,9 +102,7 @@
                 <StackPanel VerticalAlignment="Center">
                     <materialDesign:PopupBox Foreground="White" HorizontalAlignment="Right"  Margin="9" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
                         <StackPanel Width="150" Background="#FFE1DDE2">
-                            <Button Content="About" FontSize="18"/>
-                            <Separator/>
-                            <Button Content="Exit" FontSize="18" Click="closeBTN_Click"/>
+                               <Button Content="Exit" FontSize="18" Click="closeBTN_Click"/>
                         </StackPanel>
                     </materialDesign:PopupBox>
                 </StackPanel>
@@ -146,7 +144,14 @@
                     <ListViewItem Height="44" Foreground="#FFDCDCDC" FontSize="23" PreviewMouseDown="ListViewItem_PreviewMouseDownBot">
                         <StackPanel Orientation="Horizontal" >
                             <materialDesign:PackIcon Kind="Message" Margin="9" Width="25" Height="25" VerticalAlignment="Center"/>
-                            <TextBlock Text=" Bot Meesage" VerticalAlignment="Center"/>
+                            <TextBlock Text=" Bot Message" VerticalAlignment="Center"/>
+
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="44" Foreground="#FFDCDCDC" FontSize="23" PreviewMouseDown="ListViewItem_PreviewMouseDownYT">
+                        <StackPanel Orientation="Horizontal" >
+                            <materialDesign:PackIcon Kind="PlayArrow" Margin="9" Width="25" Height="25" VerticalAlignment="Center"/>
+                            <TextBlock Text=" YouTube" VerticalAlignment="Center"/>
 
                         </StackPanel>
                     </ListViewItem>

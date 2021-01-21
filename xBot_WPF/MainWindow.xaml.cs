@@ -65,9 +65,6 @@ namespace xBot_WPF
         private static string[] comandList;
         //-------------------------------------------------
 
-        //background worker var
-        BackgroundWorker worker;
-        //-------------------------------------------------
 
         //bad word lists path declaration and variable
         readonly static string badWordDir = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\data\badwords.txt";
@@ -89,13 +86,10 @@ namespace xBot_WPF
         readonly static string ytFile = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\data\youtube_link.txt";
      
         readonly static string ytControl = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\data\yt_control.txt";
-        private int ytC = 0;
+        private string ytC;
 
         //-------------------------------------------------
 
-        //declare control string voariable for dark mode
-        private static string darkModConrol = string.Empty;
-        //-------------------------------------------------
 
         //declare weather variables
         private static string apiKey = string.Empty;
@@ -108,6 +102,7 @@ namespace xBot_WPF
         botMSG bM;
         command cmD;
         badWords bW;
+        youtube yT;
         //--------------------------------
 
         public MainWindow()
@@ -160,12 +155,6 @@ namespace xBot_WPF
 
             }
 
-            if (Reg.regKey_Read(keyName, "DarkModKey") == "")
-            {
-                Reg.regKey_CreateKey(keyName, "DarkModKey", "");
-
-
-            }
 
             if (Reg.regKey_Read(keyName, "WeatherAPIKey") == "")
             {
@@ -217,6 +206,7 @@ namespace xBot_WPF
             apiKey = Reg.regKey_Read(keyName, "WeatherAPIKey"); 
 
             //---------------------------------
+
             //staus check timer start
 
             System.Windows.Threading.DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
@@ -338,10 +328,6 @@ namespace xBot_WPF
                     {
                         if (e.ChatMessage.Message.Contains(bad))
                             client.TimeoutUser(e.ChatMessage.Channel, e.ChatMessage.Username, TimeSpan.FromMinutes(timeBan), "[BOT] Bad word! " + Convert.ToString(timeBan) + " minute(s) timeout!");
-
-                        //if (Dameru.DamerauLevenshteinDistance(bad, e.ChatMessage.Message) <= 4)
-                        //    client.TimeoutUser(e.ChatMessage.Channel, e.ChatMessage.Username, TimeSpan.FromMinutes(timeBan), "[BOT] Bad word! " + Convert.ToString(timeBan) + " minute(s) timeout!");
-
                     }
                 }
 
@@ -452,22 +438,22 @@ namespace xBot_WPF
             }
             //----------------------------
 
-            ////!yt command display play link
-            //string ytLink = File.ReadAllText(ytFile);
+            //!yt command display play link
+            string ytLink = File.ReadAllText(ytFile);
 
-            //if (playStatusLBL.Text.Contains("Play"))
-            //{
-            //    if (e.ChatMessage.Message.Contains("!yt"))
-            //        client.SendMessage(e.ChatMessage.Channel, "[BOT] Now playing: " + ytLink);
+            if (ytC=="1")
+            {
+                if (e.ChatMessage.Message.Contains("!yt"))
+                    client.SendMessage(e.ChatMessage.Channel, "[BOT] Now playing: " + ytLink);
 
-            //}
-            //else
-            //{
-            //    if (e.ChatMessage.Message.Contains("!yt"))
-            //        client.SendMessage(e.ChatMessage.Channel, "[BOT] Nothing playing at the moment! ");
-            //}
+            }
+            else
+            {
+                if (e.ChatMessage.Message.Contains("!yt"))
+                    client.SendMessage(e.ChatMessage.Channel, "[BOT] Nothing playing at the moment! ");
+            }
 
-            ////----------------------------
+            //----------------------------
         }
 
         private void Client_OnWhisperReceived(object sender, OnWhisperReceivedArgs e)
@@ -603,6 +589,7 @@ namespace xBot_WPF
             timeBan = Int32.Parse(Reg.regKey_Read(keyName, "WordBanTime"));
             bWord = Reg.regKey_Read(keyName, "BadWord");
             apiKey = Reg.regKey_Read(keyName, "WeatherAPIKey");
+            ytC = File.ReadAllText(ytControl); 
             //-----------------------------------
 
             if (client.IsConnected)
@@ -698,24 +685,10 @@ namespace xBot_WPF
         //closing all windows
         private void Window_Closed(object sender, EventArgs e)
         {
-            if (sT.IsVisible)
-            {
-                sT.Close();
-            }
 
-            if (bM.IsVisible)
+            if (yT.IsVisible)
             {
-                bM.Close();
-            }
-
-            if (cmD.IsVisible)
-            {
-                cmD.Close();
-            }
-
-            if (bW.IsVisible)
-            {
-                bW.Close();
+                yT.Close();
             }
         }
 
@@ -758,10 +731,26 @@ namespace xBot_WPF
             cmD.ShowDialog();
         }
 
+        /// <summary>
+        /// Display bad words window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ListViewItem_PreviewMouseDownBAD(object sender, MouseButtonEventArgs e)
         {
             bW = new badWords();
             bW.ShowDialog();
+        }
+
+        /// <summary>
+        /// Display YouTube player window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ListViewItem_PreviewMouseDownYT(object sender, MouseButtonEventArgs e)
+        {
+            yT = new youtube();
+            yT.Show();
         }
     }
 }
