@@ -21,11 +21,12 @@ Changelog:
     show status if client is connected
     saveing twitch user name and oauth key to registry
     set custom bot connect message in real time
-    add/display commnads in real time to list
-    add/display bad words in real time to list
+    add/remove/display commnads in real time to list
+    add/remove/display bad words in real time to list
     change time(minutes) for chat ban in ream time
     hardcoded !help command for display the list of coomands
     hardcoded !ss command for shout a streamer
-    added Weather Forecast command
+    hardcoded !yt command for youtube current song played on xBot youtube player
+    hardcoded !weather Weather Forecast command
 
 (more to come)
