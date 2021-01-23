@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:xBot_WPF"
         mc:Ignorable="d"
-        Title="Command List Maker" Height="654" Width="1107.696" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Visibility="Visible" WindowStyle="None" MouseDown="Window_MouseDown" >
+        Title="Command List Maker" Height="654" Width="1107.696" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Visibility="Visible" WindowStyle="None" MouseDown="Window_MouseDown" Icon="Resources/icon.ico" >
     <Window.Resources>
         <Style x:Key="MyWaterMarkStyle" TargetType="{x:Type TextBox}">
             <Setter Property="Template">

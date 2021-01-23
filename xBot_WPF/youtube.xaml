@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:xBot_WPF"
         xmlns:adorners="http://gu.se/Adorners"
         mc:Ignorable="d"
-        Title="YouTube Player" WindowStyle="None" Height="570.145" Width="729.808" ResizeMode="NoResize" MouseDown="Window_MouseDown" Closed="Window_Closed" WindowStartupLocation="CenterScreen">
+        Title="YouTube Player" WindowStyle="None" Height="570.145" Width="729.808" ResizeMode="NoResize" MouseDown="Window_MouseDown" Closed="Window_Closed" WindowStartupLocation="CenterScreen" Icon="Resources/icon.ico">
     <Grid>
 
         <Border BorderBrush="Black" BorderThickness="1"/>

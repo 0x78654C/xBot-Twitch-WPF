@@ -38,7 +38,7 @@ namespace xBot_WPF
     public partial class MainWindow : Window
     {
         //declare twitch client variable
-        TwitchClient client= new TwitchClient();
+        TwitchClient client = new TwitchClient();
         //------------------------------------------------
 
         //data and log directory declare
@@ -84,7 +84,7 @@ namespace xBot_WPF
 
         //Media player declaration
         readonly static string ytFile = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\data\youtube_link.txt";
-     
+
         readonly static string ytControl = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\data\yt_control.txt";
         private string ytC;
 
@@ -96,13 +96,14 @@ namespace xBot_WPF
         private static string weatheCond = string.Empty;
         static readonly HttpClient clientH = new HttpClient();
         //---------------------------------------------------
-        
+
         //declare the bot forms variables
         settings sT;
         botMSG bM;
         command cmD;
         badWords bW;
         youtube yT;
+        about aB;
         //--------------------------------
 
         public MainWindow()
@@ -144,7 +145,7 @@ namespace xBot_WPF
             if (Reg.regKey_Read(keyName, "UserName") == "")
             {
                 Reg.regKey_CreateKey(keyName, "UserName", "");
-                
+
 
             }
 
@@ -163,7 +164,7 @@ namespace xBot_WPF
 
             }
 
-            if(Reg.regKey_Read(keyName, "WeatherMSG")=="")
+            if (Reg.regKey_Read(keyName, "WeatherMSG") == "")
             {
                 Reg.regKey_CreateKey(keyName, "WeatherMSG", "0");
             }
@@ -180,7 +181,7 @@ namespace xBot_WPF
 
             if (Reg.regKey_Read(keyName, "WordBanTime") == "")
             {
-                Reg.regKey_CreateKey(keyName, "WordBanTime","0");
+                Reg.regKey_CreateKey(keyName, "WordBanTime", "0");
             }
             //-----------------------------------------
 
@@ -188,22 +189,22 @@ namespace xBot_WPF
             //Load and display username, streamkey and dark mode control from registry
 
             t_userName = Reg.regKey_Read(keyName, "UserName");
-            
+
             try
             {
-                
+
                 t_streamKey = Encryption._decryptData(Reg.regKey_Read(keyName, "StreamKey"));
             }
             catch (Exception)
             {
                 //we bypass the error if no data found in ini for aouth key
             }
- 
+
 
             botMSGKey = Reg.regKey_Read(keyName, "BotMSG");
-            timeBan = Int32.Parse(Reg.regKey_Read(keyName, "WordBanTime"));     
-            bWord= Reg.regKey_Read(keyName, "BadWord");
-            apiKey = Reg.regKey_Read(keyName, "WeatherAPIKey"); 
+            timeBan = Int32.Parse(Reg.regKey_Read(keyName, "WordBanTime"));
+            bWord = Reg.regKey_Read(keyName, "BadWord");
+            apiKey = Reg.regKey_Read(keyName, "WeatherAPIKey");
 
             //---------------------------------
 
@@ -221,7 +222,7 @@ namespace xBot_WPF
             //----------------------------------
 
             //load upper twitch logo
-           upperLogo.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/upper_logo.png"));
+            upperLogo.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/upper_logo.png"));
             //-----------------------------------
         }
 
@@ -240,7 +241,7 @@ namespace xBot_WPF
                     logViewRTB.ScrollToEnd();
                 }
             });
-                  
+
         }
 
 
@@ -276,9 +277,11 @@ namespace xBot_WPF
         /// </summary>
         private void BotStop()
         {
-            client.Disconnect();
 
-            
+            if (client.IsConnected)
+            {
+                client.Disconnect();
+            }
             if (!client.IsConnected)
             {
                 date = DateTime.Now.ToString("yyyy MM dd HH:mm:ss");
@@ -287,7 +290,6 @@ namespace xBot_WPF
                 CLog.LogWrite("[" + date + "] xBot Disconncted!");
                 startBotBTN.Content = "START";
             }
-           
         }
 
         #region Client events
@@ -318,7 +320,7 @@ namespace xBot_WPF
             weatherKey = Reg.regKey_Read(keyName, "WeatherMSG");
             //on bad workd received
 
-            if (bWord=="1")
+            if (bWord == "1")
             {
 
                 badWordList = File.ReadAllLines(badWordDir);
@@ -377,7 +379,7 @@ namespace xBot_WPF
             //shout streamer commad
             using (var sReader = new StringReader(e.ChatMessage.Message))
             {
-                
+
                 string line;
                 while ((line = sReader.ReadLine()) != null)
                 {
@@ -388,18 +390,53 @@ namespace xBot_WPF
                         {
                             if (lS[1].Length > 0)
                             {
-                                client.SendMessage(e.ChatMessage.Channel, "Shoutout for @" + lS[1] + " which is also a streamer! https://twitch.tv/" + lS[1]);
+                                client.SendMessage(e.ChatMessage.Channel, "[BOT] Shoutout for @" + lS[1] + " which is also a streamer! https://twitch.tv/" + lS[1]);
 
                             }
                             else
                             {
-                                client.SendMessage(e.ChatMessage.Channel, "You must add the name of streamer for shoutout with @ character!");
+                                client.SendMessage(e.ChatMessage.Channel, "[BOT] You must add the name of streamer for shoutout with @ character!");
 
                             }
                         }
                         catch
                         {
-                            client.SendMessage(e.ChatMessage.Channel, "You must add the name of streamer for shoutout with @ character!");
+                            client.SendMessage(e.ChatMessage.Channel, "[BOT] You must add the name of streamer for shoutout with @ character!");
+
+                        }
+                    }
+
+                }
+            }
+            //----------------------------
+
+
+            //good luck commad
+            using (var sReader = new StringReader(e.ChatMessage.Message))
+            {
+
+                string line;
+                while ((line = sReader.ReadLine()) != null)
+                {
+                    if (line.Contains("!gl"))
+                    {
+                        string[] lS = line.Split('@');
+                        try
+                        {
+                            if (lS[1].Length > 0)
+                            {
+                                client.SendMessage(e.ChatMessage.Channel, "[BOT] "+ e.ChatMessage.Username + " wishes " + lS[1] + " good luck. May you succeed in whatever you're planning to do!");
+
+                            }
+                            else
+                            {
+                                client.SendMessage(e.ChatMessage.Channel, "[BOT] You must add the name of chatter for good luck command with @ character!");
+
+                            }
+                        }
+                        catch
+                        {
+                            client.SendMessage(e.ChatMessage.Channel, "[BOT] You must add the name of chatter for good luck command with @ character!");      
 
                         }
                     }
@@ -409,8 +446,8 @@ namespace xBot_WPF
             //----------------------------
 
             //weather data display display
-        
-            if (weatherKey=="1")
+
+            if (weatherKey == "1")
             {
                 weatheCond = e.ChatMessage.Message;
                 try
@@ -441,7 +478,7 @@ namespace xBot_WPF
             //!yt command display play link
             string ytLink = File.ReadAllText(ytFile);
 
-            if (ytC=="1")
+            if (ytC == "1")
             {
                 if (e.ChatMessage.Message.Contains("!yt"))
                     client.SendMessage(e.ChatMessage.Channel, "[BOT] Now playing: " + ytLink);
@@ -459,21 +496,21 @@ namespace xBot_WPF
         private void Client_OnWhisperReceived(object sender, OnWhisperReceivedArgs e)
         {
             if (e.WhisperMessage.Username == "my_friend")
-                client.SendWhisper(e.WhisperMessage.Username, "Hey! Whispers are so cool!!");
+                client.SendWhisper(e.WhisperMessage.Username, "[BOT] Hey! Whispers are so cool!!");
         }
 
         private void Client_OnNewSubscriber(object sender, OnNewSubscriberArgs e)
         {
             if (e.Subscriber.SubscriptionPlan == SubscriptionPlan.Prime)
-                client.SendMessage(e.Channel, $"Welcome {e.Subscriber.DisplayName} to the substers! You just earned 500 points! So kind of you to use your Twitch Prime on this channel!");
+                client.SendMessage(e.Channel, $"[BOT] Welcome {e.Subscriber.DisplayName} to the substers! You just earned 500 points! So kind of you to use your Twitch Prime on this channel!");
             else
-                client.SendMessage(e.Channel, $"Welcome {e.Subscriber.DisplayName} to the substers! You just earned 500 points!");
+                client.SendMessage(e.Channel, $"[BOT] Welcome {e.Subscriber.DisplayName} to the substers! You just earned 500 points!");
         }
 
         private void Client_OnUserJoinedArgs(object sender, OnUserJoinedArgs e)
         {
             //Enebale user joiend chat only when check is on.
-            if (botMSGKey=="1")
+            if (botMSGKey == "1")
             {
 
                 client.SendMessage(e.Channel, $"[BOT] Welcome to my channel {e.Username}. and thank you for joining. For more commands type !help");
@@ -589,7 +626,7 @@ namespace xBot_WPF
             timeBan = Int32.Parse(Reg.regKey_Read(keyName, "WordBanTime"));
             bWord = Reg.regKey_Read(keyName, "BadWord");
             apiKey = Reg.regKey_Read(keyName, "WeatherAPIKey");
-            ytC = File.ReadAllText(ytControl); 
+            ytC = File.ReadAllText(ytControl);
             //-----------------------------------
 
             if (client.IsConnected)
@@ -679,7 +716,7 @@ namespace xBot_WPF
             sT = new settings();
 
             sT.ShowDialog();
-            
+
         }
 
         //closing all windows
@@ -751,6 +788,17 @@ namespace xBot_WPF
         {
             yT = new youtube();
             yT.Show();
+        }
+
+        /// <summary>
+        /// About window open button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void aboutBTN_Click(object sender, RoutedEventArgs e)
+        {
+            aB = new about();
+            aB.ShowDialog();
         }
     }
 }

@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:xBot_WPF"
         mc:Ignorable="d"
-        Title="xBot-Twitch" Height="683.594" Width="1008.808" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Visibility="Visible" MouseDown="Window_MouseDown" AllowsTransparency="True" WindowStyle="None" Closed="Window_Closed">
+        Title="xBot-Twitch" Height="683.594" Width="1008.808" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Visibility="Visible" MouseDown="Window_MouseDown" AllowsTransparency="True" WindowStyle="None" Closed="Window_Closed" Icon="Resources/icon.ico">
 
     <Window.Resources>
         <Storyboard x:Key="menuOpen">
@@ -102,7 +102,9 @@
                 <StackPanel VerticalAlignment="Center">
                     <materialDesign:PopupBox Foreground="White" HorizontalAlignment="Right"  Margin="9" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
                         <StackPanel Width="150" Background="#FFE1DDE2">
-                               <Button Content="Exit" FontSize="18" Click="closeBTN_Click"/>
+                            <Button Content="About" FontSize="18" Click="aboutBTN_Click"/>
+                            <Separator/>
+                            <Button Content="Exit" FontSize="18" Click="closeBTN_Click"/>
                         </StackPanel>
                     </materialDesign:PopupBox>
                 </StackPanel>

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:xBot_WPF"
         xmlns:adorners="http://gu.se/Adorners"
         mc:Ignorable="d"
-        Title="Settings" Height="340" Width="342" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Visibility="Visible" MouseDown="Window_MouseDown" AllowsTransparency="True" WindowStyle="None">
+        Title="Settings" Height="340" Width="342" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Visibility="Visible" MouseDown="Window_MouseDown" AllowsTransparency="True" WindowStyle="None" Icon="Resources/icon.ico">
     <Window.Resources>
         <Style x:Key="MyWaterMarkStyle" TargetType="{x:Type TextBox}">
             <Setter Property="Template">

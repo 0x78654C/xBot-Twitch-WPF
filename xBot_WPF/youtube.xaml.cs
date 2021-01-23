@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using System.IO;
 using System.Reflection;
 using System.Threading;
+using System.Text.RegularExpressions;
 
 namespace xBot_WPF
 {
@@ -27,7 +28,7 @@ namespace xBot_WPF
         readonly static string ytFile = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\data\youtube_link.txt";
 
         readonly static string ytControl = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\data\yt_control.txt";
-        
+        MatchCollection matches;
         //-----------------------------------------
         public youtube()
         {
@@ -115,13 +116,23 @@ namespace xBot_WPF
 
             if (playBTN.Content.ToString() == "Play")
             {
-                reload_YT(youtTubeLink.Text);
-                using (var sWriter = new StreamWriter(ytFile))
+                //we check if continas the '=' symbol for check and after cont it 
+                matches = Regex.Matches(youtTubeLink.Text, "=");
+
+                if (youtTubeLink.Text.Contains("youtube.") &&  matches.Count==1 )
                 {
-                    sWriter.Write(youtTubeLink.Text);
-                    sWriter.Close();
+                    reload_YT(youtTubeLink.Text);
+                    using (var sWriter = new StreamWriter(ytFile))
+                    {
+                        sWriter.Write(youtTubeLink.Text);
+                        sWriter.Close();
+                    }
+                    playBTN.Content = "Stop";
                 }
-                playBTN.Content = "Stop";
+                else
+                {
+                    MessageBox.Show("You have typed a invalid YouTube link!");
+                }
             }
             else
             {

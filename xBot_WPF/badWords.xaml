@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:xBot_WPF"
         mc:Ignorable="d"
-        Title="Bad Words Chat Ban" AllowsTransparency="True" Height="450" Width="617.757" ResizeMode="NoResize" WindowStyle="None" MouseDown="Window_MouseDown" WindowStartupLocation="CenterScreen">
+        Title="Bad Words Chat Ban" AllowsTransparency="True" Height="450" Width="617.757" ResizeMode="NoResize" WindowStyle="None" MouseDown="Window_MouseDown" WindowStartupLocation="CenterScreen" Icon="Resources/icon.ico">
     <Window.Resources>
         <Style x:Key="MyWaterMarkStyle" TargetType="{x:Type TextBox}">
             <Setter Property="Template">

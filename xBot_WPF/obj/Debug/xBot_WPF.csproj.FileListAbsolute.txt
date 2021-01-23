@@ -302,3 +302,5 @@ F:\twitch\Projects\xBot-Twitch-WPF\xBot_WPF\obj\Debug\xBot_WPF.csproj.CoreCompil
 F:\twitch\Projects\xBot-Twitch-WPF\xBot_WPF\obj\Debug\xBot_WPF.csproj.CopyComplete
 F:\twitch\Projects\xBot-Twitch-WPF\xBot_WPF\obj\Debug\xBot_WPF.exe
 F:\twitch\Projects\xBot-Twitch-WPF\xBot_WPF\obj\Debug\xBot_WPF.pdb
+F:\twitch\Projects\xBot-Twitch-WPF\xBot_WPF\obj\Debug\about.g.cs
+F:\twitch\Projects\xBot-Twitch-WPF\xBot_WPF\obj\Debug\about.baml
