@@ -2,6 +2,9 @@
  
 xBot - Twitch bot in csharp WPF
 
+Requirement: .NET Framework 4.7
+
+
 ![alt text](https://github.com/0x78654C/xBot-Twitch-WPF/blob/main/xBot_WPF/t1.png?raw=true)
 
 ![alt text](https://github.com/0x78654C/xBot-Twitch-WPF/blob/main/xBot_WPF/t2.png?raw=true)
@@ -16,7 +19,7 @@ https://programm.top/en/c-sharp/algorithm/damerau-levenshtein-distance/ (for Dam
 
 Project ongoing live on: https://www.twitch.tv/x_coding
 
-Changelog:
+Features:
 
     show status if client is connected
     saveing twitch user name and oauth key to registry
@@ -28,5 +31,6 @@ Changelog:
     hardcoded !ss command for shout a streamer
     hardcoded !yt command for youtube current song played on xBot youtube player
     hardcoded !weather Weather Forecast command
+    hardcoded !gl for whishing good luck to some one in chat from you  
 
 (more to come)
