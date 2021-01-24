@@ -104,6 +104,10 @@ namespace xBot_WPF
         about aB;
         //--------------------------------
 
+        //Define the background worker for bot start
+        BackgroundWorker worker;
+        //--------------------------------
+
         public MainWindow()
         {
             InitializeComponent();
@@ -258,12 +262,16 @@ namespace xBot_WPF
         /// <summary>
         /// Bot Start function
         /// </summary>
-        public void BotStart()
+        public void BotStart(object sender, DoWorkEventArgs e)
         {
+            this.Dispatcher.Invoke(() =>
+            {
+                logViewRTB.Document.Blocks.Clear();
+            });
             date = DateTime.Now.ToString("yyyy MM dd HH:mm:ss");
-            logWrite("[" + date + "] xBot Connecting!");
-            logViewRTB.Document.Blocks.Clear();
-            ConnectionCredentials credentials = new ConnectionCredentials(t_userName, t_streamKey);
+            logWrite("[" + date + "] xBot Connecting....");
+           
+            ConnectionCredentials credentials = new ConnectionCredentials(t_userName, t_streamKey,null,true);
             var clientOptions = new ClientOptions
             {
                 MessagesAllowedInPeriod = 750,
@@ -281,8 +289,16 @@ namespace xBot_WPF
             client.OnConnected += Client_OnConnected;
             client.OnUserJoined += Client_OnUserJoinedArgs;
             client.Connect();
-            startBotBTN.Content = "STOP";
-            logWrite("[" + date + "] xBot Connected!");
+            this.Dispatcher.Invoke(() =>
+            {
+                startBotBTN.Content = "STOP";
+            });
+            //we check if bot is connected and display the log info
+            if (client.IsConnected)
+            {
+                logWrite("[" + date + "] xBot Connected to "+t_userName +" channel!");
+                CLog.LogWrite("[" + date + "] xBot Connected!");//we save to log file
+            }
         }
 
         /// <summary>
@@ -298,7 +314,6 @@ namespace xBot_WPF
             if (!client.IsConnected)
             {
                 date = DateTime.Now.ToString("yyyy MM dd HH:mm:ss");
-                logViewRTB.Document.Blocks.Clear();
                 logWrite("[" + date + "] xBot Disconncted!");
                 CLog.LogWrite("[" + date + "] xBot Disconncted!");
                 startBotBTN.Content = "START";
@@ -325,7 +340,7 @@ namespace xBot_WPF
             botMSG = File.ReadAllText(botMsgFile);
             logWrite("[Bot Start Message]: "+botMSG);
             CLog.LogWrite(e.Channel + botMSG);
-            client.SendMessage(e.Channel, "[BOT] " + botMSG);
+            client.SendMessage(e.Channel, botMSG);
         }
 
         private void Client_OnMessageReceived(object sender, OnMessageReceivedArgs e)
@@ -349,7 +364,7 @@ namespace xBot_WPF
                     if (bad.Length > 0)
                     {
                         if (e.ChatMessage.Message.Contains(bad))
-                            client.TimeoutUser(e.ChatMessage.Channel, e.ChatMessage.Username, TimeSpan.FromMinutes(timeBan), "[BOT] Bad word! " + Convert.ToString(timeBan) + " minute(s) timeout!");
+                            client.TimeoutUser(e.ChatMessage.Channel, e.ChatMessage.Username, TimeSpan.FromMinutes(timeBan), "Bad word ban! " + Convert.ToString(timeBan) + " minute(s) timeout!");
                             logWrite(e.ChatMessage.Channel +" | "+ e.ChatMessage.Username+" | "+ TimeSpan.FromMinutes(timeBan)+" | "+ "[BOT] Bad word ban! " + Convert.ToString(timeBan) + " minute(s) timeout!");
                     }
                 }
@@ -367,7 +382,7 @@ namespace xBot_WPF
 
                     if (e.ChatMessage.Message.Contains(s[0]))
                     {
-                        client.SendMessage(e.ChatMessage.Channel, "[BOT] " + s[1]);
+                        client.SendMessage(e.ChatMessage.Channel, s[1]);
                         logWrite("[BOT] " + s[1]);
                     }
                          
@@ -393,7 +408,7 @@ namespace xBot_WPF
             {
                 if (e.ChatMessage.Message.Contains("!help"))
                 {
-                    client.SendMessage(e.ChatMessage.Channel, "[BOT] List of commands is: " + listCMD + "; !yt; !weather; !ss");
+                    client.SendMessage(e.ChatMessage.Channel, "List of commands is: " + listCMD + "; !yt; !weather; !ss");
                     logWrite("[BOT] List of commands is: " + listCMD + "; !yt; !weather; !ss");
                 }
             }
@@ -401,7 +416,7 @@ namespace xBot_WPF
             {
                 if (e.ChatMessage.Message.Contains("!help"))
                 {
-                    client.SendMessage(e.ChatMessage.Channel, "[BOT] List of commands is: " + listCMD + "; !yt");
+                    client.SendMessage(e.ChatMessage.Channel, "List of commands is: " + listCMD + "; !yt");
                     logWrite("[BOT] List of commands is: " + listCMD + "; !yt");
                 }
             }
@@ -422,12 +437,12 @@ namespace xBot_WPF
                         {
                             if (lS[1].Length > 0)
                             {
-                                client.SendMessage(e.ChatMessage.Channel, "[BOT] Shoutout for @" + lS[1] + " which is also a streamer! https://twitch.tv/" + lS[1]);
+                                client.SendMessage(e.ChatMessage.Channel, "Shoutout for @" + lS[1] + " which is also a streamer! https://twitch.tv/" + lS[1]);
                                 logWrite("[BOT] Shoutout for @" + lS[1] + " which is also a streamer! https://twitch.tv/" + lS[1]);
                             }
                             else
                             {
-                                client.SendMessage(e.ChatMessage.Channel, "[BOT] You must add the name of streamer for shoutout with @ character!");
+                                client.SendMessage(e.ChatMessage.Channel, "You must add the name of streamer for shoutout with @ character!");
                                 logWrite("[BOT] You must add the name of streamer for shoutout with @ character!");
                             }
                         }
@@ -458,12 +473,12 @@ namespace xBot_WPF
                         {
                             if (lS[1].Length > 0)
                             {
-                                client.SendMessage(e.ChatMessage.Channel, "[BOT] " + e.ChatMessage.Username + " wishes " + lS[1] + " good luck. May you succeed in whatever you're planning to do!");
+                                client.SendMessage(e.ChatMessage.Channel, e.ChatMessage.Username + " wishes " + lS[1] + " good luck. May you succeed in whatever you're planning to do!");
                                 logWrite("[BOT] " + e.ChatMessage.Username + " wishes " + lS[1] + " good luck. May you succeed in whatever you're planning to do!");
                             }
                             else
                             {
-                                client.SendMessage(e.ChatMessage.Channel, "[BOT] You must add the name of chatter for good luck command with @ character!");
+                                client.SendMessage(e.ChatMessage.Channel, "You must add the name of chatter for good luck command with @ character!");
                                 logWrite("[BOT] You must add the name of chatter for good luck command with @ character!");
                             }
                         }
@@ -492,19 +507,19 @@ namespace xBot_WPF
                         cn = we[1];
                         if (cn.Length > 0)
                         {
-                            client.SendMessage(e.ChatMessage.Channel, "[BOT] The weather(Celsius) on " + cn + " is:" + Environment.NewLine + weatherForecast(cn));
+                            client.SendMessage(e.ChatMessage.Channel, "The weather(Celsius) on " + cn + " is:" + Environment.NewLine + weatherForecast(cn));
                              logWrite("[BOT] The weather(Celsius) on " + cn + " is:" + Environment.NewLine + weatherForecast(cn));
                         }
                         else
                         {
-                            client.SendMessage(e.ChatMessage.Channel, "[BOT] Weathr not avaible on this City or API Key tries excided!");
+                            client.SendMessage(e.ChatMessage.Channel, "Weathr not avaible on this City or API Key tries excided!");
                             logWrite("[BOT] Weathr not avaible on this City or API Key tries excided!");
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    client.SendMessage(e.ChatMessage.Channel, "[BOT] Check the City name please!");
+                    client.SendMessage(e.ChatMessage.Channel, "Check the City name please!");
                     logWrite("[BOT] Check the City name please!");
                 }
             }
@@ -517,7 +532,7 @@ namespace xBot_WPF
             {
                 if (e.ChatMessage.Message.Contains("!yt"))
                 {
-                    client.SendMessage(e.ChatMessage.Channel, "[BOT] Now playing: " + ytLink);
+                    client.SendMessage(e.ChatMessage.Channel, "Now playing: " + ytLink);
                     logWrite("[BOT] Now playing: " + ytLink);
                 }
             }
@@ -525,7 +540,7 @@ namespace xBot_WPF
             {
                 if (e.ChatMessage.Message.Contains("!yt"))
                 {
-                    client.SendMessage(e.ChatMessage.Channel, "[BOT] Nothing playing at the moment! ");
+                    client.SendMessage(e.ChatMessage.Channel, "Nothing playing at the moment! ");
                     logWrite("[BOT] Nothing playing at the moment! ");
                 }
             }
@@ -537,16 +552,16 @@ namespace xBot_WPF
         {
             if (e.WhisperMessage.Username == "my_friend")
             {
-                client.SendWhisper(e.WhisperMessage.Username, "[BOT] Hey! Whispers are so cool!!");
+                client.SendWhisper(e.WhisperMessage.Username, "Hey! Whispers are so cool!!");
             }
         }
 
         private void Client_OnNewSubscriber(object sender, OnNewSubscriberArgs e)
         {
             if (e.Subscriber.SubscriptionPlan == SubscriptionPlan.Prime)
-                client.SendMessage(e.Channel, $"[BOT] Welcome {e.Subscriber.DisplayName} to the substers! You just earned 500 points! So kind of you to use your Twitch Prime on this channel!");
+                client.SendMessage(e.Channel, $"Welcome {e.Subscriber.DisplayName} to the substers! You just earned 500 points! So kind of you to use your Twitch Prime on this channel!");
             else
-                client.SendMessage(e.Channel, $"[BOT] Welcome {e.Subscriber.DisplayName} to the substers! You just earned 500 points!");
+                client.SendMessage(e.Channel, $" Welcome {e.Subscriber.DisplayName} to the substers! You just earned 500 points!");
         }
 
         private void Client_OnUserJoinedArgs(object sender, OnUserJoinedArgs e)
@@ -555,7 +570,7 @@ namespace xBot_WPF
             if (botMSGKey == "1")
             {
 
-                client.SendMessage(e.Channel, $"[BOT] Welcome to my channel {e.Username}. and thank you for joining. For more commands type !help");
+                client.SendMessage(e.Channel, $"Welcome to my channel {e.Username}. and thank you for joining. For more commands type !help");
             }
 
         }
@@ -578,10 +593,10 @@ namespace xBot_WPF
                 {
                     //Open weather map API link with celsius 
                     // TODO: will decide if I put switch for ferenhait
-                    string html = "https://api.openweathermap.org/data/2.5/weather?q={0}&appid={1}&units=metric";
+                    string html = @"https://api.openweathermap.org/data/2.5/weather?q={0}&appid={1}&units=metric";
 
 
-                    HttpResponseMessage response = clientH.GetAsync(string.Format(html, CityName, apiKey)).GetAwaiter().GetResult();
+                    HttpResponseMessage response = clientH.GetAsync(string.Format(html, CityName, Encryption._decryptData(apiKey))).GetAwaiter().GetResult();
                     response.EnsureSuccessStatusCode();
                     string responseBody = response.Content.ReadAsStringAsync().Result;
 
@@ -627,7 +642,7 @@ namespace xBot_WPF
             {
                 //In case of error we output this in console.
                 outs = "Please check city name!";
-               // logWrite("Weather error: " + e.ToString());
+                logWrite("Weather error: " + e.ToString());
             }
 
             //print the final weather forecast
@@ -729,7 +744,9 @@ namespace xBot_WPF
 
                     if (t_streamKey.Length > 0)
                     {
-                        BotStart();
+                        worker = new BackgroundWorker();
+                        worker.DoWork += BotStart;
+                        worker.RunWorkerAsync();
                     }
                     else
                     {
@@ -830,7 +847,9 @@ namespace xBot_WPF
                 {
                     if (t_streamKey.Length > 0)
                     {
-                        BotStart();
+                        worker = new BackgroundWorker();
+                        worker.DoWork += BotStart;
+                        worker.RunWorkerAsync();
                     }
                     else
                     {

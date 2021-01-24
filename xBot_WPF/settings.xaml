@@ -67,7 +67,7 @@
                 <Label Name="closeLBL" Content="x" FontSize="26" Foreground="#FFE1DDE2" HorizontalAlignment="Right" Margin="0,-3,10,0" VerticalAlignment="Top" Height="46" PreviewMouseDown="closeLBL_PreviewMouseDown"/>
                 <Label Name="miniMizeLBL" Content="_" FontSize="26" Foreground="#FFE1DDE2" HorizontalAlignment="Right" Margin="0,-7,37,0" VerticalAlignment="Top" Height="46" PreviewMouseDown="miniMizeLBL_PreviewMouseDown" />
             </Grid>
-            <TextBox Style="{StaticResource MyWaterMarkStyle}" FontSize="14" adorners:Watermark.Text="Twitch Bot User Name" TextAlignment="Center" Name="userNameTXT" HorizontalAlignment="Left" Height="32" Margin="42,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="255">
+            <TextBox Style="{StaticResource MyWaterMarkStyle}" FontSize="14" adorners:Watermark.Text="Twitch Channel Name To Connect" TextAlignment="Center" Name="userNameTXT" HorizontalAlignment="Left" Height="32" Margin="42,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="255">
                 <adorners:Watermark.TextStyle>
                     <Style TargetType="{x:Type TextBlock}">
                         <Setter Property="Opacity" Value="0.5" />
@@ -76,7 +76,7 @@
                     </Style>
                 </adorners:Watermark.TextStyle>
             </TextBox>
-            <PasswordBox  FontSize="14"  adorners:Watermark.Text ="Twitch OAuth Chat Key" Name="streamOauthKeyTXT" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="32" Margin="42,118,0,0"  VerticalAlignment="Top" Width="255" PasswordChanged="passwordChanged_oAuth"  >
+            <PasswordBox  FontSize="14"  adorners:Watermark.Text ="Your Twitch OAuth Chat Key" Name="streamOauthKeyTXT" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="32" Margin="42,118,0,0"  VerticalAlignment="Top" Width="255" PasswordChanged="passwordChanged_oAuth"  >
                 <adorners:Watermark.TextStyle>
                     <Style TargetType="{x:Type TextBlock}">
                         <Setter Property="Opacity" Value="0.5" />

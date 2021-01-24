@@ -8,3 +8,5 @@
 !fw:A follow on my stream will be superb for me ;). Thank you!
 !st:Stress my bot please xD. Use !help for commands
 !ide:Visual Studio 2019 Pro
+!project:A simple Twitch bot in C# using WPF design!
+!lisa:May the force of the study be with you, Lisa Rei! 
