@@ -88,7 +88,7 @@
                 <ColumnDefinition/>
                 <ColumnDefinition Width="0*"/>
             </Grid.ColumnDefinitions>
-            <RichTextBox Name="logViewRTB" IsReadOnly="True" HorizontalAlignment="Left" Height="632" Margin="50,50,0,0" VerticalAlignment="Top" Width="957">
+            <RichTextBox Name="logViewRTB" IsReadOnly="True" HorizontalAlignment="Left" Height="632" Margin="50,50,0,0" VerticalAlignment="Top" Width="957" FontSize="16">
                 <FlowDocument>
                     <Paragraph>
                         <Run Text=""/>
@@ -121,7 +121,7 @@
                             <materialDesign:PackIcon Background="#FFE1DDE2" Foreground="Black" Kind="Menu"/>
                         </Button>
                     </Grid>
-                    <ListViewItem Height="44" Foreground="#FFDCDCDC" FontSize="23" PreviewMouseDown="ListViewItem_PreviewMouseDown">
+                    <ListViewItem ToolTip="Settings" Height="44" Foreground="#FFDCDCDC" FontSize="23" PreviewMouseDown="ListViewItem_PreviewMouseDown">
                         <StackPanel Orientation="Horizontal" >
                             <materialDesign:PackIcon Kind="Settings" Margin="9" Width="25" Height="25" VerticalAlignment="Center"/>
                             <TextBlock Text=" Settings" VerticalAlignment="Center"/>
@@ -129,28 +129,28 @@
                         </StackPanel>
                     </ListViewItem>
 
-                    <ListViewItem Height="44" Foreground="#FFDCDCDC" FontSize="23" PreviewMouseDown="ListViewItem_PreviewMouseDownCMD">
+                    <ListViewItem ToolTip="Commands" Height="44" Foreground="#FFDCDCDC" FontSize="23" PreviewMouseDown="ListViewItem_PreviewMouseDownCMD">
                         <StackPanel Orientation="Horizontal" >
                             <materialDesign:PackIcon Kind="CommaCircle" Margin="9" Width="25" Height="25" VerticalAlignment="Center"/>
                             <TextBlock Text=" Commands" VerticalAlignment="Center"/>
 
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem Height="44" Foreground="#FFDCDCDC" FontSize="23" PreviewMouseDown="ListViewItem_PreviewMouseDownBAD">
+                    <ListViewItem ToolTip="Chat Ban" Height="44" Foreground="#FFDCDCDC" FontSize="23" PreviewMouseDown="ListViewItem_PreviewMouseDownBAD">
                         <StackPanel Orientation="Horizontal" >
                             <materialDesign:PackIcon Kind="Wordpress" Margin="9" Width="25" Height="25" VerticalAlignment="Center"/>
-                            <TextBlock Text=" Bad Words" VerticalAlignment="Center"/>
+                            <TextBlock Text=" Chat Ban" VerticalAlignment="Center"/>
 
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem Height="44" Foreground="#FFDCDCDC" FontSize="23" PreviewMouseDown="ListViewItem_PreviewMouseDownBot">
+                    <ListViewItem ToolTip="Bot Message" Height="44" Foreground="#FFDCDCDC" FontSize="23" PreviewMouseDown="ListViewItem_PreviewMouseDownBot">
                         <StackPanel Orientation="Horizontal" >
                             <materialDesign:PackIcon Kind="Message" Margin="9" Width="25" Height="25" VerticalAlignment="Center"/>
                             <TextBlock Text=" Bot Message" VerticalAlignment="Center"/>
 
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem Height="44" Foreground="#FFDCDCDC" FontSize="23" PreviewMouseDown="ListViewItem_PreviewMouseDownYT">
+                    <ListViewItem ToolTip="YoutTube Player" Height="44" Foreground="#FFDCDCDC" FontSize="23" PreviewMouseDown="ListViewItem_PreviewMouseDownYT">
                         <StackPanel Orientation="Horizontal" >
                             <materialDesign:PackIcon Kind="PlayArrow" Margin="9" Width="25" Height="25" VerticalAlignment="Center"/>
                             <TextBlock Text=" YouTube" VerticalAlignment="Center"/>

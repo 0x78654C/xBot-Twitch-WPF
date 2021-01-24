@@ -93,7 +93,7 @@ namespace xBot_WPF
                 cmd = nameTXT.Text;
                 msg = contentTXT.Text;
 
-                ///Grab only comands list not the message 
+                //Grab only comands list not the message 
                 List<string> lst = new List<string>();
                 foreach (var line in cmd_lineA)
                 {

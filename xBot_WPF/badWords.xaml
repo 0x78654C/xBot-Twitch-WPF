@@ -65,7 +65,7 @@
     <Grid>
         <Border BorderBrush="Black" BorderThickness="1"/>
         <Grid VerticalAlignment="Top" Height="50" Background="#FF690FC2" >
-            <TextBlock Text="Bad Words Management"  TextAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontSize="22" Margin="179,6,198,4"/>
+            <TextBlock Text="Bad Words - Chat Ban"  TextAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontSize="22" Margin="179,6,198,4"/>
             <Label Name="closeLBL" Content="x" FontSize="26" Foreground="#FFE1DDE2" HorizontalAlignment="Right" Margin="0,-3,10,0" VerticalAlignment="Top" Height="46" PreviewMouseDown="closeLBL_PreviewMouseDown"/>
             <Label Name="miniMizeLBL" Content="_" FontSize="26" Foreground="#FFE1DDE2" HorizontalAlignment="Right" Margin="0,-7,37,0" VerticalAlignment="Top" Height="46" PreviewMouseDown="miniMizeLBL_PreviewMouseDown" />
             <TextBox Name="badWrodTXT" Style="{StaticResource MyWaterMarkStyle}" FontSize="16" AcceptsReturn="True" Tag="Type bad words here for add in list..." HorizontalAlignment="Left" Height="303" Margin="17,65,0,-318" TextWrapping="Wrap" VerticalAlignment="Top" Width="281"/>

@@ -15,6 +15,7 @@ using System.IO;
 using System.Reflection;
 using System.Threading;
 using System.Text.RegularExpressions;
+using Core;
 
 namespace xBot_WPF
 {
@@ -26,18 +27,32 @@ namespace xBot_WPF
 
         //Declare path to youtube link file
         readonly static string ytFile = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\data\youtube_link.txt";
-
-        readonly static string ytControl = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\data\yt_control.txt";
+        private static string ytControl = "0";
+        private static string YtWin = "0";
         MatchCollection matches;
         //-----------------------------------------
+
+        //Declare keyname
+        private static string keyName = "xBot";
+        //----------------------------------------
+
         public youtube()
         {
             InitializeComponent();
+
             //load youtube link 
             youtTubeLink.Text = File.ReadAllText(ytFile);
             //--------------------------
-        }
 
+            //Load control number from registry
+            ytControl = Reg.regKey_Read(keyName, "YTControl");
+            //---------------------------
+
+            //Set control number for window status
+            Reg.regKey_WriteSubkey(keyName, "YtWin", "1");
+            //---------------------------
+
+        }
 
         /// <summary>
         /// youtube reload link on browser
@@ -45,17 +60,14 @@ namespace xBot_WPF
         /// <param name="url"></param>
         public void reload_YT(string url)
         {
-                string html = "<html><head><center>";
-                html += "<meta content='IE=Edge' http-equiv='X-UA-Compatible'/>";
-                html += "<iframe id='video' src= 'https://www.youtube.com/embed/{0}?rel=0&amp;&amp;showinfo=0;&autoplay=1' width='647' height='380' frameborder='0' allowfullscreen></iframe>";
-                html += "</center></body></html>";
+            string html = "<html><head><center>";
+            html += "<meta content='IE=Edge' http-equiv='X-UA-Compatible'/>";
+            html += "<iframe id='video' src= 'https://www.youtube.com/embed/{0}?rel=0&amp;&amp;showinfo=0;&autoplay=1' width='647' height='380' frameborder='0' allowfullscreen></iframe>";
+            html += "</center></body></html>";
             try
             {
                 this.ytBrowser.NavigateToString(string.Format(html, url.Split('=')[1]));
-                using (var sWriter = new StreamWriter(ytControl))
-                {
-                    sWriter.Write("1");
-                }
+                Reg.regKey_WriteSubkey(keyName, "YTControl", "1");
             }
             catch
             {
@@ -64,10 +76,8 @@ namespace xBot_WPF
                 html1 += "<iframe id='video' src= ' ' width='647' height='380' frameborder='0' allowfullscreen></iframe>";
                 html1 += "</center></body></html>";
                 this.ytBrowser.NavigateToString(html1);
-                using (var sWriter = new StreamWriter(ytControl))
-                {
-                    sWriter.Write("0");
-                }
+                Reg.regKey_WriteSubkey(keyName, "YTControl", "0");
+
             }
 
 
@@ -103,6 +113,9 @@ namespace xBot_WPF
         private void closeLBL_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
             this.Close();
+            //reset window control key to 0 on colose
+            Reg.regKey_WriteSubkey(keyName, "YtWin", "0");
+            //---------------------------------------
         }
 
 
@@ -119,7 +132,7 @@ namespace xBot_WPF
                 //we check if continas the '=' symbol for check and after cont it 
                 matches = Regex.Matches(youtTubeLink.Text, "=");
 
-                if (youtTubeLink.Text.Contains("youtube.") &&  matches.Count==1 )
+                if (youtTubeLink.Text.Contains("youtube.") && matches.Count == 1)
                 {
                     reload_YT(youtTubeLink.Text);
                     using (var sWriter = new StreamWriter(ytFile))
@@ -141,10 +154,7 @@ namespace xBot_WPF
                 html1 += "<iframe id='video' src= ' ' width='647' height='380' frameborder='0' allowfullscreen></iframe>";
                 html1 += "</center></body></html>";
                 this.ytBrowser.NavigateToString(html1);
-                using (var sWriter = new StreamWriter(ytControl))
-                {
-                    sWriter.Write("0");
-                }
+                Reg.regKey_WriteSubkey(keyName, "YTControl", "0");
                 playBTN.Content = "Play";
             }
 
@@ -156,16 +166,16 @@ namespace xBot_WPF
         /// <param name="e"></param>
         private void Window_Closed(object sender, EventArgs e)
         {
-            
-                string html1 = "<html><head><center>";
-                html1 += "<meta content='IE=Edge' http-equiv='X-UA-Compatible'/>";
-                html1 += "<iframe id='video' src= ' ' width='647' height='380' frameborder='0' allowfullscreen></iframe>";
-                html1 += "</center></body></html>";
-                this.ytBrowser.NavigateToString(html1);
-                using (var sWriter = new StreamWriter(ytControl))
-            {
-                sWriter.Write("0");
-            }
+
+            string html1 = "<html><head><center>";
+            html1 += "<meta content='IE=Edge' http-equiv='X-UA-Compatible'/>";
+            html1 += "<iframe id='video' src= ' ' width='647' height='380' frameborder='0' allowfullscreen></iframe>";
+            html1 += "</center></body></html>";
+            this.ytBrowser.NavigateToString(html1);
+            Reg.regKey_WriteSubkey(keyName, "YTControl", "0");
+            //reset window control key to 0 on colose
+            Reg.regKey_WriteSubkey(keyName, "YtWin", "0");
+            //-------------------------------------------
         }
     }
 }
