@@ -16,7 +16,7 @@ https://programm.top/en/c-sharp/algorithm/damerau-levenshtein-distance/ (for Dam
 
 Project ongoing live on: https://www.twitch.tv/x_coding
 
-Changelog:
+Features:
 
     show status if client is connected
     saveing twitch user name and oauth key to registry
