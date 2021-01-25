@@ -24,7 +24,7 @@ namespace xBot_WPF
     /// </summary>
     public partial class command : Window
     {
-        //readonly static string comFile = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\data\command.txt";
+        //declare global variables
         readonly static string comFile = Directory.GetCurrentDirectory() + @"\data\command.txt";
 
         StreamWriter sWriter;
@@ -34,6 +34,7 @@ namespace xBot_WPF
         private static string[] cmd_line;
         private static string[] cmd_lineA;
         private static string listCMD;
+        //----------------------------------
 
         public command()
         {
@@ -180,7 +181,6 @@ namespace xBot_WPF
                 if (cmd_lst.Contains("!"+cmd+":"))
                 {
                 
-
                         //check if help hardcoded commands exists
                         if (!cmd.Contains("help") || !cmd.Contains("yt") || !cmd.Contains("weather") || !cmd.Contains("ss"))
                         {
@@ -206,9 +206,7 @@ namespace xBot_WPF
                         {
                             MessageBox.Show("You cannot delete command '" + cmd + "' because is predifined!"); ;
                         }
-
-
-                        
+ 
                     using (sWriter = new StreamWriter(comFile))
                     {
                         cmd_lst = Regex.Replace(cmd_lst, @"^\s+$[\r\n]*", string.Empty, RegexOptions.Multiline);

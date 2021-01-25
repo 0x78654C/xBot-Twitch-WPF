@@ -106,11 +106,17 @@ namespace xBot_WPF
         BackgroundWorker worker;
         //--------------------------------
 
+        //Declare mutex variable for startup instance check
+        Mutex myMutex;
+        //---------------------------------
+
         public MainWindow()
         {
             InitializeComponent();
 
-
+            //aplication startup instance check
+            Application_Startup();
+            //---------------------------------------------
             //Bot start message
             this.Dispatcher.Invoke(() =>
             {
@@ -254,6 +260,21 @@ namespace xBot_WPF
             Reg.regKey_WriteSubkey(keyName, "YTControl", "0");
             Reg.regKey_WriteSubkey(keyName, "YtWin", "0");
             //-----------------------------------
+        }
+
+
+        /// <summary>
+        /// Check aplication start instace and close if is already opened
+        /// </summary>
+        private void Application_Startup()
+        {
+            bool aIsNewInstance = false;
+            myMutex = new Mutex(true, "xBot", out aIsNewInstance);
+            if (!aIsNewInstance)
+            {
+                System.Windows.Forms.MessageBox.Show("xBot is already running...");
+                App.Current.Shutdown();
+            }
         }
 
         /// <summary>

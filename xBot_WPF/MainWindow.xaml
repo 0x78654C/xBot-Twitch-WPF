@@ -6,7 +6,8 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:xBot_WPF"
         mc:Ignorable="d"
-        Title="xBot-Twitch" Height="683.594" Width="1008.808" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Visibility="Visible" MouseDown="Window_MouseDown" AllowsTransparency="True" WindowStyle="None" Closed="Window_Closed" Icon="Resources/icon.ico">
+        Name="xBot"
+        Title="xBot-Twitch" Height="683.594" Width="1008.808" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Visibility="Visible" MouseDown="Window_MouseDown" AllowsTransparency="True" WindowStyle="None" Closed="Window_Closed" Icon="Resources/icon.ico">
 
     <Window.Resources>
         <Storyboard x:Key="menuOpen">

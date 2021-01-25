@@ -70,11 +70,9 @@ namespace xBot_WPF
         /// <param name="e"></param>
         private void saveBTNMSG_Click(object sender, RoutedEventArgs e)
         {
-
             Reg.regKey_WriteSubkey(keyName, "StartMessage", botMSGtxt.Text);
-                MessageBox.Show("Message saved!"); 
-                this.Close();
-    
+            MessageBox.Show("Message saved!");
+            this.Close();
         }
     }
 }

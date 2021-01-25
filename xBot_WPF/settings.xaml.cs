@@ -20,7 +20,7 @@ namespace xBot_WPF
     /// </summary>
     public partial class settings : Window
     {
-        //Declare variables
+        //Declare global variables
         private static string keyName = "xBot";
         private static string t_userName;
         private static string t_streamKey;
