@@ -27,7 +27,7 @@ namespace xBot_WPF
         private static string weatherKey;
         private static string apiKey;
         private static string joinedKey;
-       
+
         //---------------------------------------------------------
         public settings()
         {
@@ -53,7 +53,7 @@ namespace xBot_WPF
 
             streamOauthKeyTXT.Password = t_streamKey;
             userNameTXT.Text = t_userName;
-            weatherAPIKeyTXT.Password = apiKey;
+            weatherAPIKeyTXT.Password = Encryption._decryptData(apiKey);
             //---------------------------------
 
             //load weaheter checkbox msg ar deactivate
@@ -62,7 +62,8 @@ namespace xBot_WPF
             {
                 weatherCKB.Content = "Activate Weather Command: ON";
                 weatherCKB.IsChecked = true;
-            }else if (weatherKey == "0")
+            }
+            else if (weatherKey == "0")
             {
                 weatherCKB.Content = "Activate Weather Command: OFF";
                 weatherCKB.IsChecked = false;
@@ -126,7 +127,7 @@ namespace xBot_WPF
         // helper to hide watermark hint in password field
         private void passwordChanged_oAuth(object sender, RoutedEventArgs e)
         {
-           //todo future work
+            //todo future work
         }
         /// <summary>
         /// Save settings button    
@@ -135,45 +136,58 @@ namespace xBot_WPF
         /// <param name="e"></param>
         private void saveBTN_Click(object sender, RoutedEventArgs e)
         {
+            //sotre username in regkey
+            Reg.regKey_WriteSubkey(keyName, "UserName", userNameTXT.Text);
 
-            Reg.regKey_WriteSubkey(keyName, "UserName", userNameTXT.Text);//sotre username in regkey
-            Reg.regKey_WriteSubkey(keyName, "StreamKey", Encryption._encryptData(streamOauthKeyTXT.Password));//sotre oauth key in regkey
-            Reg.regKey_WriteSubkey(keyName, "WeatherAPIKey", Encryption._encryptData(weatherAPIKeyTXT.Password));//sotre weather API key in regkey
+            //sotre oauth key in regkey
+            Reg.regKey_WriteSubkey(keyName, "StreamKey", Encryption._encryptData(streamOauthKeyTXT.Password));
+
+            //sotre weather API key in regkey
+            Reg.regKey_WriteSubkey(keyName, "WeatherAPIKey", Encryption._encryptData(weatherAPIKeyTXT.Password));
 
             MessageBox.Show("Settings saved!");
             this.Close();
         }
 
-        //saveing weather keycontrol for main window check 
+        #region saveing weather keycontrol for main window check 
         private void weatherCKB_Checked(object sender, RoutedEventArgs e)
         {
-                Reg.regKey_WriteSubkey(keyName, "WeatherMSG", "1");
+            //Store the activation command control number
+            Reg.regKey_WriteSubkey(keyName, "WeatherMSG", "1");
 
-                weatherCKB.Content = "Activate Weather Command: ON";
-                
+            //change the label content to on
+            weatherCKB.Content = "Activate Weather Command: ON";
         }
 
         private void weatherCKB_Unchecked(object sender, RoutedEventArgs e)
         {
+            //store the deactivation command control number
             Reg.regKey_WriteSubkey(keyName, "WeatherMSG", "0");
+
+            //change the label content to off
             weatherCKB.Content = "Activate Weather Command: OFF";
         }
-        //-------------------------------------------------------------
+        #endregion
 
-        //saveing user joined keycontrol for main window check 
+        #region saveing user joined keycontrol for main window check 
         private void joinedCKB_Checked(object sender, RoutedEventArgs e)
         {
+            //store the OnJoined event bot display message control number for activation
             Reg.regKey_WriteSubkey(keyName, "BotMSG", "1");
 
+            //change the label content to on
             joinedCKB.Content = "Display user joiend chat message: ON";
         }
 
         private void joinedCKB_Unchecked(object sender, RoutedEventArgs e)
         {
+            //store the OnJoined event bot display message control number for deactivation
             Reg.regKey_WriteSubkey(keyName, "BotMSG", "0");
 
+            //change the label content to on
             joinedCKB.Content = "Display user joiend chat message: OFF";
         }
-        //----------------------------------------------------------------
+        #endregion
     }
 }
+

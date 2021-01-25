@@ -61,7 +61,6 @@ namespace xBot_WPF
 
         //command file variables
         readonly static string comDirectory = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\data\command.txt";
-
         private static string[] comandList;
         //-------------------------------------------------
 
@@ -147,23 +146,17 @@ namespace xBot_WPF
             if (Reg.regKey_Read(keyName, "UserName") == "")
             {
                 Reg.regKey_CreateKey(keyName, "UserName", "");
-
-
             }
 
             if (Reg.regKey_Read(keyName, "StreamKey") == "")
             {
                 Reg.regKey_CreateKey(keyName, "StreamKey", "");
-
-
             }
 
 
             if (Reg.regKey_Read(keyName, "WeatherAPIKey") == "")
             {
                 Reg.regKey_CreateKey(keyName, "WeatherAPIKey", "");
-
-
             }
 
             if (Reg.regKey_Read(keyName, "WeatherMSG") == "")
@@ -198,7 +191,7 @@ namespace xBot_WPF
             //-----------------------------------------
 
 
-            //Load and display username, streamkey and dark mode control from registry
+            #region Load and display username, streamkey and dark mode control from registry
 
             t_userName = Reg.regKey_Read(keyName, "UserName");
 
@@ -220,15 +213,13 @@ namespace xBot_WPF
             ytControl = Reg.regKey_Read(keyName, "YTControl");
             weatherKey = Reg.regKey_Read(keyName, "WeatherMSG");
             YtWin = Reg.regKey_Read(keyName, "YtWin");
-            //---------------------------------
+            #endregion
 
             //staus check timer start
-
             System.Windows.Threading.DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
             dispatcherTimer.Tick += StatusLoadIcon;
             dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
             dispatcherTimer.Start();
-
             //----------------------------------
 
             //hide start button
@@ -280,7 +271,6 @@ namespace xBot_WPF
             WebSocketClient customClient = new WebSocketClient(clientOptions);
             client = new TwitchClient(customClient);
             client.Initialize(credentials, t_userName);
-
             client.OnLog += Client_OnLog;
             client.OnJoinedChannel += Client_OnJoinedChannel;
             client.OnMessageReceived += Client_OnMessageReceived;
@@ -306,7 +296,6 @@ namespace xBot_WPF
         /// </summary>
         private void BotStop()
         {
-
             if (client.IsConnected)
             {
                 client.Disconnect();
@@ -332,8 +321,6 @@ namespace xBot_WPF
            // logWrite($"Connected to {e.AutoJoinChannel}");
             CLog.LogWrite($"Connected to {e.AutoJoinChannel}");
         }
-
-
 
         private void Client_OnJoinedChannel(object sender, OnJoinedChannelArgs e)
         {
@@ -385,8 +372,7 @@ namespace xBot_WPF
                         client.SendMessage(e.ChatMessage.Channel, s[1]);
                         logWrite("[BOT] " + s[1]);
                     }
-                         
-                    
+                                            
                 }
             }
             //-------------------------------------------------
@@ -420,13 +406,11 @@ namespace xBot_WPF
                     logWrite("[BOT] List of commands is: " + listCMD + "; !yt");
                 }
             }
-
             //----------------------------
 
             //shout streamer commad
             using (var sReader = new StringReader(e.ChatMessage.Message))
             {
-
                 string line;
                 while ((line = sReader.ReadLine()) != null)
                 {
@@ -462,7 +446,6 @@ namespace xBot_WPF
             //good luck commad
             using (var sReader = new StringReader(e.ChatMessage.Message))
             {
-
                 string line;
                 while ((line = sReader.ReadLine()) != null)
                 {
@@ -488,13 +471,11 @@ namespace xBot_WPF
                             logWrite("[BOT] You must add the name of chatter for good luck command with @ character!");
                         }
                     }
-
                 }
             }
             //----------------------------
 
             //weather data display display
-
             if (weatherKey == "1")
             {
                 weatheCond = e.ChatMessage.Message;
@@ -527,7 +508,6 @@ namespace xBot_WPF
 
             //!yt command display play link
             string ytLink = File.ReadAllText(ytFile);
-
             if (ytControl == "1")
             {
                 if (e.ChatMessage.Message.Contains("!yt"))
@@ -544,7 +524,6 @@ namespace xBot_WPF
                     logWrite("[BOT] Nothing playing at the moment! ");
                 }
             }
-
             //----------------------------
         }
 
@@ -569,7 +548,6 @@ namespace xBot_WPF
             //Enebale user joiend chat only when check is on.
             if (botMSGKey == "1")
             {
-
                 client.SendMessage(e.Channel, $"Welcome to my channel {e.Username}. and thank you for joining. For more commands type !help");
             }
 
@@ -678,8 +656,6 @@ namespace xBot_WPF
         private void StatusLoadIcon(object sender, EventArgs e)
         {
 
-
-
             //read variables form registry
             t_userName = Reg.regKey_Read(keyName, "UserName");
 
@@ -732,31 +708,48 @@ namespace xBot_WPF
         /// <param name="e"></param>
         private void startBTN_Click(object sender, RoutedEventArgs e)
         {
+            botConnect();
+        }
 
-            if (client.IsConnected)
+        /// <summary>
+        /// Bot connection function
+        /// </summary>
+
+        private void botConnect()
+        {
+            if (Network.inetCK())//check internet connection first
             {
-                BotStop();
-            }
-            else
-            {
-                if (t_userName.Length > 0)
+                
+                if (client.IsConnected)
                 {
-
-                    if (t_streamKey.Length > 0)
-                    {
-                        worker = new BackgroundWorker();
-                        worker.DoWork += BotStart;
-                        worker.RunWorkerAsync();
-                    }
-                    else
-                    {
-                        System.Windows.Forms.MessageBox.Show("Please fill in settings the oAuth Twitch key!");
-                    }
+                    BotStop();
                 }
                 else
                 {
-                    System.Windows.Forms.MessageBox.Show("Please fill in settings the user name!");
+                    if (t_userName.Length > 0)
+                    {
+
+                        if (t_streamKey.Length > 0)
+                        {
+                            worker = new BackgroundWorker();
+                            worker.DoWork += BotStart;
+                            worker.RunWorkerAsync();
+                        }
+                        else
+                        {
+                            logWrite("Please fill in settings the oAuth Twitch key!");
+                        }
+                    }
+                    else
+                    {
+                        logWrite("Please fill in settings the user name!");
+                    }
                 }
+            }
+            else
+            {
+                logWrite("No internet connection!");
+               
             }
         }
         /// <summary>
@@ -779,7 +772,6 @@ namespace xBot_WPF
         /// <param name="e"></param>
         private void btnCloseMenu_Click(object sender, RoutedEventArgs e)
         {
-
             logViewRTB.Margin = new Thickness(50, 50, 0, 0);
             btnOpenMenu.Visibility = Visibility.Visible;
             btnCloseMenu.Visibility = Visibility.Collapsed;
@@ -804,15 +796,12 @@ namespace xBot_WPF
         private void ListViewItem_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
             sT = new settings();
-
             sT.ShowDialog();
-
         }
 
         //closing all windows
         private void Window_Closed(object sender, EventArgs e)
         {
-
             if (yT.IsVisible)
             {
                 yT.Close();
@@ -837,30 +826,7 @@ namespace xBot_WPF
         /// <param name="e"></param>
         private void statIMG_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (client.IsConnected)
-            {
-                BotStop();
-            }
-            else
-            {
-                if (t_userName.Length > 0)
-                {
-                    if (t_streamKey.Length > 0)
-                    {
-                        worker = new BackgroundWorker();
-                        worker.DoWork += BotStart;
-                        worker.RunWorkerAsync();
-                    }
-                    else
-                    {
-                        System.Windows.Forms.MessageBox.Show("Please fill in settings the oAuth Twitch key!");
-                    }
-                }
-                else
-                {
-                    System.Windows.Forms.MessageBox.Show("Please fill in settings the user name!");
-                }
-            }
+            botConnect();
         }
 
         /// <summary>
