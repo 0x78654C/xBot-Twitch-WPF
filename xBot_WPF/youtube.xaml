@@ -23,7 +23,7 @@
             <WebBrowser  Visibility="Visible" Name="ytBrowser" HorizontalAlignment="Left" Height="413" Margin="10,50,0,0" VerticalAlignment="Top" Width="710"/>
         </StackPanel>
         <Button Name="playBTN" Style="{DynamicResource RoundCorner2}" Content="Play" HorizontalAlignment="Center" Margin="313,523,321,0" VerticalAlignment="Top" Width="96" Height="37" Foreground="#FFE1DDEE" Click="playBTN_Click"/>
-        <TextBox FontSize="14" adorners:Watermark.Text="Add YouTube link here for play..." TextAlignment="Center" Name="youtTubeLink" HorizontalAlignment="Left" Height="28" Margin="195,483,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="334">
+        <TextBox FontSize="14" adorners:Watermark.Text="Add YouTube link here for play..." TextAlignment="Center" Name="youtTubeLink" HorizontalAlignment="Left" Height="28" Margin="195,483,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="334" MaxLength="254">
             <adorners:Watermark.TextStyle>
                 <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="Opacity" Value="0.5" />

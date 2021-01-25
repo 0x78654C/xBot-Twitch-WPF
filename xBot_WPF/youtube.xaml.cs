@@ -29,6 +29,7 @@ namespace xBot_WPF
         readonly static string ytFile = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\data\youtube_link.txt";
         private static string ytControl = "0";
         private static string YtWin = "0";
+        private static string YtLink;
         MatchCollection matches;
         //-----------------------------------------
 
@@ -41,7 +42,7 @@ namespace xBot_WPF
             InitializeComponent();
 
             //load youtube link 
-            youtTubeLink.Text = File.ReadAllText(ytFile);
+            youtTubeLink.Text = Reg.regKey_Read(keyName, "YtLink");
             //--------------------------
 
             //Load control number from registry
@@ -135,11 +136,7 @@ namespace xBot_WPF
                 if (youtTubeLink.Text.Contains("youtube.") && matches.Count == 1)
                 {
                     reload_YT(youtTubeLink.Text);
-                    using (var sWriter = new StreamWriter(ytFile))
-                    {
-                        sWriter.Write(youtTubeLink.Text);
-                        sWriter.Close();
-                    }
+                    Reg.regKey_WriteSubkey(keyName, "YtLink", youtTubeLink.Text);
                     playBTN.Content = "Stop";
                 }
                 else

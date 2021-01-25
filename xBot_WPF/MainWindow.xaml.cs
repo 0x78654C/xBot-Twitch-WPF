@@ -77,12 +77,11 @@ namespace xBot_WPF
         //-------------------------------------------------
 
         //declare path to bot message
-        readonly static string botMsgFile = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\data\bot_message.txt";
-        private static string botMSG;
+         private static string StartMessage;
         //-------------------------------------------------
 
         //Media player declaration
-        readonly static string ytFile = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\data\youtube_link.txt";
+        private static string YtLink;
         private static string ytControl = "0";
         private static string YtWin = "0";
         //-------------------------------------------------
@@ -111,6 +110,15 @@ namespace xBot_WPF
         {
             InitializeComponent();
 
+
+            //Bot start message
+            this.Dispatcher.Invoke(() =>
+            {
+                logViewRTB.Document.Blocks.Clear();
+            });
+            logWrite("Welcome to xBot! The Twitch bot that was entirely build on live stream :D");
+            //----------------------------------------------
+
             //data directory check and create if not exists
             if (!Directory.Exists(dataDirectory))
             {
@@ -133,10 +141,10 @@ namespace xBot_WPF
             }
             //---------------------------------------------------
 
-            //check if bot message exits and if not we recreate
-            if (!File.Exists(botMsgFile))
+            //check if comands file exits and if not we recreate
+            if (!File.Exists(comDirectory))
             {
-                File.WriteAllText(botMsgFile, "");
+                File.WriteAllText(comDirectory, "");
             }
             //---------------------------------------------------
 
@@ -188,6 +196,16 @@ namespace xBot_WPF
             {
                 Reg.regKey_CreateKey(keyName, "YtWin", "0");
             }
+
+            if (Reg.regKey_Read(keyName, "StartMessage") == "")
+            {
+                Reg.regKey_CreateKey(keyName, "StartMessage", " ");
+            }
+
+            if (Reg.regKey_Read(keyName, "YtLink") == "")
+            {
+                Reg.regKey_CreateKey(keyName, "YtLink", " ");
+            }
             //-----------------------------------------
 
 
@@ -213,6 +231,8 @@ namespace xBot_WPF
             ytControl = Reg.regKey_Read(keyName, "YTControl");
             weatherKey = Reg.regKey_Read(keyName, "WeatherMSG");
             YtWin = Reg.regKey_Read(keyName, "YtWin");
+            StartMessage = Reg.regKey_Read(keyName, "StartMessage");
+            YtLink= Reg.regKey_Read(keyName, "YtLink");
             #endregion
 
             //staus check timer start
@@ -228,6 +248,11 @@ namespace xBot_WPF
 
             //load upper twitch logo
             upperLogo.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/upper_logo.png"));
+            //-----------------------------------
+
+            //reset Youtube Controler and window on bot start in case of cras
+            Reg.regKey_WriteSubkey(keyName, "YTControl", "0");
+            Reg.regKey_WriteSubkey(keyName, "YtWin", "0");
             //-----------------------------------
         }
 
@@ -324,10 +349,10 @@ namespace xBot_WPF
 
         private void Client_OnJoinedChannel(object sender, OnJoinedChannelArgs e)
         {
-            botMSG = File.ReadAllText(botMsgFile);
-            logWrite("[Bot Start Message]: "+botMSG);
-            CLog.LogWrite(e.Channel + botMSG);
-            client.SendMessage(e.Channel, botMSG);
+
+            logWrite("[Bot Start Message]: "+StartMessage);
+            CLog.LogWrite(e.Channel + StartMessage);
+            client.SendMessage(e.Channel, StartMessage);
         }
 
         private void Client_OnMessageReceived(object sender, OnMessageReceivedArgs e)
@@ -507,13 +532,13 @@ namespace xBot_WPF
             //----------------------------
 
             //!yt command display play link
-            string ytLink = File.ReadAllText(ytFile);
+            
             if (ytControl == "1")
             {
                 if (e.ChatMessage.Message.Contains("!yt"))
                 {
-                    client.SendMessage(e.ChatMessage.Channel, "Now playing: " + ytLink);
-                    logWrite("[BOT] Now playing: " + ytLink);
+                    client.SendMessage(e.ChatMessage.Channel, "Now playing: " + YtLink);
+                    logWrite("[BOT] Now playing: " + YtLink);
                 }
             }
             else
@@ -675,6 +700,8 @@ namespace xBot_WPF
             ytControl = Reg.regKey_Read(keyName, "YTControl");
             weatherKey = Reg.regKey_Read(keyName, "WeatherMSG");
             YtWin = Reg.regKey_Read(keyName, "YtWin");
+            StartMessage = Reg.regKey_Read(keyName, "StartMessage");
+            YtLink = Reg.regKey_Read(keyName, "YtLink");
             //-----------------------------------
 
             if (client.IsConnected)

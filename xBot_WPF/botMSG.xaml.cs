@@ -22,25 +22,15 @@ namespace xBot_WPF
     public partial class botMSG : Window
     {
         //declare variables
-        private static string BotMSGFile=Directory.GetCurrentDirectory()+ @"\data\bot_message.txt";
+        private static string keyName = "xBot";
         //-----------------------------------------
 
         public botMSG()
         {
             InitializeComponent();
             //check message file and display on textbox
-            if (File.Exists(BotMSGFile))
-            {
-                botMSGtxt.Text = File.ReadAllText(BotMSGFile);
-
-            }
-            else
-            {
-                MessageBox.Show("File "+BotMSGFile+" dose not exist!");
-                this.Close();
-            }
+            botMSGtxt.Text = Reg.regKey_Read(keyName, "StartMessage");
             //--------------------------------------------------------
-
 
         }
 
@@ -80,17 +70,11 @@ namespace xBot_WPF
         /// <param name="e"></param>
         private void saveBTNMSG_Click(object sender, RoutedEventArgs e)
         {
-            if (File.Exists(BotMSGFile))
-            {
-                File.WriteAllText(BotMSGFile, botMSGtxt.Text);
+
+            Reg.regKey_WriteSubkey(keyName, "StartMessage", botMSGtxt.Text);
                 MessageBox.Show("Message saved!"); 
                 this.Close();
-            }
-            else 
-            {
-                MessageBox.Show("File " + BotMSGFile + " dose not exist!");
-                this.Close();
-            }
+    
         }
     }
 }

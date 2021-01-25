@@ -44,7 +44,7 @@
             <Label Name="closeLBL" Content="x" FontSize="26" Foreground="#FFE1DDE2" HorizontalAlignment="Right" Margin="0,-3,10,0" VerticalAlignment="Top" Height="46" PreviewMouseDown="closeLBL_PreviewMouseDown"/>
             <Label Name="miniMizeLBL" Content="_" FontSize="26" Foreground="#FFE1DDE2" HorizontalAlignment="Right" Margin="0,-7,37,0" VerticalAlignment="Top" Height="46" PreviewMouseDown="miniMizeLBL_PreviewMouseDown" />
         </Grid>
-        <TextBox Name="botMSGtxt" Style="{StaticResource MyWaterMarkStyle}" FontSize="16" Tag="Enter here your start chat display message..." HorizontalAlignment="Left" Height="216" Margin="10,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="654"/>
+        <TextBox Name="botMSGtxt" Style="{StaticResource MyWaterMarkStyle}" FontSize="16" Tag="Enter here your start chat display message..." HorizontalAlignment="Left" Height="216" Margin="10,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="654" MaxLength="254"/>
         <Button Name="saveBTNMSG" Foreground="#FFE1DDEE" Style="{DynamicResource RoundCorner2}"  Content="Save Message" HorizontalAlignment="Left" Margin="262,307,0,0" VerticalAlignment="Top" Width="152" Height="41" Click="saveBTNMSG_Click"/>
 
     </Grid>
