@@ -3,7 +3,9 @@
 xBot - Twitch bot in csharp WPF
 
 Requirement: .NET Framework 4.7
-
+<p align="center">
+![alt text](https://github.com/0x78654C/xBot-Twitch-WPF/blob/main/xBot_WPF/l1.png?raw=true)
+</p>
 
 ![alt text](https://github.com/0x78654C/xBot-Twitch-WPF/blob/main/xBot_WPF/t1.png?raw=true)
 
