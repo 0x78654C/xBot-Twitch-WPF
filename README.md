@@ -1,4 +1,4 @@
-<div style="text-align:center">![alt text](https://github.com/0x78654C/xBot-Twitch-WPF/blob/main/xBot_WPF/l1.png?raw=true)</div>
+![alt text](https://github.com/0x78654C/xBot-Twitch-WPF/blob/main/xBot_WPF/l1.png?raw=true)
 
 # xBot-Twitch-WPF
  
