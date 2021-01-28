@@ -100,7 +100,7 @@ namespace xBot_WPF {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/xBot_WPF;component/about.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/xBot;component/about.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\about.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

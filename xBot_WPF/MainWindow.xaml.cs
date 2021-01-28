@@ -35,9 +35,23 @@ using System.ComponentModel;
 
 namespace xBot_WPF
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    /*
+       Description: This a simple Twitch bot created with passion and fun entirely live on steam.
+       Is based on https://github.com/TwitchLib/TwitchLib 
+
+
+       This app is distributed under the MIT License.
+       Copyright © 2021 0x78654C. All rights reserved.
+
+       THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+       IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+       FITNESS FOR A PARTICULAR PURPOSE AND NON INFRINGEMENT. IN NO EVENT SHALL THE
+       AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+       LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+       OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+       SOFTWARE.
+     */
+
     public partial class MainWindow : Window
     {
         //declare twitch client variable
@@ -546,7 +560,7 @@ namespace xBot_WPF
                         if (cn.Length > 0)
                         {
                             client.SendMessage(e.ChatMessage.Channel, "The weather(Celsius) on " + cn + " is:" + Environment.NewLine + weatherForecast(cn));
-                             logWrite("[BOT] The weather(Celsius) on " + cn + " is:" + Environment.NewLine + weatherForecast(cn));
+                             logWrite("[BOT] The weather(Celsius) in " + cn + " is:" + Environment.NewLine + weatherForecast(cn));
                         }
                         else
                         {

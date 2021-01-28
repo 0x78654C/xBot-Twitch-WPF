@@ -58,7 +58,7 @@ namespace xBot_WPF {
             
             #line default
             #line hidden
-            System.Uri resourceLocater = new System.Uri("/xBot_WPF;component/app.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/xBot;component/app.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\App.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

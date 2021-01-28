@@ -122,10 +122,10 @@
                 <StackPanel>
                     <Grid Height="50" Background="#FFE1DDE2">
                         <Button x:Name="btnCloseMenu" BorderThickness="0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Background="Transparent" Height="30" Width="30" VerticalAlignment="top" HorizontalAlignment="Right" Click="btnCloseMenu_Click" Visibility="Collapsed">
-                            <materialDesign:PackIcon Background="#FFE1DDE2" Foreground="Black" Kind="ArrowLeft" />
+                            <materialDesign:PackIcon Background="#FFE1DDE2" Foreground="Black" Kind="ArrowLeft" Height="25" Width="25"/>
                         </Button>
                         <Button x:Name="btnOpenMenu" BorderThickness="0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"  Background="Transparent" Height="50" Width="50" VerticalAlignment="top" HorizontalAlignment="Center" Click="btnOpenMenu_Click">
-                            <materialDesign:PackIcon Background="#FFE1DDE2" Foreground="Black" Kind="Menu"/>
+                            <materialDesign:PackIcon Background="#FFE1DDE2" Foreground="Black" Kind="Menu" Height="25" Width="25"/>
                         </Button>
                     </Grid>
                     <ListViewItem ToolTip="Settings" Height="44" Foreground="#FFDCDCDC" FontSize="23" PreviewMouseDown="ListViewItem_PreviewMouseDown">
@@ -159,7 +159,7 @@
                     </ListViewItem>
                     <ListViewItem ToolTip="YoutTube Player" Height="44" Foreground="#FFDCDCDC" FontSize="23" PreviewMouseDown="ListViewItem_PreviewMouseDownYT">
                         <StackPanel Orientation="Horizontal" >
-                            <materialDesign:PackIcon Kind="Youtube" Margin="9" Width="25" Height="25" VerticalAlignment="Center"/>
+                            <materialDesign:PackIcon Kind="PlayArrow" Margin="9" Width="25" Height="25" VerticalAlignment="Center"/>
                             <TextBlock Text=" YouTube" VerticalAlignment="Center"/>
 
                         </StackPanel>
