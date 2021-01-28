@@ -17,7 +17,6 @@ https://github.com/TwitchLib/TwitchLib (for api connect)
 
 https://github.com/davcs86/csharp-uhwid (for oath hwid encrypt/decrypt)
 
-https://programm.top/en/c-sharp/algorithm/damerau-levenshtein-distance/ (for Damerau-Levenshtein distance algorithm)
 
 Project ongoing live on: https://www.twitch.tv/x_coding
 
@@ -33,6 +32,7 @@ Features:
     hardcoded !ss command for shout a streamer
     hardcoded !yt command for youtube current song played on xBot youtube player
     hardcoded !weather Weather Forecast command
-    hardcoded !gl for whishing good luck to some one in chat from you  
+    hardcoded !gl for whishing good luck to some one in chat from you
+    added Total Viewers online count on interface
 
 (more to come)
