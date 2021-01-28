@@ -89,7 +89,7 @@
                 <ColumnDefinition/>
                 <ColumnDefinition Width="0*"/>
             </Grid.ColumnDefinitions>
-            <RichTextBox Name="logViewRTB" IsReadOnly="True" HorizontalAlignment="Left" Height="632" Margin="50,50,0,0" VerticalAlignment="Top" Width="957" FontSize="16">
+            <RichTextBox Name="logViewRTB" IsReadOnly="True" HorizontalAlignment="Left" Height="602" Margin="50,50,0,0" VerticalAlignment="Top" Width="957" FontSize="16">
                 <FlowDocument>
                     <Paragraph>
                         <Run Text=""/>
@@ -110,7 +110,13 @@
                     </materialDesign:PopupBox>
                 </StackPanel>
                 <Label Name="miniMizeLBL" Content="_" PreviewMouseDown="miniMizeLBL_PreviewMouseDown" FontSize="25" Foreground="#FFE1DDE2" HorizontalAlignment="Left" Margin="942,-3,0,0" VerticalAlignment="Top"/>
-                <Image Name="upperLogo" Visibility="Visible" Source="pack://siteoforigin:,,,/Resources/upper_logo.png" HorizontalAlignment="Left" Height="44" Margin="377,3,0,0" VerticalAlignment="Top" Width="47"/>
+                <materialDesign:PackIcon Kind="Twitch" Margin="392,8,0,0" Width="37" Height="36" Foreground="#FFE1DDE2" RenderTransformOrigin="1.547,0.52"/>
+
+            </Grid>
+            <Grid VerticalAlignment="Top" Height="30" Background="#FF690FC2" Margin="0,652,0,0" >
+                <materialDesign:PackIcon Kind="Person" Margin="791,2,0,0" Width="25" Height="26" Foreground="#FFE1DDE2" RenderTransformOrigin="1.547,0.52"/>
+                <Label Name="viewLvl" Content="Total Viewers:"  FontSize="18" Foreground="#FFE1DDE2" HorizontalAlignment="Left" Margin="814,-3,0,0" VerticalAlignment="Top"/>
+                <Label Name="viewersLbL" Content="0"  FontSize="18" Foreground="#FFE1DDE2" HorizontalAlignment="Left" Margin="924,-2,0,-1" VerticalAlignment="Top"/>
             </Grid>
             <Grid x:Name="GridMenu" HorizontalAlignment="Left"  Width="50" Background="#FF450881" >
                 <StackPanel>
@@ -153,7 +159,7 @@
                     </ListViewItem>
                     <ListViewItem ToolTip="YoutTube Player" Height="44" Foreground="#FFDCDCDC" FontSize="23" PreviewMouseDown="ListViewItem_PreviewMouseDownYT">
                         <StackPanel Orientation="Horizontal" >
-                            <materialDesign:PackIcon Kind="PlayArrow" Margin="9" Width="25" Height="25" VerticalAlignment="Center"/>
+                            <materialDesign:PackIcon Kind="Youtube" Margin="9" Width="25" Height="25" VerticalAlignment="Center"/>
                             <TextBlock Text=" YouTube" VerticalAlignment="Center"/>
 
                         </StackPanel>

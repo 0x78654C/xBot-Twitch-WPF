@@ -21,6 +21,9 @@ using TwitchLib.Client.Extensions;
 using TwitchLib.Client.Models;
 using TwitchLib.Communication.Clients;
 using TwitchLib.Communication.Models;
+using TwitchLib.Api;
+using TwitchLib.Api.Helix.Models.Users;
+using TwitchLib.Api.V5.Models.Subscriptions;
 using Ini;
 using System.IO;
 using System.Reflection;
@@ -109,6 +112,8 @@ namespace xBot_WPF
         //Declare mutex variable for startup instance check
         Mutex myMutex;
         //---------------------------------
+
+        int Viewers=0;
 
         public MainWindow()
         {
@@ -252,14 +257,13 @@ namespace xBot_WPF
             startBotBTN.Visibility = Visibility.Hidden;
             //----------------------------------
 
-            //load upper twitch logo
-            upperLogo.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/upper_logo.png"));
-            //-----------------------------------
 
             //reset Youtube Controler and window on bot start in case of cras
             Reg.regKey_WriteSubkey(keyName, "YTControl", "0");
             Reg.regKey_WriteSubkey(keyName, "YtWin", "0");
             //-----------------------------------
+
+
         }
 
 
@@ -276,6 +280,8 @@ namespace xBot_WPF
                 App.Current.Shutdown();
             }
         }
+
+      
 
         /// <summary>
         /// Log writer
@@ -306,7 +312,7 @@ namespace xBot_WPF
                 logViewRTB.Document.Blocks.Clear();
             });
             date = DateTime.Now.ToString("yyyy MM dd HH:mm:ss");
-            logWrite("[" + date + "] xBot Connecting....");
+            logWrite("[" + date + "] xBot connecting to "+t_userName +" channel....");
            
             ConnectionCredentials credentials = new ConnectionCredentials(t_userName, t_streamKey,null,true);
             var clientOptions = new ClientOptions
@@ -324,6 +330,7 @@ namespace xBot_WPF
             client.OnNewSubscriber += Client_OnNewSubscriber;
             client.OnConnected += Client_OnConnected;
             client.OnUserJoined += Client_OnUserJoinedArgs;
+            client.OnUserLeft += Client_OnUserLeftArgs;
             client.Connect();
             this.Dispatcher.Invoke(() =>
             {
@@ -352,6 +359,8 @@ namespace xBot_WPF
                 logWrite("[" + date + "] xBot Disconncted!");
                 CLog.LogWrite("[" + date + "] xBot Disconncted!");
                 startBotBTN.Content = "START";
+                Viewers = 0;
+                viewersLbL.Content = "0";
             }
         }
 
@@ -375,6 +384,8 @@ namespace xBot_WPF
             CLog.LogWrite(e.Channel + StartMessage);
             client.SendMessage(e.Channel, StartMessage);
         }
+
+        
 
         private void Client_OnMessageReceived(object sender, OnMessageReceivedArgs e)
         {
@@ -596,9 +607,18 @@ namespace xBot_WPF
             {
                 client.SendMessage(e.Channel, $"Welcome to my channel {e.Username}. and thank you for joining. For more commands type !help");
             }
-
+            Viewers++;
         }
 
+        private void Client_OnUserLeftArgs(object sender, OnUserLeftArgs e)
+        {
+            if (Viewers > 0)
+            {
+                Viewers--;
+            }
+        }
+
+        
         #endregion
 
 
@@ -701,6 +721,9 @@ namespace xBot_WPF
         /// <param name="e"></param>
         private void StatusLoadIcon(object sender, EventArgs e)
         {
+            //Display total users from stream
+            viewersLbL.Content = Viewers.ToString();
+            //-----------------------------------
 
             //read variables form registry
             t_userName = Reg.regKey_Read(keyName, "UserName");
@@ -850,9 +873,16 @@ namespace xBot_WPF
         //closing all windows
         private void Window_Closed(object sender, EventArgs e)
         {
-            if (yT.IsVisible)
+            try
             {
-                yT.Close();
+                if (yT.IsVisible)
+                {
+                    yT.Close();
+                }
+            }
+            catch
+            {
+
             }
         }
 

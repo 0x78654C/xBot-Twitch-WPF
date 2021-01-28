@@ -606,3 +606,27 @@ x_codingHey, I'm xBot, a twitch bot build entirely on a twitch stream :D !
 1/25/2021 9:17:13 PM: x_coding - Received: :x_coding!x_coding@x_coding.tmi.twitch.tv JOIN #x_coding
 1/25/2021 9:18:22 PM: x_coding - Received: :extramoar!extramoar@extramoar.tmi.twitch.tv PART #x_coding
 1/25/2021 9:18:22 PM: x_coding - Received: :bibiethumps!bibiethumps@bibiethumps.tmi.twitch.tv PART #x_coding
+1/25/2021 9:20:27 PM: x_coding - Received: :extramoar!extramoar@extramoar.tmi.twitch.tv JOIN #x_coding
+1/25/2021 9:20:27 PM: x_coding - Received: :bibiethumps!bibiethumps@bibiethumps.tmi.twitch.tv JOIN #x_coding
+1/25/2021 9:20:44 PM: x_coding - Received: PING :tmi.twitch.tv
+1/25/2021 9:20:44 PM: x_coding - Writing: PONG
+1/25/2021 9:23:09 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=09ae4420a4aab3718c9c5ed909036227;color=;display-name=x_Coding;emotes=;flags=;id=64c6e950-9baf-4f80-b900-b7d0e835330d;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611609936968;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :!discord
+1/25/2021 9:23:09 PM: x_coding - Received: @badge-info=;badges=moderator/1;color=;display-name=xCodingBOT;emote-sets=0;mod=1;subscriber=0;user-type=mod :tmi.twitch.tv USERSTATE #x_coding
+1/25/2021 9:23:11 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=051d2cb67e957809b8b81180349613d5;color=;display-name=x_Coding;emotes=;flags=;id=d97e78b8-eead-4e84-9e54-7a5b6734f01f;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611609938853;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :!git
+1/25/2021 9:23:11 PM: x_coding - Received: @badge-info=;badges=moderator/1;color=;display-name=xCodingBOT;emote-sets=0;mod=1;subscriber=0;user-type=mod :tmi.twitch.tv USERSTATE #x_coding
+1/25/2021 9:24:36 PM: x_coding - Received: :anotherttvviewer!anotherttvviewer@anotherttvviewer.tmi.twitch.tv PART #x_coding
+1/25/2021 9:24:36 PM: x_coding - Received: :havethis2!havethis2@havethis2.tmi.twitch.tv PART #x_coding
+1/25/2021 9:25:15 PM: x_coding - Received: PING :tmi.twitch.tv
+1/25/2021 9:25:15 PM: x_coding - Writing: PONG
+1/25/2021 9:27:37 PM: x_coding - Received: :havethis2!havethis2@havethis2.tmi.twitch.tv JOIN #x_coding
+1/25/2021 9:27:37 PM: x_coding - Received: :anotherttvviewer!anotherttvviewer@anotherttvviewer.tmi.twitch.tv JOIN #x_coding
+1/25/2021 9:29:15 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=e88ee55fc14572b90aa5b154248770b6;color=;display-name=x_Coding;emotes=;flags=;id=ebc7c1e7-8574-49cf-b096-75c3344d8571;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611610303143;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :!help
+1/25/2021 9:29:15 PM: x_coding - Received: @badge-info=;badges=moderator/1;color=;display-name=xCodingBOT;emote-sets=0;mod=1;subscriber=0;user-type=mod :tmi.twitch.tv USERSTATE #x_coding
+1/25/2021 9:29:19 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=257c78ca2c44cb03efdc1786cff7969d;color=;display-name=x_Coding;emotes=;flags=;id=5f544804-fada-4086-8a08-b861a6295f6c;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611610306972;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :!project
+1/25/2021 9:29:19 PM: x_coding - Received: @badge-info=;badges=moderator/1;color=;display-name=xCodingBOT;emote-sets=0;mod=1;subscriber=0;user-type=mod :tmi.twitch.tv USERSTATE #x_coding
+1/25/2021 9:29:31 PM: x_coding - Received: PING :tmi.twitch.tv
+1/25/2021 9:29:31 PM: x_coding - Writing: PONG
+1/25/2021 9:29:35 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=22975620d48fe779598d0bd43e9600a4;color=;display-name=x_Coding;emotes=;flags=;id=364a2548-41d1-4384-a664-b182426944c1;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611610323362;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :good night/day all
+1/25/2021 9:29:40 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=8caed93cee203a93347ebfd18a46e704;color=;display-name=x_Coding;emotes=;flags=;id=9ca52060-ff7c-46f9-b456-46dd57e4ebcb;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611610328117;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :cya on next steam
+1/25/2021 9:29:59 PM: x_coding - Disconnect Twitch Chat Client...
+[2021 01 25 23:29:59] xBot Disconncted!
