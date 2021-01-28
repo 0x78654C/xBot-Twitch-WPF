@@ -35,15 +35,18 @@ namespace xBot_WPF
             //Load and display username, streamkey and dark mode control from registry
 
             t_userName = Reg.regKey_Read(keyName, "UserName");
-
-            try
+            t_streamKey = Reg.regKey_Read(keyName, "StreamKey");
+            if (t_streamKey != "")
             {
+                try
+                {
 
-                t_streamKey = Encryption._decryptData(Reg.regKey_Read(keyName, "StreamKey"));
-            }
-            catch (Exception)
-            {
-                //we bypass the error if no data found in ini for aouth key
+                    t_streamKey = Encryption._decryptData(Reg.regKey_Read(keyName, "StreamKey"));
+                }
+                catch
+                {
+                    // MessageBox.Show(e.ToString());
+                }
             }
 
 
@@ -140,11 +143,25 @@ namespace xBot_WPF
             Reg.regKey_WriteSubkey(keyName, "UserName", userNameTXT.Text);
 
             //sotre oauth key in regkey
-            Reg.regKey_WriteSubkey(keyName, "StreamKey", Encryption._encryptData(streamOauthKeyTXT.Password));
+            if (streamOauthKeyTXT.Password != "")
+            {
+                Reg.regKey_WriteSubkey(keyName, "StreamKey", Encryption._encryptData(streamOauthKeyTXT.Password));
+            }
+            else
+            {
+                
+                Reg.regKey_WriteSubkey(keyName, "StreamKey", streamOauthKeyTXT.Password);
+            }
 
             //sotre weather API key in regkey
-            Reg.regKey_WriteSubkey(keyName, "WeatherAPIKey", Encryption._encryptData(weatherAPIKeyTXT.Password));
-
+            if (weatherAPIKeyTXT.Password != "")
+            {
+                Reg.regKey_WriteSubkey(keyName, "WeatherAPIKey", Encryption._encryptData(weatherAPIKeyTXT.Password));
+            }
+            else
+            {
+                Reg.regKey_WriteSubkey(keyName, "WeatherAPIKey", weatherAPIKeyTXT.Password);
+            }
             MessageBox.Show("Settings saved!");
             this.Close();
         }

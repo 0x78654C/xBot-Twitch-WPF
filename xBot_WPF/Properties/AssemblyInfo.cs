@@ -8,11 +8,11 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("xBot")]
-[assembly: AssemblyDescription("Simple Twitch bot based on: https://github.com/TwitchLib/TwitchLib. Made on C#")]
+[assembly: AssemblyDescription("Simple Twitch bot based on: https://github.com/TwitchLib/TwitchLib. Made on C#. The bot was entirely made of fun as hobby on stream.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("xBot_WPF")]
-[assembly: AssemblyCopyright("Copyright ©  2021")]
+[assembly: AssemblyCopyright("Copyright ©  2021 0x78654c")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

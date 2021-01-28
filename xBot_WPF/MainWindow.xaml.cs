@@ -547,14 +547,14 @@ namespace xBot_WPF
             //----------------------------
 
             //weather data display display
-            if (weatherKey == "1")
+            if (weatherKey == "1" && apiKey != "")
             {
                 weatheCond = e.ChatMessage.Message;
                 try
                 {
                     string[] we = weatheCond.Split(' ');
                     string cn = string.Empty;
-                    if (we[0] == "!weather")
+                    if (we[0] == "!weather") 
                     {
                         cn = we[1];
                         if (cn.Length > 0)
@@ -569,11 +569,16 @@ namespace xBot_WPF
                         }
                     }
                 }
-                catch (Exception ex)
+                catch
                 {
                     client.SendMessage(e.ChatMessage.Channel, "Check the City name please!");
                     logWrite("[BOT] Check the City name please!");
                 }
+            }
+            else
+            {
+                client.SendMessage(e.ChatMessage.Channel, "Weather command is disabled for the moment!");
+                logWrite("[BOT] Weather command is disabled for the moment!");
             }
             //----------------------------
 
@@ -822,12 +827,12 @@ namespace xBot_WPF
                         }
                         else
                         {
-                            logWrite("Please fill in settings the oAuth Twitch key!");
+                            logWrite("Please fill in settings your oAuth Twitch key generated from https://twitchapps.com/tmi/ !");
                         }
                     }
                     else
                     {
-                        logWrite("Please fill in settings the user name!");
+                        logWrite("Please fill in settings the user name for the Twitch Channel that you want to connect!");
                     }
                 }
             }

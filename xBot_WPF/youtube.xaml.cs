@@ -26,10 +26,7 @@ namespace xBot_WPF
     {
 
         //Declare path to youtube link file
-        readonly static string ytFile = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\data\youtube_link.txt";
         private static string ytControl = "0";
-        private static string YtWin = "0";
-        private static string YtLink;
         MatchCollection matches;
         //-----------------------------------------
 
