@@ -4,12 +4,14 @@
  
 xBot - Twitch bot in csharp WPF
 
-Requirement: .NET Framework 4.7
 
 
 ![alt text](https://github.com/0x78654C/xBot-Twitch-WPF/blob/main/xBot_WPF/t1.png?raw=true)
 
 ![alt text](https://github.com/0x78654C/xBot-Twitch-WPF/blob/main/xBot_WPF/t2.png?raw=true)
+
+
+This project was made entirely on stream as fun. I'm not a professional programmer and I do this as a hobby but when I put something in my mind I try solve/create it.
 
 using following libs:
 
@@ -17,6 +19,7 @@ https://github.com/TwitchLib/TwitchLib (for api connect)
 
 https://github.com/davcs86/csharp-uhwid (for oath hwid encrypt/decrypt)
 
+Requirement: .NET Framework 4.7
 
 Project ongoing live on: https://www.twitch.tv/x_coding
 
@@ -33,6 +36,6 @@ Features:
     hardcoded !yt command for youtube current song played on xBot youtube player
     hardcoded !weather Weather Forecast command
     hardcoded !gl for whishing good luck to some one in chat from you
-    added Total Viewers online count on interface
+    total viewers online count on interface
 
 (more to come)
