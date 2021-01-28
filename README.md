@@ -17,7 +17,6 @@ https://github.com/TwitchLib/TwitchLib (for api connect)
 
 https://github.com/davcs86/csharp-uhwid (for oath hwid encrypt/decrypt)
 
-https://programm.top/en/c-sharp/algorithm/damerau-levenshtein-distance/ (for Damerau-Levenshtein distance algorithm)
 
 Project ongoing live on: https://www.twitch.tv/x_coding
 
