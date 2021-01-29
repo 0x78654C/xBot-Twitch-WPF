@@ -68,6 +68,8 @@ namespace xBot_WPF
         readonly static string keyName = "xBot";
         private static string weatherKey = "0";
         private static string botMSGKey = "0";
+        private static string botMSGControl = "0";
+        private static string weatherUnits = "0";
         //------------------------------------------
 
         //declare twitch credential info
@@ -174,6 +176,8 @@ namespace xBot_WPF
             //---------------------------------------------------
 
 
+            
+
             //Checking if reg keys and subkeys exist and if not we recreate
 
             if (Reg.regKey_Read(keyName, "UserName") == "")
@@ -231,6 +235,16 @@ namespace xBot_WPF
             {
                 Reg.regKey_CreateKey(keyName, "YtLink", " ");
             }
+
+            if (Reg.regKey_Read(keyName, "botMSGControl") == "")
+            {
+                Reg.regKey_CreateKey(keyName, "botMSGControl", "0");
+            }
+
+            if (Reg.regKey_Read(keyName, "weatherUnits") == "")
+            {
+                Reg.regKey_CreateKey(keyName, "weatherUnits", "0");
+            }
             //-----------------------------------------
 
 
@@ -258,6 +272,8 @@ namespace xBot_WPF
             YtWin = Reg.regKey_Read(keyName, "YtWin");
             StartMessage = Reg.regKey_Read(keyName, "StartMessage");
             YtLink= Reg.regKey_Read(keyName, "YtLink");
+            botMSGControl = Reg.regKey_Read(keyName, "botMSGControl");
+            weatherUnits = Reg.regKey_Read(keyName, "weatherUnits");
             #endregion
 
             //staus check timer start
@@ -353,8 +369,8 @@ namespace xBot_WPF
             //we check if bot is connected and display the log info
             if (client.IsConnected)
             {
-                logWrite("[" + date + "] xBot Connected to "+t_userName +" channel!");
-                CLog.LogWrite("[" + date + "] xBot Connected!");//we save to log file
+                logWrite("[" + date + "] xBot Connected to "+t_userName +" channel !");
+
             }
         }
 
@@ -381,22 +397,24 @@ namespace xBot_WPF
         #region Client events
         private void Client_OnLog(object sender, OnLogArgs e)
         {
-           // logWrite($"{e.DateTime.ToString()}: {e.BotUsername} - {e.Data}");
-            CLog.LogWrite($"{e.DateTime.ToString()}: {e.BotUsername} - {e.Data}");
+          //  CLog.LogWrite($"{e.DateTime.ToString()}: {e.BotUsername} - {e.Data}");
+          //for future work
         }
 
         private void Client_OnConnected(object sender, OnConnectedArgs e)
         {
-           // logWrite($"Connected to {e.AutoJoinChannel}");
-            CLog.LogWrite($"Connected to {e.AutoJoinChannel}");
+            date = DateTime.Now.ToString("yyyy MM dd HH:mm:ss");
+            CLog.LogWrite("[" + date + $"] Connected to {e.AutoJoinChannel} channel !");
         }
 
         private void Client_OnJoinedChannel(object sender, OnJoinedChannelArgs e)
         {
-
-            logWrite("[Bot Start Message]: "+StartMessage);
-            CLog.LogWrite(e.Channel + StartMessage);
-            client.SendMessage(e.Channel, StartMessage);
+            if (botMSGControl == "1")
+            {
+                logWrite("[Bot Start Message]: " + StartMessage);
+                CLog.LogWrite("[Bot Start Message]: " + StartMessage);
+                client.SendMessage(e.Channel, StartMessage);
+            }
         }
 
         
@@ -408,6 +426,7 @@ namespace xBot_WPF
             if (e.ChatMessage.Message.Length > 0)
             {
                 logWrite("["+date2+"] "+e.ChatMessage.Username + " : " + e.ChatMessage.Message);
+                CLog.LogWrite("[" + date2 + "] " + e.ChatMessage.Username + " : " + e.ChatMessage.Message);
             }
             //-----------
 
@@ -424,6 +443,7 @@ namespace xBot_WPF
                         if (e.ChatMessage.Message.Contains(bad))
                             client.TimeoutUser(e.ChatMessage.Channel, e.ChatMessage.Username, TimeSpan.FromMinutes(timeBan), "Bad word ban! " + Convert.ToString(timeBan) + " minute(s) timeout!");
                             logWrite(e.ChatMessage.Channel +" | "+ e.ChatMessage.Username+" | "+ TimeSpan.FromMinutes(timeBan)+" | "+ "[BOT] Bad word ban! " + Convert.ToString(timeBan) + " minute(s) timeout!");
+                            CLog.LogWrite(e.ChatMessage.Channel + " | " + e.ChatMessage.Username + " | " + TimeSpan.FromMinutes(timeBan) + " | " + "[BOT] Bad word ban! " + Convert.ToString(timeBan) + " minute(s) timeout!");
                     }
                 }
 
@@ -442,6 +462,7 @@ namespace xBot_WPF
                     {
                         client.SendMessage(e.ChatMessage.Channel, s[1]);
                         logWrite("[BOT] " + s[1]);
+                        CLog.LogWrite("[BOT] " + s[1]);
                     }
                                             
                 }
@@ -467,6 +488,7 @@ namespace xBot_WPF
                 {
                     client.SendMessage(e.ChatMessage.Channel, "List of commands is: " + listCMD + "; !yt; !weather; !ss");
                     logWrite("[BOT] List of commands is: " + listCMD + "; !yt; !weather; !ss");
+                    CLog.LogWrite("[BOT] List of commands is: " + listCMD + "; !yt; !weather; !ss");
                 }
             }
             else
@@ -475,6 +497,7 @@ namespace xBot_WPF
                 {
                     client.SendMessage(e.ChatMessage.Channel, "List of commands is: " + listCMD + "; !yt");
                     logWrite("[BOT] List of commands is: " + listCMD + "; !yt");
+                    CLog.LogWrite("[BOT] List of commands is: " + listCMD + "; !yt");
                 }
             }
             //----------------------------
@@ -494,17 +517,20 @@ namespace xBot_WPF
                             {
                                 client.SendMessage(e.ChatMessage.Channel, "Shoutout for @" + lS[1] + " which is also a streamer! https://twitch.tv/" + lS[1]);
                                 logWrite("[BOT] Shoutout for @" + lS[1] + " which is also a streamer! https://twitch.tv/" + lS[1]);
+                                CLog.LogWrite("[BOT] Shoutout for @" + lS[1] + " which is also a streamer! https://twitch.tv/" + lS[1]);
                             }
                             else
                             {
                                 client.SendMessage(e.ChatMessage.Channel, "You must add the name of streamer for shoutout with @ character!");
                                 logWrite("[BOT] You must add the name of streamer for shoutout with @ character!");
+                                CLog.LogWrite("[BOT] You must add the name of streamer for shoutout with @ character!");
                             }
                         }
                         catch
                         {
                             client.SendMessage(e.ChatMessage.Channel, "[BOT] You must add the name of streamer for shoutout with @ character!");
                             logWrite("[BOT] You must add the name of streamer for shoutout with @ character!");
+                            CLog.LogWrite("[BOT] You must add the name of streamer for shoutout with @ character!");
 
                         }
                     }
@@ -529,24 +555,27 @@ namespace xBot_WPF
                             {
                                 client.SendMessage(e.ChatMessage.Channel, e.ChatMessage.Username + " wishes " + lS[1] + " good luck. May you succeed in whatever you're planning to do!");
                                 logWrite("[BOT] " + e.ChatMessage.Username + " wishes " + lS[1] + " good luck. May you succeed in whatever you're planning to do!");
+                                CLog.LogWrite("[BOT] " + e.ChatMessage.Username + " wishes " + lS[1] + " good luck. May you succeed in whatever you're planning to do!");
                             }
                             else
                             {
                                 client.SendMessage(e.ChatMessage.Channel, "You must add the name of chatter for good luck command with @ character!");
                                 logWrite("[BOT] You must add the name of chatter for good luck command with @ character!");
+                                CLog.LogWrite("[BOT] You must add the name of chatter for good luck command with @ character!");
                             }
                         }
                         catch
                         {
                             client.SendMessage(e.ChatMessage.Channel, "[BOT] You must add the name of chatter for good luck command with @ character!");
                             logWrite("[BOT] You must add the name of chatter for good luck command with @ character!");
+                            CLog.LogWrite("[BOT] You must add the name of chatter for good luck command with @ character!");
                         }
                     }
                 }
             }
             //----------------------------
 
-            //weather data display display
+            //weather data display 
             if (weatherKey == "1" && apiKey != "")
             {
                 weatheCond = e.ChatMessage.Message;
@@ -559,13 +588,25 @@ namespace xBot_WPF
                         cn = we[1];
                         if (cn.Length > 0)
                         {
-                            client.SendMessage(e.ChatMessage.Channel, "The weather(Celsius) on " + cn + " is:" + Environment.NewLine + weatherForecast(cn));
-                             logWrite("[BOT] The weather(Celsius) in " + cn + " is:" + Environment.NewLine + weatherForecast(cn));
+                            if (weatherUnits == "1")
+                            {
+                                client.SendMessage(e.ChatMessage.Channel, "The weather(Celsius) on " + cn + " is:" + Environment.NewLine + weatherForecast(cn));
+                                logWrite("[BOT] The weather(Celsius) in " + cn + " is:" + Environment.NewLine + weatherForecast(cn));
+                                CLog.LogWrite("[BOT] The weather(Celsius) in " + cn + " is:" + Environment.NewLine + weatherForecast(cn));
+                            }
+                            else
+                            {
+                                client.SendMessage(e.ChatMessage.Channel, "The weather(Fahrenheit) on " + cn + " is:" + Environment.NewLine + weatherForecast(cn));
+                                logWrite("[BOT] The weather(Fahrenheit) in " + cn + " is:" + Environment.NewLine + weatherForecast(cn));
+                                CLog.LogWrite("[BOT] The weather(Fahrenheit) in " + cn + " is:" + Environment.NewLine + weatherForecast(cn));
+
+                            }
                         }
                         else
                         {
                             client.SendMessage(e.ChatMessage.Channel, "Weathr not avaible on this City or API Key tries excided!");
                             logWrite("[BOT] Weathr not avaible on this City or API Key tries excided!");
+                            CLog.LogWrite("[BOT] Weathr not avaible on this City or API Key tries excided!");
                         }
                     }
                 }
@@ -573,12 +614,14 @@ namespace xBot_WPF
                 {
                     client.SendMessage(e.ChatMessage.Channel, "Check the City name please!");
                     logWrite("[BOT] Check the City name please!");
+                    CLog.LogWrite("[BOT] Check the City name please!");
                 }
             }
             else
             {
                 client.SendMessage(e.ChatMessage.Channel, "Weather command is disabled for the moment!");
                 logWrite("[BOT] Weather command is disabled for the moment!");
+                CLog.LogWrite("[BOT] Weather command is disabled for the moment!");
             }
             //----------------------------
 
@@ -590,6 +633,7 @@ namespace xBot_WPF
                 {
                     client.SendMessage(e.ChatMessage.Channel, "Now playing: " + YtLink);
                     logWrite("[BOT] Now playing: " + YtLink);
+                    CLog.LogWrite("[BOT] Now playing: " + YtLink);
                 }
             }
             else
@@ -598,6 +642,7 @@ namespace xBot_WPF
                 {
                     client.SendMessage(e.ChatMessage.Channel, "Nothing playing at the moment! ");
                     logWrite("[BOT] Nothing playing at the moment! ");
+                    CLog.LogWrite("[BOT] Nothing playing at the moment! ");
                 }
             }
             //----------------------------
@@ -608,15 +653,24 @@ namespace xBot_WPF
             if (e.WhisperMessage.Username == "my_friend")
             {
                 client.SendWhisper(e.WhisperMessage.Username, "Hey! Whispers are so cool!!");
+                CLog.LogWrite(e.WhisperMessage.Username+ ": Hey! Whispers are so cool!! ");
             }
         }
 
         private void Client_OnNewSubscriber(object sender, OnNewSubscriberArgs e)
         {
             if (e.Subscriber.SubscriptionPlan == SubscriptionPlan.Prime)
+            {
                 client.SendMessage(e.Channel, $"Welcome {e.Subscriber.DisplayName} to the substers! You just earned 500 points! So kind of you to use your Twitch Prime on this channel!");
+                logWrite(e.Channel + $":  Welcome {e.Subscriber.DisplayName} to the substers! You just earned 500 points! So kind of you to use your Twitch Prime on this channel!");
+                CLog.LogWrite(e.Channel + $":  Welcome {e.Subscriber.DisplayName} to the substers! You just earned 500 points! So kind of you to use your Twitch Prime on this channel!");
+            }
             else
+            {
                 client.SendMessage(e.Channel, $" Welcome {e.Subscriber.DisplayName} to the substers! You just earned 500 points!");
+                logWrite(e.Channel+ $":  Welcome {e.Subscriber.DisplayName} to the substers! You just earned 500 points!");
+                CLog.LogWrite(e.Channel + $":  Welcome {e.Subscriber.DisplayName} to the substers! You just earned 500 points!");
+            }
         }
 
         private void Client_OnUserJoinedArgs(object sender, OnUserJoinedArgs e)
@@ -625,6 +679,8 @@ namespace xBot_WPF
             if (botMSGKey == "1")
             {
                 client.SendMessage(e.Channel, $"Welcome to my channel {e.Username}. and thank you for joining. For more commands type !help");
+                logWrite(e.Channel + $"  Welcome to my channel {e.Username}. and thank you for joining. For more commands type !help");
+                CLog.LogWrite(e.Channel + $"  Welcome to my channel {e.Username}. and thank you for joining. For more commands type !help");
             }
             Viewers++;
         }
@@ -657,7 +713,14 @@ namespace xBot_WPF
                     //Open weather map API link with celsius 
                     // TODO: will decide if I put switch for ferenhait
                     string html = @"https://api.openweathermap.org/data/2.5/weather?q={0}&appid={1}&units=metric";
-
+                    if (weatherUnits == "1")
+                    {
+                        html = @"https://api.openweathermap.org/data/2.5/weather?q={0}&appid={1}&units=metric";
+                    }
+                    else
+                    {
+                        html = @"https://api.openweathermap.org/data/2.5/weather?q={0}&appid={1}&units=imperial";
+                    }
 
                     HttpResponseMessage response = clientH.GetAsync(string.Format(html, CityName, Encryption._decryptData(apiKey))).GetAwaiter().GetResult();
                     response.EnsureSuccessStatusCode();
@@ -765,6 +828,8 @@ namespace xBot_WPF
             YtWin = Reg.regKey_Read(keyName, "YtWin");
             StartMessage = Reg.regKey_Read(keyName, "StartMessage");
             YtLink = Reg.regKey_Read(keyName, "YtLink");
+            botMSGControl = Reg.regKey_Read(keyName, "botMSGControl");
+            weatherUnits = Reg.regKey_Read(keyName, "weatherUnits");
             //-----------------------------------
 
             if (client.IsConnected)
@@ -809,31 +874,37 @@ namespace xBot_WPF
         {
             if (Network.inetCK())//check internet connection first
             {
-                
-                if (client.IsConnected)
+                if (Network.portCheck("tmi.twitch.tv", 80))//check twithc server
                 {
-                    BotStop();
-                }
-                else
-                {
-                    if (t_userName.Length > 0)
+                    if (client.IsConnected)
                     {
-
-                        if (t_streamKey.Length > 0)
-                        {
-                            worker = new BackgroundWorker();
-                            worker.DoWork += BotStart;
-                            worker.RunWorkerAsync();
-                        }
-                        else
-                        {
-                            logWrite("Please fill in settings your oAuth Twitch key generated from https://twitchapps.com/tmi/ !");
-                        }
+                        BotStop();
                     }
                     else
                     {
-                        logWrite("Please fill in settings the user name for the Twitch Channel that you want to connect!");
+                        if (t_userName.Length > 0)
+                        {
+
+                            if (t_streamKey.Length > 0)
+                            {
+                                worker = new BackgroundWorker();
+                                worker.DoWork += BotStart;
+                                worker.RunWorkerAsync();
+                            }
+                            else
+                            {
+                                logWrite("Please fill in settings your oAuth Twitch key generated from https://twitchapps.com/tmi/ !");
+                            }
+                        }
+                        else
+                        {
+                            logWrite("Please fill in settings the user name for the Twitch Channel that you want to connect!");
+                        }
                     }
+                }
+                else
+                {
+                    logWrite("Twitch tmi.twitch.tv server is down!");
                 }
             }
             else

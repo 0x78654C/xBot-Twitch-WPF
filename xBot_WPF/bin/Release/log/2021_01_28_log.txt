@@ -110,3 +110,45 @@ x_codingHey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
 1/28/2021 8:31:59 PM: x_coding - Received: :x_coding!x_coding@x_coding.tmi.twitch.tv JOIN #x_coding
 1/28/2021 8:35:30 PM: x_coding - Received: PING :tmi.twitch.tv
 1/28/2021 8:35:30 PM: x_coding - Writing: PONG
+1/28/2021 8:43:07 PM: x_coding - Connecting to: 
+1/28/2021 8:43:08 PM: x_coding - Should be connected!
+[2021 01 28 22:43:07] xBot Connected!
+1/28/2021 8:43:08 PM: x_coding - Joining channel: x_coding
+1/28/2021 8:43:09 PM: x_coding - Received: :tmi.twitch.tv 001 xcodingbot :Welcome, GLHF!
+1/28/2021 8:43:09 PM: x_coding - Received: :tmi.twitch.tv 002 xcodingbot :Your host is tmi.twitch.tv
+1/28/2021 8:43:09 PM: x_coding - Received: :tmi.twitch.tv 003 xcodingbot :This server is rather new
+1/28/2021 8:43:09 PM: x_coding - Received: :tmi.twitch.tv 004 xcodingbot :-
+Connected to x_coding
+1/28/2021 8:43:09 PM: x_coding - Received: :tmi.twitch.tv 375 xcodingbot :-
+1/28/2021 8:43:09 PM: x_coding - Received: :tmi.twitch.tv 372 xcodingbot :You are in a maze of twisty passages, all alike.
+1/28/2021 8:43:09 PM: x_coding - Received: :tmi.twitch.tv 376 xcodingbot :>
+1/28/2021 8:43:09 PM: x_coding - Received: :tmi.twitch.tv CAP * ACK :twitch.tv/membership
+1/28/2021 8:43:09 PM: x_coding - Unaccounted for: :tmi.twitch.tv CAP * ACK :twitch.tv/membership (please create a TwitchLib GitHub issue :P)
+1/28/2021 8:43:09 PM: x_coding - Received: :tmi.twitch.tv CAP * ACK :twitch.tv/commands
+1/28/2021 8:43:09 PM: x_coding - Unaccounted for: :tmi.twitch.tv CAP * ACK :twitch.tv/commands (please create a TwitchLib GitHub issue :P)
+1/28/2021 8:43:09 PM: x_coding - Received: :tmi.twitch.tv CAP * ACK :twitch.tv/tags
+1/28/2021 8:43:09 PM: x_coding - Unaccounted for: :tmi.twitch.tv CAP * ACK :twitch.tv/tags (please create a TwitchLib GitHub issue :P)
+1/28/2021 8:43:09 PM: x_coding - Received: :xcodingbot!xcodingbot@xcodingbot.tmi.twitch.tv JOIN #x_coding
+1/28/2021 8:43:09 PM: x_coding - Received: :xcodingbot.tmi.twitch.tv 353 xcodingbot = #x_coding :xcodingbot
+1/28/2021 8:43:09 PM: x_coding - Received: :xcodingbot.tmi.twitch.tv 366 xcodingbot #x_coding :End of /NAMES list
+1/28/2021 8:43:09 PM: x_coding - Finished channel joining queue.
+1/28/2021 8:43:09 PM: x_coding - Received: @badge-info=;badges=moderator/1;color=;display-name=xCodingBOT;emote-sets=0;mod=1;subscriber=0;user-type=mod :tmi.twitch.tv USERSTATE #x_coding
+1/28/2021 8:43:09 PM: x_coding - Received: @emote-only=0;followers-only=-1;r9k=0;rituals=0;room-id=503606492;slow=0;subs-only=0 :tmi.twitch.tv ROOMSTATE #x_coding
+x_codingHey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+1/28/2021 8:43:09 PM: x_coding - Finished channel joining queue.
+1/28/2021 8:43:09 PM: x_coding - Received: @badge-info=;badges=moderator/1;color=;display-name=xCodingBOT;emote-sets=0;mod=1;subscriber=0;user-type=mod :tmi.twitch.tv USERSTATE #x_coding
+1/28/2021 8:43:16 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=2b1376d89f08f60a6868f5ee86b5d8e9;color=;display-name=x_Coding;emotes=;flags=;id=1af77f55-8998-46eb-b795-bd07be08f288;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611866743960;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :well guys
+1/28/2021 8:43:22 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=8b9e98c127dfcca82bf8cb70dbea4324;color=;display-name=x_Coding;emotes=;flags=;id=49fa6fc2-58af-4a2d-9751-4ea85ef6d2d7;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611866750485;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :i think this project is done
+1/28/2021 8:43:47 PM: x_coding - Received: :x_coding!x_coding@x_coding.tmi.twitch.tv JOIN #x_coding
+1/28/2021 8:43:47 PM: x_coding - Received: :malta_goya!malta_goya@malta_goya.tmi.twitch.tv JOIN #x_coding
+1/28/2021 8:44:03 PM: x_coding - Received: @badge-info=;badges=;client-nonce=5578703afbfafac88fe2870689ee8666;color=#7400FF;display-name=malta_goya;emotes=;flags=;id=c5c717a2-4534-45e4-85fb-478b713faefd;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611866791164;turbo=0;user-id=138101507;user-type= :malta_goya!malta_goya@malta_goya.tmi.twitch.tv PRIVMSG #x_coding :nice
+1/28/2021 8:44:39 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=8f3d337b6db531367b826a8740e758ac;color=;display-name=x_Coding;emotes=;flags=;id=e82a3dc6-38d5-4865-a1bb-4ad1e7439c61;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611866826749;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :need new one:d
+1/28/2021 8:44:55 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=1938642d9f44e1a07cac8b526397bdd5;color=;display-name=x_Coding;emotes=;flags=;id=65d25d68-4384-4f21-a9c4-3a26f598d61a;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611866842766;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :!project
+1/28/2021 8:44:55 PM: x_coding - Received: @badge-info=;badges=moderator/1;color=;display-name=xCodingBOT;emote-sets=0;mod=1;subscriber=0;user-type=mod :tmi.twitch.tv USERSTATE #x_coding
+1/28/2021 8:45:51 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;color=;display-name=x_Coding;emotes=;flags=;id=eaf90435-039d-4ea0-8b00-5f5e495ca32b;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611866899001;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :!project
+1/28/2021 8:45:51 PM: x_coding - Received: @badge-info=;badges=moderator/1;color=;display-name=xCodingBOT;emote-sets=0;mod=1;subscriber=0;user-type=mod :tmi.twitch.tv USERSTATE #x_coding
+1/28/2021 8:47:36 PM: x_coding - Received: PING :tmi.twitch.tv
+1/28/2021 8:47:36 PM: x_coding - Writing: PONG
+1/28/2021 8:47:58 PM: x_coding - Received: @badge-info=;badges=broadcaster/1;client-nonce=fe6282dbf4b831e1414b6418928961df;color=;display-name=x_Coding;emotes=;flags=;id=0a2b4a79-8bb5-46c1-8717-1dcafe12fad4;mod=0;room-id=503606492;subscriber=0;tmi-sent-ts=1611867026211;turbo=0;user-id=503606492;user-type= :x_coding!x_coding@x_coding.tmi.twitch.tv PRIVMSG #x_coding :good night all
+1/28/2021 8:48:28 PM: x_coding - Disconnect Twitch Chat Client...
+[2021 01 28 22:48:28] xBot Disconncted!

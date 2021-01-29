@@ -23,6 +23,7 @@ namespace xBot_WPF
     {
         //declare variables
         private static string keyName = "xBot";
+        private static string botMSGControl;
         //-----------------------------------------
 
         public botMSG()
@@ -32,6 +33,20 @@ namespace xBot_WPF
             botMSGtxt.Text = Reg.regKey_Read(keyName, "StartMessage");
             //--------------------------------------------------------
 
+
+            //Load checkbox control
+            botMSGControl = Reg.regKey_Read(keyName, "botMSGControl");
+            if (botMSGControl=="1")
+            {
+                botMsgCKB.IsChecked = true;
+                botMsgCKB.Content = "Display Bot Message on Start: ON";
+            }
+            else
+            {
+                botMsgCKB.IsChecked = false;
+                botMsgCKB.Content = "Display Bot Message on Start: OFF";
+            }
+            //--------------------------------------------------------
         }
 
         /// <summary>
@@ -73,6 +88,27 @@ namespace xBot_WPF
             Reg.regKey_WriteSubkey(keyName, "StartMessage", botMSGtxt.Text);
             MessageBox.Show("Message saved!");
             this.Close();
+        }
+        /// <summary>
+        /// Save control key to 1 if checked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void botMsgCKB_Checked(object sender, RoutedEventArgs e)
+        {
+            botMsgCKB.Content = "Display Bot Message on Start: ON";
+            Reg.regKey_WriteSubkey(keyName, "botMSGControl", "1");
+        }
+
+        /// <summary>
+        /// Save control key to 0 if unchecked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void botMsgCKB_Unchecked(object sender, RoutedEventArgs e)
+        {
+            botMsgCKB.Content = "Display Bot Message on Start: OFF";
+            Reg.regKey_WriteSubkey(keyName, "botMSGControl", "0");
         }
     }
 }

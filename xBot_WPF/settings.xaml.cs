@@ -27,13 +27,14 @@ namespace xBot_WPF
         private static string weatherKey;
         private static string apiKey;
         private static string joinedKey;
+        private static string weatherUnits;
 
         //---------------------------------------------------------
         public settings()
         {
             InitializeComponent();
             //Load and display username, streamkey and dark mode control from registry
-
+            weatherUnits = Reg.regKey_Read(keyName, "weatherUnits");
             t_userName = Reg.regKey_Read(keyName, "UserName");
             t_streamKey = Reg.regKey_Read(keyName, "StreamKey");
             if (t_streamKey != "")
@@ -65,11 +66,13 @@ namespace xBot_WPF
             {
                 weatherCKB.Content = "Activate Weather Command: ON";
                 weatherCKB.IsChecked = true;
+                weaherUnits.IsEnabled = true;
             }
             else if (weatherKey == "0")
             {
                 weatherCKB.Content = "Activate Weather Command: OFF";
                 weatherCKB.IsChecked = false;
+                weaherUnits.IsEnabled = false;
             }
             else if (weatherKey.Length <= 0)
             {
@@ -95,6 +98,21 @@ namespace xBot_WPF
             {
                 joinedCKB.IsChecked = false;
                 joinedCKB.IsEnabled = false;
+            }
+            //----------------------------------------
+
+            //load weather units key control
+
+            if (weatherUnits == "1")
+            {
+
+                weaherUnits.SelectedIndex = 0;
+               
+            }
+            else
+            {
+                weaherUnits.SelectedIndex = 1;
+               
             }
             //----------------------------------------
         }
@@ -174,6 +192,7 @@ namespace xBot_WPF
 
             //change the label content to on
             weatherCKB.Content = "Activate Weather Command: ON";
+            weaherUnits.IsEnabled = true;
         }
 
         private void weatherCKB_Unchecked(object sender, RoutedEventArgs e)
@@ -183,6 +202,7 @@ namespace xBot_WPF
 
             //change the label content to off
             weatherCKB.Content = "Activate Weather Command: OFF";
+            weaherUnits.IsEnabled = false ;
         }
         #endregion
 
@@ -205,6 +225,18 @@ namespace xBot_WPF
             joinedCKB.Content = "Display user joiend chat message: OFF";
         }
         #endregion
+
+        private void weaherUnits_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (weaherUnits.SelectedItem.ToString().Contains("Celsius")) 
+            {
+                Reg.regKey_WriteSubkey(keyName, "weatherUnits", "1");
+            }
+            else
+            {
+                Reg.regKey_WriteSubkey(keyName, "weatherUnits", "0");
+            }
+        }
     }
 }
 

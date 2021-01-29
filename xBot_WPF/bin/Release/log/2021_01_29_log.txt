@@ -1,0 +1,113 @@
+[2021 01 29 21:22:56] xBot Connected!
+Connected to x_coding !
+x_codingHey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021 01 29 21:26:32] x_coding : !weather london
+[BOT] The weather(Celsius) in london is:
+ Temperature: 8.98
+ Feels Like: 4.44
+ Minim Temperature: 7.78
+ Maxim Temperature: 10
+ Humidity: 81
+ Wind Speed: 5.14
+
+[2021 01 29 21:26:34] x_coding : !yt
+[BOT] Nothing playing at the moment! 
+[2021 01 29 21:26:36] x_coding : !pc
+[BOT] 1. 2 in 1 Lenovo 2 in 1 310 icr with linux(Ubuntu) wich I use for remote connection on server. 2. HP Microserver GEN 8 with 10 gb of ram and dual core Xeon E3 1220L  CPU on wich I stream and code.
+[2021 01 29 21:26:37] x_coding : !lisa
+[BOT] May the force of the study be with you, Lisa Rei! 
+[2021 01 29 21:26:40] x_coding : !git
+[BOT]  Some of my projects www.github.com/0x78654C/
+[2021 01 29 21:26:43] x_coding : !discord
+[BOT] Join me on disscord --  www.discord.gg/CyTrYDydQ9
+[2021 01 29 21:36:54] xBot Disconncted!
+[2021 01 29 21:37:58] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021 01 29 21:50:27] xBot Disconncted!
+[2021 01 29 22:12:12] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021 01 29 22:12:21] x_coding : !weather London
+[BOT] The weather(Fahrenheit) in London is:
+ Temperature: 47.55
+ Feels Like: 39.65
+ Minim Temperature: 46
+ Maxim Temperature: 48.99
+ Humidity: 87
+ Wind Speed: 11.5
+
+[2021 01 29 22:13:05] x_coding : !weather London
+[BOT] The weather(Fahrenheit) in London is:
+ Temperature: 47.55
+ Feels Like: 39.65
+ Minim Temperature: 46
+ Maxim Temperature: 48.99
+ Humidity: 87
+ Wind Speed: 11.5
+
+[2021 01 29 22:13:28] x_coding : !weather London
+[BOT] The weather(Celsius) in London is:
+ Temperature: 8.64
+ Feels Like: 4.25
+ Minim Temperature: 7.78
+ Maxim Temperature: 9.44
+ Humidity: 87
+ Wind Speed: 5.14
+
+[2021 01 29 22:31:13] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021 01 29 22:31:18] x_coding : !weather london
+[BOT] The weather(Celsius) in london is:
+ Temperature: 8.54
+ Feels Like: 4.13
+ Minim Temperature: 7.78
+ Maxim Temperature: 9.44
+ Humidity: 87
+ Wind Speed: 5.14
+
+[2021 01 29 22:31:31] x_coding : !weather london
+[BOT] The weather(Celsius) in london is:
+ Temperature: 8.54
+ Feels Like: 4.13
+ Minim Temperature: 7.78
+ Maxim Temperature: 9.44
+ Humidity: 87
+ Wind Speed: 5.14
+
+[2021 01 29 22:31:51] x_coding : !weather london
+[BOT] The weather(Celsius) in london is:
+ Temperature: 8.54
+ Feels Like: 4.13
+ Minim Temperature: 7.78
+ Maxim Temperature: 9.44
+ Humidity: 87
+ Wind Speed: 5.14
+
+[2021 01 29 22:32:03] x_coding : !weather london
+[BOT] The weather(Celsius) in london is:
+ Temperature: 8.54
+ Feels Like: 4.13
+ Minim Temperature: 7.78
+ Maxim Temperature: 9.44
+ Humidity: 87
+ Wind Speed: 5.14
+
+[2021 01 29 22:33:50] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021 01 29 22:34:01] x_coding : !weather London
+[BOT] The weather(Fahrenheit) in London is:
+ Temperature: 47.39
+ Feels Like: 38.16
+ Minim Temperature: 46
+ Maxim Temperature: 48.99
+ Humidity: 87
+ Wind Speed: 13.8
+
+[2021 01 29 22:34:13] x_coding : !weather London
+[BOT] The weather(Celsius) in London is:
+ Temperature: 8.59
+ Feels Like: 4.19
+ Minim Temperature: 7.78
+ Maxim Temperature: 9.44
+ Humidity: 87
+ Wind Speed: 5.14
+
