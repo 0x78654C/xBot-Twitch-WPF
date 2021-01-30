@@ -71,10 +71,9 @@
             <TextBox Name="badWrodTXT" Style="{StaticResource MyWaterMarkStyle}" FontSize="16" AcceptsReturn="True" Tag="Type bad words here for add in list..." HorizontalAlignment="Left" Height="303" Margin="17,65,0,-318" TextWrapping="Wrap" VerticalAlignment="Top" Width="281"/>
             <TextBox Name="banTimeTXT" Style="{StaticResource MyWaterMarkStyleC}" FontSize="14" TextAlignment="Center" Tag="Chat ban time" HorizontalAlignment="Left" Height="32" Margin="246,391,0,-373" TextWrapping="Wrap" VerticalAlignment="Top" Width="127" TextChanged="banTimeTXT_TextChanged"  PreviewTextInput="NumberValidationTextBox"/>
             <CheckBox Name="banWordCKB" Content="Activate Chat Ban: OFF" HorizontalAlignment="Left" Margin="401,398,0,-367" VerticalAlignment="Top" Checked="banWordCKB_Checked" Unchecked="banWordCKB_Unchecked" Height="19"/>
-            <TextBox Name="listWordsTXT" Style="{StaticResource MyWaterMarkStyle}" FontSize="16" Tag="Bad words list." HorizontalAlignment="Left" Height="303" Margin="318,65,0,-318" TextWrapping="Wrap" IsReadOnly="True" VerticalAlignment="Top" Width="281"/>
             <Button Name="adderBTN" Style="{DynamicResource RoundCorner2}" Content="Add Bad Word(s)" Foreground="#FFE1DDE2" HorizontalAlignment="Left" Margin="90,373,0,-352" VerticalAlignment="Top" Width="123" Height="29" Click="adderBTN_Click"/>
-            <Button Name="removerBTN" Style="{DynamicResource RoundCorner2}" Content="Delete Bad Word(s)" Foreground="#FFE1DDE2" HorizontalAlignment="Left" Margin="90,416,0,-395" VerticalAlignment="Top" Width="123" Height="29" Click="removerBTN_Click"/>
-
+            <Button Name="removerBTN" Style="{DynamicResource RoundCorner2}" Content="Delete Bad Word" Foreground="#FFE1DDE2" HorizontalAlignment="Left" Margin="90,416,0,-395" VerticalAlignment="Top" Width="123" Height="29" Click="removerBTN_Click"/>
+            <ListBox x:Name="wordList" Margin="318,65,19,-318" FontSize="16" />
         </Grid>
     </Grid>
 </Window>

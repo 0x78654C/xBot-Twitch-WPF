@@ -232,7 +232,7 @@ namespace xBot_WPF
         {
             string[] playlinks = File.ReadAllLines(playListFile);
             string playL = File.ReadAllText(playListFile);
-            if (playList.SelectedItem.ToString().Length > 0)
+            if (playList.SelectedIndex != -1)
             {
                 foreach (var line in playlinks)
                 {

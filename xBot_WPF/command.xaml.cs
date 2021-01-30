@@ -172,14 +172,13 @@ namespace xBot_WPF
         {
             if (File.Exists(comFile))
             {
-                if (commandList.SelectedItem.ToString().Length > 0)
+                if (commandList.SelectedIndex != -1)
                 {
                     string[] cL = commandList.SelectedItem.ToString().Split(':');
 
                     cmd_line = File.ReadAllLines(comFile);
                     cmd_lst = File.ReadAllText(comFile);
                     cmd = nameTXT.Text;
-
 
 
                     foreach (var line in cmd_line)
@@ -192,8 +191,6 @@ namespace xBot_WPF
 
                         }
                     }
-
-
 
                     using (sWriter = new StreamWriter(comFile))
                     {

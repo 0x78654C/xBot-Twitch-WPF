@@ -42,7 +42,16 @@ namespace xBot_WPF
             //Load bad words lis in text box
             if (File.Exists(badWordDir))
             {
-                listWordsTXT.Text = File.ReadAllText(badWordDir);
+              
+                //we add every word from external file to listbox
+                string[] bList = File.ReadAllLines(badWordDir);
+                foreach(var line in bList)
+                {
+                    if (line.Length > 0)
+                    {
+                        wordList.Items.Add(line);
+                    }
+                }
             }
             else
             {
@@ -93,17 +102,26 @@ namespace xBot_WPF
         {
             if (File.Exists(badWordDir))
             {
-                string line;
-                using (var sr = new StringReader(badWrodTXT.Text))
+
+                if (badWrodTXT.Text.Length > 0)
                 {
-                    while ((line = sr.ReadLine()) != null)
+
+                    badWrodTXT.Text = Regex.Replace(badWrodTXT.Text, @"^\s+$[\r\n]*", string.Empty, RegexOptions.Multiline); //remove new line and emty line
+                    string line;
+                    using (var sr = new StringReader(badWrodTXT.Text))
                     {
-                        File.AppendAllText(badWordDir, line+Environment.NewLine);
-                     
-                        listWordsTXT.Text = File.ReadAllText(badWordDir);
-                        badWrodTXT.Clear();
+                        while ((line = sr.ReadLine()) != null)
+                        {
+                            File.AppendAllText(badWordDir, line + Environment.NewLine);
+                            wordList.Items.Add(line);
+                            badWrodTXT.Clear();
+                        }
+
                     }
-                    
+                }
+                else
+                {
+                    MessageBox.Show("You must fill the empy text box!");
                 }
             }
             else
@@ -183,17 +201,27 @@ namespace xBot_WPF
             {
                 string line;
                 string bFile = File.ReadAllText(badWordDir);
-                using (var sr = new StringReader(badWrodTXT.Text))
+                if (wordList.SelectedIndex == -1)
                 {
-                    while ((line = sr.ReadLine()) != null)
-                    {
-                        bFile = bFile.Replace(line, "");
-                    }
+                    MessageBox.Show("Please select a word for delete!");
+                }
+                else
+                {
 
-                    bFile = Regex.Replace(bFile, @"^\s+$[\r\n]*", string.Empty, RegexOptions.Multiline);
-                    File.WriteAllText(badWordDir, bFile);
-                    listWordsTXT.Text = File.ReadAllText(badWordDir);
-                    badWrodTXT.Clear();
+
+                    using (var sr = new StringReader(wordList.SelectedItem.ToString()))
+                    {
+                        while ((line = sr.ReadLine()) != null)
+                        {
+                            bFile = bFile.Replace(line, "");
+
+                        }
+
+                        wordList.Items.Remove(wordList.SelectedItem.ToString());
+                        bFile = Regex.Replace(bFile, @"^\s+$[\r\n]*", string.Empty, RegexOptions.Multiline);
+                        File.WriteAllText(badWordDir, bFile);
+
+                    }
                 }
             }
             else

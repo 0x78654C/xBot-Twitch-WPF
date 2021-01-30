@@ -53,3 +53,29 @@ x_coding  Welcome to my channel ftopayr. and thank you for joining. For more com
 x_coding  Welcome to my channel havethis2. and thank you for joining. For more commands type !help
 x_coding  Welcome to my channel jointeffortt. and thank you for joining. For more commands type !help
 x_coding  Welcome to my channel x_coding. and thank you for joining. For more commands type !help
+[2021 01 30 21:22:29] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021 01 30 21:22:42] x_coding : !help
+[BOT] List of commands is: !hi; !me; !hello; !git; !try; !pc; !discord; !fw; !st; !ide; !lisa; !project; !yt; !weather; !ss
+[2021 01 30 21:34:27] xBot Disconncted!
+[2021 01 30 21:58:52] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021 01 30 22:00:58] x_coding : !git
+[BOT]  Some of my projects www.github.com/0x78654C/
+[2021 01 30 22:01:03] x_coding : !project
+[BOT] A simple Twitch bot in C#(WPF). www.github.com/0x78654C/xBot-Twitch-WPF
+[2021 01 30 22:01:12] x_coding : !help
+[BOT] List of commands is: !hi; !me; !hello; !git; !try; !pc; !discord; !fw; !st; !ide; !lisa; !project; !yt; !weather; !ss
+[2021 01 30 22:01:14] x_coding : !yt
+[BOT] Now playing: https://www.youtube.com/watch?v=l9nh1l8ZIJQ
+[2021 01 30 22:07:01] xBot Disconncted!
+[2021 01 30 22:19:33] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+x_coding  Welcome to my channel droopdoggg. and thank you for joining. For more commands type !help
+x_coding  Welcome to my channel extramoar. and thank you for joining. For more commands type !help
+x_coding  Welcome to my channel havethis2. and thank you for joining. For more commands type !help
+x_coding  Welcome to my channel jointeffortt. and thank you for joining. For more commands type !help
+x_coding  Welcome to my channel pingutio. and thank you for joining. For more commands type !help
+x_coding  Welcome to my channel x_coding. and thank you for joining. For more commands type !help
+x_coding  Welcome to my channel abbottcostello. and thank you for joining. For more commands type !help
+[2021 01 30 22:22:50] x_coding : what new project should i code?

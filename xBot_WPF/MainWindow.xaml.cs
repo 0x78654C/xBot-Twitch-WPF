@@ -96,7 +96,7 @@ namespace xBot_WPF
         //-------------------------------------------------
 
         //declare path to bot message
-         private static string StartMessage;
+        private static string StartMessage;
         //-------------------------------------------------
 
         //Media player declaration
@@ -130,7 +130,7 @@ namespace xBot_WPF
         Mutex myMutex;
         //---------------------------------
 
-        int Viewers=0;
+        int Viewers = 0;
 
         public MainWindow()
         {
@@ -279,7 +279,7 @@ namespace xBot_WPF
             weatherKey = Reg.regKey_Read(keyName, "WeatherMSG");
             YtWin = Reg.regKey_Read(keyName, "YtWin");
             StartMessage = Reg.regKey_Read(keyName, "StartMessage");
-            YtLink= Reg.regKey_Read(keyName, "YtLink");
+            YtLink = Reg.regKey_Read(keyName, "YtLink");
             botMSGControl = Reg.regKey_Read(keyName, "botMSGControl");
             weatherUnits = Reg.regKey_Read(keyName, "weatherUnits");
             #endregion
@@ -319,7 +319,7 @@ namespace xBot_WPF
             }
         }
 
-      
+
 
         /// <summary>
         /// Log writer
@@ -350,9 +350,9 @@ namespace xBot_WPF
                 logViewRTB.Document.Blocks.Clear();
             });
             date = DateTime.Now.ToString("yyyy MM dd HH:mm:ss");
-            logWrite("[" + date + "] xBot connecting to "+t_userName +" channel....");
-           
-            ConnectionCredentials credentials = new ConnectionCredentials(t_userName, t_streamKey,null,true);
+            logWrite("[" + date + "] xBot connecting to " + t_userName + " channel....");
+
+            ConnectionCredentials credentials = new ConnectionCredentials(t_userName, t_streamKey, null, true);
             var clientOptions = new ClientOptions
             {
                 MessagesAllowedInPeriod = 750,
@@ -377,7 +377,7 @@ namespace xBot_WPF
             //we check if bot is connected and display the log info
             if (client.IsConnected)
             {
-                logWrite("[" + date + "] xBot Connected to "+t_userName +" channel !");
+                logWrite("[" + date + "] xBot Connected to " + t_userName + " channel !");
 
             }
         }
@@ -405,8 +405,9 @@ namespace xBot_WPF
         #region Client events
         private void Client_OnLog(object sender, OnLogArgs e)
         {
-          //  CLog.LogWrite($"{e.DateTime.ToString()}: {e.BotUsername} - {e.Data}");
-          //for future work
+            //  CLog.LogWrite($"{e.DateTime.ToString()}: {e.BotUsername} - {e.Data}");
+            //for future work
+
         }
 
         private void Client_OnConnected(object sender, OnConnectedArgs e)
@@ -425,7 +426,7 @@ namespace xBot_WPF
             }
         }
 
-        
+
 
         private void Client_OnMessageReceived(object sender, OnMessageReceivedArgs e)
         {
@@ -433,7 +434,7 @@ namespace xBot_WPF
             string date2 = DateTime.Now.ToString("yyyy MM dd HH:mm:ss");
             if (e.ChatMessage.Message.Length > 0)
             {
-                logWrite("["+date2+"] "+e.ChatMessage.Username + " : " + e.ChatMessage.Message);
+                logWrite("[" + date2 + "] " + e.ChatMessage.Username + " : " + e.ChatMessage.Message);
                 CLog.LogWrite("[" + date2 + "] " + e.ChatMessage.Username + " : " + e.ChatMessage.Message);
             }
             //-----------
@@ -449,9 +450,11 @@ namespace xBot_WPF
                     if (bad.Length > 0)
                     {
                         if (e.ChatMessage.Message.Contains(bad))
+                        {
                             client.TimeoutUser(e.ChatMessage.Channel, e.ChatMessage.Username, TimeSpan.FromMinutes(timeBan), "Bad word ban! " + Convert.ToString(timeBan) + " minute(s) timeout!");
-                            logWrite(e.ChatMessage.Channel +" | "+ e.ChatMessage.Username+" | "+ TimeSpan.FromMinutes(timeBan)+" | "+ "[BOT] Bad word ban! " + Convert.ToString(timeBan) + " minute(s) timeout!");
+                            logWrite(e.ChatMessage.Channel + " | " + e.ChatMessage.Username + " | " + TimeSpan.FromMinutes(timeBan) + " | " + "[BOT] Bad word ban! " + Convert.ToString(timeBan) + " minute(s) timeout!");
                             CLog.LogWrite(e.ChatMessage.Channel + " | " + e.ChatMessage.Username + " | " + TimeSpan.FromMinutes(timeBan) + " | " + "[BOT] Bad word ban! " + Convert.ToString(timeBan) + " minute(s) timeout!");
+                        }
                     }
                 }
 
@@ -472,7 +475,7 @@ namespace xBot_WPF
                         logWrite("[BOT] " + s[1]);
                         CLog.LogWrite("[BOT] " + s[1]);
                     }
-                                            
+
                 }
             }
             //-------------------------------------------------
@@ -591,7 +594,7 @@ namespace xBot_WPF
                 {
                     string[] we = weatheCond.Split(' ');
                     string cn = string.Empty;
-                    if (we[0] == "!weather") 
+                    if (we[0] == "!weather")
                     {
                         cn = we[1];
                         if (cn.Length > 0)
@@ -634,7 +637,7 @@ namespace xBot_WPF
             //----------------------------
 
             //!yt command display play link
-            
+
             if (ytControl == "1")
             {
                 if (e.ChatMessage.Message.Contains("!yt"))
@@ -661,7 +664,7 @@ namespace xBot_WPF
             if (e.WhisperMessage.Username == "my_friend")
             {
                 client.SendWhisper(e.WhisperMessage.Username, "Hey! Whispers are so cool!!");
-                CLog.LogWrite(e.WhisperMessage.Username+ ": Hey! Whispers are so cool!! ");
+                CLog.LogWrite(e.WhisperMessage.Username + ": Hey! Whispers are so cool!! ");
             }
         }
 
@@ -676,7 +679,7 @@ namespace xBot_WPF
             else
             {
                 client.SendMessage(e.Channel, $" Welcome {e.Subscriber.DisplayName} to the substers! You just earned 500 points!");
-                logWrite(e.Channel+ $":  Welcome {e.Subscriber.DisplayName} to the substers! You just earned 500 points!");
+                logWrite(e.Channel + $":  Welcome {e.Subscriber.DisplayName} to the substers! You just earned 500 points!");
                 CLog.LogWrite(e.Channel + $":  Welcome {e.Subscriber.DisplayName} to the substers! You just earned 500 points!");
             }
         }
@@ -701,7 +704,7 @@ namespace xBot_WPF
             }
         }
 
-        
+
         #endregion
 
 
@@ -918,7 +921,7 @@ namespace xBot_WPF
             else
             {
                 logWrite("No internet connection!");
-               
+
             }
         }
         /// <summary>
