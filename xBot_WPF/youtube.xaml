@@ -7,7 +7,7 @@
         xmlns:adorners="http://gu.se/Adorners"
         mc:Ignorable="d"
         Name="YtPlayer"
-        Title="YouTube" WindowStyle="None" Height="570.145" Width="729.808" ResizeMode="NoResize" MouseDown="Window_MouseDown" Closed="Window_Closed" WindowStartupLocation="CenterScreen" Icon="Resources/icon.ico">
+        Title="YouTube" WindowStyle="None" Height="570.145" Width="1179.808" ResizeMode="NoResize" MouseDown="Window_MouseDown" Closed="Window_Closed" WindowStartupLocation="CenterScreen" Icon="Resources/icon.ico">
     <Grid>
 
         <Border BorderBrush="Black" BorderThickness="1"/>
@@ -19,11 +19,14 @@
             <Label Name="miniMizeLBL" Content="_" FontSize="26" Foreground="#FFE1DDE2" HorizontalAlignment="Right" Margin="0,-7,37,0" VerticalAlignment="Top" Height="46" PreviewMouseDown="miniMizeLBL_PreviewMouseDown" />
 
         </Grid>
+      
         <StackPanel>
             <WebBrowser  Visibility="Visible" Name="ytBrowser" HorizontalAlignment="Left" Height="413" Margin="10,50,0,0" VerticalAlignment="Top" Width="710"/>
         </StackPanel>
-        <Button Name="playBTN" Style="{DynamicResource RoundCorner2}" Content="Play" HorizontalAlignment="Center" Margin="313,523,321,0" VerticalAlignment="Top" Width="96" Height="37" Foreground="#FFE1DDEE" Click="playBTN_Click"/>
-        <TextBox FontSize="14" adorners:Watermark.Text="Add YouTube link here for play..." TextAlignment="Center" Name="youtTubeLink" HorizontalAlignment="Left" Height="28" Margin="195,483,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="334" MaxLength="254">
+        <ListBox x:Name="playList" Margin="749,79,30,108" PreviewMouseDoubleClick="playList_PreviewMouseDoubleClick" FontSize="16"/>
+        <Label Content="Youtube Playlist:" FontSize="16" Margin="740,45,220,491"/>
+        <Button Name="playBTN" Style="{DynamicResource RoundCorner2}" Content="Play" HorizontalAlignment="Center" Margin="312,495,772,0" VerticalAlignment="Top" Width="96" Height="37" Foreground="#FFE1DDEE" Click="playBTN_Click"/>
+        <TextBox FontSize="14" adorners:Watermark.Text="Add YouTube link here for add in list..." TextAlignment="Center" Name="youtTubeLink" HorizontalAlignment="Left" Height="28" Margin="787,474,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="334" MaxLength="254">
             <adorners:Watermark.TextStyle>
                 <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="Opacity" Value="0.5" />
@@ -32,7 +35,9 @@
                 </Style>
             </adorners:Watermark.TextStyle>
         </TextBox>
+        <Button x:Name="addSongBTN" Style="{DynamicResource RoundCorner2}" Content="Add in list" HorizontalAlignment="Center" Margin="825,516,259,0" VerticalAlignment="Top" Width="96" Height="37" Foreground="#FFE1DDEE" Click="addToListBTN"/>
 
+        <Button x:Name="remSongBTN" Style="{DynamicResource RoundCorner2}" Content="Remove Link" HorizontalAlignment="Center" Margin="990,516,94,0" VerticalAlignment="Top" Width="96" Height="37" Foreground="#FFE1DDEE" Click="remListBTN"/>
 
     </Grid>
 </Window>

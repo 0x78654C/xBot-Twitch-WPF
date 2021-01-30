@@ -44,10 +44,10 @@
             <Label Name="closeLBL" Content="x" FontSize="26" Foreground="#FFE1DDE2" HorizontalAlignment="Right" Margin="0,-3,10,0" VerticalAlignment="Top" Height="46" PreviewMouseDown="closeLBL_PreviewMouseDown"/>
             <Label Name="miniMizeLBL" Content="_" FontSize="26" Foreground="#FFE1DDE2" HorizontalAlignment="Right" Margin="0,-7,37,0" VerticalAlignment="Top" Height="46" PreviewMouseDown="miniMizeLBL_PreviewMouseDown" />
         </Grid>
-        <TextBox Name="listTXT" Style="{StaticResource MyWaterMarkStyle}" FontSize="14" Tag="Commands list..." HorizontalAlignment="Left" Height="568" Margin="316,68,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="782" IsReadOnly="True" TextChanged="listTXT_TextChanged"/>
-        <TextBox Name="nameTXT" Style="{StaticResource MyWaterMarkStyle}" FontSize="14" Tag="Command Name" HorizontalAlignment="Left" Height="23" Margin="17,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="281"/>
+         <TextBox Name="nameTXT" Style="{StaticResource MyWaterMarkStyle}" FontSize="14" Tag="Command Name" HorizontalAlignment="Left" Height="23" Margin="17,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="281"/>
         <TextBox Name="contentTXT" Style="{StaticResource MyWaterMarkStyle}" FontSize="14" Tag="Enter command content ..." HorizontalAlignment="Left" Height="146" Margin="17,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="281"/>
         <Button Name="adderBTN" Style="{DynamicResource RoundCorner2}" Content="Add Command" Foreground="#FFE1DDE2" HorizontalAlignment="Left" Margin="100,279,0,0" VerticalAlignment="Top" Width="123" Height="29" Click="adderBTN_Click"/>
         <Button Name="removerBTN" Style="{DynamicResource RoundCorner2}" Content="Delete Command" Foreground="#FFE1DDE2" HorizontalAlignment="Left" Margin="100,313,0,0" VerticalAlignment="Top" Width="123" Height="29" Click="removerBTN_Click"/>
+        <ListBox x:Name="commandList" Margin="316,68,10,10" FontSize="14"/>
     </Grid>
 </Window>

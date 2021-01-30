@@ -41,7 +41,14 @@ namespace xBot_WPF
             //loading command list in the textbox
             if (File.Exists(comFile))
             {
-                listTXT.Text = File.ReadAllText(comFile);
+                string[] cList = File.ReadAllLines(comFile);
+                foreach (var line in cList)
+                {
+                    if (line.Length > 0)
+                    {
+                        commandList.Items.Add(line);
+                    }
+                }
             }
             else
             {
@@ -102,7 +109,7 @@ namespace xBot_WPF
                         string[] cmdS = line.Split(':');
                         lst.Add(cmdS[0]);
                     }
-                }               
+                }
                 listCMD = string.Join("; ", lst);
                 //------------------------------------------
 
@@ -122,11 +129,12 @@ namespace xBot_WPF
                                     //remove empty lines
                                     cmd_lst = Regex.Replace(cmd_lst, @"^\s+$[\r\n]*", string.Empty, RegexOptions.Multiline);
                                     sWriter.Write("!" + cmd + ":" + msg + Environment.NewLine);
+                                    commandList.Items.Add("!" + cmd + ":" + msg);
                                     sWriter.Close();
                                     nameTXT.Clear();
                                     contentTXT.Clear();
                                     MessageBox.Show("Command: '" + cmd + "' with message: '" + msg + "' added to list");
-                                    listTXT.Text = File.ReadAllText(comFile);
+
                                 }
                                 else
                                 {
@@ -154,15 +162,6 @@ namespace xBot_WPF
                 MessageBox.Show(comFile + " file not found!");
             }
         }
-        /// <summary>
-        /// scroll to end on command list box
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void listTXT_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            listTXT.ScrollToEnd();
-        }
 
         /// <summary>
         /// Delete command from list
@@ -173,58 +172,46 @@ namespace xBot_WPF
         {
             if (File.Exists(comFile))
             {
-                cmd_line = File.ReadAllLines(comFile);
-                cmd_lst = File.ReadAllText(comFile);
-                cmd = nameTXT.Text;
-                
-                if (cmd_lst.Contains("!"+cmd+":"))
+                if (commandList.SelectedItem.ToString().Length > 0)
                 {
-                
-                        //check if help hardcoded commands exists
-                        if (!cmd.Contains("help") || !cmd.Contains("yt") || !cmd.Contains("weather") || !cmd.Contains("ss"))
-                        {
-                            if (cmd.Length > 0 && !cmd.StartsWith("!") || !cmd.EndsWith(":"))
-                            {
-                            foreach (var line in cmd_line)
-                            {
-                                //check if command already exists in line
-                                if (line.Contains("!"+cmd+":"))
-                                {
+                    string[] cL = commandList.SelectedItem.ToString().Split(':');
 
-                                    cmd_lst = cmd_lst.Replace(line, "");
-                                    
-                                }
-                            }
-                            }
-                            else
-                            {
-                                MessageBox.Show("The message should not contain the symbols ':' and '!'and not be empty !"); ;
-                            }
-                        }
-                        else
+                    cmd_line = File.ReadAllLines(comFile);
+                    cmd_lst = File.ReadAllText(comFile);
+                    cmd = nameTXT.Text;
+
+
+
+                    foreach (var line in cmd_line)
+                    {
+                        //check if command already exists in line
+                        if (line.Contains(cL[0]))
                         {
-                            MessageBox.Show("You cannot delete command '" + cmd + "' because is predifined!"); ;
+
+                            cmd_lst = cmd_lst.Replace(line, "");
+
                         }
- 
+                    }
+
+
+
                     using (sWriter = new StreamWriter(comFile))
                     {
                         cmd_lst = Regex.Replace(cmd_lst, @"^\s+$[\r\n]*", string.Empty, RegexOptions.Multiline);
                         sWriter.Write(cmd_lst);
                         sWriter.Close();
                         nameTXT.Clear();
-                        MessageBox.Show("Command: " + cmd + " was removed from list");
-                        
+                        MessageBox.Show("The command "+cL[0]+" was deleted!");
+
                     }
 
-             
-                    listTXT.Text = File.ReadAllText(comFile);
+                    commandList.Items.Remove(commandList.SelectedItem);
+
                 }
                 else
                 {
-                    MessageBox.Show("The command '" + cmd + "' dose not exist in list or contains the symbols '!' or ':' !"); 
+                    MessageBox.Show("You need to select a command from list!");
                 }
-
-
             }
             else
             {

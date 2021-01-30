@@ -226,6 +226,11 @@ namespace xBot_WPF
         }
         #endregion
 
+        /// <summary>
+        /// Write key control by unit case
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void weaherUnits_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (weaherUnits.SelectedItem.ToString().Contains("Celsius")) 

@@ -25,9 +25,11 @@ namespace xBot_WPF
     public partial class youtube : Window
     {
 
-        //Declare path to youtube link file
+        //Declare path to youtube links file
         private static string ytControl = "0";
         MatchCollection matches;
+        readonly static string playListFile = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\data\playList.txt";
+        private static string playLink;
         //-----------------------------------------
 
         //Declare keyname
@@ -39,7 +41,7 @@ namespace xBot_WPF
             InitializeComponent();
 
             //load youtube link 
-            youtTubeLink.Text = Reg.regKey_Read(keyName, "YtLink");
+            playLink = Reg.regKey_Read(keyName, "YtLink");
             //--------------------------
 
             //Load control number from registry
@@ -50,6 +52,16 @@ namespace xBot_WPF
             Reg.regKey_WriteSubkey(keyName, "YtWin", "1");
             //---------------------------
 
+            //load links from playslistfile in listbox
+            string[] yLinks = File.ReadAllLines(playListFile);
+            foreach (var line in yLinks)
+            {
+                if (line.Length > 0)
+                {
+                    playList.Items.Add(line);
+                }
+            }
+            //---------------------------
         }
 
         /// <summary>
@@ -66,6 +78,7 @@ namespace xBot_WPF
             {
                 this.ytBrowser.NavigateToString(string.Format(html, url.Split('=')[1]));
                 Reg.regKey_WriteSubkey(keyName, "YTControl", "1");
+                playLink = url;
             }
             catch
             {
@@ -127,19 +140,9 @@ namespace xBot_WPF
 
             if (playBTN.Content.ToString() == "Play")
             {
-                //we check if continas the '=' symbol for check and after cont it 
-                matches = Regex.Matches(youtTubeLink.Text, "=");
 
-                if (youtTubeLink.Text.Contains("youtube.") && matches.Count == 1)
-                {
-                    reload_YT(youtTubeLink.Text);
-                    Reg.regKey_WriteSubkey(keyName, "YtLink", youtTubeLink.Text);
-                    playBTN.Content = "Stop";
-                }
-                else
-                {
-                    MessageBox.Show("You have typed a invalid YouTube link!");
-                }
+                reload_YT(playLink);
+                playBTN.Content = "Stop";
             }
             else
             {
@@ -171,5 +174,89 @@ namespace xBot_WPF
             Reg.regKey_WriteSubkey(keyName, "YtWin", "0");
             //-------------------------------------------
         }
+
+        /// <summary>
+        /// Add song from tb to list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void addToListBTN(object sender, RoutedEventArgs e)
+        {
+            //we check if continas the '=' symbol for check and after cont it 
+            matches = Regex.Matches(youtTubeLink.Text, "=");
+
+            if (youtTubeLink.Text.Contains("youtube.") && matches.Count == 1)
+            {
+                if (!playList.Items.Contains(youtTubeLink.Text))
+                {
+                    playList.Items.Add(youtTubeLink.Text);
+                    using (var sFile = new StreamWriter(playListFile, append: true))
+                    {
+                        sFile.WriteLine(youtTubeLink.Text);
+                        sFile.Flush();
+                        sFile.Close();
+
+                    }
+                    youtTubeLink.Clear();
+                }
+                else
+                {
+                    MessageBox.Show(youtTubeLink.Text + " already exists in playlist!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("You have typed a invalid YouTube link!");
+            }
+        }
+
+        /// <summary>
+        /// Play song on dboule click list value
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void playList_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            reload_YT(playList.SelectedItem.ToString());
+            Reg.regKey_WriteSubkey(keyName, "YtLink", playList.SelectedItem.ToString());
+            playBTN.Content = "Stop";
+        }
+
+        /// <summary>
+        /// remove link from list box
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void remListBTN(object sender, RoutedEventArgs e)
+        {
+            string[] playlinks = File.ReadAllLines(playListFile);
+            string playL = File.ReadAllText(playListFile);
+            if (playList.SelectedItem.ToString().Length > 0)
+            {
+                foreach (var line in playlinks)
+                {
+                    if (line.Contains(playList.SelectedItem.ToString()))
+                    {
+                        playL = playL.Replace(line, "");
+                    }
+                }
+
+
+                playList.Items.Remove(playList.SelectedItem);
+                playL= Regex.Replace(playL, @"^\s+$[\r\n]*", string.Empty, RegexOptions.Multiline);
+                using(var sW = new StreamWriter(playListFile))
+                {
+                    sW.Write(playL);
+                    sW.Flush();
+                    sW.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("You need to select a link from list!");
+            }
+        }
     }
+
 }

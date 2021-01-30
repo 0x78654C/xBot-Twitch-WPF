@@ -100,6 +100,7 @@ namespace xBot_WPF
         //-------------------------------------------------
 
         //Media player declaration
+        readonly static string playListFile = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\data\playList.txt";
         private static string YtLink;
         private static string ytControl = "0";
         private static string YtWin = "0";
@@ -176,7 +177,14 @@ namespace xBot_WPF
             //---------------------------------------------------
 
 
-            
+            //check if youtube playlist file exits and if not we recreate
+            if (!File.Exists(playListFile))
+            {
+                File.WriteAllText(playListFile, "");
+            }
+            //---------------------------------------------------
+
+
 
             //Checking if reg keys and subkeys exist and if not we recreate
 
