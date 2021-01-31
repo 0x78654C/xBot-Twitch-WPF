@@ -43,9 +43,9 @@ namespace xBot_WPF
 
                     t_streamKey = Encryption._decryptData(Reg.regKey_Read(keyName, "StreamKey"));
                 }
-                catch
+                catch(Exception e)
                 {
-                    // MessageBox.Show(e.ToString());
+                    CLog.LogWriteError("Settigns - decrypt oAuth Key: " + e.ToString());
                 }
             }
 
@@ -101,17 +101,13 @@ namespace xBot_WPF
             //----------------------------------------
 
             //load weather units key control
-
             if (weatherUnits == "1")
             {
-
-                weaherUnits.SelectedIndex = 0;
-               
+                weaherUnits.SelectedIndex = 0;              
             }
             else
             {
-                weaherUnits.SelectedIndex = 1;
-               
+                weaherUnits.SelectedIndex = 1;              
             }
             //----------------------------------------
         }

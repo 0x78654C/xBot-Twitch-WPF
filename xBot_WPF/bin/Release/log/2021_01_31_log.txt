@@ -105,3 +105,34 @@ Please check city name!
 [2021-01-31 14:33:01] x_coding : !discord
 [BOT] Join me on disscord --  www.discord.gg/CyTrYDydQ9
 [2021-01-31 14:38:13] xBot Disconncted!
+[2021-01-31 14:40:20] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-01-31 14:41:00] x_coding : !sorry
+[BOT] Sorry that I don't have a mic or camera at the moment. Maybe in future will aquire one for you guys! 
+[2021-01-31 14:41:20] x_coding : !pc
+[BOT] 1. 2 in 1 Lenovo 2 in 1 310 icr with linux(Ubuntu) wich I use for remote connection on server. 2. HP Microserver GEN 8 with 10 gb of ram and dual core Xeon E3 1220L  CPU on wich I stream and code.
+[2021-01-31 14:48:47] x_coding : !fw
+[BOT] A follow on my stream will be superb for me ;). Thank you!
+[2021-01-31 14:49:58] x_coding : thx for follow:D
+[2021-01-31 14:51:08] bobindaoffice : good luck man
+[2021-01-31 14:51:30] x_coding : !gl @bobindaoffice
+[BOT] x_coding wishes bobindaoffice good luck. May you succeed in whatever you're planning to do!
+[2021-01-31 14:51:40] bobindaoffice : :)
+[2021-01-31 14:53:23] x_coding : omg. thx for follow guys
+[2021-01-31 14:53:25] x_coding : :d
+[2021-01-31 14:55:09] x_coding : thx all:d
+[2021-01-31 15:03:01] x_coding : thx for follow kylechad21
+[2021-01-31 15:03:05] x_coding : and others:D
+[2021-01-31 15:03:08] x_coding : !discrod
+[2021-01-31 15:03:12] x_coding : !discord
+[BOT] Join me on disscord --  www.discord.gg/CyTrYDydQ9
+[2021-01-31 15:05:04] x_coding : !sr
+[2021-01-31 15:05:07] x_coding : !help
+[BOT] List of commands is: !me; !git; !try; !pc; !discord; !fw; !st; !ide; !lisa; !project; !sorry; !yt; !weather; !ss
+[2021-01-31 15:07:23] x_coding : thx Naniniho
+[2021-01-31 15:23:53] x_coding : @thx for follow
+[2021-01-31 15:24:08] x_coding : this is it for today
+[2021-01-31 15:24:10] x_coding : cya round
+[2021-01-31 15:24:12] x_coding : arround
+[2021-01-31 15:24:19] x_coding : on next stream
+[2021-01-31 15:25:56] xBot Disconncted!
