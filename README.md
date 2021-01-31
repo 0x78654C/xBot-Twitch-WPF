@@ -18,12 +18,18 @@ using following libs:
 https://github.com/TwitchLib/TwitchLib (for api connect)
 
 https://github.com/davcs86/csharp-uhwid (for oath hwid encrypt/decrypt)
+_____________________________________________________
 
-Requirement: .NET Framework 4.7
+**Requirement**: 
+
+.NET Framework 4.7
+
+_____________________________________________________
+
 
 Project ongoing live on: https://www.twitch.tv/x_coding
 
-Features:
+**Features**:
 
     show status if client is connected
     saveing twitch user name, openweather api key and oauth key to registry
