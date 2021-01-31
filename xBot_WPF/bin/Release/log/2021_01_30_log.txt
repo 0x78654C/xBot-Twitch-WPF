@@ -79,3 +79,17 @@ x_coding  Welcome to my channel pingutio. and thank you for joining. For more co
 x_coding  Welcome to my channel x_coding. and thank you for joining. For more commands type !help
 x_coding  Welcome to my channel abbottcostello. and thank you for joining. For more commands type !help
 [2021 01 30 22:22:50] x_coding : what new project should i code?
+[2021 01 30 22:27:31] x_coding : !discord
+[BOT] Join me on disscord --  www.discord.gg/CyTrYDydQ9
+[2021 01 30 22:31:21] x_coding : this is it guys
+[2021 01 30 22:31:26] x_coding : cya on next strea,
+[2021 01 30 22:31:28] x_coding : stream
+[2021 01 30 22:31:30] x_coding : ;)
+[2021 01 30 22:31:45] x_coding : !fw
+[BOT] A follow on my stream will be superb for me ;). Thank you!
+[2021 01 30 22:32:29] xBot Disconncted!
+[2021 01 30 22:36:52] Connected to x_coding channel as x_coding
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021 01 30 22:37:49] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021 01 30 22:39:34] xBot Disconncted!

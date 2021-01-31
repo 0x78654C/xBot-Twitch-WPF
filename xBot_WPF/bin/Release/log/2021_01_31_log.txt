@@ -1,0 +1,72 @@
+[2021 01 31 13:14:27] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021 01 31 13:15:14] xBot Disconncted!
+[2021 01 31 13:18:58] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021 01 31 13:20:34] x_coding : !yt
+[BOT] Now playing: https://www.youtube.com/watch?v=iAYMJk9IsDA
+[2021 01 31 13:32:32] xBot Disconncted!
+[2021 01 31 13:40:19] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021 01 31 13:41:05] x_coding : !yt
+[BOT] Now playing: https://www.youtube.com/watch?v=l9nh1l8ZIJQ
+[2021 01 31 13:41:11] x_coding : !help
+[BOT] List of commands is: !hi; !me; !hello; !git; !try; !pc; !discord; !fw; !st; !ide; !lisa; !project; !yt; !weather; !ss
+[2021 01 31 13:41:19] x_coding : !discord
+[BOT] Join me on disscord --  www.discord.gg/CyTrYDydQ9
+[2021 01 31 13:41:23] x_coding : !porject
+[2021 01 31 13:41:31] x_coding : !project
+[BOT] A simple Twitch bot in C#(WPF). www.github.com/0x78654C/xBot-Twitch-WPF
+[2021-01-31 13:45:39] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-01-31 13:45:47] xBot Disconncted!
+[2021-01-31 13:47:50] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-01-31 13:47:58] xBot Disconncted!
+[2021-01-31 13:53:42] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-01-31 13:59:24] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-01-31 14:03:19] x_coding : !help
+[BOT] List of commands is: !hi; !me; !hello; !git; !try; !pc; !discord; !fw; !st; !ide; !lisa; !project; !yt; !weather; !ss
+[2021-01-31 14:03:26] x_coding : !weather Texas
+[BOT] The weather(Fahrenheit) in Texas is:
+ Temperature: 44.6
+ Feels Like: 33.66
+ Minim Temperature: 44.6
+ Maxim Temperature: 44.6
+ Humidity: 57
+ Wind Speed: 12.66
+
+[2021-01-31 14:03:44] x_coding : !weather dc
+[BOT] The weather(Fahrenheit) in dc is:
+Please check city name!
+[2021-01-31 14:03:57] x_coding : !weather London
+[BOT] The weather(Fahrenheit) in London is:
+ Temperature: 38.64
+ Feels Like: 25.92
+ Minim Temperature: 37
+ Maxim Temperature: 39.99
+ Humidity: 75
+ Wind Speed: 16.11
+
+[2021-01-31 14:04:11] x_coding : !weather London
+[BOT] The weather(Celsius) in London is:
+ Temperature: 3.69
+ Feels Like: -3.38
+ Minim Temperature: 2.78
+ Maxim Temperature: 4.44
+ Humidity: 75
+ Wind Speed: 7.2
+
+[2021-01-31 14:05:11] x_coding : !st
+[BOT] Stress my bot please xD. Use !help for commands
+[2021-01-31 14:05:24] x_coding : !fw
+[BOT] A follow on my stream will be superb for me ;). Thank you!
+[2021-01-31 14:05:26] x_coding : ut
+[2021-01-31 14:05:28] x_coding : !yt
+[BOT] Nothing playing at the moment! 
+[2021-01-31 14:07:10] x_coding : !help
+[BOT] List of commands is: !me; !hello; !git; !try; !pc; !discord; !fw; !st; !ide; !lisa; !project; !sorry; !yt; !weather; !ss
+[2021-01-31 14:07:14] x_coding : !sorry
+[BOT] Sorry that I don't have a mic or camera at the moment. Maybe in future will aquire one for you guys! 

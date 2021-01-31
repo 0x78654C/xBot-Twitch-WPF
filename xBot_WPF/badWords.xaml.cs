@@ -208,17 +208,15 @@ namespace xBot_WPF
                 else
                 {
 
-
                     using (var sr = new StringReader(wordList.SelectedItem.ToString()))
                     {
                         while ((line = sr.ReadLine()) != null)
                         {
                             bFile = bFile.Replace(line, "");
-
                         }
 
                         wordList.Items.Remove(wordList.SelectedItem.ToString());
-                        bFile = Regex.Replace(bFile, @"^\s+$[\r\n]*", string.Empty, RegexOptions.Multiline);
+                        bFile = Regex.Replace(bFile, @"^\s+$[\r\n]*", string.Empty, RegexOptions.Multiline);//remove empty lines
                         File.WriteAllText(badWordDir, bFile);
 
                     }

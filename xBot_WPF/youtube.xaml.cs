@@ -137,10 +137,9 @@ namespace xBot_WPF
         /// <param name="e"></param>
         private void playBTN_Click(object sender, RoutedEventArgs e)
         {
-
+            
             if (playBTN.Content.ToString() == "Play")
             {
-
                 reload_YT(playLink);
                 playBTN.Content = "Stop";
             }
@@ -153,6 +152,7 @@ namespace xBot_WPF
                 this.ytBrowser.NavigateToString(html1);
                 Reg.regKey_WriteSubkey(keyName, "YTControl", "0");
                 playBTN.Content = "Play";
+                
             }
 
         }

@@ -70,12 +70,12 @@ namespace xBot_WPF
         private static string botMSGKey = "0";
         private static string botMSGControl = "0";
         private static string weatherUnits = "0";
-        //------------------------------------------
+        //------------------------------------------------
 
         //declare twitch credential info
         private static string t_userName;
         private static string t_streamKey;
-        //--------------------------------------------------
+        //-------------------------------------------------
 
 
         //command file variables
@@ -111,7 +111,7 @@ namespace xBot_WPF
         private static string apiKey = string.Empty;
         private static string weatheCond = string.Empty;
         static readonly HttpClient clientH = new HttpClient();
-        //---------------------------------------------------
+        //--------------------------------------------------
 
         //declare the bot forms variables
         settings sT;
@@ -349,7 +349,7 @@ namespace xBot_WPF
             {
                 logViewRTB.Document.Blocks.Clear();
             });
-            date = DateTime.Now.ToString("yyyy MM dd HH:mm:ss");
+            date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             logWrite("[" + date + "] xBot connecting to " + t_userName + " channel....");
 
             ConnectionCredentials credentials = new ConnectionCredentials(t_userName, t_streamKey, null, true);
@@ -378,7 +378,6 @@ namespace xBot_WPF
             if (client.IsConnected)
             {
                 logWrite("[" + date + "] xBot Connected to " + t_userName + " channel !");
-
             }
         }
 
@@ -393,7 +392,7 @@ namespace xBot_WPF
             }
             if (!client.IsConnected)
             {
-                date = DateTime.Now.ToString("yyyy MM dd HH:mm:ss");
+                date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                 logWrite("[" + date + "] xBot Disconncted!");
                 CLog.LogWrite("[" + date + "] xBot Disconncted!");
                 startBotBTN.Content = "START";
@@ -412,7 +411,7 @@ namespace xBot_WPF
 
         private void Client_OnConnected(object sender, OnConnectedArgs e)
         {
-            date = DateTime.Now.ToString("yyyy MM dd HH:mm:ss");
+            date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             CLog.LogWrite("[" + date + $"] Connected to {e.AutoJoinChannel} channel !");
         }
 
@@ -431,7 +430,7 @@ namespace xBot_WPF
         private void Client_OnMessageReceived(object sender, OnMessageReceivedArgs e)
         {
             //Display in logwindow the chat messages
-            string date2 = DateTime.Now.ToString("yyyy MM dd HH:mm:ss");
+            string date2 = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             if (e.ChatMessage.Message.Length > 0)
             {
                 logWrite("[" + date2 + "] " + e.ChatMessage.Username + " : " + e.ChatMessage.Message);
@@ -983,7 +982,7 @@ namespace xBot_WPF
             }
             catch
             {
-
+            
             }
         }
 

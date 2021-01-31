@@ -28,7 +28,6 @@ namespace xBot_WPF
         private static string apiKey;
         private static string joinedKey;
         private static string weatherUnits;
-
         //---------------------------------------------------------
         public settings()
         {
