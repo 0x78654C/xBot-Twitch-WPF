@@ -18,23 +18,29 @@ using following libs:
 https://github.com/TwitchLib/TwitchLib (for api connect)
 
 https://github.com/davcs86/csharp-uhwid (for oath hwid encrypt/decrypt)
+_____________________________________________________
 
-Requirement: .NET Framework 4.7
+**Requirement**: 
+
+.NET Framework 4.7
+
+_____________________________________________________
+
 
 Project ongoing live on: https://www.twitch.tv/x_coding
 
-Features:
+**Features**:
 
     show status if client is connected
-    saveing twitch user name and oauth key to registry
+    saveing twitch user name, openweather api key and oauth key to registry
     set custom bot connect message in real time
     add/remove/display commnads in real time to list
-    add/remove/display bad words in real time to list
-    change time(minutes) for chat ban in ream time
-    hardcoded !help command for display the list of coomands
+    add/remove/display bad words for chat ban in real time to list
+    change time(minutes) for chat ban in real time
+    hardcoded !help command for display the list of commands
     hardcoded !ss command for shout a streamer
     hardcoded !yt command for youtube current song played on xBot youtube player
-    hardcoded !weather Weather Forecast command
+    hardcoded !weather Weather Forecast(Fahrenheit and Celsius units) command using openweather.org API
     hardcoded !gl for whishing good luck to some one in chat from you
     total viewers online count on interface
 
