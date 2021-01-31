@@ -265,9 +265,9 @@ namespace xBot_WPF
 
                 t_streamKey = Encryption._decryptData(Reg.regKey_Read(keyName, "StreamKey"));
             }
-            catch (Exception)
+            catch (Exception x)
             {
-                //we bypass the error if no data found in ini for aouth key
+                CLog.LogWrite("oAuth decrypt error: " + x.ToString()) ;
             }
 
 
@@ -540,8 +540,6 @@ namespace xBot_WPF
                         {
                             client.SendMessage(e.ChatMessage.Channel, "[BOT] You must add the name of streamer for shoutout with @ character!");
                             logWrite("[BOT] You must add the name of streamer for shoutout with @ character!");
-                            CLog.LogWrite("[BOT] You must add the name of streamer for shoutout with @ character!");
-
                         }
                     }
 
@@ -578,7 +576,6 @@ namespace xBot_WPF
                         {
                             client.SendMessage(e.ChatMessage.Channel, "[BOT] You must add the name of chatter for good luck command with @ character!");
                             logWrite("[BOT] You must add the name of chatter for good luck command with @ character!");
-                            CLog.LogWrite("[BOT] You must add the name of chatter for good luck command with @ character!");
                         }
                     }
                 }
@@ -624,14 +621,13 @@ namespace xBot_WPF
                 {
                     client.SendMessage(e.ChatMessage.Channel, "Check the City name please!");
                     logWrite("[BOT] Check the City name please!");
-                    CLog.LogWrite("[BOT] Check the City name please!");
+
                 }
             }
             else
             {
                 client.SendMessage(e.ChatMessage.Channel, "Weather command is disabled for the moment!");
                 logWrite("[BOT] Weather command is disabled for the moment!");
-                CLog.LogWrite("[BOT] Weather command is disabled for the moment!");
             }
             //----------------------------
 
@@ -772,13 +768,14 @@ namespace xBot_WPF
                 {
                     //we print the issue on the log viewer console
                     logWrite("No openweathermap.org API Key saved! Please check" + Environment.NewLine);
+                   
                 }
             }
             catch (Exception e)
             {
                 //In case of error we output this in console.
                 outs = "Please check city name!";
-                logWrite("Weather error: " + e.ToString());
+                CLog.LogWriteError("Weather error: " + e.ToString());
             }
 
             //print the final weather forecast
@@ -825,9 +822,9 @@ namespace xBot_WPF
 
                 t_streamKey = Encryption._decryptData(Reg.regKey_Read(keyName, "StreamKey"));
             }
-            catch (Exception)
+            catch (Exception x)
             {
-                //we bypass the error if no data found in ini for aouth key
+                CLog.LogWrite("oAuth decrypt error:" + x.ToString()); 
             }
             botMSGKey = Reg.regKey_Read(keyName, "BotMSG");
             timeBan = Int32.Parse(Reg.regKey_Read(keyName, "WordBanTime"));
@@ -982,7 +979,7 @@ namespace xBot_WPF
             }
             catch
             {
-            
+            //We move on 
             }
         }
 

@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30406.217
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xBot_WPF", "xBot_WPF\xBot_WPF.csproj", "{3A25FD24-B544-4BFA-B9FD-22769079E902}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "..\xBot\xBot\xBot-Twitch\Core\Core.csproj", "{1C8CB806-59E3-40A1-98C6-776286CC93A6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{1C8CB806-59E3-40A1-98C6-776286CC93A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

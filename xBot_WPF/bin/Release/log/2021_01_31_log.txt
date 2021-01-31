@@ -70,3 +70,38 @@ Please check city name!
 [BOT] List of commands is: !me; !hello; !git; !try; !pc; !discord; !fw; !st; !ide; !lisa; !project; !sorry; !yt; !weather; !ss
 [2021-01-31 14:07:14] x_coding : !sorry
 [BOT] Sorry that I don't have a mic or camera at the moment. Maybe in future will aquire one for you guys! 
+[2021-01-31 14:08:48] x_coding : !st
+[BOT] Stress my bot please xD. Use !help for commands
+[2021-01-31 14:08:51] x_coding : !st
+[BOT] Stress my bot please xD. Use !help for commands
+[2021-01-31 14:09:00] x_coding : !fw
+[BOT] A follow on my stream will be superb for me ;). Thank you!
+[2021-01-31 14:22:38] xBot Disconncted!
+[2021-01-31 14:23:24] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-01-31 14:23:28] x_coding : !weather dddd
+[BOT] The weather(Fahrenheit) in dddd is:
+Please check city name!
+[2021-01-31 14:24:31] x_coding : !weather prague
+[BOT] The weather(Fahrenheit) in prague is:
+ Temperature: 31.35
+ Feels Like: 22.05
+ Minim Temperature: 30
+ Maxim Temperature: 33.01
+ Humidity: 69
+ Wind Speed: 8.05
+
+[2021-01-31 14:24:39] x_coding : !gl
+[2021-01-31 14:26:38] xBot Disconncted!
+[2021-01-31 14:28:34] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-01-31 14:30:18] x_coding : !gl @xCodingBOT
+[BOT] x_coding wishes xCodingBOT good luck. May you succeed in whatever you're planning to do!
+[2021-01-31 14:30:31] x_coding : !fw
+[BOT] A follow on my stream will be superb for me ;). Thank you!
+[2021-01-31 14:32:34] x_coding : !projecg
+[2021-01-31 14:32:37] x_coding : !project
+[BOT] A simple Twitch bot in C#(WPF). www.github.com/0x78654C/xBot-Twitch-WPF
+[2021-01-31 14:33:01] x_coding : !discord
+[BOT] Join me on disscord --  www.discord.gg/CyTrYDydQ9
+[2021-01-31 14:38:13] xBot Disconncted!
