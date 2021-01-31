@@ -25,7 +25,6 @@ namespace xBot_WPF
     {
         //declare global variables
         readonly static string comFile = Directory.GetCurrentDirectory() + @"\data\command.txt";
-
         StreamWriter sWriter;
         private static string cmd;
         private static string msg;
@@ -186,22 +185,20 @@ namespace xBot_WPF
                         //check if command already exists in line
                         if (line.Contains(cL[0]))
                         {
-
                             cmd_lst = cmd_lst.Replace(line, "");
-
                         }
                     }
 
                     using (sWriter = new StreamWriter(comFile))
                     {
-                        cmd_lst = Regex.Replace(cmd_lst, @"^\s+$[\r\n]*", string.Empty, RegexOptions.Multiline);
+                        cmd_lst = Regex.Replace(cmd_lst, @"^\s+$[\r\n]*", string.Empty, RegexOptions.Multiline);//remove empty lines
                         sWriter.Write(cmd_lst);
                         sWriter.Close();
                         nameTXT.Clear();
                         MessageBox.Show("The command "+cL[0]+" was deleted!");
 
                     }
-
+                    //we remove item from list
                     commandList.Items.Remove(commandList.SelectedItem);
 
                 }

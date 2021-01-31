@@ -136,3 +136,41 @@ Please check city name!
 [2021-01-31 15:24:12] x_coding : arround
 [2021-01-31 15:24:19] x_coding : on next stream
 [2021-01-31 15:25:56] xBot Disconncted!
+[2021-01-31 22:12:38] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-01-31 22:21:20] karantaffairs : !lurk
+[2021-01-31 22:22:48] x_coding : !lurk?:D
+[2021-01-31 22:22:55] x_coding : @karantaffairs hey
+[2021-01-31 22:24:32] karantaffairs : Lurk = I'm giving you the views you require but not gonna be active in chat
+[2021-01-31 22:24:48] karantaffairs : It's 2am for me & I'm barely awake :D
+[2021-01-31 22:26:10] x_coding : aa:D
+[2021-01-31 22:26:14] x_coding : thx @karantaffairs
+[2021-01-31 22:26:31] x_coding : by me is 22 pm
+[2021-01-31 22:34:33] itslegohead : hi
+[2021-01-31 22:35:32] x_coding : hey hey
+[2021-01-31 22:35:34] x_coding : and wealcome
+[2021-01-31 22:37:51] x_coding : !discord
+[BOT] Join me on disscord --  www.discord.gg/CyTrYDydQ9
+[2021-01-31 22:37:56] x_coding : !help
+[BOT] List of commands is: !me; !git; !try; !pc; !discord; !fw; !st; !ide; !lisa; !sorry; !project; !yt; !weather; !ss
+[2021-01-31 22:43:34] x_coding : !fw
+[BOT] A follow on my stream will be superb for me ;). Thank you!
+[2021-01-31 22:43:42] x_coding : !sorry
+[BOT] Sorry that I don't have a mic or camera at the moment. Maybe in future will aquire one for you guys! 
+[2021-01-31 22:55:56] getnschwifty710 : here to help with views
+[2021-01-31 22:56:15] x_coding : Thnks @getnschwifty710 . I apriciate
+[2021-01-31 22:57:06] getnschwifty710 : @x_coding no problem thanks for the follw
+[2021-01-31 23:07:17] x_coding : !discord
+[BOT] Join me on disscord --  www.discord.gg/CyTrYDydQ9
+[2021-01-31 23:37:00] kylechad21 : Yo yo yo
+[2021-01-31 23:37:10] kylechad21 : Good luck getting the views up bro
+[2021-01-31 23:37:46] x_coding : thx @kylechad21
+[2021-01-31 23:41:28] x_coding : !weather London
+[BOT] The weather(Fahrenheit) in London is:
+ Temperature: 37.74
+ Feels Like: 31.55
+ Minim Temperature: 37
+ Maxim Temperature: 39.2
+ Humidity: 93
+ Wind Speed: 5.75
+
