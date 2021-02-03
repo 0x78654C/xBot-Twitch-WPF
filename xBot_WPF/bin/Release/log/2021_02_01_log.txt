@@ -3,3 +3,13 @@
 [2021-02-01 00:06:30] x_coding : !discord
 [BOT] Join me on disscord --  www.discord.gg/CyTrYDydQ9
 [2021-02-01 00:07:32] xBot Disconncted!
+[2021-02-01 22:45:18] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-01 23:24:12] getnschwifty710 : here to help with views
+[2021-02-01 23:24:26] x_coding : thx;)
+[2021-02-01 23:25:01] polaris_1904 : same
+[2021-02-01 23:26:09] x_coding : thx guys
+[2021-02-01 23:37:50] x_coding : !discord
+[BOT] Join me on disscord --  www.discord.gg/CyTrYDydQ9
+[2021-02-01 23:37:54] x_coding : !git
+[BOT]  Some of my projects www.github.com/0x78654C/

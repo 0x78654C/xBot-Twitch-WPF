@@ -130,6 +130,11 @@ namespace xBot_WPF
         Mutex myMutex;
         //---------------------------------
 
+
+        //declare timer for load icons and variables read value
+        System.Windows.Threading.DispatcherTimer dispatcherTimer;
+        //--------------------------------
+
         int Viewers = 0;
 
         public MainWindow()
@@ -285,7 +290,7 @@ namespace xBot_WPF
             #endregion
 
             //staus check timer start
-            System.Windows.Threading.DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
+            dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
             dispatcherTimer.Tick += StatusLoadIcon;
             dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
             dispatcherTimer.Start();
@@ -345,8 +350,11 @@ namespace xBot_WPF
         /// </summary>
         public void BotStart(object sender, DoWorkEventArgs e)
         {
+            
             this.Dispatcher.Invoke(() =>
             {
+                statIMG.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/orange_dot.png"));
+
                 logViewRTB.Document.Blocks.Clear();
             });
             date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
@@ -370,15 +378,20 @@ namespace xBot_WPF
             client.OnUserJoined += Client_OnUserJoinedArgs;
             client.OnUserLeft += Client_OnUserLeftArgs;
             client.Connect();
-            this.Dispatcher.Invoke(() =>
-            {
-                startBotBTN.Content = "STOP";
-            });
+
             //we check if bot is connected and display the log info
             if (client.IsConnected)
             {
                 logWrite("[" + date + "] xBot Connected to " + t_userName + " channel !");
+                Thread.Sleep(1);
+                statIMG.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/green_dot.png"));
+                this.Dispatcher.Invoke(() =>
+                {
+                    startBotBTN.Content = "STOP";
+                });
+              
             }
+       
         }
 
         /// <summary>
@@ -842,7 +855,6 @@ namespace xBot_WPF
             if (client.IsConnected)
             {
 
-
                 statIMG.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/green_dot.png"));
 
             }
@@ -894,9 +906,11 @@ namespace xBot_WPF
 
                             if (t_streamKey.Length > 0)
                             {
+                                dispatcherTimer.Stop();
                                 worker = new BackgroundWorker();
                                 worker.DoWork += BotStart;
                                 worker.RunWorkerAsync();
+                                dispatcherTimer.Start();
                             }
                             else
                             {
