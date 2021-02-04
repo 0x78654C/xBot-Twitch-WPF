@@ -15,3 +15,11 @@ F:\twitch\Projects\xBot\xBot\xBot-Twitch\Core\obj\Release\Core.csproj.CoreCompil
 F:\twitch\Projects\xBot\xBot\xBot-Twitch\Core\obj\Release\Core.csproj.CopyComplete
 F:\twitch\Projects\xBot\xBot\xBot-Twitch\Core\obj\Release\Core.dll
 F:\twitch\Projects\xBot\xBot\xBot-Twitch\Core\obj\Release\Core.pdb
+F:\twitch\Projects\xBot-Twitch-WPF\Core\bin\Release\Core.dll
+F:\twitch\Projects\xBot-Twitch-WPF\Core\bin\Release\Core.pdb
+F:\twitch\Projects\xBot-Twitch-WPF\Core\bin\Release\UHWID.pdb
+F:\twitch\Projects\xBot-Twitch-WPF\Core\obj\Release\Core.csprojAssemblyReference.cache
+F:\twitch\Projects\xBot-Twitch-WPF\Core\obj\Release\Core.csproj.CoreCompileInputs.cache
+F:\twitch\Projects\xBot-Twitch-WPF\Core\obj\Release\Core.csproj.CopyComplete
+F:\twitch\Projects\xBot-Twitch-WPF\Core\obj\Release\Core.dll
+F:\twitch\Projects\xBot-Twitch-WPF\Core\obj\Release\Core.pdb

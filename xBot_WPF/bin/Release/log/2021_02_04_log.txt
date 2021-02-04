@@ -1,0 +1,39 @@
+[2021-02-04 22:34:27] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-04 22:34:32] xBot Disconncted!
+[2021-02-04 22:34:38] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-04 22:42:26] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-04 23:05:23] x_coding : !help
+[BOT] List of commands is: !me; !git; !try; !pc; !discord; !fw; !st; !ide; !lisa; !sorry; !project; !yt; !weather; !ss
+[2021-02-04 23:26:19] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-04 23:26:33] xBot Disconncted!
+[2021-02-04 23:30:19] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-04 23:34:39] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-04 23:35:07] xBot Disconncted!
+[2021-02-04 23:36:35] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-04 23:36:39] xBot Disconncted!
+[2021-02-04 23:42:30] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-04 23:42] No internet connection at the moment. Trying to reconnect...
+[2021-02-04 23:43] No internet connection at the moment. Trying to reconnect...
+[2021-02-04 23:48:35] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-04 23:50:56] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-04 23:52:51] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-04 23:52] No internet connection at the moment. Trying to reconnect...
+[2021-02-04 23:53] No internet connection at the moment. Trying to reconnect...
+[2021-02-04 23:54:15] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-04 23:54] No internet connection at the moment. Trying to reconnect...
+[2021-02-04 23:54:30] x_coding : !helo
+[2021-02-04 23:54:32] x_coding : !help
+[BOT] List of commands is: !me; !git; !try; !pc; !discord; !fw; !st; !ide; !lisa; !sorry; !project; !yt; !weather; !ss
+[2021-02-04 23:55] No internet connection at the moment. Trying to reconnect...

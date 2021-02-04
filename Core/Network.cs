@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net;
 using System.Net.Sockets;
+using System.IO;
 
 namespace Core
 {
@@ -17,6 +18,11 @@ namespace Core
         /// </summary>
         /// <param name="ip"></param>
         /// <returns>verifies if IP is up or not</returns>
+        /// 
+
+        //declare date variable
+      private static string date=string.Empty;
+        //------------------
 
         public static bool pingH(string ip)
         {
@@ -31,7 +37,8 @@ namespace Core
             }
             catch (PingException p)
             {
-                CLog.LogWriteError("Core - pingH: " + p.ToString());
+                date = DateTime.Now.ToString("yyyy-dd-HH:mm");
+                CLog.LogWriteError("["+date+"]Core - pingH: " + p.ToString());
             }
             finally
             {

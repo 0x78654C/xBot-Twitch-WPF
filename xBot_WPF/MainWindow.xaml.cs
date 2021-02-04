@@ -24,7 +24,6 @@ using TwitchLib.Communication.Models;
 using TwitchLib.Api;
 using TwitchLib.Api.Helix.Models.Users;
 using TwitchLib.Api.V5.Models.Subscriptions;
-using Ini;
 using System.IO;
 using System.Reflection;
 using Core;
@@ -289,11 +288,10 @@ namespace xBot_WPF
             weatherUnits = Reg.regKey_Read(keyName, "weatherUnits");
             #endregion
 
-            //staus check timer start
+            //staus check timer declaration
             dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
             dispatcherTimer.Tick += StatusLoadIcon;
             dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
-            dispatcherTimer.Start();
             //----------------------------------
 
             //hide start button
@@ -306,6 +304,9 @@ namespace xBot_WPF
             Reg.regKey_WriteSubkey(keyName, "YtWin", "0");
             //-----------------------------------
 
+            //load connection icon
+            statIMG.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/red_dot.png"));
+            //---------------------------------
 
         }
 
@@ -357,7 +358,7 @@ namespace xBot_WPF
 
                 logViewRTB.Document.Blocks.Clear();
             });
-            date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
             logWrite("[" + date + "] xBot connecting to " + t_userName + " channel....");
 
             ConnectionCredentials credentials = new ConnectionCredentials(t_userName, t_streamKey, null, true);
@@ -402,13 +403,18 @@ namespace xBot_WPF
             if (client.IsConnected)
             {
                 client.Disconnect();
+                dispatcherTimer.Stop();
+                statIMG.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/red_dot.png"));
+
             }
             if (!client.IsConnected)
             {
-                date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
                 logWrite("[" + date + "] xBot Disconncted!");
                 CLog.LogWrite("[" + date + "] xBot Disconncted!");
                 startBotBTN.Content = "START";
+                
+                //reset viewers counter
                 Viewers = 0;
                 viewersLbL.Content = "0";
             }
@@ -418,13 +424,14 @@ namespace xBot_WPF
         private void Client_OnLog(object sender, OnLogArgs e)
         {
             //  CLog.LogWrite($"{e.DateTime.ToString()}: {e.BotUsername} - {e.Data}");
-            //for future work
+            
+            ///For future work if necesaryJ
 
         }
 
         private void Client_OnConnected(object sender, OnConnectedArgs e)
         {
-            date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
             CLog.LogWrite("[" + date + $"] Connected to {e.AutoJoinChannel} channel !");
         }
 
@@ -806,6 +813,7 @@ namespace xBot_WPF
                 this.DragMove();
         }
 
+
         /// <summary>
         /// Close wpf form button
         /// </summary>
@@ -852,16 +860,57 @@ namespace xBot_WPF
             weatherUnits = Reg.regKey_Read(keyName, "weatherUnits");
             //-----------------------------------
 
-            if (client.IsConnected)
+            //status checking 
+            if (Network.inetCK())
             {
+                if (client.IsConnected)
+                {
 
-                statIMG.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/green_dot.png"));
+                    statIMG.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/green_dot.png"));
 
+                }
+                else
+                {
+                    statIMG.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/orange_dot.png"));
+                    date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+                    client.Connect();
+                    if (client.IsConnected)
+                    {
+                        logWrite("[" + date + "]Internet up. Reconnected to " + t_userName + " channel !");
+                        CLog.LogWrite("[" + date + "]Internet up. Reconnected to " + t_userName + " channel !");
+                    }
+                }
             }
             else
             {
-                statIMG.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/red_dot.png"));
+                if (!client.IsConnected)
+                {
+                    Viewers = 0;
+                    viewersLbL.Content = "0";
+                    date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+                    statIMG.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/red_dot.png"));
+                    string oRTB = ConvertRichTextBoxContentsToString(logViewRTB);
+                    if (!oRTB.Contains("[" + date + "] No internet connection at the moment. Trying to reconnect..."))
+                    {
+                        logWrite("[" + date + "] No internet connection at the moment. Trying to reconnect...");
+                        CLog.LogWrite("[" + date + "] No internet connection at the moment. Trying to reconnect...");
+                    }
+                }
             }
+            //------------------------------------------------
+        }
+
+
+        /// <summary>
+        /// Output string from a rich text box
+        /// </summary>
+        /// <param name="rtb"></param>
+        /// <returns></returns>
+        private string ConvertRichTextBoxContentsToString(System.Windows.Controls.RichTextBox rtb)
+        {
+            TextRange textRange = new TextRange(rtb.Document.ContentStart,
+            rtb.Document.ContentEnd);
+            return textRange.Text;
         }
 
         /// <summary>

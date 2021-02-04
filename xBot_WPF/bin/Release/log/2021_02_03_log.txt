@@ -166,3 +166,48 @@ x_coding | kualda23 | 00:01:00 | [BOT] Bad word ban! 1 minute(s) timeout!
 [2021-02-03 23:27:02] kualda23 : thanks! I will save this page
 [2021-02-03 23:27:13] x_coding : ;)
 [2021-02-03 23:27:22] kualda23 : for when I can stream thru my pc
+[2021-02-03 23:29:04] x_coding : updated with new fixes you saw on stream
+[2021-02-03 23:33:33] kualda23 : every time I have bots in my chat jaja
+[2021-02-03 23:33:40] kualda23 : like 4-8
+[2021-02-03 23:33:56] kualda23 : but not count such a viewerz is weird
+[2021-02-03 23:34:31] x_coding : bewcause they are not new viewrs
+[2021-02-03 23:34:35] x_coding : avarage
+[2021-02-03 23:35:06] kualda23 : oh yes
+[2021-02-03 23:35:42] kualda23 : is a problem this average.. and I streamed 20 hours and now is complicated to have 3/3 jaja
+[2021-02-03 23:36:00] kualda23 : 0.8 now..
+[2021-02-03 23:36:08] x_coding : :D
+[2021-02-03 23:36:12] x_coding : well one day
+[2021-02-03 23:36:21] kualda23 : ye jaja I hope so
+[2021-02-03 23:36:25] kualda23 : you too man
+[2021-02-03 23:36:37] kualda23 : 93 follows
+[2021-02-03 23:40:27] x_coding : i hited accidently the end steam button
+[2021-02-03 23:40:29] x_coding : :D
+[2021-02-03 23:40:30] x_coding : sorry
+[2021-02-03 23:41:12] x_coding : !weather prague
+[BOT] The weather(Fahrenheit) in prague is:
+ Temperature: 47.25
+ Feels Like: 35.96
+ Minim Temperature: 46
+ Maxim Temperature: 48.2
+ Humidity: 76
+ Wind Speed: 16.11
+
+[2021-02-03 23:41:51] x_coding : thx or follow
+[2021-02-03 23:42:15] x_coding : !weather New York
+[BOT] The weather(Celsius) in New is:
+ Temperature: 26
+ Feels Like: 31.35
+ Minim Temperature: 26
+ Maxim Temperature: 26
+ Humidity: 94
+ Wind Speed: 1.5
+
+[2021-02-03 23:42:30] x_coding : !help
+[BOT] List of commands is: !me; !git; !try; !pc; !discord; !fw; !st; !ide; !lisa; !sorry; !project; !yt; !weather; !ss
+[2021-02-03 23:43:47] xBot Disconncted!
+[2021-02-03 23:43:51] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-03 23:53:13] x_coding : cya all on next steam
+[2021-02-03 23:53:19] x_coding : stream
+[2021-02-03 23:53:26] x_coding : i have some inet issue
+[2021-02-03 23:53:38] xBot Disconncted!

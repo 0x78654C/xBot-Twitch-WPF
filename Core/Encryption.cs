@@ -22,6 +22,11 @@ namespace Core
         private static string _KEY = SimpleUID+AdvancedUID;
         //--------------------------------------
 
+        //declare date variable
+        private static string date = string.Empty;
+        //---------------------------------------
+
+
         /// <summary>
         /// decryption function
         /// </summary>
@@ -50,8 +55,9 @@ namespace Core
             }
             catch(Exception e)
             {
+                date = DateTime.Now.ToString("yyyy-dd-HH:mm");
                 //throw new Exception ("Error: Something went wrong on decryption!");
-                CLog.LogWriteError("Core - Decryption error: " + e.ToString());
+                CLog.LogWriteError("[" + date + "]Core - Decryption error: " + e.ToString());
             }
             return DecryptedData;
 
@@ -86,7 +92,8 @@ namespace Core
             }
             catch(Exception e)
             {
-                CLog.LogWriteError("Core - Encryption error: " + e.ToString());
+                date = DateTime.Now.ToString("yyyy-dd-HH:mm");
+                CLog.LogWriteError("[" + date + "]Core - Encryption error: " + e.ToString());
             }
             return EncryptedData;
 

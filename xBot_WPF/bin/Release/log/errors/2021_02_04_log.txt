@@ -1,0 +1,936 @@
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 28
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
+Core - pingH: System.Net.NetworkInformation.PingException: An exception occurred during a Ping request. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   --- End of inner exception stack trace ---
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress, Int32 timeout, Byte[] buffer, PingOptions options)
+   at System.Net.NetworkInformation.Ping.Send(String hostNameOrAddress)
+   at Core.Network.pingH(String ip) in F:\twitch\Projects\xBot-Twitch-WPF\Core\Network.cs:line 29
