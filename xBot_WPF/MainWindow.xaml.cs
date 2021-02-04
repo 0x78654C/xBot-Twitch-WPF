@@ -379,20 +379,22 @@ namespace xBot_WPF
             client.OnUserJoined += Client_OnUserJoinedArgs;
             client.OnUserLeft += Client_OnUserLeftArgs;
             client.Connect();
-
+          
             //we check if bot is connected and display the log info
             if (client.IsConnected)
             {
                 logWrite("[" + date + "] xBot Connected to " + t_userName + " channel !");
                 Thread.Sleep(1);
                 statIMG.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/green_dot.png"));
-                this.Dispatcher.Invoke(() =>
-                {
-                    startBotBTN.Content = "STOP";
-                });
+
+                startBotBTN.Content = "STOP";             
               
             }
-       
+            
+            this.Dispatcher.Invoke(() =>
+            {
+                startBotBTN.Content = "STOP";
+            });
         }
 
         /// <summary>
@@ -865,7 +867,7 @@ namespace xBot_WPF
             {
                 if (client.IsConnected)
                 {
-
+                    startBotBTN.Content = "STOP";
                     statIMG.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/green_dot.png"));
 
                 }
@@ -876,6 +878,7 @@ namespace xBot_WPF
                     client.Connect();
                     if (client.IsConnected)
                     {
+                        startBotBTN.Content = "STOP";
                         logWrite("[" + date + "]Internet up. Reconnected to " + t_userName + " channel !");
                         CLog.LogWrite("[" + date + "]Internet up. Reconnected to " + t_userName + " channel !");
                     }
@@ -887,6 +890,7 @@ namespace xBot_WPF
                 {
                     Viewers = 0;
                     viewersLbL.Content = "0";
+                    startBotBTN.Content = "START";
                     date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
                     statIMG.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/red_dot.png"));
                     string oRTB = ConvertRichTextBoxContentsToString(logViewRTB);

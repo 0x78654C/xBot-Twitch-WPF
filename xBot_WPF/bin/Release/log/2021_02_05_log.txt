@@ -81,3 +81,31 @@
 [2021-02-05 00:55] xBot Disconncted!
 [2021-02-05 00:55] Connected to x_coding channel !
 [Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-05 01:09:17] x_coding : this is it for today
+[2021-02-05 01:09:24] x_coding : cya all on next stream
+[2021-02-05 01:09] xBot Disconncted!
+[2021-02-05 01:09] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-05 01:09] xBot Disconncted!
+[2021-02-05 01:10] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-05 01:11] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-05 01:12] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-05 01:12] xBot Disconncted!
+[2021-02-05 01:12] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-05 01:14] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-05 01:15] xBot Disconncted!
+[2021-02-05 01:15] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-05 01:16] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-05 01:18] Connected to x_coding channel !
+[2021-02-05 01:19] Connected to x_coding channel !
+[2021-02-05 01:20] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-05 01:22] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
