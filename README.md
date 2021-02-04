@@ -43,5 +43,6 @@ Project ongoing live on: https://www.twitch.tv/x_coding
     hardcoded !weather Weather Forecast(Fahrenheit and Celsius units) command using openweather.org API
     hardcoded !gl for whishing good luck to some one in chat from you
     total viewers online count on interface
+    automaticaly reconnect to twitch channel if internet connection crashed and is up again 
 
 (more to come)
