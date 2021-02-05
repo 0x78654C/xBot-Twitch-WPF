@@ -69,6 +69,7 @@ namespace xBot_WPF
         private static string botMSGKey = "0";
         private static string botMSGControl = "0";
         private static string weatherUnits = "0";
+        private static string menuStatus = "0";
         //------------------------------------------------
 
         //declare twitch credential info
@@ -257,6 +258,11 @@ namespace xBot_WPF
             {
                 Reg.regKey_CreateKey(keyName, "weatherUnits", "0");
             }
+
+            if (Reg.regKey_Read(keyName, "Menu") == "")
+            {
+                Reg.regKey_CreateKey(keyName, "Menu", "0");
+            }
             //-----------------------------------------
 
 
@@ -286,16 +292,34 @@ namespace xBot_WPF
             YtLink = Reg.regKey_Read(keyName, "YtLink");
             botMSGControl = Reg.regKey_Read(keyName, "botMSGControl");
             weatherUnits = Reg.regKey_Read(keyName, "weatherUnits");
+            menuStatus = Reg.regKey_Read(keyName, "Menu");
             #endregion
 
+
+            //Menu state check and apply
+            if (menuStatus == "1")
+            {
+                GridMenu.Width = 199;
+                btnOpenMenu.Visibility = Visibility.Collapsed;
+                btnCloseMenu.Visibility = Visibility.Visible;
+                startBotBTN.Visibility = Visibility.Visible;
+                logViewRTB.Margin = new Thickness(199, 50, 0, 0);
+             
+            }
+            else
+            {
+                GridMenu.Width = 50;
+                logViewRTB.Margin = new Thickness(50, 50, 0, 0);
+                btnOpenMenu.Visibility = Visibility.Visible;
+                btnCloseMenu.Visibility = Visibility.Collapsed;
+                startBotBTN.Visibility = Visibility.Hidden;
+              
+            }
+            //---------------------------------
             //staus check timer declaration
             dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
             dispatcherTimer.Tick += StatusLoadIcon;
             dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
-            //----------------------------------
-
-            //hide start button
-            startBotBTN.Visibility = Visibility.Hidden;
             //----------------------------------
 
 
@@ -390,11 +414,7 @@ namespace xBot_WPF
                 startBotBTN.Content = "STOP";             
               
             }
-            
-            this.Dispatcher.Invoke(() =>
-            {
-                startBotBTN.Content = "STOP";
-            });
+
         }
 
         /// <summary>
@@ -998,6 +1018,7 @@ namespace xBot_WPF
             btnCloseMenu.Visibility = Visibility.Visible;
             startBotBTN.Visibility = Visibility.Visible;
             logViewRTB.Margin = new Thickness(199, 50, 0, 0);
+            Reg.regKey_WriteSubkey(keyName, "Menu", "1");
         }
 
         /// <summary>
@@ -1011,6 +1032,7 @@ namespace xBot_WPF
             btnOpenMenu.Visibility = Visibility.Visible;
             btnCloseMenu.Visibility = Visibility.Collapsed;
             startBotBTN.Visibility = Visibility.Hidden;
+            Reg.regKey_WriteSubkey(keyName, "Menu", "0");
         }
 
 

@@ -112,7 +112,9 @@ namespace xBot_WPF
                 listCMD = string.Join("; ", lst);
                 //------------------------------------------
 
-                using (sWriter = new StreamWriter(comFile, append: true))
+                //Check for empty command text
+
+                if (cmd.Length>0)
                 {
                     //check if help cmd exists
                     if (!cmd.Contains("help") && !cmd.Contains("yt") && !cmd.Contains("weather") && !cmd.Contains("ss") && !cmd.Contains("gl"))
@@ -127,9 +129,10 @@ namespace xBot_WPF
                                 {
                                     //remove empty lines
                                     cmd_lst = Regex.Replace(cmd_lst, @"^\s+$[\r\n]*", string.Empty, RegexOptions.Multiline);
-                                    sWriter.Write("!" + cmd + ":" + msg + Environment.NewLine);
+                                    // sWriter.Write("!" + cmd + ":" + msg + Environment.NewLine);
+                                    File.AppendAllText(comFile, "!" + cmd + ":" + msg + Environment.NewLine);
                                     commandList.Items.Add("!" + cmd + ":" + msg);
-                                    sWriter.Close();
+                                    //sWriter.Close();
                                     nameTXT.Clear();
                                     contentTXT.Clear();
                                     MessageBox.Show("Command: '" + cmd + "' with message: '" + msg + "' added to list");
@@ -137,7 +140,30 @@ namespace xBot_WPF
                                 }
                                 else
                                 {
-                                    MessageBox.Show("The list already contains '" + cmd + "' command!");
+                                    if (commandList.SelectedIndex != -1 && commandList.SelectedItem.ToString().Contains(cmd))
+                                    {
+                                        string[] cL = commandList.SelectedItem.ToString().Split(':');
+                                        foreach (var line in cmd_lineA)
+                                        {
+                                            //check if command already exists in line
+                                            if (line.Contains(cL[0]))
+                                            {
+                                                cmd_lst = cmd_lst.Replace(line, "!" + cmd + ":" + msg);
+                                            }
+                                        }
+
+                                        cmd_lst = Regex.Replace(cmd_lst, @"^\s+$[\r\n]*", string.Empty, RegexOptions.Multiline);//remove empty lines
+                                        File.WriteAllText(comFile, cmd_lst);
+
+
+                                        commandList.Items.Remove(commandList.SelectedItem);
+                                        commandList.Items.Add("!" + cmd + ":" + msg);
+                                        contentTXT.Clear();
+                                        nameTXT.Clear();
+                                        MessageBox.Show("The command '!" + cmd + "' was updated with message: '" + msg + "'");
+                                    }
+
+
                                 }
                             }
                             else
@@ -154,11 +180,17 @@ namespace xBot_WPF
                     {
                         MessageBox.Show("You cannot add command '" + cmd + "' because is predifined!"); ;
                     }
+
+                }
+                else
+                {
+                    MessageBox.Show("You must type/select a command");
                 }
             }
             else
             {
                 MessageBox.Show(comFile + " file not found!");
+                
             }
         }
 
@@ -195,7 +227,7 @@ namespace xBot_WPF
                         sWriter.Write(cmd_lst);
                         sWriter.Close();
                         nameTXT.Clear();
-                        MessageBox.Show("The command "+cL[0]+" was deleted!");
+                        MessageBox.Show("The command " + cL[0] + " was deleted!");
 
                     }
                     //we remove item from list
@@ -210,6 +242,22 @@ namespace xBot_WPF
             else
             {
                 MessageBox.Show(comFile + " file not found!");
+            }
+        }
+
+        /// <summary>
+        /// We update the command textbox with the command name from selected command item
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void commandList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (commandList.SelectedIndex != -1)
+            {
+                string sItem = commandList.SelectedItem.ToString();
+                string[] fItem = sItem.Split('!');
+                string[] lItem = fItem[1].Split(':');
+                nameTXT.Text = lItem[0];
             }
         }
     }

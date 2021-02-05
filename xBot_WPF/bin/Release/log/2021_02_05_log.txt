@@ -109,3 +109,49 @@
 [Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
 [2021-02-05 01:22] Connected to x_coding channel !
 [Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-05 01:23] xBot Disconncted!
+[2021-02-05 01:23] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-05 01:24] xBot Disconncted!
+[2021-02-05 22:32] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-05 22:36:46] x_coding : !discord
+[BOT] Join me on disscord --  www.discord.gg/CyTrYDydQ9
+[2021-02-05 22:49:00] marenthyu : OwO what's this
+[2021-02-05 22:51:39] x_coding : hello
+[2021-02-05 22:51:44] x_coding : coding
+[2021-02-05 22:51:51] x_coding : my own bot
+[2021-02-05 22:51:57] marenthyu : and no mic, apparently naroDesu
+[2021-02-05 22:52:16] x_coding : yes, sadly not good setup
+[2021-02-05 22:52:18] marenthyu : a WPF, eh?
+[2021-02-05 22:52:21] x_coding : sorry
+[2021-02-05 22:52:23] marenthyu : interesting approach :P
+[2021-02-05 22:52:23] x_coding : yes
+[2021-02-05 22:52:57] x_coding : !yt
+[BOT] Now playing: https://www.youtube.com/watch?v=iAYMJk9IsDA
+[2021-02-05 22:53:01] x_coding : !help
+[BOT] List of commands is: !me; !git; !try; !pc; !discord; !fw; !st; !ide; !lisa; !sorry; !project; !yt; !weather; !ss
+[2021-02-05 22:53:47] x_coding : i must say . I'm not a pro coder
+[2021-02-05 22:53:56] marenthyu : if you need help with anything, make sure to join the TwitchDev Discord
+[2021-02-05 22:55:39] marenthyu : (you can find it under "Support" on the dev site naroDesu )
+[2021-02-05 22:56:19] x_coding : ok
+[2021-02-05 22:56:22] x_coding : thank you
+[2021-02-05 22:56:27] marenthyu : yw naroEhehe
+[2021-02-05 22:56:29] x_coding : btw !discord
+[BOT] Join me on disscord --  www.discord.gg/CyTrYDydQ9
+[2021-02-05 22:56:39] x_coding : if want to join
+[2021-02-05 22:56:41] x_coding : !fw
+[BOT] A follow on my stream will be superb for me ;). Thank you!
+[2021-02-05 22:56:49] marenthyu : I'm in 100 already, so i'll politely decline the invitation iivgmiHehe
+[2021-02-05 22:57:08] marenthyu : have a wonderful evening / Weekend~
+[2021-02-05 22:57:10] marenthyu : o/
+[2021-02-05 22:57:59] x_coding : @Marenthyu thank you! same;) and thx for been here
+[2021-02-05 22:59] xBot Disconncted!
+[2021-02-05 23:08] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-05 23:19] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+x_coding  Welcome to my channel x_coding. and thank you for joining. For more commands type !help
+[2021-02-05 23:24:22] x_coding : !project
+[BOT] Weather data based encryption library in C# AES and others methods.
+[2021-02-05 23:47] xBot Disconncted!

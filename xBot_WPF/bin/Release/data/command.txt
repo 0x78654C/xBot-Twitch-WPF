@@ -8,4 +8,4 @@
 !ide:Visual Studio 2019 Pro
 !lisa:May the force of the study be with you, Lisa Rei! 
 !sorry:Sorry that I don't have a mic or camera at the moment. Maybe in future will aquire one for you guys! 
-!project:Weather data based encryption library in C# AES and others methods.
+!project:A simple Twitch bot in C#(WPF). www.github.com/0x78654C/xBot-Twitch-WPF

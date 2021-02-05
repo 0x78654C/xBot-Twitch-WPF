@@ -10,3 +10,4 @@
 !ide:Visual Studio 2019 Pro
 !lisa:May the force of the study be with you, Lisa Rei! 
 !project:A simple Twitch bot in C#(WPF). www.github.com/0x78654C/xBot-Twitch-WPF
+!test:asdasd
