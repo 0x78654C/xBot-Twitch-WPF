@@ -34,8 +34,8 @@ Project ongoing live on: https://www.twitch.tv/x_coding
     show status if client is connected
     saveing twitch user name, openweather api key and oauth key to registry
     set custom bot connect message in real time
-    add/remove/display commnads in real time to list
-    add/remove/display bad words for chat ban in real time to list
+    add/remove/update commnads in real time to list
+    add/remove bad words for chat ban in real time to list
     change time(minutes) for chat ban in real time
     hardcoded !help command for display the list of commands
     hardcoded !ss command for shout a streamer
