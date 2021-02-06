@@ -42,7 +42,7 @@ Project ongoing live on: https://www.twitch.tv/x_coding
     hardcoded !yt command for youtube current song played on xBot youtube player
     hardcoded !weather Weather Forecast(Fahrenheit and Celsius units) command using openweather.org API
     hardcoded !gl for whishing good luck to some one in chat from you
-    people on chat room count on interface
+    display people on chat room count on interface
     automaticaly reconnect to twitch channel if internet connection crashed and is up again 
 
 (more to come)
