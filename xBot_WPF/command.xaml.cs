@@ -129,10 +129,8 @@ namespace xBot_WPF
                                 {
                                     //remove empty lines
                                     cmd_lst = Regex.Replace(cmd_lst, @"^\s+$[\r\n]*", string.Empty, RegexOptions.Multiline);
-                                    // sWriter.Write("!" + cmd + ":" + msg + Environment.NewLine);
                                     File.AppendAllText(comFile, "!" + cmd + ":" + msg + Environment.NewLine);
                                     commandList.Items.Add("!" + cmd + ":" + msg);
-                                    //sWriter.Close();
                                     nameTXT.Clear();
                                     contentTXT.Clear();
                                     MessageBox.Show("Command: '" + cmd + "' with message: '" + msg + "' added to list");

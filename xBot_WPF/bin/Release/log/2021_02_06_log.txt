@@ -1,0 +1,165 @@
+[2021-02-06 00:35]Internet up. Reconnected to x_coding channel !
+[2021-02-06 00:35]Internet up. Reconnected to x_coding channel !
+[2021-02-06 00:35] Connected to x_coding channel !
+x_coding  Welcome to my channel xcodingbot. and thank you for joining. For more commands type !help
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+x_coding  Welcome to my channel x_coding. and thank you for joining. For more commands type !help
+[2021-02-06 00:44:11] x_coding : !weather london
+[BOT] The weather(Celsius) in london is:
+ Temperature: 6.87
+ Feels Like: 4.11
+ Minim Temperature: 6.67
+ Maxim Temperature: 7.22
+ Humidity: 93
+ Wind Speed: 2.57
+
+[2021-02-06 00:48:38] x_coding : !help
+[BOT] List of commands is: !me; !git; !try; !pc; !discord; !fw; !st; !ide; !lisa; !sorry; !project; !yt; !weather; !ss
+[2021-02-06 00:48:44] x_coding : !project
+[BOT] A simple Twitch bot in C#(WPF). www.github.com/0x78654C/xBot-Twitch-WPF
+[2021-02-06 00:49:08] x_coding : thx for follow guys
+x_coding  Welcome to my channel stallionduck058. and thank you for joining. For more commands type !help
+x_coding  Welcome to my channel sweaty_jones. and thank you for joining. For more commands type !help
+[2021-02-06 00:52:03] stallionduck058 : hey how are you? hows the stream
+[2021-02-06 00:52:22] sweaty_jones : having fun?
+[2021-02-06 00:52:25] x_coding : @StallionDuck058 fine
+[2021-02-06 00:52:27] x_coding : :D
+[2021-02-06 00:52:29] x_coding : yep
+[2021-02-06 00:52:31] x_coding : checking code
+[2021-02-06 00:53:56] x_coding : !yt
+[BOT] Now playing: https://www.youtube.com/watch?v=iAYMJk9IsDA
+[2021-02-06 00:54:19] x_coding : !yt
+[BOT] Nothing playing at the moment! 
+[2021-02-06 00:54:24] x_coding : !ide
+[BOT] Visual Studio 2019 Pro
+[2021-02-06 00:54:32] x_coding : !discord
+[BOT] Join me on disscord --  www.discord.gg/CyTrYDydQ9
+[2021-02-06 00:56:44] x_coding : well cya all on next steam ;)
+[2021-02-06 00:57] xBot Disconncted!
+[2021-02-06 00:59] Connected to x_coding channel !
+x_coding  Welcome to my channel xcodingbot. and thank you for joining. For more commands type !help
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-06 00:59] xBot Disconncted!
+[2021-02-06 01:00]Internet up. Reconnected to x_coding channel !
+[2021-02-06 01:00]Internet up. Reconnected to x_coding channel !
+[2021-02-06 01:00] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-06 01:01] xBot Disconncted!
+[2021-02-06 01:01] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-06 01:01] xBot Disconncted!
+[2021-02-06 01:01] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-06 01:01] xBot Disconncted!
+[2021-02-06 14:49] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-06 14:53:21] vildeandsober : yoo
+[2021-02-06 14:53:43] x_coding : @VildeandSober hello and welcome
+[2021-02-06 14:54:49] x_coding : !help
+[BOT] List of commands is: !me; !git; !try; !pc; !discord; !fw; !st; !ide; !lisa; !sorry; !project; !yt; !weather; !ss
+[2021-02-06 14:55:05] vildeandsober : !Git
+[2021-02-06 14:55:08] vildeandsober : !git
+[BOT]  Some of my projects www.github.com/0x78654C/
+[2021-02-06 14:56:30] x_coding : !sorry
+[BOT] Sorry that I don't have a mic or camera at the moment. Maybe in future will aquire one for you guys! 
+[2021-02-06 14:56:58] vildeandsober : no worries
+[2021-02-06 14:57:16] vildeandsober : im just gonna chill in here while i do my work as well
+[2021-02-06 14:57:18] vildeandsober : :)
+[2021-02-06 14:58:05] vildeandsober : i am learning coding C. tryin to learn about vsts
+[2021-02-06 14:58:06] karantaffairs : Sup
+[2021-02-06 14:58:13] x_coding : ok:D
+[2021-02-06 14:58:17] x_coding : @karantaffairs hey hey
+[2021-02-06 14:58:30] x_coding : @VildeandSober today is a more code reviwe
+[2021-02-06 14:58:39] x_coding : if i find any bugs i fix
+[2021-02-06 14:58:44] vildeandsober : oh niceee
+[2021-02-06 14:59:01] x_coding : i code mostly at night after work and some time i'm to sleepy and can miss somehting:D
+[2021-02-06 14:59:20] vildeandsober : gotchya
+[2021-02-06 15:00:23] karantaffairs : how's it going?
+[2021-02-06 15:00:23] x_coding : @karantaffairs how you doing mate?:D
+[2021-02-06 15:00:29] x_coding : fine fine
+[2021-02-06 15:00:44] x_coding : found some issues this days and added some ne stuff too
+[2021-02-06 15:00:46] x_coding : new*
+[2021-02-06 15:02:53] karantaffairs : Im doing alright
+[2021-02-06 15:03:26] karantaffairs : been reading through tons of documents and articles related to a job I'm applying to
+[2021-02-06 15:03:42] x_coding : what kind of job?
+[2021-02-06 15:03:57] karantaffairs : So I'm moving from sales to project management
+[2021-02-06 15:05:06] x_coding : Interesting , in what branch?
+[2021-02-06 15:05:38] karantaffairs : digital marketing
+[2021-02-06 15:06:51] x_coding : wow, nice, very nice
+[2021-02-06 15:06:56] x_coding : !weather london
+[BOT] The weather(Celsius) in london is:
+ Temperature: 7.79
+ Feels Like: 5.74
+ Minim Temperature: 7
+ Maxim Temperature: 8.33
+ Humidity: 87
+ Wind Speed: 1.54
+
+[2021-02-06 15:06:58] x_coding : !fw
+[BOT] A follow on my stream will be superb for me ;). Thank you!
+[2021-02-06 15:07:09] x_coding : !weather blabla
+[BOT] The weather(Celsius) in blabla is:
+Please check city name!
+[2021-02-06 15:12] xBot Disconncted!
+[2021-02-06 15:12] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-06 15:13:26] x_coding : !weather blabla
+[BOT] The weather(Celsius) in blabla is:
+Please check city name!
+[2021-02-06 15:14:03] x_coding : !weather bala
+[BOT] The weather(Celsius) in bala is:
+ Temperature: 18.77
+ Feels Like: 16.02
+ Minim Temperature: 18.33
+ Maxim Temperature: 19
+ Humidity: 68
+ Wind Speed: 5.14
+
+[2021-02-06 15:14:10] x_coding : lol
+[2021-02-06 15:14:18] x_coding : !weather blabla
+[BOT] The weather(Celsius) in blabla is:
+Please check city name!
+[2021-02-06 15:18] xBot Disconncted!
+[2021-02-06 15:19] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-06 15:19:20] x_coding : !weather ddd
+[2021-02-06 15:22] xBot Disconncted!
+[2021-02-06 15:22] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-06 15:22:44] x_coding : !weather london
+[BOT] The weather(Celsius) in london is:
+ Temperature: 7.8
+ Feels Like: 5.76
+ Minim Temperature: 7
+ Maxim Temperature: 8.33
+ Humidity: 87
+ Wind Speed: 1.54
+
+[2021-02-06 15:22:58] x_coding : !weather blaaaaa
+[BOT] The weather(Celsius) in blaaaaa is:
+Please check city name!
+[2021-02-06 15:25] xBot Disconncted!
+[2021-02-06 15:25] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-06 15:26:01] x_coding : !weather
+[2021-02-06 15:26:13] x_coding : !weather s
+[BOT] The weather(Celsius) in s is:
+Please check city name!
+[2021-02-06 15:27] xBot Disconncted!
+[2021-02-06 15:27] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-06 15:28:02] x_coding : !weather aa
+[BOT] The weather(Celsius) in aa is:
+Please check city name!
+[2021-02-06 15:28] xBot Disconncted!
+[2021-02-06 15:29] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-06 15:29:57] x_coding : !weather a
+[BOT] The weather(Celsius) in a is:
+Please check city name!
+[2021-02-06 15:31:09] x_coding : !weather a
+[BOT] The weather(Celsius) in a is:
+Please check city name!
+[2021-02-06 15:34] xBot Disconncted!
+[2021-02-06 15:34] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !

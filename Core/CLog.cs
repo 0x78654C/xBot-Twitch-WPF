@@ -22,7 +22,7 @@ namespace Core
         /// <summary>
         /// Log writer function
         /// </summary>
-        /// <param name="data"></param>
+        /// <param name="data">String data to writhe in log file</param>
         public static void LogWrite(string data)
         {
             //grabbin the current date
@@ -49,7 +49,7 @@ namespace Core
         /// <summary>
         /// Write errors to log folder
         /// </summary>
-        /// <param name="data"></param>
+        /// <param name="data">String data to write in error log files.</param>
 
         public static void LogWriteError(string data)
         {

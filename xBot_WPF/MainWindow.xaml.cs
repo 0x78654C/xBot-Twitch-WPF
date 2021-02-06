@@ -316,6 +316,8 @@ namespace xBot_WPF
               
             }
             //---------------------------------
+
+
             //staus check timer declaration
             dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
             dispatcherTimer.Tick += StatusLoadIcon;
@@ -752,6 +754,9 @@ namespace xBot_WPF
         /// <returns></returns>
         private string weatherForecast(string CityName)
         {
+           
+            string _date = DateTime.Now.ToString("yyyy_MM_dd");
+            string errFile = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\log\errors\" + _date + "_log.txt";
             string outs = string.Empty;
             try
             {
@@ -810,14 +815,26 @@ namespace xBot_WPF
                 {
                     //we print the issue on the log viewer console
                     logWrite("No openweathermap.org API Key saved! Please check" + Environment.NewLine);
-                   
                 }
             }
             catch (Exception e)
             {
                 //In case of error we output this in console.
                 outs = "Please check city name!";
-                CLog.LogWriteError("Weather error: " + e.ToString());
+
+                //save the entire error to file
+                date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+
+                if (File.Exists(errFile))
+                {
+                    string rErrorFile = File.ReadAllText(errFile);
+
+                    if (!rErrorFile.Contains(date))
+                    {
+                        CLog.LogWriteError("[" + date + "] Weather error: " + e.ToString() + Environment.NewLine);
+                    }
+                }
+
             }
 
             //print the final weather forecast
@@ -843,7 +860,9 @@ namespace xBot_WPF
         /// <param name="e"></param>
         private void closeBTN_Click(object sender, RoutedEventArgs e)
         {
-            System.Windows.Application.Current.Shutdown();
+            botConnect();//disconnect the bot on ext
+
+            System.Windows.Application.Current.Shutdown();//close the app
         }
 
         /// <summary>
@@ -882,7 +901,7 @@ namespace xBot_WPF
             weatherUnits = Reg.regKey_Read(keyName, "weatherUnits");
             //-----------------------------------
 
-            //status checking 
+            //status checking on internet and bot 
             if (Network.inetCK())
             {
                 if (client.IsConnected)
@@ -908,8 +927,11 @@ namespace xBot_WPF
             {
                 if (!client.IsConnected)
                 {
+                    //we reset the people chat room counters
                     Viewers = 0;
                     viewersLbL.Content = "0";
+                    //-------------------------------------------
+
                     startBotBTN.Content = "START";
                     date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
                     statIMG.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/red_dot.png"));
@@ -966,7 +988,7 @@ namespace xBot_WPF
         {
             if (Network.inetCK())//check internet connection first
             {
-                if (Network.portCheck("tmi.twitch.tv", 80))//check twithc server
+                if (Network.portCheck("tmi.twitch.tv", 80))//check twitch server
                 {
                     if (client.IsConnected)
                     {

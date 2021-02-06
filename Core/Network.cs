@@ -13,17 +13,18 @@ namespace Core
     public class Network
     {
 
+
+        //declare date variable
+        private static string date = string.Empty;
+        //------------------
+
+
         /// <summary>
         /// Verifies if IP is up or not
         /// </summary>
-        /// <param name="ip"></param>
-        /// <returns>verifies if IP is up or not</returns>
-        /// 
-
-        //declare date variable
-      private static string date=string.Empty;
-        //------------------
-
+        /// <param name="ip">Enter the hostname/IP address.</param>
+        /// <returns>string</returns>
+       
         public static bool pingH(string ip)
         {
             bool pingable = false;
@@ -54,7 +55,7 @@ namespace Core
         /// <summary>
         /// Checking internet connection with Google DNS 8.8.8.8
         /// </summary>
-        /// <returns></returns>
+        /// <returns>bool</returns>
         public static bool inetCK()
         {
             if (pingH("8.8.8.8"))
@@ -70,8 +71,8 @@ namespace Core
         /// <summary>
         ///Check TCP connection for a specific address/hostname and port
         /// </summary>
-        /// <param name="address"></param>
-        /// <param name="port"></param>
+        /// <param name="address">Add the ip/hostname address</param>
+        /// <param name="port">Port</param>
         /// <returns>bool</returns>
         public static bool portCheck(string address,int port)
         {

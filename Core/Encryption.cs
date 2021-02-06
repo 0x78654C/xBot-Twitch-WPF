@@ -30,9 +30,8 @@ namespace Core
         /// <summary>
         /// decryption function
         /// </summary>
-        /// <param name="data"></param>
-        /// <param name="pass"></param>
-        /// <returns></returns>
+        /// <param name="data">String for decryption</param>
+        /// <returns>String</returns>
         public static string _decryptData(string data)
         {
             string DecryptedData=string.Empty;
@@ -56,7 +55,6 @@ namespace Core
             catch(Exception e)
             {
                 date = DateTime.Now.ToString("yyyy-dd-HH:mm");
-                //throw new Exception ("Error: Something went wrong on decryption!");
                 CLog.LogWriteError("[" + date + "]Core - Decryption error: " + e.ToString());
             }
             return DecryptedData;
@@ -66,8 +64,8 @@ namespace Core
         /// <summary>
         /// Encryption function
         /// </summary>
-        /// <param name="data"></param>
-        /// <returns></returns>
+        /// <param name="data">String for encryption</param>
+        /// <returns>string</returns>
         public static string _encryptData(string data)
         {
             string EncryptedData = string.Empty;
