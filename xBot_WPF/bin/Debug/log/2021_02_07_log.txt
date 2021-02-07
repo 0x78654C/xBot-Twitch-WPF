@@ -131,3 +131,22 @@
 [BOT] List of commands is: !hi; !me; !hello; !git; !try; !pc; !discord; !fw; !st; !ide; !lisa; !project; !yt; !weather 
 [2021-02-07 14:09:59] x_coding : !me
 [BOT]  Simple coder for fun and help others!
+[2021-02-07 14:14] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021 02 07 14:14:22]Bad words check activated!
+[2021-02-07 14:14:39] x_coding : Stress my bot
+[2021-02-07 14:14:44] x_coding : Guys
+[2021-02-07 14:14:49] x_coding : !St
+[2021-02-07 14:14:53] x_coding : !st
+[BOT] Stress my bot please xD. Use !help for commands
+[2021-02-07 14:15:54] x_coding : !ide
+[BOT] Visual Studio 2019 Pro
+[2021-02-07 14:16:39] x_coding : !project
+[BOT] A simple Twitch bot in C#(WPF). www.github.com/0x78654C/xBot-Twitch-WPF
+[2021-02-07 14:16:45] x_coding : fuck
+x_coding | x_coding | 00:01:00 | [BOT] Bad word ban! 1 minute(s) timeout!
+[2021-02-07 14:16:53] x_coding : X
+[2021-02-07 14:21] Connected to x_coding channel !
+[2021-02-07 14:21] xBot Disconncted!
+[2021-02-07 14:22] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !

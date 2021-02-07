@@ -60,6 +60,7 @@ namespace xBot_WPF
         //data and log directory declare
         readonly static string dataDirectory = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\data";
         readonly static string logDirectory = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\log";
+        readonly static string logErrorDirectory = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\log\errors";
         //------------------------------------------------
 
 
@@ -160,10 +161,16 @@ namespace xBot_WPF
             //------------------------------------------------
 
 
-            //log directory check and create if not exists
+            //log/error directory check and create if not exists
             if (!Directory.Exists(logDirectory))
             {
                 Directory.CreateDirectory(logDirectory);
+               
+            }
+
+            if (!Directory.Exists(logErrorDirectory))
+            {
+                Directory.CreateDirectory(logErrorDirectory);
             }
             //------------------------------------------------
 
