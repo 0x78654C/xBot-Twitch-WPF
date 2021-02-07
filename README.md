@@ -40,8 +40,9 @@ Project ongoing live on: https://www.twitch.tv/x_coding
     hardcoded !help command for display the list of commands
     hardcoded !ss command for shout a streamer (the command works only for the current streamer)
     hardcoded !yt command for youtube current song played on xBot youtube player
-    hardcoded !weather Weather Forecast(Fahrenheit and Celsius units) command using openweather.org API
+    hardcoded !weather for Weather Forecast(Fahrenheit and Celsius units) command using openweather.org API
     hardcoded !gl for whishing good luck to some one in chat from you  (the command works only for the current streamer)
+    hardcoded !time command for display time on a specified city. ex: !time America New_York (Used API from: http://worldtimeapi.org) 
     display people on chat room count on interface
     automaticaly reconnect to twitch channel if internet connection crashed and is up again 
 
