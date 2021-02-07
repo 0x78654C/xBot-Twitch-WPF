@@ -1,0 +1,133 @@
+[2021-02-07 13:18]Internet up. Reconnected to x_coding channel !
+[2021-02-07 13:19] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-07 13:20:04] x_coding : !help
+[BOT] List of commands is: !hi; !me; !hello; !git; !try; !pc; !discord; !fw; !st; !ide; !lisa; !project; !test; !yt; !weather; !ss
+[2021 02 07 13:20:11]Bad words check activated!
+[2021-02-07 13:20:38] x_coding : !weather london
+[BOT] The weather(Celsius) in london is:
+ Temperature: 0.65
+ Feels Like: -4.77
+ Minim Temperature: 0
+ Maxim Temperature: 1.67
+ Humidity: 86
+ Wind Speed: 4.63
+
+[2021-02-07 13:20:47] x_coding : i need some testers
+[2021-02-07 13:20:48] x_coding : :D
+[2021-02-07 13:20:54] x_coding : for chat ban
+[2021-02-07 13:23:20] x_coding : !help
+[BOT] List of commands is: !hi; !me; !hello; !git; !try; !pc; !discord; !fw; !st; !ide; !lisa; !project; !test; !yt; !weather; !ss
+[2021-02-07 13:23:26] x_coding : !project
+[BOT] A simple Twitch bot in C#(WPF). www.github.com/0x78654C/xBot-Twitch-WPF
+[2021-02-07 13:23:43] x_coding : !git
+[BOT]  Some of my projects www.github.com/0x78654C/
+[2021-02-07 13:23:52] x_coding : !hello
+[BOT]  Hello to all
+[2021-02-07 13:24] xBot Disconncted!
+[2021-02-07 13:32] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-07 13:32:55] x_coding : @DataDev heylo ;)
+[2021-02-07 13:33:16] datadev : building chatbot cool 👍😎
+[2021-02-07 13:33:25] x_coding : thank you
+[2021-02-07 13:33:30] x_coding : !help
+[BOT] List of commands is: !hi; !me; !hello; !git; !try; !pc; !discord; !fw; !st; !ide; !lisa; !project; !test; !yt; !weather; !ss
+[2021-02-07 13:34:06] x_coding : !ss @DataDev
+[BOT] Shoutout for @DataDev which is also a streamer! https://twitch.tv/DataDev
+[2021-02-07 13:34:17] x_coding : can you try pls the ss command?
+[2021-02-07 13:34:41] datadev : !ss
+[2021-02-07 13:35:20] datadev : ! hi
+[2021-02-07 13:35:27] x_coding : perfect
+[2021-02-07 13:35:31] x_coding : works only on me
+[2021-02-07 13:35:38] datadev : !hi
+[BOT]  Hello from x_Coding
+[2021-02-07 13:35:39] x_coding : !ss @DataDev
+[BOT] Shoutout for @DataDev which is also a streamer! https://twitch.tv/DataDev
+[2021-02-07 13:35:45] x_coding : !help
+[BOT] List of commands is: !hi; !me; !hello; !git; !try; !pc; !discord; !fw; !st; !ide; !lisa; !project; !test; !yt; !weather; !ss
+[2021-02-07 13:35:50] x_coding : this are the commands
+[2021-02-07 13:35:57] x_coding : !discord
+[BOT] Join me on disscord --  www.discord.gg/CyTrYDydQ9
+[2021-02-07 13:35:58] datadev : !pc
+[BOT] 1. 2 in 1 Lenovo 2 in 1 310 icr with linux(Ubuntu) wich I use for remote connection on server. 2. HP Microserver GEN 8 with 10 gb of ram and dual core Xeon E3 1220L  CPU on wich I stream and code.
+[2021-02-07 13:36:16] x_coding : !weather london
+[BOT] The weather(Celsius) in london is:
+ Temperature: 0.55
+ Feels Like: -5.46
+ Minim Temperature: 0
+ Maxim Temperature: 1.67
+ Humidity: 93
+ Wind Speed: 5.66
+
+[2021-02-07 13:37:15] datadev : ubuntu hehe I am installing UBUNTU
+[2021-02-07 13:37:21] x_coding : i stop a lil the bot
+[2021-02-07 13:37:26] x_coding : is good updated distro
+[2021-02-07 13:37:28] x_coding : ubuntu
+[2021-02-07 13:37] xBot Disconncted!
+[2021-02-07 13:41]Internet up. Reconnected to x_coding channel !
+[2021-02-07 13:41] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-07 13:41:54] x_coding : try again the ss command:d
+[2021-02-07 13:42:26] x_coding : !ss @DataDev
+[BOT] Shoutout for @DataDev which is also a streamer! https://twitch.tv/DataDev
+[2021-02-07 13:42:56] x_coding : !discord
+[BOT] Join me on disscord --  www.discord.gg/CyTrYDydQ9
+[2021-02-07 13:44] xBot Disconncted!
+[2021-02-07 13:49]Internet up. Reconnected to x_coding channel !
+[2021-02-07 13:49] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-07 13:50:12] x_coding : test please now the ss comand
+[2021-02-07 13:50:15] x_coding : and gl
+[2021-02-07 13:51:56] x_coding : heh
+[2021-02-07 13:51:58] x_coding : but
+[2021-02-07 13:51:59] x_coding : bug
+[2021-02-07 13:52:01] x_coding : w8
+[2021-02-07 13:53]Internet up. Reconnected to x_coding channel !
+[2021-02-07 13:53] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-07 13:53:07] x_coding : !github
+[2021-02-07 13:53:12] x_coding : !git
+[BOT]  Some of my projects www.github.com/0x78654C/
+[2021-02-07 13:53:31] x_coding : @DataDev now works fine:D i saw in your call
+[2021-02-07 13:53:58] x_coding : I used string contain witch takes all posabilities
+[2021-02-07 13:54:28] x_coding : i stop bot for fix all
+[2021-02-07 13:54] xBot Disconncted!
+[2021-02-07 13:57] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-07 13:57:11] x_coding : !yt
+[BOT] Nothing playing at the moment! 
+[2021-02-07 13:57:14] x_coding : !gl
+[2021-02-07 13:57:24] x_coding : !gl @DataDev
+[2021-02-07 13:57:45] x_coding : !ss @x_Coding
+[2021-02-07 13:57] xBot Disconncted!
+[2021-02-07 14:02] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-07 14:02:18] x_coding : !gl @DataDev
+[BOT] x_coding wishes DataDev good luck. May you succeed in whatever you're planning to do!
+[2021-02-07 14:02:24] x_coding : !weather london
+[BOT] The weather(Celsius) in london is:
+ Temperature: 0.67
+ Feels Like: -5.33
+ Minim Temperature: 0
+ Maxim Temperature: 1.67
+ Humidity: 93
+ Wind Speed: 5.66
+
+[2021-02-07 14:02:35] x_coding : !ss @DataDev
+[BOT] Shoutout for @DataDev which is also a streamer! https://twitch.tv/DataDev
+[2021-02-07 14:03:22] x_coding : some one can test chat ban?
+[2021-02-07 14:03:30] x_coding : i received weerd errors
+[2021-02-07 14:04:57] x_coding : Is set to 1 min
+[2021-02-07 14:05:47] x_coding : and commands !ss and !gl
+[2021-02-07 14:08:46] x_coding : !help
+[BOT] List of commands is: !hi; !me; !hello; !git; !try; !pc; !discord; !fw; !st; !ide; !lisa; !project; !test; !yt; !weather 
+[2021-02-07 14:09:04] x_coding : !st
+[BOT] Stress my bot please xD. Use !help for commands
+[2021-02-07 14:09:25] x_coding : !try
+[BOT] Try the commands please!
+[2021-02-07 14:09:32] x_coding : !test
+[BOT] asdasd
+[2021-02-07 14:09:48] x_coding : !help
+[BOT] List of commands is: !hi; !me; !hello; !git; !try; !pc; !discord; !fw; !st; !ide; !lisa; !project; !yt; !weather 
+[2021-02-07 14:09:59] x_coding : !me
+[BOT]  Simple coder for fun and help others!

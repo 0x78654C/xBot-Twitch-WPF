@@ -163,3 +163,115 @@ Please check city name!
 [2021-02-06 15:34] xBot Disconncted!
 [2021-02-06 15:34] Connected to x_coding channel !
 [Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-06 15:37:06] x_coding : !discord
+[BOT] Join me on disscord --  www.discord.gg/CyTrYDydQ9
+[2021-02-06 15:37:08] x_coding : !fw
+[BOT] A follow on my stream will be superb for me ;). Thank you!
+[2021-02-06 15:48:04] novveee : yo
+[2021-02-06 15:48:07] zzzzainab : hey hey
+[2021-02-06 15:48:10] karantaffairs : yayayyayayayay
+[2021-02-06 15:48:14] beardedguylevi : RAIDDDDDDDD
+[2021-02-06 15:48:16] karantaffairs : raid raid raid
+[2021-02-06 15:48:24] beardedguylevi : Surprised? Kappa
+[2021-02-06 15:48:29] x_coding : :D
+[2021-02-06 15:48:30] novveee : i dont code so idk what im watching ill just leave you on lurk so you can get affiliate LUL
+[2021-02-06 15:48:33] x_coding : hey hey
+[2021-02-06 15:48:46] x_coding : thx alot all
+[2021-02-06 15:48:55] karantaffairs : I need to remember to have the bloody raid command copy pasta ready for everyone
+[2021-02-06 15:49:09] x_coding : @novveee i'm coding a bot for twitch
+[2021-02-06 15:49:11] x_coding : !project
+[BOT] A simple Twitch bot in C#(WPF). www.github.com/0x78654C/xBot-Twitch-WPF
+[2021-02-06 15:49:14] x_coding : !help
+[BOT] List of commands is: !me; !git; !try; !pc; !discord; !fw; !st; !ide; !lisa; !sorry; !project; !yt; !weather; !ss
+[2021-02-06 15:49:30] karantaffairs : Imma head off of Twitch
+[2021-02-06 15:49:31] novveee : Karant KomodoHype Affairs KomodoHype Raid KomodoHype
+[2021-02-06 15:49:39] karantaffairs : should be back after dinner
+[2021-02-06 15:49:42] karantaffairs : Cheers guys!
+[2021-02-06 15:49:51] x_coding : @karantaffairs cheers and thx again
+[2021-02-06 15:49:52] karantaffairs : Love y'all
+[2021-02-06 15:50:09] karantaffairs : You're welcome!
+[2021-02-06 15:50:14] x_coding : test the bot guys if want
+[2021-02-06 15:50:44] beardedguylevi : Coding has always interested me but I never went further than simple high school classes
+[2021-02-06 15:50:53] beardedguylevi : !pc
+[BOT] 1. 2 in 1 Lenovo 2 in 1 310 icr with linux(Ubuntu) wich I use for remote connection on server. 2. HP Microserver GEN 8 with 10 gb of ram and dual core Xeon E3 1220L  CPU on wich I stream and code.
+[2021-02-06 15:51:11] x_coding : @beardedguylevi well. Is never late to start
+[2021-02-06 15:51:30] x_coding : And as you can see u dont need super pc :))
+[2021-02-06 15:52:02] beardedguylevi : :) are you self taught?
+[2021-02-06 15:52:19] x_coding : Yes
+[2021-02-06 15:53:09] beardedguylevi : Do you have any good sources for me to start with?
+[2021-02-06 15:53:29] beardedguylevi : !yt
+[BOT] Now playing: https://www.youtube.com/watch?v=mOe8VEMuPo0
+[2021-02-06 15:53:34] x_coding : To be honest? Google/stackoverflow
+[2021-02-06 15:53:49] x_coding : The song you hear is from streamlabs
+[2021-02-06 15:54:01] x_coding : That is activated for yt to show it works
+[2021-02-06 15:54:31] x_coding : I started by making something. Than search every piece on google till i finished
+[2021-02-06 15:55:06] beardedguylevi : Oh wow! That's impressive
+[2021-02-06 15:55:12] x_coding : !weather london
+[BOT] The weather(Celsius) in london is:
+ Temperature: 7.96
+ Feels Like: 5.37
+ Minim Temperature: 7.78
+ Maxim Temperature: 8.33
+ Humidity: 81
+ Wind Speed: 2.06
+
+[2021-02-06 15:55:37] x_coding : @BeardedGuyLevi i do this since 2013
+[2021-02-06 15:55:41] x_coding : and is not my main job
+[2021-02-06 15:56:05] x_coding : i had some breaks on code a period
+[2021-02-06 15:58:37] beardedguylevi : Are you mainly C# or do you know other languages such as C++, Java, etc?
+[2021-02-06 15:59:14] x_coding : mainly c# but i do java(android) and some swift
+[2021-02-06 15:59:16] x_coding : !git
+[BOT]  Some of my projects www.github.com/0x78654C/
+[2021-02-06 16:00:17] x_coding : all here:D
+[2021-02-06 16:00:19] x_coding : well
+[2021-02-06 16:00:35] x_coding : wich put out for public;)
+[2021-02-06 16:01:26] beardedguylevi : Nice! I'll check them out :)
+[2021-02-06 16:04:57] beardedguylevi : Where are you from?
+[2021-02-06 16:05:11] x_coding : romania
+[2021-02-06 16:05:32] beardedguylevi : Nice! I'm in the US
+[2021-02-06 16:05:58] x_coding : pretty in the morning at you right now, right?
+[2021-02-06 16:06:17] x_coding : !sorry
+[BOT] Sorry that I don't have a mic or camera at the moment. Maybe in future will aquire one for you guys! 
+[2021-02-06 16:06:22] beardedguylevi : Yes, I just got out of bed about an hour ago!
+[2021-02-06 16:06:28] beardedguylevi : And no worries my friend
+[2021-02-06 16:06:31] x_coding : i have a kid an sleeps
+[2021-02-06 16:06:37] x_coding : cannot make to much noise:d
+[2021-02-06 16:06:48] beardedguylevi : Ah I understand!
+[2021-02-06 16:07:37] x_coding : you stream too?
+[2021-02-06 16:07:51] beardedguylevi : I do! I play games :)
+[2021-02-06 16:08:54] x_coding : you got my follow;)
+[2021-02-06 16:09:11] x_coding : i miss plaing a video game:))
+[2021-02-06 16:09:46] beardedguylevi : Thanks so much! I appreciate it :) What games do you like?
+[2021-02-06 16:10:16] x_coding : mmo
+[2021-02-06 16:10:23] x_coding : Lineage 2 i played alot
+[2021-02-06 16:10:29] x_coding : but i miss a good shooter
+[2021-02-06 16:11:16] x_coding : well i go out
+[2021-02-06 16:11:23] x_coding : kid wakes up ;)
+[2021-02-06 16:11:28] beardedguylevi : :)
+[2021-02-06 16:11:30] x_coding : thx all for been here
+[2021-02-06 16:11:40] x_coding : :D I apriciate
+[2021-02-06 16:11:51] x_coding : and cya on next steam
+[2021-02-06 16:11:55] beardedguylevi : I hope you have a good night, thanks for the conversation and suggestions! :)
+[2021-02-06 16:12:08] x_coding : @BeardedGuyLevi any time
+[2021-02-06 16:12:14] x_coding : u can join discord too
+[2021-02-06 16:12:17] x_coding : !discord
+[BOT] Join me on disscord --  www.discord.gg/CyTrYDydQ9
+[2021-02-06 20:54]Internet up. Reconnected to x_coding channel !
+[2021-02-06 20:55]Internet up. Reconnected to x_coding channel !
+[2021-02-06 20:55]Internet up. Reconnected to x_coding channel !
+[2021-02-06 20:55]Internet up. Reconnected to x_coding channel !
+[2021-02-06 20:55]Internet up. Reconnected to x_coding channel !
+[2021-02-06 20:55]Internet up. Reconnected to x_coding channel !
+[2021-02-06 20:55]Internet up. Reconnected to x_coding channel !
+[2021-02-06 20:55]Internet up. Reconnected to x_coding channel !
+[2021-02-06 20:55] Connected to x_coding channel !
+[2021-02-06 20:55]Internet up. Reconnected to x_coding channel !
+[2021-02-06 20:55] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-06 20:55]Internet up. Reconnected to x_coding channel !
+[2021-02-06 20:55]Internet up. Reconnected to x_coding channel !
+[2021-02-06 20:55]Internet up. Reconnected to x_coding channel !
+[2021-02-06 20:55] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !

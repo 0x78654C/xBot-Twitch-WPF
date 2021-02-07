@@ -93,7 +93,6 @@ namespace Core
 
         public static void regKey_CreateKey(string keyName, string subKeyName, string subKeyValue)
         {
-
             RegistryKey key = Registry.CurrentUser.CreateSubKey
             (keyName);
 
