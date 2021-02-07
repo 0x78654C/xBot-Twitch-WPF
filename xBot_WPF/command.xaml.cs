@@ -117,7 +117,7 @@ namespace xBot_WPF
                 if (cmd.Length>0)
                 {
                     //check if help cmd exists
-                    if (!cmd.Contains("help") && !cmd.Contains("yt") && !cmd.Contains("weather") && !cmd.Contains("ss") && !cmd.Contains("gl"))
+                    if (!cmd.Contains("time") && !cmd.Contains("help") && !cmd.Contains("yt") && !cmd.Contains("weather") && !cmd.Contains("ss") && !cmd.Contains("gl"))
                     {
                         //check for separator oparator to not be present in our message
                         if (!msg.Contains(":"))

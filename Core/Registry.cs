@@ -85,11 +85,11 @@ namespace Core
         }
 
         /// <summary>
-        /// Registry key create
+        ///  Registry key create
         /// </summary>
-        /// <param name="keyPath"></param>
         /// <param name="keyName"></param>
-        /// <param name="keyValue"></param>
+        /// <param name="subKeyName"></param>
+        /// <param name="subKeyValue"></param>
 
         public static void regKey_CreateKey(string keyName, string subKeyName, string subKeyValue)
         {

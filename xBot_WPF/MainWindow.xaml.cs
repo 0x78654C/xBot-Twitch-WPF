@@ -165,7 +165,7 @@ namespace xBot_WPF
             if (!Directory.Exists(logDirectory))
             {
                 Directory.CreateDirectory(logDirectory);
-               
+
             }
 
             if (!Directory.Exists(logErrorDirectory))
@@ -340,8 +340,8 @@ namespace xBot_WPF
             //load connection icon
             this.Dispatcher.Invoke(() =>
             {
-            statIMG.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/red_dot.png"));
-             });
+                statIMG.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/red_dot.png"));
+            });
             //---------------------------------
 
         }
@@ -387,13 +387,14 @@ namespace xBot_WPF
         /// </summary>
         public void BotStart(object sender, DoWorkEventArgs e)
         {
-            
+
             this.Dispatcher.Invoke(() =>
             {
                 statIMG.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/orange_dot.png"));
 
                 logViewRTB.Document.Blocks.Clear();
             });
+
             date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
             logWrite("[" + date + "] xBot connecting to " + t_userName + " channel....");
 
@@ -413,7 +414,7 @@ namespace xBot_WPF
             client.OnUserJoined += Client_OnUserJoinedArgs;
             client.OnUserLeft += Client_OnUserLeftArgs;
             client.Connect();
-          
+
             //we check if bot is connected and display the log info
             if (client.IsConnected)
             {
@@ -425,7 +426,7 @@ namespace xBot_WPF
 
                     startBotBTN.Content = "STOP";
                 });
-              
+
             }
 
         }
@@ -451,14 +452,14 @@ namespace xBot_WPF
                 logWrite("[" + date + "] xBot Disconncted!");
                 CLog.LogWrite("[" + date + "] xBot Disconncted!");
                 startBotBTN.Content = "START";
-                
+
                 //reset viewers counter
                 Viewers = 0;
                 viewersLbL.Content = "0";
             }
         }
-       
-       
+
+
         #region Client events
 
         /* //Disabled for future use
@@ -475,6 +476,9 @@ namespace xBot_WPF
             date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
             CLog.LogWrite("[" + date + $"] Connected to {e.AutoJoinChannel} channel !");
         }
+
+
+
 
         private void Client_OnJoinedChannel(object sender, OnJoinedChannelArgs e)
         {
@@ -556,7 +560,7 @@ namespace xBot_WPF
             listCMD = string.Join("; ", lst);
             if (weatherKey == "1")// we check if weather command is activated and set
             {
-                if (e.ChatMessage.Message =="!help")
+                if (e.ChatMessage.Message == "!help")
                 {
                     client.SendMessage(e.ChatMessage.Channel, "List of commands is: " + listCMD + "; !yt; !weather");
                     logWrite("[BOT] List of commands is: " + listCMD + "; !yt; !weather");
@@ -565,7 +569,7 @@ namespace xBot_WPF
             }
             else
             {
-                if (e.ChatMessage.Message =="!help")
+                if (e.ChatMessage.Message == "!help")
                 {
                     client.SendMessage(e.ChatMessage.Channel, "List of commands is: " + listCMD + "; !yt");
                     logWrite("[BOT] List of commands is: " + listCMD + "; !yt");
@@ -608,7 +612,7 @@ namespace xBot_WPF
                         }
                         else
                         {
-                            client.SendMessage(e.ChatMessage.Channel, "Only @"+e.ChatMessage.Username+" can use the !ss command!");
+                            client.SendMessage(e.ChatMessage.Channel, "Only @" + e.ChatMessage.Username + " can use the !ss command!");
                             logWrite("[BOT] Only @" + e.ChatMessage.Username + " can use the !ss command!");
                             CLog.LogWrite("[BOT] Only @" + e.ChatMessage.Username + " can use the !ss command!");
                         }
@@ -662,13 +666,77 @@ namespace xBot_WPF
             }
             //----------------------------
 
+            //timezone data display 
+            weatheCond = e.ChatMessage.Message;
+            try
+            {
+                string[] we = weatheCond.Split(' ');
+                string cn1 = string.Empty;
+                string cn2 = string.Empty;
+                if (we[0].StartsWith("!time"))
+                {
+                    cn1 = we[1]; //grab Continent name
+                    cn2 = we[2]; //grab City Name
+                    if (cn1.Length > 0 && cn2.Length > 0)
+                    {
+
+                        client.SendMessage(e.ChatMessage.Channel, "The time in " + cn2 + " (" + cn1 + ") is:" + Environment.NewLine + TimeZone(cn1, cn2));
+                        logWrite("[BOT] The time in " + cn2 + " (" + cn1 + ") is:" + Environment.NewLine + TimeZone(cn1, cn2));
+                        CLog.LogWrite("[BOT] The time in " + cn2 + " (" + cn1 + ") is:" + Environment.NewLine + TimeZone(cn1, cn2));
+
+
+                    }
+                    else
+                    {
+                        client.SendMessage(e.ChatMessage.Channel, "The time command should look like this: !time Continet City_Name");
+                        logWrite("[BOT] The time command should look like this: !time Continet City_Name");
+                        CLog.LogWrite("[BOT] The time command should look like this: !time Continet City_Name");
+                    }
+                }
+            }
+            catch
+            {
+                client.SendMessage(e.ChatMessage.Channel, "The time command should look like this: !time Continet City_Name. Or some information is wrong. Only Cities avaible on http://worldtimeapi.org are displyed!");
+                logWrite("[BOT] The time command should look like this: !time Continet City_Name. Or some information is wrong.  Only Cities avaible on http://worldtimeapi.org are displyed!");
+
+            }
+
+            //----------------------------
+
+            //!yt command display play link
+
+            if (ytControl == "1")
+            {
+                if (e.ChatMessage.Message == "!yt")
+                {
+                    client.SendMessage(e.ChatMessage.Channel, "Now playing: " + YtLink);
+                    logWrite("[BOT] Now playing: " + YtLink);
+                    CLog.LogWrite("[BOT] Now playing: " + YtLink);
+                }
+            }
+            else
+            {
+                if (e.ChatMessage.Message == "!yt")
+                {
+                    client.SendMessage(e.ChatMessage.Channel, "Nothing playing at the moment! ");
+                    logWrite("[BOT] Nothing playing at the moment! ");
+                    CLog.LogWrite("[BOT] Nothing playing at the moment! ");
+                }
+            }
+            //----------------------------
+
+
+
+
+
+
             //weather data display 
             if (weatherKey == "1" && apiKey != "")
             {
-                weatheCond = e.ChatMessage.Message;
+                string timeC = e.ChatMessage.Message;
                 try
                 {
-                    string[] we = weatheCond.Split(' ');
+                    string[] we = timeC.Split(' ');
                     string cn = string.Empty;
                     if (we[0].Contains("!weather"))
                     {
@@ -708,28 +776,6 @@ namespace xBot_WPF
             {
                 client.SendMessage(e.ChatMessage.Channel, "Weather command is disabled for the moment!");
                 logWrite("[BOT] Weather command is disabled for the moment!");
-            }
-            //----------------------------
-
-            //!yt command display play link
-
-            if (ytControl == "1")
-            {
-                if (e.ChatMessage.Message == "!yt")
-                {
-                    client.SendMessage(e.ChatMessage.Channel, "Now playing: " + YtLink);
-                    logWrite("[BOT] Now playing: " + YtLink);
-                    CLog.LogWrite("[BOT] Now playing: " + YtLink);
-                }
-            }
-            else
-            {
-                if (e.ChatMessage.Message == "!yt")
-                {
-                    client.SendMessage(e.ChatMessage.Channel, "Nothing playing at the moment! ");
-                    logWrite("[BOT] Nothing playing at the moment! ");
-                    CLog.LogWrite("[BOT] Nothing playing at the moment! ");
-                }
             }
             //----------------------------
         }
@@ -786,14 +832,80 @@ namespace xBot_WPF
 
 
         /// <summary>
+        /// TimeZone extract using http://worldtimeapi.org API
+        /// </summary>
+        /// <param name="Region">Continent</param>
+        /// <param name="CityName">City Name</param>
+        /// <returns>string</returns>
+        private string TimeZone(string Region, string CityName)
+        {
+            string _date = DateTime.Now.ToString("yyyy_MM_dd");
+            string date2 = string.Empty;
+            string errFile = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\log\errors\" + _date + "_log.txt";
+            string outs = string.Empty;
+            string html = @"http://worldtimeapi.org/api/timezone/{0}/{1}";
+            try
+            {
+
+                HttpResponseMessage response = clientH.GetAsync(string.Format(html, Region, CityName)).GetAwaiter().GetResult();
+                response.EnsureSuccessStatusCode();
+                string responseBody = response.Content.ReadAsStringAsync().Result;
+
+                //parsing the https output 
+                string[] oS = responseBody.Split(',');
+                string[] oY = oS[2].Split('.');
+                oY[0] = oY[0].Replace("\"datetime\":\"", "Date: ");
+                oY[0] = oY[0].Replace("T", " Hour: ");
+                //-----------------
+
+                //return the final data
+                outs = oY[0];
+
+
+            }
+            catch (Exception e)
+            {
+                outs = "Please check City name or Continent name. Only Cities avaible on http://worldtimeapi.org are displyed!";
+                //save the entire error to file
+                date2 = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+
+                if (File.Exists(errFile))
+                {
+                    string rErrorFile = File.ReadAllText(errFile);
+
+                    if (!rErrorFile.Contains("[" + date2 + "] TimeZone error: "))
+                    {
+                        CLog.LogWriteError("[" + date2 + "] TimeZone error: " + e.ToString() + Environment.NewLine);
+                    }
+                }
+                else
+                {
+                    File.WriteAllText(errFile, "");
+                    string rErrorFile = File.ReadAllText(errFile);
+
+                    if (!rErrorFile.Contains("[" + date2 + "] TimeZone error: "))
+                    {
+                        CLog.LogWriteError("[" + date2 + "] TimeZone error: " + e.ToString() + Environment.NewLine);
+                    }
+                }
+                //--------------------------------
+            }
+
+            return outs;
+
+        }
+
+
+        /// <summary>
         /// weather api check and return the output parssed
         /// </summary>
         /// <param name="CityName"></param>
         /// <returns></returns>
         private string weatherForecast(string CityName)
         {
-           
+
             string _date = DateTime.Now.ToString("yyyy_MM_dd");
+            string date2 = string.Empty;
             string errFile = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\log\errors\" + _date + "_log.txt";
             string outs = string.Empty;
             try
@@ -861,24 +973,25 @@ namespace xBot_WPF
                 outs = "Please check city name!";
 
                 //save the entire error to file
-                date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+                date2 = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
 
                 if (File.Exists(errFile))
                 {
                     string rErrorFile = File.ReadAllText(errFile);
 
-                    if (!rErrorFile.Contains(date))
+                    if (!rErrorFile.Contains("[" + date2 + "] Weather error: "))
                     {
-                        CLog.LogWriteError("[" + date + "] Weather error: " + e.ToString() + Environment.NewLine);
+                        CLog.LogWriteError("[" + date2 + "] Weather error: " + e.ToString() + Environment.NewLine);
                     }
                 }
                 else
                 {
+                    File.WriteAllText(errFile, "");
                     string rErrorFile = File.ReadAllText(errFile);
 
-                    if (!rErrorFile.Contains(date))
+                    if (!rErrorFile.Contains("[" + date2 + "] Weather error: "))
                     {
-                        CLog.LogWriteError("[" + date + "] Weather error: " + e.ToString() + Environment.NewLine);
+                        CLog.LogWriteError("[" + date2 + "] Weather error: " + e.ToString() + Environment.NewLine);
                     }
                 }
                 //--------------------------------
@@ -934,7 +1047,7 @@ namespace xBot_WPF
             }
             catch (Exception x)
             {
-                CLog.LogWrite("oAuth decrypt error:" + x.ToString()); 
+                CLog.LogWrite("oAuth decrypt error:" + x.ToString());
             }
             botMSGKey = Reg.regKey_Read(keyName, "BotMSG");
             timeBan = Int32.Parse(Reg.regKey_Read(keyName, "WordBanTime"));
@@ -966,7 +1079,7 @@ namespace xBot_WPF
                     {
                         statIMG.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/orange_dot.png"));
                     });
-                        date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+                    date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
                     client.Connect();
                     if (client.IsConnected)
                     {
@@ -974,7 +1087,7 @@ namespace xBot_WPF
                         {
                             startBotBTN.Content = "STOP";
                         });
-                            logWrite("[" + date + "]Internet up. Reconnected to " + t_userName + " channel !");
+                        logWrite("[" + date + "]Internet up. Reconnected to " + t_userName + " channel !");
                         CLog.LogWrite("[" + date + "]Internet up. Reconnected to " + t_userName + " channel !");
                     }
                 }
@@ -993,7 +1106,7 @@ namespace xBot_WPF
                         date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
                         statIMG.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/red_dot.png"));
                     });
-                        string oRTB = ConvertRichTextBoxContentsToString(logViewRTB);
+                    string oRTB = ConvertRichTextBoxContentsToString(logViewRTB);
                     if (!oRTB.Contains("[" + date + "] No internet connection at the moment. Trying to reconnect..."))
                     {
                         logWrite("[" + date + "] No internet connection at the moment. Trying to reconnect...");
@@ -1148,7 +1261,7 @@ namespace xBot_WPF
             }
             catch
             {
-            //We move on 
+                //We move on 
             }
         }
 

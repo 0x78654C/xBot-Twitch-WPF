@@ -10,3 +10,50 @@
 [2021-02-07 13:45:54] datadev : !github
 [BOT]  Some of my projects www.github.com/0x78654C/
 [2021-02-07 13:48] xBot Disconncted!
+[2021-02-07 21:59] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-07 22:32:49] codingwithscott : Hello!
+[2021-02-07 22:39:45] x_coding : hey
+[2021-02-07 22:40:03] x_coding : working on time command:d
+[2021-02-07 22:40:08] x_coding : first attempt:D
+[2021-02-07 22:40:10] codingwithscott : Cool
+[2021-02-07 22:40] xBot Disconncted!
+[2021-02-07 23:24] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-07 23:24:40] x_coding : !time
+[2021-02-07 23:24:52] x_coding : !time europe s
+[2021-02-07 23:29:31] x_coding : !time europe caa
+[2021-02-07 23:30:02] x_coding : !time europe berlin
+[BOT] The time in berlin (europe) is:
+Date: 2021-02-07 Hour: 22:32:41
+[2021-02-07 23:31:15] x_coding : !weather lon
+[BOT] The weather(Celsius) in lon is:
+ Temperature: 27.81
+ Feels Like: 23.75
+ Minim Temperature: 27.81
+ Maxim Temperature: 27.81
+ Humidity: 17
+ Wind Speed: 3.07
+
+[2021-02-07 23:31:23] x_coding : !weather Llll
+[2021-02-07 23:32:15] x_coding : now a new bug:D
+[2021-02-07 23:32:34] codingwithscott : Always a new bug :)
+[2021-02-07 23:33:52] x_coding : yesterday the error log saver was fine
+[2021-02-07 23:34:07] x_coding : now dosen't work on weather and same stuff on time zone too:d
+[2021-02-07 23:34] xBot Disconncted!
+[2021-02-07 23:55] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-07 23:55:25] x_coding : !time europe BUcharest
+[BOT] The time in BUcharest (europe) is:
+Date: 2021-02-07 Hour: 23:58:05
+[2021-02-07 23:55:39] x_coding : !time asdasda
+[2021-02-07 23:55:53] yanni_boi : ok, I have to go, my baby is waking up... but I might say hi again another time. Have fun!
+[2021-02-07 23:56:37] x_coding : @yanni_boi i understand you... thx for showing up;)
+[2021-02-07 23:57:11] x_coding : !time aa
+[2021-02-07 23:57:16] x_coding : !time aa aa
+[BOT] The time in aa (aa) is:
+Please check City name or Continent name. Only Cities avaible on http://worldtimeapi.org are displyed!
+[2021-02-07 23:57:29] x_coding : !weather sss
+[BOT] The weather(Celsius) in sss is:
+Please check city name!
+[2021-02-07 23:57:47] x_coding : !perfect

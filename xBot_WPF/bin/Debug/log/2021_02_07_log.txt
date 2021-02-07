@@ -150,3 +150,411 @@ x_coding | x_coding | 00:01:00 | [BOT] Bad word ban! 1 minute(s) timeout!
 [2021-02-07 14:21] xBot Disconncted!
 [2021-02-07 14:22] Connected to x_coding channel !
 [Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-07 14:24]Internet up. Reconnected to x_coding channel !
+[2021-02-07 14:25] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-07 14:25:17] x_coding : !st
+[BOT] Stress my bot please xD. Use !help for commands
+[2021-02-07 14:28:14] x_coding : !st
+[BOT] Stress my bot please xD. Use !help for commands
+[2021-02-07 14:28:23] x_coding : !weather london
+[BOT] The weather(Celsius) in london is:
+ Temperature: 1.1
+ Feels Like: -4.26
+ Minim Temperature: 0.56
+ Maxim Temperature: 2.22
+ Humidity: 86
+ Wind Speed: 4.63
+
+[2021-02-07 14:28:38] x_coding : !weather bucharest
+[BOT] The weather(Celsius) in bucharest is:
+ Temperature: 1.78
+ Feels Like: -2.97
+ Minim Temperature: 1
+ Maxim Temperature: 2.22
+ Humidity: 93
+ Wind Speed: 4.12
+
+[2021-02-07 14:29:05] x_coding : !weather new york
+[BOT] The weather(Celsius) in new is:
+ Temperature: 31
+ Feels Like: 32.56
+ Minim Temperature: 31
+ Maxim Temperature: 31
+ Humidity: 62
+ Wind Speed: 5.14
+
+[2021-02-07 14:29:14] x_coding : !st
+[BOT] Stress my bot please xD. Use !help for commands
+[2021-02-07 14:29:56] x_coding : !st
+[BOT] Stress my bot please xD. Use !help for commands
+[2021-02-07 14:30:00] x_coding : !project
+[BOT] A simple Twitch bot in C#(WPF). www.github.com/0x78654C/xBot-Twitch-WPF
+[2021-02-07 14:30:09] x_coding : !Help
+[2021-02-07 14:30:13] x_coding : !help
+[BOT] List of commands is: !hi; !me; !hello; !git; !try; !pc; !discord; !fw; !st; !ide; !lisa; !project; !yt; !weather 
+[2021-02-07 14:30:33] x_coding : !yt
+[BOT] Nothing playing at the moment! 
+[2021-02-07 14:30:46] x_coding : !yt
+[BOT] Now playing: https://www.youtube.com/watch?v=mOe8VEMuPo0
+[2021-02-07 14:31:07] x_coding : !yt
+[BOT] Now playing: https://www.youtube.com/watch?v=mOe8VEMuPo0
+[2021-02-07 14:31:19] x_coding : !yt
+[BOT] Nothing playing at the moment! 
+[2021-02-07 14:31:31] x_coding : !ss @xcodingbot
+[BOT] Shoutout for @xcodingbot which is also a streamer! https://twitch.tv/xcodingbot
+[2021-02-07 14:35:24] x_coding : !st
+[BOT] Stress my bot please xD. Use !help for commands
+[2021-02-07 14:35:33] x_coding : !help
+[BOT] List of commands is: !hi; !me; !hello; !git; !try; !pc; !discord; !fw; !st; !ide; !lisa; !project; !yt; !weather 
+[2021-02-07 14:36:29] x_coding : !test
+[2021-02-07 14:36:33] x_coding : !git
+[BOT]  Some of my projects www.github.com/0x78654C/
+[2021-02-07 14:36:36] x_coding : !discord
+[BOT] Join me on disscord --  www.discord.gg/CyTrYDydQ9
+[2021-02-07 14:38:50] x_coding : !st
+[BOT] Stress my bot please xD. Use !help for commands
+[2021-02-07 14:39:54] x_coding : thx for follow :D
+[2021-02-07 14:40:28] x_coding : !st
+[BOT] Stress my bot please xD. Use !help for commands
+[2021-02-07 14:41:43] x_coding : !discord
+[BOT] Join me on disscord --  www.discord.gg/CyTrYDydQ9
+[2021-02-07 14:45:01] x_coding : !st
+[BOT] Stress my bot please xD. Use !help for commands
+[2021-02-07 14:46:59] warriorone4 : Followed!
+[2021-02-07 14:47:06] warriorone4 : You trying fit affiliate?
+[2021-02-07 14:49:23] x_coding : @warriorone4 hey... thx. yes
+[2021-02-07 14:53:01] x_coding : !st
+[BOT] Stress my bot please xD. Use !help for commands
+[2021-02-07 14:55:00] x_coding : !help
+[BOT] List of commands is: !hi; !me; !hello; !git; !try; !pc; !discord; !fw; !st; !ide; !lisa; !project; !yt; !weather 
+[2021-02-07 14:55:03] x_coding : !st
+[BOT] Stress my bot please xD. Use !help for commands
+[2021-02-07 14:55:18] x_coding : !weather deva
+[BOT] The weather(Celsius) in deva is:
+ Temperature: 12.31
+ Feels Like: 9.81
+ Minim Temperature: 12.31
+ Maxim Temperature: 12.31
+ Humidity: 58
+ Wind Speed: 1.77
+
+[2021-02-07 14:55:31] x_coding : !weather bucharest
+[BOT] The weather(Celsius) in bucharest is:
+ Temperature: 1.77
+ Feels Like: -2.83
+ Minim Temperature: 1
+ Maxim Temperature: 2.22
+ Humidity: 100
+ Wind Speed: 4.12
+
+[2021-02-07 14:58:09] codingwithscott : !hi
+[BOT]  Hello from x_Coding
+[2021-02-07 14:58:32] x_coding : @CodingWithScott hello
+[2021-02-07 14:58:35] x_coding : !help
+[BOT] List of commands is: !hi; !me; !hello; !git; !try; !pc; !discord; !fw; !st; !ide; !lisa; !project; !yt; !weather 
+[2021-02-07 14:59:10] codingwithscott : Hello @x_Coding
+[2021-02-07 14:59:13] codingwithscott : !git
+[BOT]  Some of my projects www.github.com/0x78654C/
+[2021-02-07 14:59:53] x_coding : I’m not a pro but i try best :d
+[2021-02-07 15:00:03] x_coding : How are you @codingwithscott
+[2021-02-07 15:00:05] x_coding : ?
+[2021-02-07 15:00:26] codingwithscott : I am doing well. How are you?
+[2021-02-07 15:00:41] x_coding : Fine. Some sunday bug fix ;)
+[2021 02 07 15:01:05]Bad words check activated!
+[2021-02-07 15:01:16] codingwithscott : I know how that is. LOL
+[2021-02-07 15:01:26] x_coding : ;)
+[2021-02-07 15:01:36] x_coding : !weather new york
+[BOT] The weather(Fahrenheit) in new is:
+ Temperature: 89.6
+ Feels Like: 92.7
+ Minim Temperature: 89.6
+ Maxim Temperature: 89.6
+ Humidity: 55
+ Wind Speed: 9.22
+
+[2021-02-07 15:02:11] x_coding : I always said that this project is done always find something to fix/add
+[2021-02-07 15:02:29] x_coding : !sorry
+[2021-02-07 15:03:25] x_coding : !sorry
+[BOT] Sorry that I don't have a mic or camera at the moment. Maybe in future will aquire one for you guys! 
+[2021-02-07 15:04:34] x_coding : !yt
+[BOT] Now playing: https://www.youtube.com/watch?v=mOe8VEMuPo0
+[2021-02-07 15:04:34] codingwithscott : That's cool. There is always something new to play with in programming. That's my favorite thing about programming
+[2021-02-07 15:05:06] x_coding : Yes. And keeps the adrenaline up when you discover something new or improve
+[2021-02-07 15:05:16] x_coding : !yt
+[BOT] Now playing: https://www.youtube.com/watch?v=Z-VfaG9ZN_U
+[2021-02-07 15:06:03] x_coding : I’m selft thought so every new discover for me is kind of something
+[2021-02-07 15:06:15] x_coding : Even if i don’t reinvent the wheel
+[2021-02-07 15:06:26] x_coding : !yt
+[BOT] Nothing playing at the moment! 
+[2021-02-07 15:08:20] x_coding : !discord
+[BOT] Join me on disscord --  www.discord.gg/CyTrYDydQ9
+[2021-02-07 15:08:25] x_coding : !fw
+[BOT] A follow on my stream will be superb for me ;). Thank you!
+[2021-02-07 15:08:34] codingwithscott : Do you use Azure? They have some interesting things for bots
+[2021-02-07 15:08:52] x_coding : I use twitchlib for it
+[2021-02-07 15:08:54] x_coding : No
+[2021-02-07 15:08:56] x_coding : Like?
+[2021-02-07 15:09:04] x_coding : Thx for follow
+[2021-02-07 15:09:46] codingwithscott : I am using Azure speech-to-text to let me speak commands into my microphone and display the command in chat
+[2021-02-07 15:10:17] x_coding : Well, i was thinking something like that for the discord voice chat
+[2021-02-07 15:10:26] x_coding : Like for play a specific music
+[2021-02-07 15:10:40] x_coding : But is a good ideea for this one too
+[2021-02-07 15:10:44] x_coding : Should try
+[2021-02-07 15:12:43] x_coding : Uses ai?
+[2021-02-07 15:13:23] codingwithscott : I think it uses AI, but all on the Azure servers
+[2021-02-07 15:14:11] codingwithscott : They also have LUIS (language Understanding) to understand text/speech
+[2021-02-07 15:14:41] x_coding : Preatty interesting
+[2021-02-07 15:15:14] codingwithscott : I can share the github repo for my bot, if you want. It's only at the very beginning
+[2021-02-07 15:15:24] x_coding : Sure
+[2021-02-07 15:15:57] codingwithscott : https://github.com/ScottLilly/ScottBot
+[2021-02-07 15:18:43] codingwithscott : I don't have much on that website
+[2021-02-07 15:19:21] x_coding : No problem, i like the ideea of helping onthers
+[2021-02-07 15:19:58] codingwithscott : Me too. I have a lot of C# guides on my other website
+[2021-02-07 15:20:38] x_coding : I will have a look for sure
+[2021-02-07 15:20:56] x_coding : Is a handy for newbies like us
+[2021-02-07 15:20:58] x_coding : Keep it up
+[2021-02-07 15:22:27] x_coding : I do programming since 2013 but never went to a procedural one
+[2021-02-07 15:22:42] x_coding : I coded mostly for my needs
+[2021-02-07 15:22:50] x_coding : And went in love with it
+[2021-02-07 15:23:13] codingwithscott : It is fun to create little programs that help out :)
+[2021-02-07 15:23:52] x_coding : Yes. I did alot of personal one and some times for work too. Even it is not my main job
+[2021-02-07 15:24:15] x_coding : In the end programming we invented to easy our work
+[2021-02-07 15:24:55] x_coding : But sadly, looking at the big picture, is a minus too
+[2021-02-07 15:25:05] codingwithscott : True. We create our "robots" so we can be lazy
+[2021-02-07 15:25:11] x_coding : yes
+[2021-02-07 15:25:30] x_coding : and the person who did that job before is not reqired anymore
+[2021-02-07 15:25:44] x_coding : one more jobles person +-
+[2021-02-07 15:26:07] x_coding : i felt that on my own job
+[2021-02-07 15:26:25] x_coding : from 5 coworkers reamained only me
+[2021-02-07 15:26:34] codingwithscott : :(
+[2021-02-07 15:26:53] x_coding : on every major new tech income
+[2021-02-07 15:27:06] x_coding : well... 'evolution'?
+[2021-02-07 15:27:11] x_coding : good way to say?
+[2021-02-07 15:27:25] x_coding : !st
+[BOT] Stress my bot please xD. Use !help for commands
+[2021-02-07 15:27:38] codingwithscott : Yes. Hopefully, the benefits from technology are more than the costs
+[2021-02-07 15:27:46] codingwithscott : !help
+[BOT] List of commands is: !hi; !me; !hello; !git; !try; !pc; !discord; !fw; !st; !ide; !lisa; !project; !sorry; !yt; !weather 
+[2021-02-07 15:27:51] codingwithscott : !st
+[BOT] Stress my bot please xD. Use !help for commands
+[2021-02-07 15:27:56] x_coding : Hope one day will be so
+[2021-02-07 15:27:56] codingwithscott : !ide
+[BOT] Visual Studio 2019 Pro
+[2021-02-07 15:28:03] codingwithscott : !lisa
+[BOT] May the force of the study be with you, Lisa Rei! 
+[2021-02-07 15:28:08] x_coding : !ss @codingwithscott
+[BOT] Shoutout for @codingwithscott which is also a streamer! https://twitch.tv/codingwithscott
+[2021-02-07 15:28:13] codingwithscott : !try
+[BOT] Try the commands please!
+[2021-02-07 15:28:22] codingwithscott : !project
+[BOT] A simple Twitch bot in C#(WPF). www.github.com/0x78654C/xBot-Twitch-WPF
+[2021-02-07 15:28:35] codingwithscott : !weather houston texas
+[BOT] The weather(Fahrenheit) in houston is:
+ Temperature: 42.13
+ Feels Like: 31.53
+ Minim Temperature: 39.99
+ Maxim Temperature: 44.6
+ Humidity: 81
+ Wind Speed: 13.8
+
+[2021-02-07 15:29:03] codingwithscott : !me
+[BOT]  Simple coder for fun and help others!
+[2021-02-07 15:29:10] x_coding : I think i should make more dynamic the weather command
+[2021-02-07 15:29:20] x_coding : Like weather location units
+[2021-02-07 15:29:25] x_coding : C or F
+[2021-02-07 15:29:31] codingwithscott : A time command would also be nice
+[2021-02-07 15:29:39] x_coding : For now only the streamer can
+[2021-02-07 15:29:43] x_coding : Surre
+[2021-02-07 15:30:13] x_coding : Will do;)
+[2021-02-07 15:30:29] x_coding : Noted
+[2021-02-07 15:30:43] x_coding : But on next streams
+[2021-02-07 15:31:26] x_coding : !weather bucharest
+[BOT] The weather(Celsius) in bucharest is:
+ Temperature: 1.71
+ Feels Like: -2.89
+ Minim Temperature: 1
+ Maxim Temperature: 2.22
+ Humidity: 100
+ Wind Speed: 4.12
+
+[2021-02-07 15:32:02] x_coding : !discord
+[BOT] Join me on disscord --  www.discord.gg/CyTrYDydQ9
+[2021-02-07 15:32:04] x_coding : !git
+[BOT]  Some of my projects www.github.com/0x78654C/
+[2021-02-07 15:32:22] x_coding : No crash till now and i run in debug mod :))
+[2021-02-07 15:32:42] x_coding : Well. I think this is it for today
+[2021-02-07 15:32:55] x_coding : (My child wakes up)
+[2021-02-07 15:33:26] x_coding : I will add time comand on next stream. Thx for information and help
+[2021-02-07 15:33:40] codingwithscott : You're welcome. Have a good day!
+[2021-02-07 15:33:52] x_coding : I apriciate! Have a nice day
+[2021-02-07 15:34] xBot Disconncted!
+[2021-02-07 22:41] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-07 22:41:34] x_coding : !time Europe London
+[BOT] The time in London (Europe) is:
+{Date: abbreviationDate: :Date: GM Hour: Date: ,Date: client_ipDate: :Date: 79
+[2021-02-07 22:45] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-07 22:45:41] x_coding : !time
+[2021-02-07 22:45:55] x_coding : !time europe london
+[2021-02-07 22:47] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-07 22:47:43] x_coding : not quite.. i parse as normal string output
+[2021-02-07 22:47:51] x_coding : !time europe london
+[BOT] The time in london (europe) is:
+{Date: abbreviationDate: :Date: GM Hour: Date: ,Date: client_ipDate: :Date: 79
+[2021-02-07 22:49:02] x_coding : found issue:D
+[2021-02-07 22:54] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-07 22:54:19] x_coding : !time europe London
+[BOT] The time in London (europe) is:
+"day_of_week":0
+[2021-02-07 22:55] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-07 22:55:46] x_coding : !time europe london
+[BOT] The time in london (europe) is:
+"day_of_week":0
+[2021-02-07 22:57]Internet up. Reconnected to x_coding channel !
+[2021-02-07 22:57] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-07 22:57:34] x_coding : !time europe london
+[BOT] The time in london (europe) is:
+Date: 2021-02-07 Hour: 21:00:14
+[2021-02-07 22:57:38] x_coding : :D
+[2021-02-07 22:58:06] x_coding : fixed
+[2021-02-07 22:58:33] x_coding : !time America New York
+[BOT] The time in New (America) is:
+
+[2021-02-07 22:58:47] x_coding : !time Ameria New_york
+[BOT] The time in New_york (Ameria) is:
+
+[2021-02-07 23:01] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-07 23:01:32] x_coding : !time America new_york
+[BOT] The time in new_york (America) is:
+Date: 2021-02-07 Hour: 16:04:11
+[2021-02-07 23:01:55] codingwithscott : Nice! :)
+[2021-02-07 23:02:03] x_coding : well
+[2021-02-07 23:02:07] x_coding : try
+[2021-02-07 23:02:28] codingwithscott : !time America Houston
+[BOT] The time in Houston (America) is:
+
+[2021-02-07 23:02:38] x_coding : seems not on list:d
+[2021-02-07 23:02:58] codingwithscott : !time America Chicago
+[BOT] The time in Chicago (America) is:
+Date: 2021-02-07 Hour: 15:05:37
+[2021-02-07 23:03:29] x_coding : city with 2 string names must be splited by _ symbol
+[2021-02-07 23:04:06] x_coding : not best aproach maybe but works:D
+[2021-02-07 23:04:24] codingwithscott : Yes. A good place to start
+[2021-02-07 23:04:41] x_coding : !time europa bucharest
+[BOT] The time in bucharest (europa) is:
+
+[2021-02-07 23:04:58] x_coding : !time europa prague
+[BOT] The time in prague (europa) is:
+
+[2021-02-07 23:05:22] x_coding : !time europe bucharest
+[BOT] The time in bucharest (europe) is:
+Date: 2021-02-07 Hour: 23:08:02
+[2021-02-07 23:05:50] x_coding : !time europe prague
+[BOT] The time in prague (europe) is:
+Date: 2021-02-07 Hour: 22:08:30
+[2021-02-07 23:06] xBot Disconncted!
+[2021-02-07 23:11] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-07 23:11:11] x_coding : now can test
+[2021-02-07 23:11:24] x_coding : !time America Texas
+[2021-02-07 23:11:27] codingwithscott : !time America Asuncion
+[BOT] The time in Asuncion (America) is:
+Date: 2021-02-07 Hour: 18:14:07
+[2021-02-07 23:11:43] codingwithscott : !time America Montevideo
+[BOT] The time in Montevideo (America) is:
+Date: 2021-02-07 Hour: 18:14:22
+[2021-02-07 23:12:16] x_coding : time command added:D
+[2021-02-07 23:12:41] codingwithscott : thegam324HYPE
+[2021-02-07 23:12:57] x_coding : :D
+[2021-02-07 23:13:05] x_coding : !time Europe Timisoara
+[2021-02-07 23:13:32] x_coding : !time Europe Romania
+[2021-02-07 23:13:41] x_coding : !time Europe Berlin
+[BOT] The time in Berlin (Europe) is:
+Date: 2021-02-07 Hour: 22:16:20
+[2021-02-07 23:16] xBot Disconncted!
+[2021-02-07 23:18] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-07 23:18:13] x_coding : !time europe Timisoara
+[2021-02-07 23:18:20] x_coding : perfect
+[2021-02-07 23:20:04] codingwithscott : Have you tried Postman? That's a free program I use to test calling APIs
+[2021-02-07 23:20:38] x_coding : nerver heard of it ... let me see
+[2021-02-07 23:22:52] x_coding : interesting
+[2021-02-07 23:23:08] x_coding : i will look over in future
+[2021-02-07 23:34] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-07 23:35:08] x_coding : !weather asdasdas
+[2021-02-07 23:39] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-07 23:39:11] x_coding : !weather asdasdasda
+[BOT] The weather(Celsius) in asdasdasda is:
+Please check city name!
+[2021-02-07 23:39:19] x_coding : !time Ruasdaasda
+[2021-02-07 23:39:30] x_coding : !time Europe asdasdasd
+[BOT] The time in asdasdasd (Europe) is:
+Please check City name or Continent name. Only Cities avaible on http://worldtimeapi.org are displyed!
+[2021-02-07 23:39:43] codingwithscott : It's always fun having an error in the error logging code. How do you log the error logging error?
+[2021-02-07 23:40:20] x_coding : i print the entire catch on file
+[2021-02-07 23:40:28] yanni_boi : Hi @x_Coding what is your twitchbot going to do?
+[2021-02-07 23:41]Internet up. Reconnected to x_coding channel !
+[2021-02-07 23:42] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-07 23:42] xBot Disconncted!
+[2021-02-07 23:42] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-07 23:42:29] x_coding : !time asdasd
+[2021-02-07 23:42:32] x_coding : !weather asdasdad
+[BOT] The weather(Celsius) in asdasdad is:
+Please check city name!
+[2021-02-07 23:42:54] yanni_boi : haha cool
+[2021-02-07 23:43:02] x_coding : but try to fix error log
+[2021-02-07 23:43:09] x_coding : !time europe berlin
+[BOT] The time in berlin (europe) is:
+Date: 2021-02-07 Hour: 22:45:48
+[2021-02-07 23:43:13] yanni_boi : do you let others use your bot? or just for you?
+[2021-02-07 23:43:28] yanni_boi : that is acurate
+[2021-02-07 23:43:32] yanni_boi : (berlin)
+[2021-02-07 23:44] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-07 23:44:41] x_coding : !git
+[BOT]  Some of my projects www.github.com/0x78654C/
+[2021-02-07 23:44:45] x_coding : !project
+[BOT] A simple Twitch bot in C#(WPF). www.github.com/0x78654C/xBot-Twitch-WPF
+[2021-02-07 23:44:59] x_coding : !time asdasda
+[2021-02-07 23:45:26] x_coding : still the time error not outputs
+[2021-02-07 23:46:00] yanni_boi : do you just run it locally or are you planning to have it hosted?
+[2021-02-07 23:46:09] x_coding : hosted?
+[2021-02-07 23:46:15] x_coding : is not web based:D
+[2021-02-07 23:46:25] yanni_boi : like running on a server so it runs when your computer is off
+[2021-02-07 23:46:35] x_coding : aaa
+[2021-02-07 23:46:40] x_coding : you can
+[2021-02-07 23:46:54] x_coding : but you can run localy
+[2021-02-07 23:47:04] x_coding : it uses no database so..
+[2021-02-07 23:52] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-07 23:52:49] x_coding : !time ass aaaa
+[BOT] The time in aaaa (ass) is:
+Please check City name or Continent name. Only Cities avaible on http://worldtimeapi.org are displyed!
+[2021-02-07 23:53:10] x_coding : !weather assss
+[BOT] The weather(Celsius) in assss is:
+Please check city name!
+[2021-02-07 23:53:25] x_coding : finaly fixed
+[2021-02-07 23:53:33] yanni_boi : "trimite un mesaj"
+[2021-02-07 23:53:42] yanni_boi : portuguese... I cant spell :P
+[2021-02-07 23:53:44] x_coding : romanian
+[2021-02-07 23:53:48] yanni_boi : ahhhh
+[2021-02-07 23:53:50] yanni_boi : sorry
+[2021-02-07 23:53:50] x_coding : where you saw it?
+[2021-02-07 23:53:58] yanni_boi : in obs chat
+[2021-02-07 23:54:10] x_coding : aaa
+[2021-02-07 23:54:11] x_coding : :D
+[2021-02-07 23:54:15] x_coding : ye
+[2021-02-07 23:54:19] yanni_boi : cool!
+[2021-02-07 23:54:23] x_coding : np:D
+[2021-02-07 23:54:32] x_coding : i;m from Romania
