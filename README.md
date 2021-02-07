@@ -38,10 +38,10 @@ Project ongoing live on: https://www.twitch.tv/x_coding
     add/remove bad words for chat ban in real time to list
     change time(minutes) for chat ban in real time
     hardcoded !help command for display the list of commands
-    hardcoded !ss command for shout a streamer
+    hardcoded !ss command for shout a streamer (the command works only for the current streamer)
     hardcoded !yt command for youtube current song played on xBot youtube player
     hardcoded !weather Weather Forecast(Fahrenheit and Celsius units) command using openweather.org API
-    hardcoded !gl for whishing good luck to some one in chat from you
+    hardcoded !gl for whishing good luck to some one in chat from you  (the command works only for the current streamer)
     display people on chat room count on interface
     automaticaly reconnect to twitch channel if internet connection crashed and is up again 
 
