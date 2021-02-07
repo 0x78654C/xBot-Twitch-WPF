@@ -562,18 +562,18 @@ namespace xBot_WPF
             {
                 if (e.ChatMessage.Message == "!help")
                 {
-                    client.SendMessage(e.ChatMessage.Channel, "List of commands is: " + listCMD + "; !yt; !weather");
-                    logWrite("[BOT] List of commands is: " + listCMD + "; !yt; !weather");
-                    CLog.LogWrite("[BOT] List of commands is: " + listCMD + "; !yt; !weather ");
+                    client.SendMessage(e.ChatMessage.Channel, "List of commands is: " + listCMD + "; !yt; !weather; !time");
+                    logWrite("[BOT] List of commands is: " + listCMD + "; !yt; !weather; !time");
+                    CLog.LogWrite("[BOT] List of commands is: " + listCMD + "; !yt; !weather; !time ");
                 }
             }
             else
             {
                 if (e.ChatMessage.Message == "!help")
                 {
-                    client.SendMessage(e.ChatMessage.Channel, "List of commands is: " + listCMD + "; !yt");
-                    logWrite("[BOT] List of commands is: " + listCMD + "; !yt");
-                    CLog.LogWrite("[BOT] List of commands is: " + listCMD + "; !yt");
+                    client.SendMessage(e.ChatMessage.Channel, "List of commands is: " + listCMD + "; !yt; !time ");
+                    logWrite("[BOT] List of commands is: " + listCMD + "; !yt; !time ");
+                    CLog.LogWrite("[BOT] List of commands is: " + listCMD + "; !yt; !time ");
                 }
             }
             //----------------------------
@@ -584,7 +584,7 @@ namespace xBot_WPF
                 string line;
                 while ((line = sReader.ReadLine()) != null)
                 {
-                    if (line.Contains("!ss"))
+                    if (line.StartsWith("!ss"))
                     {
                         if (e.ChatMessage.Username == t_userName)
                         {
@@ -629,7 +629,7 @@ namespace xBot_WPF
                 string line;
                 while ((line = sReader.ReadLine()) != null)
                 {
-                    if (line.Contains("!gl"))
+                    if (line.StartsWith("!gl"))
                     {
                         if (e.ChatMessage.Username == t_userName)
                         {
@@ -738,7 +738,7 @@ namespace xBot_WPF
                 {
                     string[] we = timeC.Split(' ');
                     string cn = string.Empty;
-                    if (we[0].Contains("!weather"))
+                    if (we[0].StartsWith("!weather"))
                     {
                         cn = we[1];
                         if (cn.Length > 0)

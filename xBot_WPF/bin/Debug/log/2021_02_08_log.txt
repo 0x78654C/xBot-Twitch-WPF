@@ -1,0 +1,22 @@
+[2021-02-08 00:03] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-08 00:03:42] x_coding : !gl @CodingWithScott
+[BOT] x_coding wishes CodingWithScott good luck. May you succeed in whatever you're planning to do!
+[2021-02-08 00:03:46] x_coding : !weather london
+[BOT] The weather(Celsius) in london is:
+ Temperature: -0.81
+ Feels Like: -7.72
+ Minim Temperature: -1.67
+ Maxim Temperature: 0
+ Humidity: 74
+ Wind Speed: 6.17
+
+[2021-02-08 00:03:50] codingwithscott : :)
+[2021-02-08 00:03:53] x_coding : !ss @x_Coding
+[BOT] Shoutout for @x_Coding which is also a streamer! https://twitch.tv/x_Coding
+[2021-02-08 00:04:01] x_coding : !time europe Londone
+[BOT] The time in Londone (europe) is:
+Please check City name or Continent name. Only Cities avaible on http://worldtimeapi.org are displyed!
+[2021-02-08 00:04:05] x_coding : !help
+[BOT] List of commands is: !hi; !me; !hello; !git; !try; !pc; !discord; !fw; !st; !ide; !lisa; !project; !sorry; !yt; !weather 
+[2021-02-08 00:04] xBot Disconncted!
