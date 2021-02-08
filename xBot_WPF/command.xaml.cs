@@ -244,7 +244,7 @@ namespace xBot_WPF
         }
 
         /// <summary>
-        /// We update the command textbox with the command name from selected command item
+        /// We update the command name/message textbox with the command name/message from selected command item
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -255,8 +255,10 @@ namespace xBot_WPF
                 string sItem = commandList.SelectedItem.ToString();
                 string[] fItem = sItem.Split('!');
                 string[] lItem = fItem[1].Split(':');
-                nameTXT.Text = lItem[0];
+                nameTXT.Text = lItem[0]; //we grab the command name
+                contentTXT.Text = lItem[1]; //we grab the message content
             }
         }
+
     }
 }

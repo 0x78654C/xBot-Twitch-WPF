@@ -1,1 +1,43 @@
 [2021-02-08 00:02] xBot Disconncted!
+[2021-02-08 00:07] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-08 00:08:14] x_coding : !help
+[BOT] List of commands is: !me; !git; !try; !pc; !discord; !fw; !st; !ide; !lisa; !sorry; !project; !yt; !weather; !time 
+[2021-02-08 00:08:30] x_coding : well this is it
+[2021-02-08 00:08:50] x_coding : gmm
+[2021-02-08 00:08:53] x_coding : hnn
+[2021-02-08 00:08:55] x_coding : !help
+[BOT] List of commands is: !me; !git; !try; !pc; !discord; !fw; !st; !ide; !lisa; !sorry; !project; !yt; !weather; !time 
+[2021-02-08 00:09:06] x_coding : !time europe london
+[BOT] The time in london (europe) is:
+Date: 2021-02-07 Hour: 22:11:55
+[2021-02-08 00:09:56] x_coding : this is it for today
+[2021-02-08 00:10:08] x_coding : well for yesterday according to my time
+[2021-02-08 00:10:08] x_coding : :D
+[2021-02-08 00:10:17] x_coding : !time europe bucharest
+[BOT] The time in bucharest (europe) is:
+Date: 2021-02-08 Hour: 00:12:56
+[2021-02-08 00:10:20] codingwithscott : OK. Have a good night/morning/afternoon :)
+[2021-02-08 00:10:29] x_coding : night
+[2021-02-08 00:10:31] x_coding : thx alot
+[2021-02-08 00:10:44] x_coding : have a nice day @CodingWithScott ;)
+[2021-02-08 00:10:46] x_coding : and all
+[2021-02-08 00:10:46] codingwithscott : Thanks
+[2021-02-08 00:10:52] x_coding : cya on next stream
+[2021-02-08 00:11] xBot Disconncted!
+[2021-02-08 20:39] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-08 20:49:01] wolfhoundjesse : HI! You're building a terminal?
+[2021-02-08 20:50:40] x_coding : hey
+[2021-02-08 20:50:41] x_coding : well
+[2021-02-08 20:50:44] codingwithscott : Hello!
+[2021-02-08 20:50:47] x_coding : something similar
+[2021-02-08 20:50:53] x_coding : hello Scott
+[2021-02-08 20:55:25] x_coding : this is list of commands till now:d
+[2021-02-08 21:28:36] x_coding : thx for follow Accroach
+[2021-02-08 21:28:36] x_coding : :D
+[2021-02-08 21:36:06] x_coding : fixed
+[2021-02-08 21:36:06] x_coding : :D
+[2021-02-08 21:36:23] x_coding : the \ symbol was missing from root directory
+[2021-02-08 21:36:38] x_coding : worked withuot but estaticly was bad
+[2021-02-08 21:50] xBot Disconncted!
