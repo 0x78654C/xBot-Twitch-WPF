@@ -1,6 +1,5 @@
-!me: Simple coder for fun and help others!
+!me:I am a simple coder for fun and help others. I like C# as main programming langauge but sometimes I code on java(Android) too. I'm not a professional. I am just a selft tought code lover ;) 
 !git: Some of my projects www.github.com/0x78654C/
-!try:Try the commands please!
 !pc:1. 2 in 1 Lenovo 2 in 1 310 icr with linux(Ubuntu) wich I use for remote connection on server. 2. HP Microserver GEN 8 with 10 gb of ram and dual core Xeon E3 1220L  CPU on wich I stream and code.
 !discord:Join me on disscord --  www.discord.gg/CyTrYDydQ9
 !fw:A follow on my stream will be superb for me ;). Thank you!
@@ -8,4 +7,4 @@
 !ide:Visual Studio 2019 Pro
 !lisa:May the force of the study be with you, Lisa Rei! 
 !sorry:Sorry that I don't have a mic or camera at the moment. Maybe in future will aquire one for you guys! 
-!project:A simple Twitch bot in C#(WPF). www.github.com/0x78654C/xBot-Twitch-WPF
+!project:xTerminal - a simple linux like terminal for windows in C#

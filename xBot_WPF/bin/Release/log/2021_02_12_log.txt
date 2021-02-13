@@ -1,0 +1,212 @@
+[2021-02-12 00:09:13] x_coding : this is the moments where you stay a day in nowhere
+[2021-02-12 00:10:26] codingwithscott : Sometimes when I get stuck, it helps to get away for a while. Take a walk, go to sleep and try the next day, etc.
+[2021-02-12 00:10:44] codingwithscott : My brain comes up with new ideas when I give it time to think
+[2021-02-12 00:11:27] x_coding : well same
+[2021-02-12 00:11:54] x_coding : but is 12:11 , only sleep left:D
+[2021-02-12 00:12:00] codingwithscott : haha
+[2021-02-12 00:12:22] x_coding : i decided to use CTRL +S for folder file sugestions
+[2021-02-12 00:12:29] x_coding : when prest
+[2021-02-12 00:12:32] x_coding : pres
+[2021-02-12 00:13:02] x_coding : will see if posible
+[2021-02-12 00:33:39] x_coding : :D
+[2021-02-12 00:45:46] x_coding : makeing progres
+[2021-02-12 00:45:53] x_coding : now just need to parse the path
+[2021-02-12 00:45:57] x_coding : by last \
+[2021-02-12 00:46:10] x_coding : than output on every tab
+[2021-02-12 00:46:22] x_coding : i put a count
+[2021-02-12 00:46:36] x_coding : and increment for every line
+[2021-02-12 00:46:42] codingwithscott : Cool. I'm going to be doing some other things. I'll see you later :)
+[2021-02-12 00:47:43] x_coding : i go out too
+[2021-02-12 00:48:05] x_coding : thanks for stopping by
+[2021-02-12 00:50:50] x_coding : cya on next stream
+[2021-02-12 01:21] xBot Disconncted!
+[2021-02-12 20:31] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-12 20:36:07] mblenczewski : hello! how are you doing?
+[2021-02-12 20:36:19] x_coding : @mblenczewski hey
+[2021-02-12 20:36:24] x_coding : i'm fine:d
+[2021-02-12 20:36:28] x_coding : how are you?
+[2021-02-12 20:36:51] mblenczewski : thats good to hear! im ok too
+[2021-02-12 20:37:05] mblenczewski : hows the terminal coming along?
+[2021-02-12 20:37:48] x_coding : well the project is an older one
+[2021-02-12 20:37:57] x_coding : pretty well
+[2021-02-12 20:38:04] x_coding : now i want to make tab listing
+[2021-02-12 20:38:09] x_coding : like this
+[2021-02-12 20:38:37] x_coding : it list sugest the files/directories in current location
+[2021-02-12 20:38:52] x_coding : or by string start
+[2021-02-12 20:39:05] mblenczewski : ooh nice
+[2021-02-12 20:39:31] mblenczewski : so when you are typing a string will it create a tab or simply autocomplete from the current directory contents?
+[2021-02-12 20:40:49] x_coding : exacly
+[2021-02-12 20:41:11] x_coding : the same as dose in terminal or command promt windows
+[2021-02-12 20:41:23] mblenczewski : okok
+[2021-02-12 20:41:32] x_coding : i'm just at the begging now:d
+[2021-02-12 20:41:54] x_coding : btw i changed my hdd from server wich was fried by power failure:D
+[2021-02-12 20:42:09] mblenczewski : thats rough
+[2021-02-12 20:42:18] mblenczewski : i never knew they could die like that
+[2021-02-12 20:42:23] mblenczewski : got a UPS yet?
+[2021-02-12 20:42:42] x_coding : not yet
+[2021-02-12 20:43:02] x_coding : every storage is sensible to this
+[2021-02-12 20:43:03] mblenczewski : instead of comparing strings, could you compare on KeyCode directly?
+[2021-02-12 20:43:06] x_coding : even a usb stick
+[2021-02-12 20:43:19] mblenczewski : strcmp is slower and more error prone than comparing enums (which are constant values)
+[2021-02-12 20:43:56] x_coding : for now i let it so
+[2021-02-12 20:44:03] x_coding : i will try makeit on tab key anyway
+[2021-02-12 20:53:05] x_coding : :D
+[2021-02-12 20:58:47] x_coding : seems my list dosnt add
+[2021-02-12 21:00:30] mblenczewski : you create a new list on every key press
+[2021-02-12 21:00:36] mblenczewski : so the old one is overwritten?
+[2021-02-12 21:01:20] mblenczewski : you should probably only create it once (create it when you declare the static variable) and then just call .Clear() on it when you want to empty the list
+[2021-02-12 21:04:29] x_coding : something like that?
+[2021-02-12 21:04:39] mblenczewski : i dont know why you clear it tho
+[2021-02-12 21:06:25] x_coding : because on every location i should remake?
+[2021-02-12 21:06:34] x_coding : and dont ant to add
+[2021-02-12 21:06:41] x_coding : aaa
+[2021-02-12 21:06:42] x_coding : yes
+[2021-02-12 21:06:43] mblenczewski : so why bother with a list in the first place?
+[2021-02-12 21:06:44] x_coding : you right
+[2021-02-12 21:06:52] x_coding : my bad
+[2021-02-12 21:10:06] x_coding : i should use another key
+[2021-02-12 21:20:36] datadev : this is linux or windows VoHiYo
+[2021-02-12 21:21:09] x_coding : Windows
+[2021-02-12 21:21:27] x_coding : hey @DataDev
+[2021-02-12 21:22:07] datadev : I install Linux mint yesterday
+[2021-02-12 21:22:23] x_coding : never tested
+[2021-02-12 21:22:28] datadev : very difficult f operate Linux lol
+[2021-02-12 21:22:29] x_coding : i have ubuntu on laptop
+[2021-02-12 21:22:46] x_coding : what is the difference?
+[2021-02-12 21:22:52] datadev : ubuntu is also ussed by me 20.4
+[2021-02-12 21:22:52] x_coding : is still debian?
+[2021-02-12 21:22:57] mblenczewski : linux mint is essentially the same
+[2021-02-12 21:23:00] mblenczewski : yeah its still debian
+[2021-02-12 21:23:07] datadev : yep debian but lighter
+[2021-02-12 21:23:36] x_coding : than is easy:D
+[2021-02-12 21:23:48] x_coding : arch was a little messy at begining
+[2021-02-12 21:23:53] x_coding : was different
+[2021-02-12 21:23:55] datadev : but I had kernal issue I browsed for possible solutions
+[2021-02-12 21:24:15] mblenczewski : how did you have kernel issues?!? what happened???
+[2021-02-12 21:24:20] x_coding : yes
+[2021-02-12 21:24:24] x_coding : what have u done?
+[2021-02-12 21:24:36] datadev : spend 2 sleepless nights
+[2021-02-12 21:24:51] datadev : today installed windows again
+[2021-02-12 21:25:01] datadev : :(
+[2021-02-12 21:25:11] mblenczewski : what was the error?
+[2021-02-12 21:25:30] x_coding : linux is mostly plug and play
+[2021-02-12 21:25:34] mblenczewski : ^
+[2021-02-12 21:25:37] x_coding : kind of rare for kenrnal issue
+[2021-02-12 21:25:41] x_coding : kernal
+[2021-02-12 21:25:50] datadev : I had kacpi error it was eating 80% cpu
+[2021-02-12 21:26:20] datadev : did everything called 2 friends for help all in vain
+[2021-02-12 21:26:20] mblenczewski : were you running an older kernel? were you running some wierd hardware?
+[2021-02-12 21:27:03] mblenczewski : afaik mint uses a mostly recent kernel
+[2021-02-12 21:27:07] datadev : I install ssd and 12 ram but it was not meant to be
+[2021-02-12 21:27:22] mblenczewski : huh
+[2021-02-12 21:27:29] x_coding : try ubuntu
+[2021-02-12 21:27:32] mblenczewski : must have had some wierd hardware issues
+[2021-02-12 21:27:36] mblenczewski : :((
+[2021-02-12 21:27:36] x_coding : yes
+[2021-02-12 21:27:38] datadev : I am dumb in linux
+[2021-02-12 21:27:55] x_coding : they are realy plug and go
+[2021-02-12 21:28:01] mblenczewski : linux has drivers for pretty much everything tho, and most distros build in all the modules for maximum support.
+[2021-02-12 21:28:10] mblenczewski : so im confused as to how you got errors
+[2021-02-12 21:28:12] x_coding : i installed ubuntu on an atom x5 with 2gb ram
+[2021-02-12 21:28:15] mblenczewski : guess it just wasnt your day
+[2021-02-12 21:28:26] datadev : I left it for good
+[2021-02-12 21:28:38] mblenczewski : thats a shame :(
+[2021-02-12 21:28:42] x_coding : as live was fine?
+[2021-02-12 21:28:55] x_coding : or u just installed
+[2021-02-12 21:29:32] datadev : I loved Linux had one for 3 years on core duo 2 pc no issues
+[2021-02-12 21:30:27] x_coding : i had issue with arch indeed in the way that after a while pc freezes
+[2021-02-12 21:30:42] x_coding : on other distro of debian had battery info issue
+[2021-02-12 21:30:50] x_coding : only ubuntu was fine in all for me:d
+[2021-02-12 21:30:58] x_coding : on laptop
+[2021-02-12 21:31:01] x_coding : !pc
+[BOT] 1. 2 in 1 Lenovo 2 in 1 310 icr with linux(Ubuntu) wich I use for remote connection on server. 2. HP Microserver GEN 8 with 10 gb of ram and dual core Xeon E3 1220L  CPU on wich I stream and code.
+[2021-02-12 21:31:37] datadev : some other time I will install them all I have made bootable pendrive for 3 linux os
+[2021-02-12 21:32:02] datadev : ibuntu 20.04 xubuntu and lint mint
+[2021-02-12 21:32:02] x_coding : @mblenczewski i need to clear the list since i dont want the history of what i wrote
+[2021-02-12 21:32:24] x_coding : for what you wanted to use?
+[2021-02-12 21:32:53] mblenczewski : i have no clue what the list is for tbh
+[2021-02-12 21:33:02] mblenczewski : if you need to clear it then go ahead my dude
+[2021-02-12 21:33:23] mblenczewski : i thought that when a line finishes you would clear it
+[2021-02-12 21:33:30] mblenczewski : if its the history of the line
+[2021-02-12 21:33:35] mblenczewski : erm
+[2021-02-12 21:33:36] datadev : ruby /rails windows doesn't have good support 4 ruby
+[2021-02-12 21:33:38] mblenczewski : whats the fancy diamong?
+[2021-02-12 21:33:41] mblenczewski : *diamond?
+[2021-02-12 21:33:54] x_coding : VIP
+[2021-02-12 21:34:13] mblenczewski : i dont think i deserve that tbh, but thanks
+[2021-02-12 21:34:20] x_coding : the list is for following
+[2021-02-12 21:34:36] x_coding : case you write : cd fordername
+[2021-02-12 21:34:48] x_coding : but i dont want to write the entire name
+[2021-02-12 21:35:17] x_coding : i write 'cd fol' and i parse that
+[2021-02-12 21:35:26] x_coding : and split by space
+[2021-02-12 21:35:34] x_coding : first string c[0] is th command
+[2021-02-12 21:36:02] x_coding : and second c[1] will be the start name of the file /folder in curent director
+[2021-02-12 21:36:47] mblenczewski : why not store the current line in a static variable, and when the user presses "enter", you split the line, parse it, and do other processing. then, clear the current line variable and do it all over again?
+[2021-02-12 21:38:37] x_coding : pres enter?
+[2021-02-12 21:39:01] mblenczewski : when the user finishes typing the command and runs it
+[2021-02-12 21:39:11] mblenczewski : i dont know what you use for that, but its usually "enter"
+[2021-02-12 21:39:22] x_coding : no
+[2021-02-12 21:39:23] x_coding : loog
+[2021-02-12 21:39:25] x_coding : look
+[2021-02-12 21:40:36] x_coding : omg
+[2021-02-12 21:40:40] x_coding : win 10 removed
+[2021-02-12 21:41:44] x_coding : see?
+[2021-02-12 21:42:03] mblenczewski : im going to be honest, im not sure i really understand and i dont think ill be of much use
+[2021-02-12 21:42:21] mblenczewski : if what you want is autocomplete, then you have to track the current "state" of the command
+[2021-02-12 21:42:42] x_coding : that
+[2021-02-12 21:42:51] mblenczewski : i.e. if you type a " then you toggle autocomplete off, and toggle it on again on the closing "
+[2021-02-12 21:43:29] mblenczewski : otherwise, just have a tab always increment an index into a static "directory contents" variable, which stores the children of the current working directory
+[2021-02-12 21:44:06] mblenczewski : whenever you write the name of the directory, update the current parent directory, and reset the index and repopulate the "contents" variable
+[2021-02-12 21:44:07] x_coding : so only when a command is used i have to activate?
+[2021-02-12 21:44:09] mblenczewski : something like that
+[2021-02-12 21:44:22] x_coding : so like cd blabla..
+[2021-02-12 21:44:25] x_coding : when sees cd
+[2021-02-12 21:44:28] mblenczewski : i would say have it always on, as everything in the shell is a command unless prefixed by "
+[2021-02-12 21:44:29] x_coding : it starts
+[2021-02-12 21:44:43] mblenczewski : if iyou see a ", then toggle off autocomplete untill you hit the matching "
+[2021-02-12 21:44:50] mblenczewski : *closing "
+[2021-02-12 21:45:18] x_coding : that autocomplete i need to build
+[2021-02-12 21:45:38] mblenczewski : well, for autocomplete you need to track the current working directory
+[2021-02-12 21:46:07] x_coding : did alrady
+[2021-02-12 21:46:08] x_coding : :d
+[2021-02-12 21:46:10] mblenczewski : you also need to have a "virtual" current working directory (to enable autocompleting in subdirectories
+[2021-02-12 21:46:33] x_coding : it autmaticly sotores
+[2021-02-12 21:46:36] x_coding : the current dir
+[2021-02-12 21:46:40] x_coding : when i go to it
+[2021-02-12 21:46:46] x_coding : until close
+[2021-02-12 21:46:58] mblenczewski : do you fetch the contents of the current dir and put it in a list?
+[2021-02-12 21:47:05] mblenczewski : do you have an index into this list?
+[2021-02-12 21:47:09] x_coding : and when opens it stores to current dir from xterminla.exe
+[2021-02-12 21:47:26] x_coding : i will ad an index
+[2021-02-12 21:47:32] x_coding : something like this
+[2021-02-12 21:47:39] x_coding : 1|firstfile
+[2021-02-12 21:47:47] x_coding : 2|second
+[2021-02-12 21:47:49] x_coding : and so on
+[2021-02-12 21:47:54] x_coding : and call by that
+[2021-02-12 21:48:08] mblenczewski : i think i wasnt clear
+[2021-02-12 21:48:10] x_coding : or dont know if need
+[2021-02-12 21:48:32] mblenczewski : i mean an "private static int dirContentsIdx = 0;"
+[2021-02-12 21:48:54] mblenczewski : whenver the user presses a tab, this index gets incremented (and gets wrapped if it exceeds the length of the directory contents)
+[2021-02-12 21:49:26] x_coding : yes
+[2021-02-12 21:49:39] x_coding : the same i did for command history:D
+[2021-02-12 21:49:45] x_coding : look
+[2021-02-12 21:50:52] x_coding : the history of cmmands
+[2021-02-12 21:50:52] x_coding : :D
+[2021-02-12 21:51:02] x_coding : a thing that command promt dosent have
+[2021-02-12 21:51:03] x_coding : :D
+[2021-02-12 21:51:36] mblenczewski : that sounds ok i think
+[2021-02-12 21:51:48] x_coding : yes
+[2021-02-12 21:52:12] x_coding : that was for me time saveing in linux
+[2021-02-12 21:52:22] x_coding : the history of cmmands used
+[2021-02-12 21:52:57] x_coding : but here i don't think i need an index
+[2021-02-12 21:53:04] x_coding : cose i have 2 cases
+[2021-02-12 21:53:31] x_coding : 1. i need the list of all files/folders when no value is added after space
+[2021-02-12 21:54:03] x_coding : 2. i need only the files/folders that contains the value added after space
+[2021-02-12 21:54:33] mblenczewski : i might not understand how your stuff works, so do it as you see fit
+[2021-02-12 21:56:49] mblenczewski : thanks for the stream! ill be heading off now!
+[2021-02-12 21:56:59] mblenczewski : good luck with the autocomplete!
+[2021-02-12 21:57:59] x_coding : @mblenczewski ok thanx alot for been here and advice
+[2021-02-12 22:14:17] x_coding : this is it for today
+[2021-02-12 22:14:22] x_coding : cya on next steam; )
+[2021-02-12 22:14:30] datadev : ok

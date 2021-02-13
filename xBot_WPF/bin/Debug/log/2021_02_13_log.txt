@@ -1,0 +1,21 @@
+[2021-02-13 07:53] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-13 07:53:42] x_coding : !help
+[BOT] List of commands is: !hi; !me; !hello; !git; !try; !pc; !discord; !fw; !st; !ide; !lisa; !project; !sorry; !yt; !weather; !time 
+[2021-02-13 10:28:42] x_coding : !help
+[2021-02-13 10:51]Internet up. Reconnected to x_coding channel !
+[2021-02-13 10:51] Connected to  channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-13 10:52:07] x_coding : !help
+[BOT] List of commands is: !hi; !me; !hello; !git; !try; !pc; !discord; !fw; !st; !ide; !lisa; !project; !sorry; !yt; !weather; !time 
+[2021-02-13 11:22:02] x_coding : !help
+[BOT] List of commands is: !hi; !me; !hello; !git; !try; !pc; !discord; !fw; !st; !ide; !lisa; !project; !sorry; !yt; !weather; !time 
+[2021-02-13 12:37:21] x_coding : !help
+[BOT] List of commands is: !hi; !me; !hello; !git; !try; !pc; !discord; !fw; !st; !ide; !lisa; !project; !sorry; !yt; !weather; !time 
+[2021-02-13 12:37] xBot Disconncted!
+[2021-02-13 15:21] Connected to  channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-13 15:22:18] x_coding : !help
+[BOT] List of commands is: !hi; !me; !hello; !git; !try; !pc; !discord; !fw; !st; !ide; !lisa; !project; !sorry; !yt; !weather; !time 
+[2021-02-13 16:00:35] x_coding : !test
+[2021-02-13 16:00:38] x_coding : !help

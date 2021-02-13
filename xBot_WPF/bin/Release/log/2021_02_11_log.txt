@@ -1,0 +1,54 @@
+[2021-02-11 14:40]Internet up. Reconnected to x_coding channel !
+[2021-02-11 14:41] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-11 21:57:45] x_coding : !discrod
+[2021-02-11 21:57:50] x_coding : !discord
+[2021-02-11 21:58]Internet up. Reconnected to x_coding channel !
+[2021-02-11 21:58] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-11 21:58:38] x_coding : !discord
+[BOT] Join me on disscord --  www.discord.gg/CyTrYDydQ9
+[2021-02-11 22:15:09] codingwithscott : Hello!
+[2021-02-11 22:16:18] x_coding : Hey @CodingWithScott
+[2021-02-11 22:16:22] x_coding : How are you?
+[2021-02-11 22:16:40] codingwithscott : I'm doing well. How are you?
+[2021-02-11 22:17:55] x_coding : I'm well. Just a litle code before sleep :)
+[2021-02-11 22:22:45] x_coding : @CodingWithScott Should I display th e current location directly on start?
+[2021-02-11 22:23:12] codingwithscott : I probably would. It might help the user
+[2021-02-11 22:23:34] x_coding : yes .. i was thinking that too
+[2021-02-11 22:30:50] x_coding : @CodingWithScott big issue in file/directory create.
+[2021-02-11 22:31:18] x_coding : since i use new proces and give input as param will not take space
+[2021-02-11 22:31:27] x_coding : let me see if works with ""
+[2021-02-11 22:31:49] x_coding : works:D
+[2021-02-11 22:32:03] codingwithscott : stockHandsup
+[2021-02-11 22:32:08] x_coding : otherwise need to rewrite all:D
+[2021-02-11 22:32:21] x_coding : and use a puplic string for trasnfer
+[2021-02-11 23:04:10] x_coding : why my backkgournd worker not work in timer
+[2021-02-11 23:04:55] codingwithscott : I'm not sure. I haven't used background workers in a long time
+[2021-02-11 23:05:22] x_coding : timer works fine
+[2021-02-11 23:05:34] x_coding : well i want to make tab action if posible
+[2021-02-11 23:06:04] x_coding : for suges file name from current dir
+[2021-02-11 23:06:07] x_coding : like this
+[2021-02-11 23:08:05] codingwithscott : I think I understand, but I don't know how you would do that. You wouldn't really be "in" the program
+[2021-02-11 23:08:30] codingwithscott : That would be cool to do, but might be a little difficult
+[2021-02-11 23:10:05] x_coding : yes
+[2021-02-11 23:13:00] x_coding : the problem si to overwrite the tab space
+[2021-02-11 23:13:34] x_coding : that could be done after pressing tab to delete after the sapce and pring the output
+[2021-02-11 23:37:55] codingwithscott : In your KeyInputs functions, if you add "e.Handled = true;", that should prevent the tab from moving forward 4 spaces
+[2021-02-11 23:40:36] x_coding : where?
+[2021-02-11 23:40:38] codingwithscott : line 505, maybe
+[2021-02-11 23:42:01] codingwithscott : That would need to be in the function where you get the eventargs e
+[2021-02-11 23:43:07] codingwithscott : The function that is called in the line with "+="
+[2021-02-11 23:43:51] codingwithscott : Maybe those eventargs don't have a Handled property
+[2021-02-11 23:44:23] x_coding : semms so
+[2021-02-11 23:45:58] x_coding : well
+[2021-02-11 23:46:19] x_coding : i was thinking to use other combination
+[2021-02-11 23:46:40] x_coding : since i cannot overte on tabpress the 4 spaces
+[2021-02-11 23:48:09] x_coding : windows forms:D
+[2021-02-11 23:48:14] codingwithscott : :)
+[2021-02-11 23:52:17] x_coding : Brb 5 minutes
+[2021-02-11 23:54:28] x_coding : back
+[2021-02-11 23:59:05] x_coding : sorry
+[2021-02-11 23:59:11] x_coding : some connection isue
+[2021-02-11 23:59:13] x_coding : issue
+[2021-02-11 23:59:53] codingwithscott : no problem :)

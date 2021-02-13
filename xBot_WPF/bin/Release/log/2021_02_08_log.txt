@@ -41,3 +41,47 @@ Date: 2021-02-08 Hour: 00:12:56
 [2021-02-08 21:36:23] x_coding : the \ symbol was missing from root directory
 [2021-02-08 21:36:38] x_coding : worked withuot but estaticly was bad
 [2021-02-08 21:50] xBot Disconncted!
+[2021-02-08 21:59] Connected to x_coding channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-08 22:01:19] x_coding : !git
+[BOT]  Some of my projects www.github.com/0x78654C/
+[2021-02-08 22:06:27] x_coding : !git
+[BOT]  Some of my projects www.github.com/0x78654C/
+[2021-02-08 22:06:34] x_coding : !projects
+[2021-02-08 22:06:41] x_coding : !project
+[BOT] xTerminal - a linux terminal copy(in a way or other) - personal use and not git at the moment uploaded
+[2021-02-08 22:27:35] dinocrys : I raided myslef!
+[2021-02-08 22:27:39] dinocrys : :)
+[2021-02-08 22:28:03] codingwithscott : LUL
+[2021-02-08 22:28:06] dinocrys : How is going?
+[2021-02-08 22:28:38] dinocrys : Shh, his busy :)
+[2021-02-08 22:31:20] x_coding : hey
+[2021-02-08 22:31:26] x_coding : sorry i didnt saw
+[2021-02-08 22:31:37] x_coding : i don't have second monitr :(
+[2021-02-08 22:31:45] dinocrys : I'll stalk here a bit while eating will go play something. :)
+[2021-02-08 22:31:54] x_coding : thx alot;)
+[2021-02-08 22:31:57] dinocrys : Not for long. Keep it up :)
+[2021-02-08 22:32:12] dinocrys : I used my phone as twitch dashboard
+[2021-02-08 22:32:21] dinocrys : I has nice one for chat and notifications
+[2021-02-08 22:34:15] dinocrys : Are you trying to create wrapper?
+[2021-02-08 22:34:19] x_coding : it is pointless i need to keep it on silent
+[2021-02-08 22:34:25] x_coding : since kid sleeps:d
+[2021-02-08 22:34:33] dinocrys : Vibration?
+[2021-02-08 22:34:37] x_coding : a file rename for my terminal
+[2021-02-08 22:34:47] x_coding : is loud :))
+[2021-02-08 22:35:01] x_coding : ok
+[2021-02-08 22:35:03] x_coding : now is on:D
+[2021-02-08 22:35:23] dinocrys : nah, I just providing options :)
+[2021-02-08 22:37:10] x_coding : I know
+[2021-02-08 22:37:18] x_coding : I test sometimes commands
+[2021-02-08 22:37:22] x_coding : From here
+[2021-02-08 22:37:54] dinocrys : I'll go play some tarkov with friends. will be stalking for a while :) GL
+[2021-02-08 22:39:57] x_coding : @DinoCrys ok, thx for raid ;)
+[2021-02-08 22:40:13] x_coding : and good luck on tarkov
+[2021-02-08 22:49:47] x_coding : should i upload this?:D
+[2021-02-08 22:49:50] x_coding : on git
+[2021-02-08 22:49:52] x_coding : ?
+[2021-02-08 22:50:22] codingwithscott : I upload all my projects to GitHub, but keep some private
+[2021-02-08 22:51:37] x_coding : i will upload this too
+[2021-02-08 22:51:49] x_coding : or mby fork to original one
+[2021-02-08 22:52:26] x_coding : https://github.com/willharrison/ProgrammingWithWill

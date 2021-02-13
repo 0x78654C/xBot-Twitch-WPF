@@ -93,17 +93,17 @@
     <Reference Include="TwitchLib.Api.V5.Models">
       <HintPath>..\..\xBot\xBot\xBot-Twitch\xBot\bin\Debug\TwitchLib.Api.V5.Models.dll</HintPath>
     </Reference>
-    <Reference Include="TwitchLib.Client">
-      <HintPath>..\..\xBot\xBot\xBot-Twitch\xBot\bin\Debug\TwitchLib.Client.dll</HintPath>
+    <Reference Include="TwitchLib.Client, Version=3.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\TwitchLib.Client.3.2.1\lib\netstandard2.0\TwitchLib.Client.dll</HintPath>
     </Reference>
-    <Reference Include="TwitchLib.Client.Enums">
-      <HintPath>..\..\xBot\xBot\xBot-Twitch\xBot\bin\Debug\TwitchLib.Client.Enums.dll</HintPath>
+    <Reference Include="TwitchLib.Client.Enums, Version=3.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\TwitchLib.Client.Enums.3.2.1\lib\netstandard2.0\TwitchLib.Client.Enums.dll</HintPath>
     </Reference>
-    <Reference Include="TwitchLib.Client.Models">
-      <HintPath>..\..\xBot\xBot\xBot-Twitch\xBot\bin\Debug\TwitchLib.Client.Models.dll</HintPath>
+    <Reference Include="TwitchLib.Client.Models, Version=3.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\TwitchLib.Client.Models.3.2.1\lib\netstandard2.0\TwitchLib.Client.Models.dll</HintPath>
     </Reference>
-    <Reference Include="TwitchLib.Communication">
-      <HintPath>..\..\xBot\xBot\xBot-Twitch\xBot\bin\Debug\TwitchLib.Communication.dll</HintPath>
+    <Reference Include="TwitchLib.Communication, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\TwitchLib.Communication.1.0.3\lib\netstandard2.0\TwitchLib.Communication.dll</HintPath>
     </Reference>
     <Reference Include="TwitchLib.PubSub">
       <HintPath>..\..\xBot\xBot\xBot-Twitch\xBot\bin\Debug\TwitchLib.PubSub.dll</HintPath>
