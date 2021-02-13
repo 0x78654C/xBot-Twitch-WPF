@@ -413,6 +413,7 @@ namespace xBot_WPF
             client.OnConnected += Client_OnConnected;
             client.OnUserJoined += Client_OnUserJoinedArgs;
             client.OnUserLeft += Client_OnUserLeftArgs;
+            client.AutoReListenOnException = true;
             client.Connect();
 
             //we check if bot is connected and display the log info
@@ -612,9 +613,9 @@ namespace xBot_WPF
                         }
                         else
                         {
-                            client.SendMessage(e.ChatMessage.Channel, "Only @" + e.ChatMessage.Username + " can use the !ss command!");
-                            logWrite("[BOT] Only @" + e.ChatMessage.Username + " can use the !ss command!");
-                            CLog.LogWrite("[BOT] Only @" + e.ChatMessage.Username + " can use the !ss command!");
+                            client.SendMessage(e.ChatMessage.Channel, "Only @" + t_userName + " can use the !ss command!");
+                            logWrite("[BOT] Only @" + t_userName + " can use the !ss command!");
+                            CLog.LogWrite("[BOT] Only @" + t_userName + " can use the !ss command!");
                         }
                     }
 
@@ -657,9 +658,9 @@ namespace xBot_WPF
                         }
                         else
                         {
-                            client.SendMessage(e.ChatMessage.Channel, "Only @" + e.ChatMessage.Username + " can use the !gl command!");
-                            logWrite("[BOT] Only @" + e.ChatMessage.Username + " can use the !gl command!");
-                            CLog.LogWrite("[BOT] Only @" + e.ChatMessage.Username + " can use the !gl command!");
+                            client.SendMessage(e.ChatMessage.Channel, "Only @" + t_userName + " can use the !gl command!");
+                            logWrite("[BOT] Only @" + t_userName + " can use the !gl command!");
+                            CLog.LogWrite("[BOT] Only @" + t_userName + " can use the !gl command!");
                         }
                     }
                 }
@@ -1115,6 +1116,9 @@ namespace xBot_WPF
                 }
             }
             //------------------------------------------------
+
+            //Will see if this will solve the mistery crash issue
+            GC.Collect();
         }
 
 
