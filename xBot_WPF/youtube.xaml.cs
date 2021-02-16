@@ -16,6 +16,7 @@ using System.Reflection;
 using System.Threading;
 using System.Text.RegularExpressions;
 using Core;
+using System.Net;
 
 namespace xBot_WPF
 {
@@ -30,6 +31,7 @@ namespace xBot_WPF
         MatchCollection matches;
         readonly static string playListFile = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\data\playList.txt";
         private static string playLink;
+        private static string ytTitle;
         //-----------------------------------------
 
         //Declare keyname
@@ -41,7 +43,7 @@ namespace xBot_WPF
             InitializeComponent();
 
             //load youtube link 
-            playLink = Reg.regKey_Read(keyName, "YtLink");
+            playLink = Reg.regKey_Read(keyName, "YtUrl");
             //--------------------------
 
             //Load control number from registry
@@ -70,6 +72,8 @@ namespace xBot_WPF
         /// <param name="url"></param>
         public void reload_YT(string url)
         {
+            WebClient client = new WebClient();
+            string titleParse;
             string html = "<html><head><center>";
             html += "<meta content='IE=Edge' http-equiv='X-UA-Compatible'/>";
             html += "<iframe id='video' src= 'https://www.youtube.com/embed/{0}?rel=0&amp;&amp;showinfo=0;&autoplay=1' width='647' height='380' frameborder='0' allowfullscreen></iframe>";
@@ -78,6 +82,16 @@ namespace xBot_WPF
             {
                 this.ytBrowser.NavigateToString(string.Format(html, url.Split('=')[1]));
                 Reg.regKey_WriteSubkey(keyName, "YTControl", "1");
+                
+                //Download youtube link source code
+                titleParse = client.DownloadString(url);
+
+                //grabing the title from source
+                int pFrom = titleParse.IndexOf("<title>") + "<title>".Length;
+                int pTo = titleParse.LastIndexOf("</title>");
+
+                //store the title
+                ytTitle=titleParse.Substring(pFrom, pTo - pFrom);
                 playLink = url;
             }
             catch
@@ -219,7 +233,11 @@ namespace xBot_WPF
         private void playList_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             reload_YT(playList.SelectedItem.ToString());
-            Reg.regKey_WriteSubkey(keyName, "YtLink", playList.SelectedItem.ToString());
+            //store title + youtube link in registry
+            Reg.regKey_WriteSubkey(keyName, "YtLink",ytTitle+ ": " + playList.SelectedItem.ToString());
+
+            //store youtube link only in registry
+            Reg.regKey_WriteSubkey(keyName, "YtUrl",playList.SelectedItem.ToString());
             playBTN.Content = "Stop";
         }
 

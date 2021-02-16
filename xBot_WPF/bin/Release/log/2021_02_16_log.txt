@@ -7,3 +7,63 @@
 [2021-02-16 12:02]Internet up. Reconnected to x_coding channel !
 [2021-02-16 12:02] Connected to  channel !
 [Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-16 12:12]Random Message: If you want to talk about my projects and other when i'm not streaming than join me on disscord ;) --  www.discord.gg/CyTrYDydQ9
+[2021-02-16 12:13:40] x_coding : !help
+[BOT] List of commands is: !me; !git; !pc; !discord; !fw; !ide; !lisa; !sorry; !project; !yt; !weather; !time 
+[2021-02-16 12:16:14] x_coding : !project
+[BOT] xBot - A simple, open source, Twitch build entirely on stream. Is created in C# WPF
+[2021-02-16 12:32]Random Message: A follow on my stream will be superb for me ;). Thank you
+[2021-02-16 12:51:33] x_coding : !play
+[2021-02-16 12:51:37] x_coding : !yt
+[BOT] Now playing: https://www.youtube.com/watch?v=Z-VfaG9ZN_U
+[2021-02-16 12:52:06] x_coding : !yt
+[BOT] Now playing: https://www.youtube.com/watch?v=iAYMJk9IsDA
+[2021-02-16 12:52]Random Message: For bot commands type !help
+[2021-02-16 12:53:53] x_coding : !yt
+[BOT] Now playing: https://www.youtube.com/watch?v=mOe8VEMuPo0
+[2021-02-16 12:55:58] x_coding : !yt
+[BOT] Nothing playing at the moment! 
+[2021-02-16 12:57:36] x_coding : thank you all
+[2021-02-16 12:57:39] x_coding : this is it for now
+[2021-02-16 12:57:51] x_coding : the code has been uploaded on github
+[2021-02-16 12:57:58] x_coding : see you on next stream ;)
+[2021-02-16 12:58] xBot Disconncted!
+[2021-02-16 23:17]Internet up. Reconnected to x_coding channel !
+[2021-02-16 23:17] Connected to  channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-16 23:17:53] x_coding : !yt
+[BOT] Now playing: Programming / Coding / Hacking music vol.16 (CONNECTION LOST) - YouTube: https://www.youtube.com/watch?v=l9nh1l8ZIJQ
+[2021-02-16 23:18:39] codingwithscott : Maybe you need to write a mobile app, for Twitch chat
+[2021-02-16 23:19:09] x_coding : Was thinking to make a twitch bot for mobile :))
+[2021-02-16 23:19:15] x_coding : But cannot
+[2021-02-16 23:20:51] codingwithscott : There is a mobile Twitch app named StreamPuppy. It has free and paid versions. I don't know if it has chat
+[2021-02-16 23:21:11] x_coding : Well i use the oficial twitch app
+[2021-02-16 23:21:17] x_coding : But..
+[2021-02-16 23:21:36] x_coding : Sadly i cannot cod for mobile brcause i use iphone
+[2021-02-16 23:21:42] x_coding : And this is win
+[2021-02-16 23:22:09] x_coding : And for android i don’t have good specs to emulate and i dont have android anymore
+[2021-02-16 23:22:18] codingwithscott : You might be able to use Xamarin, if you want to learn that
+[2021-02-16 23:22:20] x_coding : !yt
+[BOT] Now playing: HACKING MUSIC - Mr. Robot ðŸ¤–#13 - YouTube: https://www.youtube.com/watch?v=iAYMJk9IsDA
+[2021-02-16 23:22:47] x_coding : You need a mac machine to compile the code even with xamarin
+[2021-02-16 23:22:58] x_coding : !yt
+[BOT] Now playing: HACKING MUSIC - Mr. Robot ðŸ¤–#13 - YouTube: https://www.youtube.com/watch?v=iAYMJk9IsDA
+[2021-02-16 23:24:01] x_coding : !pc
+[BOT] 1. 2 in 1 Lenovo 2 in 1 310 icr with linux(Ubuntu) wich I use for remote connection on server. 2. HP Microserver GEN 8 with 10 gb of ram and dual core Xeon E3 1220L  CPU on wich I stream and code.
+[2021-02-16 23:24:32] x_coding : Anyway i’m glad that I added the title for yt songs
+[2021-02-16 23:25:14] x_coding : And the random message
+[2021-02-16 23:25:36] codingwithscott : Cool!
+[2021-02-16 23:28:51] x_coding : Brb 2 min
+[2021-02-16 23:31:39] x_coding : back
+[2021-02-16 23:32]Random Message: If you want to talk about my projects and other when i'm not streaming than join me on disscord ;) --  www.discord.gg/CyTrYDydQ9
+[2021-02-16 23:33] xBot Disconncted!
+[2021-02-16 23:34] Connected to  channel !
+[2021-02-16 23:34:47] x_coding : !git
+[BOT]  Some of my projects www.github.com/0x78654C/
+[2021-02-16 23:34:50] x_coding : !project
+[BOT] xBot - A simple, open source, Twitch build entirely on stream. Is created in C# WPF
+[2021-02-16 23:49] Connected to  channel !
+[2021-02-16 23:49:53] x_coding : !yt
+[BOT] Now playing: HACKING MUSIC - Mr. Robot ðŸ¤–#13 - YouTube: https://www.youtube.com/watch?v=iAYMJk9IsDA
+[2021-02-16 23:51:18] x_coding : !yt
+[BOT] Now playing: chill lofi beats to code/relax to - YouTube: https://www.youtube.com/watch?v=bmVKaAV_7-A

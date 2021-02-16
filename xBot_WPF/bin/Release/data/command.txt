@@ -6,4 +6,4 @@
 !ide:Visual Studio 2019 Pro
 !lisa:May the force of the study be with you, Lisa Rei! 
 !sorry:Sorry that I don't have a mic or camera at the moment. Maybe in future will aquire one for you guys! 
-!project:xTerminal - a simple linux like terminal for windows in C#
+!project:xBot - A simple, open source, Twitch build entirely on stream. Is created in C# WPF

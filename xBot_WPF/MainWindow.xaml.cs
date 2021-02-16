@@ -273,6 +273,11 @@ namespace xBot_WPF
                 Reg.regKey_CreateKey(keyName, "YtLink", " ");
             }
 
+            if (Reg.regKey_Read(keyName, "YtUrl") == "")
+            {
+                Reg.regKey_CreateKey(keyName, "YtUrl", " ");
+            }
+
             if (Reg.regKey_Read(keyName, "botMSGControl") == "")
             {
                 Reg.regKey_CreateKey(keyName, "botMSGControl", "0");

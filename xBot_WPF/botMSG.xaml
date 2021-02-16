@@ -41,7 +41,7 @@
         <Border BorderBrush="Black" BorderThickness="1">
         </Border>
         <Grid VerticalAlignment="Top" Height="50" Background="#FF690FC2" >
-            <TextBlock Text="xBot Start Message"  TextAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontSize="22" Margin="232,6,249,4"/>
+            <TextBlock Text="xBot Message"  TextAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontSize="22" Margin="232,6,249,4"/>
             <Label Name="closeLBL" Content="x" FontSize="26" Foreground="#FFE1DDE2" HorizontalAlignment="Right" Margin="0,-3,10,0" VerticalAlignment="Top" Height="46" PreviewMouseDown="closeLBL_PreviewMouseDown"/>
             <Label Name="miniMizeLBL" Content="_" FontSize="26" Foreground="#FFE1DDE2" HorizontalAlignment="Right" Margin="0,-7,37,0" VerticalAlignment="Top" Height="46" PreviewMouseDown="miniMizeLBL_PreviewMouseDown" />
         </Grid>
