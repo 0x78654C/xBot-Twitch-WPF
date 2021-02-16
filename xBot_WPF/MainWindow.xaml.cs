@@ -302,6 +302,7 @@ namespace xBot_WPF
             {
                 Reg.regKey_CreateKey(keyName, "rTime", "0");
             }
+
             //-----------------------------------------
 
 
