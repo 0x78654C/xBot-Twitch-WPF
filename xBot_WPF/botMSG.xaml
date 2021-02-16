@@ -48,7 +48,7 @@
         <TextBox Name="botMSGtxt" Style="{StaticResource MyWaterMarkStyle}" FontSize="16" Tag="Enter here your start chat display message..." HorizontalAlignment="Left" Height="163" Margin="10,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="295" MaxLength="254"/>
         <Button Name="saveBTNMSG" Foreground="#FFE1DDEE" Style="{DynamicResource RoundCorner2}"  Content="Save Message" HorizontalAlignment="Left" Margin="77,240,0,0" VerticalAlignment="Top" Width="152" Height="41" Click="saveBTNMSG_Click"/>
         <CheckBox Name="botMsgCKB" Content="Display Bot Message on Start: OFF" HorizontalAlignment="Left" Margin="50,303,0,0" VerticalAlignment="Top" Checked="botMsgCKB_Checked" Unchecked="botMsgCKB_Unchecked"/>
-        <ListBox x:Name="randomList" Margin="645,55,10,10" FontSize="14" SelectionChanged="randomList_SelectionChanged"/>
+        <ListBox  x:Name="randomList" Margin="645,55,10,10" FontSize="14" SelectionChanged="randomList_SelectionChanged"/>
         <TextBox x:Name="randomMSGtxt" Style="{StaticResource MyWaterMarkStyle}" FontSize="16" Tag="Enter here your random message..." HorizontalAlignment="Left" Height="163" Margin="330,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="295" MaxLength="254"/>
         <Button x:Name="addRandMSGbtn" Foreground="#FFE1DDEE" Style="{DynamicResource RoundCorner2}"  Content="Add Message" HorizontalAlignment="Left" Margin="396,240,0,0" VerticalAlignment="Top" Width="152" Height="41" Click="addBTNMSG_Click"/>
         <CheckBox x:Name="randMsgCKB" Content="Display Random Message : OFF" HorizontalAlignment="Left" Margin="379,361,0,0" VerticalAlignment="Top" Checked="randMsgCKB_Checked" Unchecked="randMsgCKB_Unchecked"/>
