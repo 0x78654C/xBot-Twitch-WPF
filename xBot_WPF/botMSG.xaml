@@ -7,7 +7,7 @@
         mc:Ignorable="d"
       
 
-    Title="StartUP Bot Message" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Height="386.916" Width="673.832" WindowStyle="None" AllowsTransparency="True" MouseDown="Window_MouseDown" Icon="Resources/icon.ico">
+    Title="StartUP Bot Message" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Height="456.879" Width="1107.109" WindowStyle="None" AllowsTransparency="True" MouseDown="Window_MouseDown" Icon="Resources/icon.ico">
     <Window.Resources>
         <Style x:Key="MyWaterMarkStyle" TargetType="{x:Type TextBox}">
             <Setter Property="Template">
@@ -20,7 +20,7 @@
                             <Label Margin="5,0,0,0" x:Name="WaterMarkLabel" Content="{TemplateBinding Tag}" HorizontalAlignment="Left" VerticalAlignment="Top"
                                Visibility="Collapsed" Foreground="Gray" FontFamily="Arial"/>
                         </Grid>
-                        
+
                         <ControlTemplate.Triggers>
                             <MultiTrigger>
                                 <MultiTrigger.Conditions>
@@ -38,14 +38,23 @@
         </Style>
     </Window.Resources>
     <Grid>
-        <Border BorderBrush="Black" BorderThickness="1"/>
+        <Border BorderBrush="Black" BorderThickness="1">
+        </Border>
         <Grid VerticalAlignment="Top" Height="50" Background="#FF690FC2" >
             <TextBlock Text="xBot Start Message"  TextAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontSize="22" Margin="232,6,249,4"/>
             <Label Name="closeLBL" Content="x" FontSize="26" Foreground="#FFE1DDE2" HorizontalAlignment="Right" Margin="0,-3,10,0" VerticalAlignment="Top" Height="46" PreviewMouseDown="closeLBL_PreviewMouseDown"/>
             <Label Name="miniMizeLBL" Content="_" FontSize="26" Foreground="#FFE1DDE2" HorizontalAlignment="Right" Margin="0,-7,37,0" VerticalAlignment="Top" Height="46" PreviewMouseDown="miniMizeLBL_PreviewMouseDown" />
         </Grid>
-        <TextBox Name="botMSGtxt" Style="{StaticResource MyWaterMarkStyle}" FontSize="16" Tag="Enter here your start chat display message..." HorizontalAlignment="Left" Height="216" Margin="10,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="654" MaxLength="254"/>
-        <Button Name="saveBTNMSG" Foreground="#FFE1DDEE" Style="{DynamicResource RoundCorner2}"  Content="Save Message" HorizontalAlignment="Left" Margin="262,294,0,0" VerticalAlignment="Top" Width="152" Height="41" Click="saveBTNMSG_Click"/>
-        <CheckBox Name="botMsgCKB" Content="Display Bot Message on Start: OFF" HorizontalAlignment="Left" Margin="239,352,0,0" VerticalAlignment="Top" Checked="botMsgCKB_Checked" Unchecked="botMsgCKB_Unchecked"/>
+        <TextBox Name="botMSGtxt" Style="{StaticResource MyWaterMarkStyle}" FontSize="16" Tag="Enter here your start chat display message..." HorizontalAlignment="Left" Height="163" Margin="10,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="295" MaxLength="254"/>
+        <Button Name="saveBTNMSG" Foreground="#FFE1DDEE" Style="{DynamicResource RoundCorner2}"  Content="Save Message" HorizontalAlignment="Left" Margin="77,240,0,0" VerticalAlignment="Top" Width="152" Height="41" Click="saveBTNMSG_Click"/>
+        <CheckBox Name="botMsgCKB" Content="Display Bot Message on Start: OFF" HorizontalAlignment="Left" Margin="50,303,0,0" VerticalAlignment="Top" Checked="botMsgCKB_Checked" Unchecked="botMsgCKB_Unchecked"/>
+        <ListBox x:Name="randomList" Margin="645,55,10,10" FontSize="14" SelectionChanged="randomList_SelectionChanged"/>
+        <TextBox x:Name="randomMSGtxt" Style="{StaticResource MyWaterMarkStyle}" FontSize="16" Tag="Enter here your random message..." HorizontalAlignment="Left" Height="163" Margin="330,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="295" MaxLength="254"/>
+        <Button x:Name="addRandMSGbtn" Foreground="#FFE1DDEE" Style="{DynamicResource RoundCorner2}"  Content="Add Message" HorizontalAlignment="Left" Margin="396,240,0,0" VerticalAlignment="Top" Width="152" Height="41" Click="addBTNMSG_Click"/>
+        <CheckBox x:Name="randMsgCKB" Content="Display Random Message : OFF" HorizontalAlignment="Left" Margin="379,361,0,0" VerticalAlignment="Top" Checked="randMsgCKB_Checked" Unchecked="randMsgCKB_Unchecked"/>
+        <Button x:Name="delRandMSGbtn" Foreground="#FFE1DDEE" Style="{DynamicResource RoundCorner2}"  Content="Delete Message" HorizontalAlignment="Left" Margin="396,299,0,0" VerticalAlignment="Top" Width="152" Height="41" Click="deleteBTNMSG_Click"/>
+        <TextBox x:Name="rTimetxt" TextAlignment="Center" Style="{StaticResource MyWaterMarkStyle}" FontSize="14" Tag=" Display Time(m)" HorizontalAlignment="Left" Height="25" Margin="355,405,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" MaxLength="254"/>
+        <Button x:Name="rTimeBtn" Foreground="#FFE1DDEE" Style="{DynamicResource RoundCorner2}"  Content="Set Display Interval" HorizontalAlignment="Left" Margin="488,397,0,0" VerticalAlignment="Top" Width="124" Height="41" Click="rTimeBtn_Click"/>
+
     </Grid>
 </Window>

@@ -1,0 +1,13 @@
+[2021-02-15 00:22:36] x_coding : !help
+[BOT] List of commands is: !me; !git; !pc; !discord; !fw; !ide; !lisa; !sorry; !project; !yt; !weather; !time 
+[2021-02-15 00:27:05] codingwithscott : Time for me to eat dinner. I'll see you later
+[2021-02-15 00:27:48] x_coding : @CodingWithScott ok, bon apetit
+[2021-02-15 00:27:57] x_coding : i am done for today too
+[2021-02-15 00:28:06] x_coding : we see us next time;)
+[2021-02-15 00:28:15] x_coding : thx for coming
+[2021-02-15 00:28:29] x_coding : have a good day/night all
+[2021-02-15 00:29] xBot Disconncted!
+[2021-02-15 22:39]Internet up. Reconnected to x_coding channel !
+[2021-02-15 22:39] Connected to  channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-15 22:47] xBot Disconncted!

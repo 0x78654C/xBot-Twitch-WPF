@@ -1,0 +1,51 @@
+[2021-02-16 00:26] Connected to  channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-16 00:29] xBot Disconncted!
+[2021-02-16 00:29] xBot Disconncted!
+[2021-02-16 00:33] Connected to  channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+Random Message: test2
+Random Message: gsgd
+Random Message: test
+[2021-02-16 00:37:16] x_coding : !help
+[BOT] List of commands is: !hi; !me; !hello; !git; !try; !pc; !discord; !fw; !st; !ide; !lisa; !project; !sorry; !yt; !weather; !time 
+Random Message: asd
+Random Message: test
+[2021-02-16 00:39] xBot Disconncted!
+[2021-02-16 00:39] xBot Disconncted!
+[2021-02-16 00:43]Internet up. Reconnected to x_coding channel !
+[2021-02-16 00:43] Connected to  channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+Random Message: If you want to talk about my projects and other when i'm not streaming than join me on disscord ;) --  www.discord.gg/CyTrYDydQ9
+Random Message: A follow on my stream will be superb for me ;). Thank you
+Random Message: A follow on my stream will be superb for me ;). Thank you
+Random Message: A follow on my stream will be superb for me ;). Thank you
+Random Message: If you want to talk about my projects and other when i'm not streaming than join me on disscord ;) --  www.discord.gg/CyTrYDydQ9
+Random Message: Some of my projects www.github.com/0x78654C/
+Random Message: Some of my projects www.github.com/0x78654C/
+Random Message: A follow on my stream will be superb for me ;). Thank you
+[2021-02-16 00:53] xBot Disconncted!
+[2021-02-16 01:11] Connected to  channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-16 01:18] xBot Disconncted!
+[2021-02-16 01:18] xBot Disconncted!
+[2021-02-16 01:19] Connected to  channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-16 01:20] xBot Disconncted!
+[2021-02-16 11:18]Internet up. Reconnected to x_coding channel !
+[2021-02-16 11:18] Connected to  channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-16 11:19] xBot Disconncted!
+[2021-02-16 11:21]Internet up. Reconnected to x_coding channel !
+[2021-02-16 11:22] Connected to  channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-16 11:23]Random Message: If you want to talk about my projects and other when I'm not streaming than join me on disscord ;) --  www.discord.gg/CyTrYDydQ9
+[2021-02-16 11:24]Random Message: If you want to talk about my projects and other when I'm not streaming than join me on disscord ;) --  www.discord.gg/CyTrYDydQ9
+[2021-02-16 11:25]Random Message: Some of my projects www.github.com/0x78654C/
+[2021-02-16 11:27]Random Message: If you want to talk about my projects and other when I'm not streaming than join me on disscord ;) --  www.discord.gg/CyTrYDydQ9
+[2021-02-16 11:28] xBot Disconncted!
+[2021-02-16 11:28] xBot Disconncted!
+[2021-02-16 11:30]Internet up. Reconnected to x_coding channel !
+[2021-02-16 11:31] Connected to  channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-16 11:31] xBot Disconncted!

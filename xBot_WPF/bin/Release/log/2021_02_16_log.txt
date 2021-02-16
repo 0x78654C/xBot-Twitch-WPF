@@ -1,0 +1,9 @@
+[2021-02-16 11:43] Connected to  channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-16 11:45]Random Message: For bot commands type !help
+[2021-02-16 11:55]Random Message: A follow on my stream will be superb for me ;). Thank you
+[2021-02-16 11:57] xBot Disconncted!
+[2021-02-16 12:02]Internet up. Reconnected to x_coding channel !
+[2021-02-16 12:02]Internet up. Reconnected to x_coding channel !
+[2021-02-16 12:02] Connected to  channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !

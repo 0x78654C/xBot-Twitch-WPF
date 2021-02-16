@@ -123,7 +123,7 @@ namespace xBot_WPF
         about aB;
         //--------------------------------
 
-        //Define the background worker for bot start
+        //Define the background worker for bot start and random message
         BackgroundWorker worker;
         //--------------------------------
 
@@ -137,6 +137,15 @@ namespace xBot_WPF
         //--------------------------------
 
         int Viewers = 0;
+
+        //declare variables for random message system
+        readonly static string randomListFile = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\data\random_msg.txt";
+        private static string randomC;
+        System.Windows.Threading.DispatcherTimer dispatcherTimerR;
+        string[] rand_list;
+        private static string rTime;
+        Random r = new Random();
+        //--------------------------------
 
         public MainWindow()
         {
@@ -193,6 +202,14 @@ namespace xBot_WPF
             if (!File.Exists(playListFile))
             {
                 File.WriteAllText(playListFile, "");
+            }
+            //---------------------------------------------------
+
+
+            //check if random list file exits and if not we recreate
+            if (!File.Exists(randomListFile))
+            {
+                File.WriteAllText(randomListFile, "");
             }
             //---------------------------------------------------
 
@@ -270,6 +287,16 @@ namespace xBot_WPF
             {
                 Reg.regKey_CreateKey(keyName, "Menu", "0");
             }
+
+            if (Reg.regKey_Read(keyName, "randomC") == "")
+            {
+                Reg.regKey_CreateKey(keyName, "randomC", "0");
+            }
+
+            if (Reg.regKey_Read(keyName, "rTime") == "")
+            {
+                Reg.regKey_CreateKey(keyName, "rTime", "0");
+            }
             //-----------------------------------------
 
 
@@ -300,6 +327,8 @@ namespace xBot_WPF
             botMSGControl = Reg.regKey_Read(keyName, "botMSGControl");
             weatherUnits = Reg.regKey_Read(keyName, "weatherUnits");
             menuStatus = Reg.regKey_Read(keyName, "Menu");
+            randomC = Reg.regKey_Read(keyName, "randomC");
+            rTime = Reg.regKey_Read(keyName, "rTime");
             #endregion
 
 
@@ -331,6 +360,20 @@ namespace xBot_WPF
             dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
             //----------------------------------
 
+            //timer declaration for random message send
+            dispatcherTimerR = new System.Windows.Threading.DispatcherTimer();
+            dispatcherTimerR.Tick += randomMessage;
+            if (Convert.ToInt32(rTime) > 0)
+            {
+                // logWrite(Convert.ToInt32(rTime).ToString());
+                dispatcherTimerR.Interval = new TimeSpan(0, Convert.ToInt32(rTime), 0);
+            }
+            else
+            {
+                dispatcherTimerR.Interval = new TimeSpan(0, 10, 0);
+            }
+            dispatcherTimerR.Stop();
+            //----------------------------------
 
             //reset Youtube Controler and window on bot start in case of cras
             Reg.regKey_WriteSubkey(keyName, "YTControl", "0");
@@ -343,6 +386,7 @@ namespace xBot_WPF
                 statIMG.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/red_dot.png"));
             });
             //---------------------------------
+
 
         }
 
@@ -441,7 +485,7 @@ namespace xBot_WPF
             {
                 client.Disconnect();
                 dispatcherTimer.Stop();
-
+                dispatcherTimerR.Stop();
                 this.Dispatcher.Invoke(() =>
                 {
                     statIMG.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/red_dot.png"));
@@ -1061,6 +1105,8 @@ namespace xBot_WPF
             YtLink = Reg.regKey_Read(keyName, "YtLink");
             botMSGControl = Reg.regKey_Read(keyName, "botMSGControl");
             weatherUnits = Reg.regKey_Read(keyName, "weatherUnits");
+            randomC = Reg.regKey_Read(keyName, "randomC");
+            rTime = Reg.regKey_Read(keyName, "rTime");
             //-----------------------------------
 
             //status checking on internet and bot 
@@ -1177,10 +1223,12 @@ namespace xBot_WPF
                             if (t_streamKey.Length > 0)
                             {
                                 dispatcherTimer.Stop();
+                                dispatcherTimerR.Stop();
                                 worker = new BackgroundWorker();
                                 worker.DoWork += BotStart;
                                 worker.RunWorkerAsync();
                                 dispatcherTimer.Start();
+                                dispatcherTimerR.Start();
                             }
                             else
                             {
@@ -1339,6 +1387,47 @@ namespace xBot_WPF
         {
             aB = new about();
             aB.ShowDialog();
+        }
+
+        /// <summary>
+        /// Random messege sender function and set timer interval for future resend
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void randomMessage(object sender, EventArgs e)
+        {
+            string dateSent = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+            if (randomC == "1")
+            {
+                List<string> randomM = new List<string>();
+                if (File.Exists(randomListFile))
+                {
+                    rand_list = File.ReadAllLines(randomListFile);
+                    foreach (var line in rand_list)
+                    {
+                        randomM.Add(line);
+                    }
+                    int index = r.Next(randomM.Count);
+                    string rand = randomM[index];
+                    client.SendMessage(t_userName, rand);//sending the random message from list
+                    logWrite("[Random Message] [Interval set to: " + rTime + " minutes]" + rand);
+                    CLog.LogWrite("[" + dateSent + "]Random Message: " + rand);
+                    if (Convert.ToInt32(rTime) > 0)
+                    {
+                        //set timer interval for nex resend
+                        dispatcherTimerR.Interval = new TimeSpan(0, Convert.ToInt32(rTime), 0);
+                    }
+                    else
+                    {
+                        dispatcherTimerR.Interval = new TimeSpan(0, 10, 0);
+                    }
+                }
+                else
+                {
+                    logWrite("[Random Message Error] File " + randomListFile + " dose not exist!");
+                    CLog.LogWriteError("File " + randomListFile + " dose not exist!");
+                }
+            }
         }
     }
 }

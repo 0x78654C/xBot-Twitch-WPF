@@ -1,0 +1,14 @@
+[2021-02-14 10:26]Internet up. Reconnected to x_coding channel !
+[2021-02-14 10:26]Internet up. Reconnected to x_coding channel !
+[2021-02-14 10:26] xBot Disconncted!
+[2021-02-14 10:26] xBot Disconncted!
+[2021-02-14 10:26] Connected to  channel !
+[Bot Start Message]: Hey, I'm xBot, a Twitch bot build entirely on a twitch stream :D !
+[2021-02-14 10:27:14] x_coding : !help
+[BOT] List of commands is: !hi; !me; !hello; !git; !try; !pc; !discord; !fw; !st; !ide; !lisa; !project; !sorry; !yt; !weather; !time 
+[2021-02-14 11:15:59] x_coding : !help
+[2021-02-14 11:24]Internet up. Reconnected to x_coding channel !
+[2021-02-14 11:24]Internet up. Reconnected to x_coding channel !
+[2021-02-14 11:24]Internet up. Reconnected to x_coding channel !
+[2021-02-14 11:24] Connected to  channel !
+[2021-02-14 12:14] xBot Disconncted!
