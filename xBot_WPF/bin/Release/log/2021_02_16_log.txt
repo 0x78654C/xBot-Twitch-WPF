@@ -67,3 +67,11 @@
 [BOT] Now playing: HACKING MUSIC - Mr. Robot ðŸ¤–#13 - YouTube: https://www.youtube.com/watch?v=iAYMJk9IsDA
 [2021-02-16 23:51:18] x_coding : !yt
 [BOT] Now playing: chill lofi beats to code/relax to - YouTube: https://www.youtube.com/watch?v=bmVKaAV_7-A
+[2021-02-16 23:53:02] x_coding : aaaaa
+[2021-02-16 23:53:19] x_coding : see what happen when you are too tired?
+[2021-02-16 23:53:20] x_coding : D:
+[2021-02-16 23:53:21] x_coding : Ld
+[2021-02-16 23:53:22] x_coding : :D
+[2021-02-16 23:53:28] codingwithscott : LUL
+[2021-02-16 23:56:40] x_coding : i forgot to remove the selection on first commits:D
+[2021-02-16 23:58:15] codingwithscott : Have you looked at adding a gitignore file, to prevent checking in obj, dll, pdb files?

@@ -84,6 +84,7 @@ namespace xBot_WPF
                 Reg.regKey_WriteSubkey(keyName, "YTControl", "1");
                 
 
+
                 //Download youtube link source code
                 titleParse = client.DownloadString(url);
 
