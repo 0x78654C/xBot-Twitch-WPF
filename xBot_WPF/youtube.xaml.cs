@@ -83,6 +83,7 @@ namespace xBot_WPF
                 this.ytBrowser.NavigateToString(string.Format(html, url.Split('=')[1]));
                 Reg.regKey_WriteSubkey(keyName, "YTControl", "1");
                 
+
                 //Download youtube link source code
                 titleParse = client.DownloadString(url);
 
