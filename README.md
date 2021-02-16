@@ -45,5 +45,6 @@ Project ongoing live on: https://www.twitch.tv/x_coding
     hardcoded !time command for display time on a specified city. ex: !time America New_York (Used API from: http://worldtimeapi.org) 
     display people on chat room count on interface
     automaticaly reconnect to twitch channel if internet connection crashed and is up again 
+    possibility to send random messages to stream at a certain time interval
 
 (more to come)
