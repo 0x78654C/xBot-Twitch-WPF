@@ -1,8 +1,0 @@
-[2021-02-07 23:57] TimeZone error: System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
-   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
-   at xBot_WPF.MainWindow.TimeZone(String Region, String CityName) in F:\twitch\Projects\xBot-Twitch-WPF\xBot_WPF\MainWindow.xaml.cs:line 842
-
-[2021-02-07 23:57] Weather error: System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
-   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
-   at xBot_WPF.MainWindow.weatherForecast(String CityName) in F:\twitch\Projects\xBot-Twitch-WPF\xBot_WPF\MainWindow.xaml.cs:line 928
-
