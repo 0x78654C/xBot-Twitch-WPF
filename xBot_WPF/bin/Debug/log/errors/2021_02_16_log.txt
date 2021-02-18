@@ -1,2 +1,0 @@
-System.NullReferenceException: Object reference not set to an instance of an object.
-   at xBot_WPF.youtube.reload_YT(String url) in F:\twitch\Projects\xBot-Twitch-WPF\xBot_WPF\youtube.xaml.cs:line 82
