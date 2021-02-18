@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Net.Sockets;
 using System.IO;
+using System.Threading;
 
 namespace Core
 {
@@ -34,6 +35,7 @@ namespace Core
                 pinger = new Ping();
                 PingReply reply = pinger.Send(ip);
                 pingable = reply.Status == IPStatus.Success;
+                Thread.Sleep(200);
 
             }
             catch (PingException p)
