@@ -175,27 +175,11 @@ DocProject/Help/*.hhp
 DocProject/Help/Html2
 DocProject/Help/html
 
-#Log ignore
-xBot_WPF/bin/Debug/log/*.txt
-xBot_WPF/bin/Debug/log/errors/*.txt
-xBot_WPF/bin/Release/log/*.txt
-xBot_WPF/bin/Release/log/errors/*.txt
-
-#binary ignore
-Bot_WPF/bin/Debug/*.exe
-Bot_WPF/bin/Debug/*.dll
-Bot_WPF/bin/Debug/*.pdb
-Bot_WPF/bin/Debug/*.config
-Bot_WPF/bin/Release/*.exe
-Bot_WPF/bin/Release/*.dll
-Bot_WPF/bin/Release/*.pdb
-Bot_WPF/bin/Release/*.config
-Core/bin/Debug/*.exe
-Core/bin/Debug/*.dll
-Core/bin/Debug/*.pdb
-Core/bin/Release/*.exe
-Core/bin/Release/*.dll
-Core/bin/Release/*.pdb
+#xBot files ignore
+xBot_WPF/bin/Debug/
+xBot_WPF/bin/Release/
+Core/bin/Debug/
+Core/bin/Release/
 
 # Click-Once directory
 publish/
