@@ -46,5 +46,6 @@ Project ongoing live on: https://www.twitch.tv/x_coding
     display people on chat room count on interface
     automaticaly reconnect to twitch channel if internet connection crashed and is up again 
     possibility to send random messages to stream at a certain time interval
+    new subscribers counter(the conter will reset when the bot is disconnected or closed)
 
 (more to come)
