@@ -115,7 +115,10 @@
             </Grid>
             <Grid VerticalAlignment="Top" Height="30" Background="#FF690FC2" Margin="0,652,0,0" >
                 <materialDesign:PackIcon Kind="Person" Margin="775,2,0,0" Width="25" Height="26" Foreground="#FFE1DDE2" RenderTransformOrigin="1.547,0.52"/>
+                <materialDesign:PackIcon Kind="Subscriptions" Margin="538,3,0,0" Width="25" Height="26" Foreground="#FFE1DDE2" RenderTransformOrigin="1.547,0.52"/>
                 <Label Name="viewLvl" Content="People on chat:"  FontSize="18" Foreground="#FFE1DDE2" HorizontalAlignment="Left" Margin="800,-3,0,-1" VerticalAlignment="Top"/>
+                <Label Name="viewSub" Content="New Subscribers:"  FontSize="18" Foreground="#FFE1DDE2" HorizontalAlignment="Left" Margin="559,-3,0,-1" VerticalAlignment="Top"/>
+                <Label Name="subsLbL" Content="0"  FontSize="18" Foreground="#FFE1DDE2" HorizontalAlignment="Left" Margin="698,-2,0,-1" VerticalAlignment="Top"/>
                 <Label Name="viewersLbL" Content="0"  FontSize="18" Foreground="#FFE1DDE2" HorizontalAlignment="Left" Margin="924,-2,0,-1" VerticalAlignment="Top"/>
             </Grid>
             <Grid x:Name="GridMenu" HorizontalAlignment="Left"  Width="50" Background="#FF450881" >

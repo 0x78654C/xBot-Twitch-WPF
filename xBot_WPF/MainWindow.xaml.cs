@@ -50,9 +50,10 @@ namespace xBot_WPF
        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
        SOFTWARE.
      */
-
+    
     public partial class MainWindow : Window
     {
+     
         //declare twitch client variable
         TwitchClient client = new TwitchClient();
         //------------------------------------------------
@@ -137,6 +138,7 @@ namespace xBot_WPF
         //--------------------------------
 
         int Viewers = 0;
+        int SubsCount = 0;
 
         //declare variables for random message system
         readonly static string randomListFile = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\data\random_msg.txt";
@@ -504,9 +506,13 @@ namespace xBot_WPF
                 CLog.LogWrite("[" + date + "] xBot Disconncted!");
                 startBotBTN.Content = "START";
 
-                //reset viewers counter
+                //reset viewers/new subs counter
                 Viewers = 0;
                 viewersLbL.Content = "0";
+
+                SubsCount = 0;
+                subsLbL.Content = "0";
+                //---------------------
             }
         }
 
@@ -518,7 +524,7 @@ namespace xBot_WPF
         {
             //  CLog.LogWrite($"{e.DateTime.ToString()}: {e.BotUsername} - {e.Data}");
             
-            ///For future work if necesaryJ
+            ///For future work if necesary
             
         }
         */
@@ -840,6 +846,8 @@ namespace xBot_WPF
             }
         }
         */
+
+       
         private void Client_OnNewSubscriber(object sender, OnNewSubscriberArgs e)
         {
             if (e.Subscriber.SubscriptionPlan == SubscriptionPlan.Prime)
@@ -854,6 +862,9 @@ namespace xBot_WPF
                 logWrite(e.Channel + $":  Welcome {e.Subscriber.DisplayName} to the substers! You just earned 500 points!");
                 CLog.LogWrite(e.Channel + $":  Welcome {e.Subscriber.DisplayName} to the substers! You just earned 500 points!");
             }
+
+            //increase subs count
+            SubsCount++;
         }
 
         private void Client_OnUserJoinedArgs(object sender, OnUserJoinedArgs e)
@@ -1084,8 +1095,10 @@ namespace xBot_WPF
         /// <param name="e"></param>
         private void StatusLoadIcon(object sender, EventArgs e)
         {
-            //Display total users from stream
+            //Display total chat users and subs from stream
             viewersLbL.Content = Viewers.ToString();
+            subsLbL.Content = SubsCount.ToString();
+            //todo: add subs count on label
             //-----------------------------------
 
             //read variables form registry
@@ -1149,9 +1162,12 @@ namespace xBot_WPF
             {
                 if (!client.IsConnected)
                 {
-                    //we reset the people chat room counters
+                    //we reset the people chat room and new subs counters
                     Viewers = 0;
                     viewersLbL.Content = "0";
+
+                    SubsCount = 0;
+                    subsLbL.Content = "0";
                     //-------------------------------------------
                     this.Dispatcher.Invoke(() =>
                     {
