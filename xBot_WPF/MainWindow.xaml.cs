@@ -31,6 +31,7 @@ using Microsoft.Win32;
 using System.Threading;
 using System.Net.Http;
 using System.ComponentModel;
+using System.Net;
 
 namespace xBot_WPF
 {
@@ -106,6 +107,11 @@ namespace xBot_WPF
         private static string YtLink;
         private static string ytControl = "0";
         private static string YtWin = "0";
+        private static string ytRequest = "0";
+        readonly static string playListRequest = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\data\playListRequest.txt";
+        List<string> cList = new List<string>();
+        List<string> pList = new List<string>();
+        List<string> qList = new List<string>();
         //-------------------------------------------------
 
 
@@ -207,6 +213,12 @@ namespace xBot_WPF
             }
             //---------------------------------------------------
 
+            //check if youtube playlist file exits and if not we recreate
+            if (!File.Exists(playListRequest))
+            {
+                File.WriteAllText(playListRequest, "");
+            }
+            //---------------------------------------------------
 
             //check if random list file exits and if not we recreate
             if (!File.Exists(randomListFile))
@@ -305,6 +317,11 @@ namespace xBot_WPF
                 Reg.regKey_CreateKey(keyName, "rTime", "0");
             }
 
+            if (Reg.regKey_Read(keyName, "ytRequest") == "")
+            {
+                Reg.regKey_CreateKey(keyName, "ytRequest", "0");
+            }
+            
             //-----------------------------------------
 
 
@@ -319,7 +336,8 @@ namespace xBot_WPF
             }
             catch (Exception x)
             {
-                CLog.LogWrite("oAuth decrypt error: " + x.ToString());
+                CLog.LogWriteError("oAuth decrypt error: " + x.ToString());
+                t_streamKey = "error_key";
             }
 
 
@@ -337,6 +355,7 @@ namespace xBot_WPF
             menuStatus = Reg.regKey_Read(keyName, "Menu");
             randomC = Reg.regKey_Read(keyName, "randomC");
             rTime = Reg.regKey_Read(keyName, "rTime");
+            ytRequest = Reg.regKey_Read(keyName, "ytRequest");
             #endregion
 
 
@@ -383,9 +402,10 @@ namespace xBot_WPF
             dispatcherTimerR.Stop();
             //----------------------------------
 
-            //reset Youtube Controler and window on bot start in case of cras
+            //reset Youtube Controler/request song and window on bot start in case of cras
             Reg.regKey_WriteSubkey(keyName, "YTControl", "0");
             Reg.regKey_WriteSubkey(keyName, "YtWin", "0");
+           // Reg.regKey_WriteSubkey(keyName, "ytRequest", "0");
             //-----------------------------------
 
             //load connection icon
@@ -395,7 +415,10 @@ namespace xBot_WPF
             });
             //---------------------------------
 
-
+            //load playlist/ and qlist and titles for song request command
+            playListLoad();
+            queueListLoad();
+            //---------------------------------
         }
 
 
@@ -465,6 +488,7 @@ namespace xBot_WPF
             client.OnConnected += Client_OnConnected;
             client.OnUserJoined += Client_OnUserJoinedArgs;
             client.OnUserLeft += Client_OnUserLeftArgs;
+            client.OnWhisperReceived += Client_OnWhisperReceived;
             client.AutoReListenOnException = true;
             client.Connect();
 
@@ -547,7 +571,7 @@ namespace xBot_WPF
             }
         }
 
-
+       
 
         private void Client_OnMessageReceived(object sender, OnMessageReceivedArgs e)
         {
@@ -783,7 +807,131 @@ namespace xBot_WPF
             //----------------------------
 
 
+            //!playlist command
+            if (ytRequest == "1")
+            {
 
+                if (e.ChatMessage.Message == "!playlist")
+                {
+                    playListLoad();//we reload the playlist to catch the new songs added
+                    string pOut = string.Join("", pList);
+                    client.SendMessage(e.ChatMessage.Username, "Current playlist: " + Environment.NewLine + pOut + Environment.NewLine);
+                    logWrite("[BOT] Current playlist: " + Environment.NewLine + pOut);
+                    CLog.LogWrite("[BOT] Current playlist: " + Environment.NewLine + pOut);
+
+                }
+
+
+           
+                if (e.ChatMessage.Message.StartsWith("!rsong"))
+                {
+                    string sR = e.ChatMessage.Message;
+                    string[] sRequest = sR.Split(' ');
+                    WebClient wClient = new WebClient();
+                    try
+                    {
+                        foreach (var line in cList)
+                        {
+                            Thread.Sleep(200);//i hope is anty spam
+                            string[] s = line.Split('|');
+
+                            if (s[0].Contains(sRequest[1]))
+                            {
+                                //Download youtube link source code
+                                string titleParse = wClient.DownloadString(s[1]);
+
+                                //grabing the title from source
+                                int pFrom = titleParse.IndexOf("<title>") + "<title>".Length;
+                                int pTo = titleParse.LastIndexOf("</title>");
+
+                                //store the title
+                                string ytTitle = titleParse.Substring(pFrom, pTo - pFrom);
+                                int c = File.ReadAllLines(playListRequest).Count();
+                                int i = c + 1;
+                                File.AppendAllText(playListRequest, i + "|" + s[1]);
+                                client.SendMessage(e.ChatMessage.Username, "Song added in queue: " + ytTitle);
+                                logWrite("[BOT] Song added in queue: " + ytTitle);
+                                CLog.LogWrite("[BOT] Song added in queue: " + ytTitle);
+                            }
+                        }
+                    }catch(Exception ex)
+                    {
+                        client.SendMessage(e.ChatMessage.Username, "Something went wrong with adding song in queue! ");
+                        logWrite("[BOT] Something went wrong with adding song in queue! ");
+                        CLog.LogWriteError("!rsong Error: " + ex.ToString());
+                    }
+
+
+                    
+                }
+                if (e.ChatMessage.Message.StartsWith("!showrequest"))
+                {
+                    string[] playList = File.ReadAllLines(playListRequest);
+                    //we clear for reaload of list
+                    qList.Clear();
+
+                    WebClient wClient = new WebClient();
+
+                    if (File.Exists(playListRequest))
+                    {
+
+                        int index = 0;
+
+                        foreach (var line in playList)
+                        {
+                            if (line.Length > 0)
+                            {
+                                Thread.Sleep(200);//I hope is anty spam
+                                try
+                                {
+                                    //Download youtube link source code
+                                    string[] s = line.Split('|');
+                                    string titleParse = wClient.DownloadString(s[1]);
+
+                                    //grabing the title from source
+                                    int pFrom = titleParse.IndexOf("<title>") + "<title>".Length;
+                                    int pTo = titleParse.LastIndexOf("</title>");
+
+                                    //store the title
+                                    string ytTitle = titleParse.Substring(pFrom, pTo - pFrom);
+                                    index++;
+                                    qList.Add(index.ToString() + " | " + ytTitle + "  " + Environment.NewLine);
+                                }
+                                catch (Exception ex)
+                                {
+                                    bool ot = false;
+                                    if (ot == false)
+                                    {
+                                        CLog.LogWriteError("[BOT] showrequest: " + ex.ToString());
+                                        ot = true;
+                                    }
+
+                                }
+                            }
+
+                        }
+                        index = 0;
+                    }
+
+                    if (qList.Count > 0)
+                    {
+                        
+                        string pOut = string.Join(" ", qList);
+                        client.SendMessage(e.ChatMessage.Username, "Request playlist: " + Environment.NewLine + pOut + Environment.NewLine);
+                        logWrite("[BOT] Request playlist: " + Environment.NewLine + pOut);
+                        CLog.LogWrite("[BOT] Request playlist: " + Environment.NewLine + pOut);
+                    }
+                    else
+                    {
+                        client.SendMessage(e.ChatMessage.Username, "There are no songs in request queue!");
+                        logWrite("[BOT] There are no songs in request queue!");
+                        CLog.LogWrite("[BOT] There are no songs in request queue!");
+                    }
+                }
+
+            }
+
+            //----------------------------
 
 
 
@@ -836,16 +984,16 @@ namespace xBot_WPF
             }
             //----------------------------
         }
-        /* //Disabled for future use
+      
         private void Client_OnWhisperReceived(object sender, OnWhisperReceivedArgs e)
         {
-            if (e.WhisperMessage.Username == "my_friend")
-            {
-                client.SendWhisper(e.WhisperMessage.Username, "Hey! Whispers are so cool!!");
-                CLog.LogWrite(e.WhisperMessage.Username + ": Hey! Whispers are so cool!! ");
-            }
+         
+            client.SendWhisper(e.WhisperMessage.Username, " : Hello. Sorry, I'm just a bot!");
+            logWrite("[BOT] Whisper sent to: "+ e.WhisperMessage.Username+ " : Hello. Sorry, I'm just a bot!");
+            CLog.LogWrite("[BOT] Whisper sent to: " + e.WhisperMessage.Username + " : Hello. Sorry, I'm just a bot ");
+            
         }
-        */
+        
 
        
         private void Client_OnNewSubscriber(object sender, OnNewSubscriberArgs e)
@@ -1111,8 +1259,10 @@ namespace xBot_WPF
             }
             catch (Exception x)
             {
-                CLog.LogWrite("oAuth decrypt error:" + x.ToString());
+                CLog.LogWriteError("oAuth decrypt error: " + x.ToString());
+                t_streamKey = "error_key";
             }
+
             botMSGKey = Reg.regKey_Read(keyName, "BotMSG");
             timeBan = Int32.Parse(Reg.regKey_Read(keyName, "WordBanTime"));
             bWord = Reg.regKey_Read(keyName, "BadWord");
@@ -1126,6 +1276,7 @@ namespace xBot_WPF
             weatherUnits = Reg.regKey_Read(keyName, "weatherUnits");
             randomC = Reg.regKey_Read(keyName, "randomC");
             rTime = Reg.regKey_Read(keyName, "rTime");
+            ytRequest = Reg.regKey_Read(keyName, "ytRequest");
             //-----------------------------------
 
             //status checking on internet and bot 
@@ -1233,6 +1384,22 @@ namespace xBot_WPF
             {
                 if (Network.portCheck("tmi.twitch.tv", 80))//check twitch server
                 {
+
+                    //read Twitch chanel name and bot oAuth Key
+                    t_userName = Reg.regKey_Read(keyName, "UserName");
+
+                    try
+                    {
+
+                        t_streamKey = Encryption._decryptData(Reg.regKey_Read(keyName, "StreamKey"));
+                    }
+                    catch (Exception x)
+                    {
+                        CLog.LogWriteError("oAuth decrypt error: " + x.ToString());
+                        t_streamKey = "error_key";
+                    }
+                    //-------------------------------------
+
                     if (client.IsConnected)
                     {
                         BotStop();
@@ -1242,7 +1409,7 @@ namespace xBot_WPF
                         if (t_userName.Length > 0)
                         {
 
-                            if (t_streamKey.Length > 0)
+                            if (t_streamKey != "error_key")
                             {
                                 dispatcherTimer.Stop();
                                 dispatcherTimerR.Stop();
@@ -1451,5 +1618,104 @@ namespace xBot_WPF
                 }
             }
         }
+        /// <summary>
+        /// Load playlist and add index number for every song
+        /// </summary>
+        private void playListLoad()
+        {
+            string[] playList = File.ReadAllLines(playListFile);
+          
+            WebClient wClient = new WebClient();
+            //we clear for reaload of list
+            pList.Clear();
+            cList.Clear();
+            if (File.Exists(playListFile))
+            {
+                try
+                {
+                    int index = 0;
+
+                    foreach (var line in playList)
+                    {
+                        Thread.Sleep(200);//i hope is anty spam
+                        //Download youtube link source code
+                        string titleParse = wClient.DownloadString(line);
+                        
+                        //grabing the title from source
+                        int pFrom = titleParse.IndexOf("<title>") + "<title>".Length;
+                        int pTo = titleParse.LastIndexOf("</title>");
+
+                        //store the title
+                        string ytTitle = titleParse.Substring(pFrom, pTo - pFrom);
+                        index++;
+
+                        pList.Add(index.ToString() + " | " + ytTitle + "  " + Environment.NewLine);
+                        cList.Add(index.ToString() + "|" + line + Environment.NewLine);
+                    }
+                    index = 0;
+                }
+                catch(Exception ex)
+                {
+                    CLog.LogWriteError("[BOT] playListLoad: "+ex.ToString());
+                }
+            }
+            else
+            {
+                logWrite("[BOT] File " + playListFile + "dose not exist! Restart application for recreate!");
+                CLog.LogWriteError("[BOT] File " + playListFile + "dose not exist! Restart application for recreate!");
+            }
+        }
+
+        /// <summary>
+        /// we load the list with the requested songs 
+        /// </summary>
+        private void queueListLoad()
+        {
+            string[] playList = File.ReadAllLines(playListRequest);
+            //we clear for reaload of list
+            qList.Clear();
+
+            WebClient wClient = new WebClient();
+
+            if (File.Exists(playListRequest))
+            {
+
+                int index = 0;
+
+                foreach (var line in playList)
+                {
+                    if (line.Length > 0)
+                    {
+                        Thread.Sleep(200);//I hope is anty spam
+                        try
+                        {
+                            //Download youtube link source code
+                            string[] s = line.Split('|');
+                            string titleParse = wClient.DownloadString(s[1]);
+
+                            //grabing the title from source
+                            int pFrom = titleParse.IndexOf("<title>") + "<title>".Length;
+                            int pTo = titleParse.LastIndexOf("</title>");
+
+                            //store the title
+                            string ytTitle = titleParse.Substring(pFrom, pTo - pFrom);
+                            index++;
+                            qList.Add(index.ToString() + " | " + ytTitle + "  " + Environment.NewLine);
+                        }catch(Exception ex)
+                        {
+                            CLog.LogWriteError("[BOT] Queuelistload: " + ex.ToString());
+
+                        }
+                    }
+
+                }
+                index = 0;
+            }
+            else
+            {
+                logWrite("[BOT] File " + playListRequest + "dose not exist! Restart application for recreate!");
+                CLog.LogWriteError("[BOT] File " + playListRequest + "dose not exist! Restart application for recreate!");
+            }
+        } 
     }
 }
