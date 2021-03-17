@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:xBot_WPF"
         xmlns:adorners="http://gu.se/Adorners"
         mc:Ignorable="d"
-        Title="Settings" Height="340" Width="342" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Visibility="Visible" MouseDown="Window_MouseDown" AllowsTransparency="True" WindowStyle="None" Icon="Resources/icon.ico">
+        Title="Settings" Height="363.713" Width="342" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Visibility="Visible" MouseDown="Window_MouseDown" AllowsTransparency="True" WindowStyle="None" Icon="Resources/icon.ico">
     <Window.Resources>
         <Style x:Key="MyWaterMarkStyle" TargetType="{x:Type TextBox}">
             <Setter Property="Template">
@@ -95,7 +95,7 @@
                 </adorners:Watermark.TextStyle>
             </PasswordBox>
             <Button Name="saveBTN" Style="{DynamicResource RoundCorner2}" Content="Save" HorizontalAlignment="Center" Margin="122,208,123,0" VerticalAlignment="Top" Width="95" Height="37" Foreground="#FFE1DDEE" Click="saveBTN_Click"/>
-            <CheckBox Name="weatherCKB" Content="Activate Weather Command: OFF" HorizontalAlignment="Left" Margin="69,305,0,0" VerticalAlignment="Top" Checked="weatherCKB_Checked" Unchecked="weatherCKB_Unchecked"/>
+            <CheckBox Name="weatherCKB" Content="Activate Weather Command: OFF" HorizontalAlignment="Left" Margin="69,307,0,0" VerticalAlignment="Top" Checked="weatherCKB_Checked" Unchecked="weatherCKB_Unchecked"/>
             <CheckBox Name="joinedCKB" Content="Display user joiend chat message: OFF" HorizontalAlignment="Left" Margin="55,253,0,0" VerticalAlignment="Top" Checked="joinedCKB_Checked" Unchecked="joinedCKB_Unchecked"/>
             <ComboBox Name="weaherUnits" IsEditable="False" Text="Celsius" HorizontalAlignment="Left" Margin="129,277,0,0" VerticalAlignment="Top" Width="83" SelectionChanged="weaherUnits_SelectionChanged">
                 <ComboBoxItem >
@@ -105,6 +105,7 @@
                     Fahrenheit
                 </ComboBoxItem>
             </ComboBox>
+            <CheckBox x:Name="songReqCKB" Content="Activate YT Song Rquest: OFF" HorizontalAlignment="Left" Margin="79,334,0,0" VerticalAlignment="Top" Checked="songReqCKB_Checked" Unchecked="songReqCKB_Unchecked"/>
         </Grid>
 
 

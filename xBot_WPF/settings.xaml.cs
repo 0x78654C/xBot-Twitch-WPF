@@ -28,6 +28,7 @@ namespace xBot_WPF
         private static string apiKey;
         private static string joinedKey;
         private static string weatherUnits;
+        private static string ytRequest;
         //---------------------------------------------------------
         public settings()
         {
@@ -53,12 +54,26 @@ namespace xBot_WPF
             weatherKey = Reg.regKey_Read(keyName, "WeatherMSG");
             apiKey = Reg.regKey_Read(keyName, "WeatherAPIKey");
             joinedKey = Reg.regKey_Read(keyName, "BotMSG");
+            ytRequest = Reg.regKey_Read(keyName, "ytRequest");
 
             streamOauthKeyTXT.Password = t_streamKey;
             userNameTXT.Text = t_userName;
             weatherAPIKeyTXT.Password = Encryption._decryptData(apiKey);
             //---------------------------------
 
+            //load yt song request setting
+            if (ytRequest == "1")
+            {
+                songReqCKB.Content = "Activate YT Song Rquest: ON";
+                songReqCKB.IsChecked = true;
+            }
+            else
+            {
+                songReqCKB.Content = "Activate YT Song Rquest: OFF";
+                songReqCKB.IsChecked = false; 
+            }
+            //---------------------------------
+            
             //load weaheter checkbox msg ar deactivate
 
             if (weatherKey == "1")
@@ -221,6 +236,21 @@ namespace xBot_WPF
         }
         #endregion
 
+        #region saveing yt song request settings
+        private void songReqCKB_Checked(object sender, RoutedEventArgs e)
+        {
+        
+            Reg.regKey_WriteSubkey(keyName, "ytRequest", "1");
+            songReqCKB.Content = "Activate YT Song Rquest: ON";
+        }
+
+        private void songReqCKB_Unchecked(object sender, RoutedEventArgs e)
+        {
+            
+            Reg.regKey_WriteSubkey(keyName, "ytRequest", "0");
+            songReqCKB.Content = "Activate YT Song Rquest: OFF";
+        }
+        #endregion
         /// <summary>
         /// Write key control by unit case
         /// </summary>
