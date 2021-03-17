@@ -1,0 +1,24 @@
+﻿<Window x:Class="xBot_WPF.yTsongRequest"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:xBot_WPF"
+        xmlns:adorners="http://gu.se/Adorners"
+        Name="ytSongRequest"
+        mc:Ignorable="d"
+      Title="YT Song Requests" WindowStyle="None" Height="570.145" Width="1179.808" ResizeMode="NoResize" MouseDown="Window_MouseDown" WindowStartupLocation="CenterScreen" Icon="Resources/icon.ico">
+
+    <Grid>
+        <Border BorderBrush="Black" BorderThickness="1">
+          
+        </Border>
+        <Grid VerticalAlignment="Top" Height="50" Background="#FF690FC2" >
+            <TextBlock Text="YouTube Song Requests List"  TextAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontSize="22" Margin="179,6,198,4"/>
+            <Label Name="closeLBL" Content="x" FontSize="26" Foreground="#FFE1DDE2" HorizontalAlignment="Right" Margin="0,-3,10,0" VerticalAlignment="Top" Height="46" PreviewMouseDown="closeLBL_PreviewMouseDown"/>
+            <Label Name="miniMizeLBL" Content="_" FontSize="26" Foreground="#FFE1DDE2" HorizontalAlignment="Right" Margin="0,-7,37,0" VerticalAlignment="Top" Height="46" PreviewMouseDown="miniMizeLBL_PreviewMouseDown" />
+
+        </Grid>
+        <ListBox Name="rPlayList" Margin="10,55,10,10" FontSize="16"  />
+    </Grid>
+</Window>
