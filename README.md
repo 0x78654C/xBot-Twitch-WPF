@@ -47,5 +47,13 @@ Project ongoing live on: https://www.twitch.tv/x_coding
     automaticaly reconnect to twitch channel if internet connection crashed and is up again 
     possibility to send random messages to stream at a certain time interval
     new subscribers counter(the conter will reset when the bot is disconnected or closed)
+	play next song on youtube player
+	----------------beta-------------------
+	Play requested songs feature (beta):
+		Viewers can add songs in a list queue that will be played . After song is played it will deleted from list.
+		!playlist - see predefined list with songs created by streamer
+		!rsong - add a song from playlist in queue Ex.: rsong 1
+		!showrequest - displays the requested songs by viewers
+	---------------------------------------	
 
 (more to come)
