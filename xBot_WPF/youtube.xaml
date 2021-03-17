@@ -22,10 +22,12 @@
       
         <StackPanel>
             <WebBrowser  Visibility="Visible" Name="ytBrowser" HorizontalAlignment="Left" Height="413" Margin="10,50,0,0" VerticalAlignment="Top" Width="710"/>
+            <MediaElement Visibility="Hidden" x:Name="MediaElt" Height="100"/>
         </StackPanel>
         <ListBox x:Name="playList" Margin="749,79,30,108" PreviewMouseDoubleClick="playList_PreviewMouseDoubleClick" FontSize="16"/>
         <Label Content="Youtube Playlist:" FontSize="16" Margin="740,45,220,491"/>
-        <Button Name="playBTN" Style="{DynamicResource RoundCorner2}" Content="Play" HorizontalAlignment="Center" Margin="312,495,772,0" VerticalAlignment="Top" Width="96" Height="37" Foreground="#FFE1DDEE" Click="playBTN_Click"/>
+        <CheckBox Name="playNextCKB" Content="Play Next Song" Margin="303,515,769,36" FontSize="12" FontWeight="Bold" Checked="playNextCKB_Checked" Unchecked="playNextCKB_Unchecked"/>
+        <Button Name="playBTN" Style="{DynamicResource RoundCorner2}" Content="Play" HorizontalAlignment="Center" Margin="309,469,775,0" VerticalAlignment="Top" Width="96" Height="37" Foreground="#FFE1DDEE" Click="playBTN_Click"/>
         <TextBox FontSize="14" adorners:Watermark.Text="Add YouTube link here for add in list..." TextAlignment="Center" Name="youtTubeLink" HorizontalAlignment="Left" Height="28" Margin="787,474,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="334" MaxLength="254">
             <adorners:Watermark.TextStyle>
                 <Style TargetType="{x:Type TextBlock}">
@@ -35,9 +37,11 @@
                 </Style>
             </adorners:Watermark.TextStyle>
         </TextBox>
-        <Button x:Name="addSongBTN" Style="{DynamicResource RoundCorner2}" Content="Add in list" HorizontalAlignment="Center" Margin="825,516,259,0" VerticalAlignment="Top" Width="96" Height="37" Foreground="#FFE1DDEE" Click="addToListBTN"/>
+        <Button x:Name="addSongBTN" Style="{DynamicResource RoundCorner2}" Content="Add in list" HorizontalAlignment="Center" Margin="787,516,297,0" VerticalAlignment="Top" Width="96" Height="37" Foreground="#FFE1DDEE" Click="addToListBTN"/>
 
-        <Button x:Name="remSongBTN" Style="{DynamicResource RoundCorner2}" Content="Remove Link" HorizontalAlignment="Center" Margin="990,516,94,0" VerticalAlignment="Top" Width="96" Height="37" Foreground="#FFE1DDEE" Click="remListBTN"/>
+        <Button x:Name="remSongBTN" Style="{DynamicResource RoundCorner2}" Content="Remove Link" HorizontalAlignment="Center" Margin="1025,516,59,0" VerticalAlignment="Top" Width="96" Height="37" Foreground="#FFE1DDEE" Click="remListBTN"/>
+        <Button x:Name="songRqBTN" Style="{DynamicResource RoundCorner2}" Content="Song Requests" HorizontalAlignment="Center" Margin="905,516,179,0" VerticalAlignment="Top" Width="96" Height="37" Foreground="#FFE1DDEE" Click="songRq"/>
+        <CheckBox x:Name="playReqCKB" Content="Play Requested Songs" Margin="283,542,746,9" FontSize="12" FontWeight="Bold" Checked="plaReqCKB_Checked" Unchecked="playReqCKB_Unchecked"/>
 
     </Grid>
 </Window>

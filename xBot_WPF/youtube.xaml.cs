@@ -38,6 +38,19 @@ namespace xBot_WPF
         private static string keyName = "xBot";
         //----------------------------------------
 
+        //Timer and counter declaration for play next vid function
+        private System.Windows.Forms.Timer timer1;
+
+        private int counter = 0;
+        //----------------------------------------
+
+        //Declare variables for play requested song
+        List<string> ListRequestedSongs = new List<string>();
+        readonly static string playListRequest = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\data\playListRequest.txt";
+        private System.Windows.Forms.Timer timer2;
+        private static string ytRequest = string.Empty;
+        //-------------------------------------
+
         public youtube()
         {
             InitializeComponent();
@@ -54,16 +67,61 @@ namespace xBot_WPF
             Reg.regKey_WriteSubkey(keyName, "YtWin", "1");
             //---------------------------
 
+            //Load control number for youtube request song
+            ytRequest = Reg.regKey_Read(keyName, "ytRequest");
+            //---------------------------
+
+            //set playReqCKB status
+            if (ytRequest == "1")
+            {
+                playReqCKB.IsEnabled = true;
+            }
+            else
+            {
+                playReqCKB.IsEnabled = false;
+            }
+            //---------------------------
+
             //load links from playslistfile in listbox
             string[] yLinks = File.ReadAllLines(playListFile);
+
             foreach (var line in yLinks)
             {
                 if (line.Length > 0)
                 {
-                    playList.Items.Add(line);
+                    playList.Items.Add(line) ;
                 }
             }
             //---------------------------
+
+            //start timer for play next song
+            timer1 = new System.Windows.Forms.Timer();
+            timer1.Tick += new EventHandler(playNexTimer_Tick);
+            timer1.Interval = 1000; // 1 second
+            timer1.Stop();
+            //---------------------------
+
+            //load song request in list
+            string[] lines = File.ReadAllLines(playListRequest);
+            foreach (var line in lines)
+            {
+                if (line.Length > 0)
+                {
+                   
+                    ListRequestedSongs.Add(line);
+                }
+            }
+
+            //---------------------------
+            //start timer for play requested song
+            timer2 = new System.Windows.Forms.Timer();
+            timer2.Tick += new EventHandler(LoadRequestedSongs);
+            timer2.Interval = 60000; // 1 minute
+            timer2.Start();
+            //---------------------------
+
+
+
         }
 
         /// <summary>
@@ -76,7 +134,7 @@ namespace xBot_WPF
             string titleParse;
             string html = "<html><head><center>";
             html += "<meta content='IE=Edge' http-equiv='X-UA-Compatible'/>";
-            html += "<iframe id='video' src= 'https://www.youtube.com/embed/{0}?rel=0&amp;&amp;showinfo=0;&autoplay=1' width='647' height='380' frameborder='0' allowfullscreen></iframe>";
+            html += "<iframe id='video' src= 'https://www.youtube.com/embed/{0}?rel=0&amp;&amp;showinfo=0;&controls=0;&autoplay=1' width='647' height='380' frameborder='0' allowfullscreen></iframe>";
             html += "</center></body></html>";
             try
             {
@@ -95,6 +153,12 @@ namespace xBot_WPF
                 //store the title
                 ytTitle=titleParse.Substring(pFrom, pTo - pFrom);
                 playLink = url;
+
+                //store youtube title in registry
+                Reg.regKey_WriteSubkey(keyName, "YtLink", ytTitle + ": " + playLink);
+
+                //store youtube link only in registry
+                Reg.regKey_WriteSubkey(keyName, "YtUrl", playLink);
             }
             catch
             {
@@ -153,7 +217,7 @@ namespace xBot_WPF
         /// <param name="e"></param>
         private void playBTN_Click(object sender, RoutedEventArgs e)
         {
-            
+           // playNext();
             if (playBTN.Content.ToString() == "Play")
             {
                 reload_YT(playLink);
@@ -161,6 +225,7 @@ namespace xBot_WPF
             }
             else
             {
+                timer1.Stop();
                 string html1 = "<html><head><center>";
                 html1 += "<meta content='IE=Edge' http-equiv='X-UA-Compatible'/>";
                 html1 += "<iframe id='video' src= ' ' width='647' height='380' frameborder='0' allowfullscreen></iframe>";
@@ -168,7 +233,19 @@ namespace xBot_WPF
                 this.ytBrowser.NavigateToString(html1);
                 Reg.regKey_WriteSubkey(keyName, "YTControl", "0");
                 playBTN.Content = "Play";
-                
+                if (playReqCKB.IsChecked == true)
+                {
+                    playReqCKB.IsChecked = false;
+                    playNextCKB.IsChecked = false;
+                }
+                else
+                {
+                    playReqCKB.IsChecked = false;
+                    playNextCKB.IsChecked = false;
+                    playNextCKB.IsEnabled = true;
+                    playReqCKB.IsEnabled = true;
+                }
+
             }
 
         }
@@ -189,6 +266,7 @@ namespace xBot_WPF
             //reset window control key to 0 on colose
             Reg.regKey_WriteSubkey(keyName, "YtWin", "0");
             //-------------------------------------------
+            timer1.Stop();
         }
 
         /// <summary>
@@ -261,7 +339,7 @@ namespace xBot_WPF
                         playL = playL.Replace(line, "");
                     }
                 }
-
+                
 
                 playList.Items.Remove(playList.SelectedItem);
                 playL= Regex.Replace(playL, @"^\s+$[\r\n]*", string.Empty, RegexOptions.Multiline);
@@ -276,6 +354,266 @@ namespace xBot_WPF
             {
                 MessageBox.Show("You need to select a link from list!");
             }
+        }
+
+        /// <summary>
+        /// Extract duration time of a YouTube video
+        /// </summary>
+        /// <param name="url"></param>
+        private static int YTVideoDuration(string url)
+        {
+            try
+            {
+                string id = url.Split('=')[1];
+                WebClient client = new WebClient();
+                //Download youtube link source code
+                string titleParse = client.DownloadString("https://www.youtube.com/watch?v=" + id);
+
+                //grabing string containing elapsed time
+                int pFrom = titleParse.IndexOf("approxDurationMs") + "approxDurationMs".Length;
+                string outs = titleParse.Substring(pFrom, 23);
+
+                //return digits only
+                string duration = Regex.Match(outs, @"\d+").Value;
+
+                //convet to int32
+                int yDuration = Int32.Parse(duration);
+
+                //convert from milliseconds to secdons
+                return yDuration / 1000;
+            }catch{
+
+                //we return 0 in case of live videos
+                return 0;
+            }
+        }
+
+       
+        /// <summary>
+        /// Play next song from listbox
+        /// </summary>
+        private void playNext()
+        {
+            try
+            {
+                if (playLink.Length > 0)
+                {
+                    int i= playList.Items.IndexOf(playLink);
+                    int c = playList.Items.Count;
+                    playList.SelectedIndex = i + 1;
+                    if (playList.SelectedIndex > c - 1)
+                    {
+                        playList.SelectedIndex = 0;
+                        playList.Focus();
+                        reload_YT(playList.SelectedItem.ToString());
+                        counter = YTVideoDuration(playLink);
+                        Reg.regKey_WriteSubkey(keyName, "YtLink", ytTitle + ": " + playLink);
+
+                        //store youtube link only in registry
+                        Reg.regKey_WriteSubkey(keyName, "YtUrl", playLink);
+                    }
+                    else
+                    {
+                        playList.SelectedIndex = i + 1;
+                        playList.Focus();
+                        reload_YT(playList.SelectedItem.ToString());
+                        counter = YTVideoDuration(playLink);
+                        Reg.regKey_WriteSubkey(keyName, "YtLink", ytTitle + ": " + playLink);
+
+                        //store youtube link only in registry
+                        Reg.regKey_WriteSubkey(keyName, "YtUrl", playLink);
+
+                    }
+
+                }
+
+            }catch(Exception e)
+            {
+               string date2 = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+                CLog.LogWriteError("[" + date2 + "] YouTube Error: " + e.ToString() + Environment.NewLine);
+               
+
+            }
+        }
+
+
+        /// <summary>
+        /// Decrement counter for play next song 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void playNexTimer_Tick(object sender, EventArgs e)
+        {
+            counter--;
+            if (counter == 0)
+            {
+                if (playReqCKB.IsChecked == true)
+                {
+                    //play requested songs
+                    PlayRequestedSong();
+                }
+                else
+                {
+                    //play next song 
+                    playNext();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Activate play next song
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void playNextCKB_Checked(object sender, RoutedEventArgs e)
+        {
+
+            reload_YT(playLink);
+            counter = YTVideoDuration(playLink);
+            timer1.Start();
+            playBTN.Content = "Stop";
+            playReqCKB.IsChecked = false;
+            playReqCKB.IsEnabled = false;
+        }
+
+        /// <summary>
+        /// Deactivate play next song
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void playNextCKB_Unchecked(object sender, RoutedEventArgs e)
+        {
+            timer1.Stop();
+            string html1 = "<html><head><center>";
+            html1 += "<meta content='IE=Edge' http-equiv='X-UA-Compatible'/>";
+            html1 += "<iframe id='video' src= ' ' width='647' height='380' frameborder='0' allowfullscreen></iframe>";
+            html1 += "</center></body></html>";
+            this.ytBrowser.NavigateToString(html1);
+            Reg.regKey_WriteSubkey(keyName, "YTControl", "0");
+            playBTN.Content = "Play";
+
+            if (ytRequest == "1")
+            {
+                playReqCKB.IsEnabled = true;
+            }
+        }
+        /// <summary>
+        /// Open song reqeust lists
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void songRq(object sender, RoutedEventArgs e)
+        {
+            yTsongRequest srq = new yTsongRequest();
+            srq.Show();
+        }
+
+        /// <summary>
+        /// Load songs from external file in list
+        /// </summary>
+        private void LoadRequestedSongs(object sender, EventArgs e)
+        {
+            string[] lines = File.ReadAllLines(playListRequest);
+            ListRequestedSongs.Clear();
+            foreach(var line in lines)
+            {
+                if(line.Length > 0)
+                {
+                    ListRequestedSongs.Add(line);
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// Plays requested songs from list
+        /// </summary>
+        private void PlayRequestedSong()
+        {
+
+            try
+            {
+                //we count the songs in list
+                int c = ListRequestedSongs.Count;
+
+
+                //check if count is not null
+                if (c > 0 )
+                {
+                    //we decrement the count because list index start from 0
+                    int i = c - 1;
+
+                    //get the song from list by index incrementor
+                    string[] song = ListRequestedSongs.ElementAt(i).Split('|');
+
+                    //play
+                    reload_YT(song[1]);
+
+                    //get video duration for next song
+                    counter = YTVideoDuration(song[1]);
+
+                    //store youtube title in registry
+                    Reg.regKey_WriteSubkey(keyName, "YtLink", ytTitle + ": " + playLink);
+
+                    //store youtube link only in registry
+                    Reg.regKey_WriteSubkey(keyName, "YtUrl", playLink);
+
+                    //we removed played song 
+                
+                    ListRequestedSongs.Remove(ListRequestedSongs.ElementAt(i));
+                    string playReqD = string.Join(Environment.NewLine, ListRequestedSongs);
+                   
+                    File.WriteAllText(playListRequest, playReqD);
+                }
+
+            }
+            catch (Exception e)
+            {
+                string date2 = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+                CLog.LogWriteError("[" + date2 + "] YouTube Error: " + e.ToString() + Environment.NewLine);
+
+            }
+        }
+        /// <summary>
+        /// We start the play next song from request list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void plaReqCKB_Checked(object sender, RoutedEventArgs e)
+        {
+            LoadRequestedSongs(sender, e);
+            if (ListRequestedSongs.Count > 0)
+            {
+                string[] song = ListRequestedSongs.ElementAt(0).Split('|');
+                reload_YT(song[1]);
+                counter = YTVideoDuration(song[1]);
+                ListRequestedSongs.Remove(ListRequestedSongs.ElementAt(0));
+
+                string playReqD = string.Join(Environment.NewLine, ListRequestedSongs);
+                File.WriteAllText(playListRequest, playReqD);
+                timer1.Start();
+                playNextCKB.IsChecked = false;
+                playNextCKB.IsEnabled = false;
+                playBTN.Content = "Stop";
+            }
+            else
+            {
+                MessageBox.Show("No songs in requested list!");
+                playReqCKB.IsChecked = false;
+            }
+        }
+        /// <summary>
+        ///  We stop the play next song from request list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void playReqCKB_Unchecked(object sender, RoutedEventArgs e)
+        {
+
+            timer1.Stop();
+            counter = 0;
+            playNextCKB.IsEnabled = true;
+            playBTN.Content = "Play";
         }
     }
 
