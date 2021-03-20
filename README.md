@@ -38,22 +38,24 @@ Project ongoing live on: https://www.twitch.tv/x_coding
     add/remove bad words for chat ban in real time to list
     change time(minutes) for chat ban in real time
     hardcoded !help command for display the list of commands
-    hardcoded !ss command for shout a streamer (the command works only for the current streamer)
+    hardcoded !ss command for shout a streamer (the command works only for the current streamer or moderators)
     hardcoded !yt command for youtube current song played on xBot youtube player
     hardcoded !weather for Weather Forecast(Fahrenheit and Celsius units) command using openweather.org API
-    hardcoded !gl for whishing good luck to some one in chat from you  (the command works only for the current streamer)
+    hardcoded !gl for whishing good luck to some one in chat from you  (the command works only for the current streamer and moderators)
     hardcoded !time command for display time on a specified city. ex: !time America New_York (Used API from: http://worldtimeapi.org) 
     display people on chat room count on interface
     automaticaly reconnect to twitch channel if internet connection crashed and is up again 
     possibility to send random messages to stream at a certain time interval
     new subscribers counter(the conter will reset when the bot is disconnected or closed)
 	play next song on youtube player
-	----------------beta-------------------
+	----------------beta(needs tests with verified bot)-------------------
 	Play requested songs feature (beta):
 		Viewers can add songs in a list queue that will be played . After song is played it will deleted from list.
 		!playlist - see predefined list with songs created by streamer
 		!rsong - add a song from playlist in queue Ex.: rsong 1
 		!showrequest - displays the requested songs by viewers
 	---------------------------------------	
+    display raiders and shout out the streamer who raided
+
 
 (more to come)
