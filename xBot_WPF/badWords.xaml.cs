@@ -39,7 +39,7 @@ namespace xBot_WPF
             banActivate = Reg.regKey_Read(keyName, "BadWord");
             //---------------------------------------
 
-            //Load bad words lis in text box
+            //Load bad words list in listview
             if (File.Exists(badWordDir))
             {
               
