@@ -155,6 +155,11 @@ namespace xBot_WPF
         Random r = new Random();
         //--------------------------------
 
+        //declare variables for mod section
+        readonly static string modFile = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\data\mods.txt";
+        string[] mods = null;
+        //--------------------------------
+
         public MainWindow()
         {
             InitializeComponent();
@@ -169,6 +174,14 @@ namespace xBot_WPF
             });
             logWrite("Welcome to xBot! The Twitch bot that was entirely build on live stream :D");
             //----------------------------------------------
+
+
+            //data directory check and create if not exists
+            if (!File.Exists(modFile))
+            {
+              File.Create(modFile);
+            }
+            //------------------------------------------------
 
             //data directory check and create if not exists
             if (!Directory.Exists(dataDirectory))
@@ -419,6 +432,14 @@ namespace xBot_WPF
             playListLoad();
             queueListLoad();
             //---------------------------------
+
+            //read mods from file
+            if (File.Exists(modFile))
+            {
+                mods = File.ReadAllLines(modFile);
+            }
+            //-----------------------------------
+
         }
 
 
@@ -488,10 +509,11 @@ namespace xBot_WPF
             client.OnConnected += Client_OnConnected;
             client.OnUserJoined += Client_OnUserJoinedArgs;
             client.OnUserLeft += Client_OnUserLeftArgs;
-            client.OnWhisperReceived += Client_OnWhisperReceived;
+            client.OnRaidNotification += Client_OnRaidNotificationArgs;
+           // client.OnBeingHosted += Client_OnBeingHosted; //disbaled untill we get respons from TwitchLib Devs
             client.AutoReListenOnException = true;
             client.Connect();
-
+        
             //we check if bot is connected and display the log info
             if (client.IsConnected)
             {
@@ -552,6 +574,26 @@ namespace xBot_WPF
             
         }
         */
+
+
+        private void Client_OnRaidNotificationArgs(object sender, OnRaidNotificationArgs e)
+        {
+            client.SendMessage(e.Channel, "We are RAIDED by " + e.RaidNotification.DisplayName + ". Shoutout for @" + e.RaidNotification.DisplayName + " which is also a streamer! https://twitch.tv/" + e.RaidNotification.DisplayName);
+            logWrite("[BOT] We are raided by " + e.RaidNotification.DisplayName);
+            CLog.LogWrite("[BOT] We are raided by " + e.RaidNotification.DisplayName);
+        }
+
+  
+        /*  //disbaled untill we get respons from TwitchLib Devs
+          private void Client_OnBeingHosted(object sender, OnBeingHostedArgs e)
+          {
+
+              client.SendMessage(t_userName, e.BeingHostedNotification.Channel + " is hosted with " + e.BeingHostedNotification.Viewers + " viewers by " + e.BeingHostedNotification.HostedByChannel);
+              logWrite("[BOT] " + e.BeingHostedNotification.Channel + " is hosted with " + e.BeingHostedNotification.Viewers + " viewers by " + e.BeingHostedNotification.HostedByChannel);
+              CLog.LogWrite("[BOT] " + e.BeingHostedNotification.Channel + " is hosted with " + e.BeingHostedNotification.Viewers + " viewers by " + e.BeingHostedNotification.HostedByChannel);
+
+          }
+          */
         private void Client_OnConnected(object sender, OnConnectedArgs e)
         {
             date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
@@ -662,12 +704,22 @@ namespace xBot_WPF
             //shout streamer commad
             using (var sReader = new StringReader(e.ChatMessage.Message))
             {
+              
                 string line;
                 while ((line = sReader.ReadLine()) != null)
                 {
                     if (line.StartsWith("!ss"))
                     {
-                        if (e.ChatMessage.Username == t_userName)
+                        List<string> mod=new List<string>();
+                        foreach(var m in mods)
+                        {
+                            if (m.Length > 0)
+                            {
+                                mod.Add(m.ToLower());
+                            }
+                        }
+                        string modList = string.Join("|", mod);
+                        if (modList.Contains(e.ChatMessage.Username) || e.ChatMessage.Username == t_userName)
                         {
                             string[] lS = line.Split('@');
                             try
@@ -712,7 +764,16 @@ namespace xBot_WPF
                 {
                     if (line.StartsWith("!gl"))
                     {
-                        if (e.ChatMessage.Username == t_userName)
+                        List<string> mod = new List<string>();
+                        foreach (var m in mods)
+                        {
+                            if (m.Length > 0)
+                            {
+                                mod.Add(m.ToLower());
+                            }
+                        }
+                        string modList = string.Join("|", mod);
+                        if (modList.Contains(e.ChatMessage.Username) && e.ChatMessage.Username == t_userName)
                         {
                             string[] lS = line.Split('@');
                             try
@@ -779,7 +840,7 @@ namespace xBot_WPF
             {
                 client.SendMessage(e.ChatMessage.Channel, "The time command should look like this: !time Continet City_Name. Or some information is wrong. Only Cities avaible on http://worldtimeapi.org are displyed!");
                 logWrite("[BOT] The time command should look like this: !time Continet City_Name. Or some information is wrong.  Only Cities avaible on http://worldtimeapi.org are displyed!");
-
+               
             }
 
             //----------------------------
@@ -985,6 +1046,7 @@ namespace xBot_WPF
             //----------------------------
         }
       
+        /* disabled for now untill I figure out with the owners of TwitchLib what is the issue
         private void Client_OnWhisperReceived(object sender, OnWhisperReceivedArgs e)
         {
          
@@ -993,7 +1055,7 @@ namespace xBot_WPF
             CLog.LogWrite("[BOT] Whisper sent to: " + e.WhisperMessage.Username + " : Hello. Sorry, I'm just a bot ");
             
         }
-        
+      */  
 
        
         private void Client_OnNewSubscriber(object sender, OnNewSubscriberArgs e)
@@ -1277,6 +1339,14 @@ namespace xBot_WPF
             randomC = Reg.regKey_Read(keyName, "randomC");
             rTime = Reg.regKey_Read(keyName, "rTime");
             ytRequest = Reg.regKey_Read(keyName, "ytRequest");
+            //-----------------------------------
+
+
+            //read mods from file
+            if (File.Exists(modFile))
+            {
+                mods = File.ReadAllLines(modFile);
+            }
             //-----------------------------------
 
             //status checking on internet and bot 
