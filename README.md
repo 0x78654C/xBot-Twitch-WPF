@@ -16,8 +16,8 @@ This project was made entirely on stream as fun. I'm not a professional programm
 using following libs:
 
 https://github.com/TwitchLib/TwitchLib (for api connect)
-
 https://github.com/davcs86/csharp-uhwid (for oath hwid encrypt/decrypt)
+https://github.com/GuOrg/Gu.Wpf.Adorners (for watermarks)
 _____________________________________________________
 
 **Requirement**: 
