@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -29,7 +32,9 @@ namespace xBot_WPF
         private static string joinedKey;
         private static string weatherUnits;
         private static string ytRequest;
+        readonly static string modFile = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\data\mods.txt";
         //---------------------------------------------------------
+
         public settings()
         {
             InitializeComponent();
@@ -125,6 +130,27 @@ namespace xBot_WPF
                 weaherUnits.SelectedIndex = 1;              
             }
             //----------------------------------------
+
+            //Load mods list in listview
+            if (File.Exists(modFile))
+            {
+
+                //we add every mod from external file to listview
+                string[] bList = File.ReadAllLines(modFile);
+                foreach (var line in bList)
+                {
+                    if (line.Length > 0)
+                    {
+                        modsListV.Items.Add(line);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("File " + modFile+ " dose not exist!");
+            }
+            //-----------------------------------------
+
         }
         /// <summary>
         /// Drag window with mouse
@@ -265,6 +291,77 @@ namespace xBot_WPF
             else
             {
                 Reg.regKey_WriteSubkey(keyName, "weatherUnits", "0");
+            }
+        }
+
+        /// <summary>
+        /// Add mods in external list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void addModBTN_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (File.Exists(modFile))
+            {
+
+                if (modNameTXT.Text.Length > 0)
+                {
+
+                    //   badWrodTXT.Text = Regex.Replace(badWrodTXT.Text, @"^\s+$[\r\n]*", string.Empty, RegexOptions.Multiline); //remove new line and emty line
+
+                    File.AppendAllText(modFile, modNameTXT.Text + Environment.NewLine);
+                    modsListV.Items.Add(modNameTXT.Text);
+                    modNameTXT.Clear();
+
+                }
+                else
+                {
+                    MessageBox.Show("You must fill the empy text box!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("File " +modFile + " dose not exist!");
+            }
+        }
+
+        /// <summary>
+        /// Remove mod from external list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void delModBTN_Click(object sender, RoutedEventArgs e)
+        {
+            if (File.Exists(modFile))
+            {
+                string line;
+                string bFile = File.ReadAllText(modFile);
+                if (modsListV.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Please select a Moderator username for delete!");
+                }
+                else
+                {
+
+                    using (var sr = new StringReader(modsListV.SelectedItem.ToString()))
+                    {
+                        while ((line = sr.ReadLine()) != null)
+                        {
+                            bFile = bFile.Replace(line, "");
+                        }
+
+                        modsListV.Items.Remove(modsListV.SelectedItem.ToString());
+                        bFile = Regex.Replace(bFile, @"^\s+$[\r\n]*", string.Empty, RegexOptions.Multiline);//remove empty lines
+                        File.WriteAllText(modFile, bFile);
+
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("File " + modFile + " dose not exist!");
             }
         }
     }

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:xBot_WPF"
         xmlns:adorners="http://gu.se/Adorners"
         mc:Ignorable="d"
-        Title="Settings" Height="363.713" Width="342" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Visibility="Visible" MouseDown="Window_MouseDown" AllowsTransparency="True" WindowStyle="None" Icon="Resources/icon.ico">
+        Title="Settings" Height="363.713" Width="680.455" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Visibility="Visible" MouseDown="Window_MouseDown" AllowsTransparency="True" WindowStyle="None" Icon="Resources/icon.ico">
     <Window.Resources>
         <Style x:Key="MyWaterMarkStyle" TargetType="{x:Type TextBox}">
             <Setter Property="Template">
@@ -94,18 +94,32 @@
                     </Style>
                 </adorners:Watermark.TextStyle>
             </PasswordBox>
-            <Button Name="saveBTN" Style="{DynamicResource RoundCorner2}" Content="Save" HorizontalAlignment="Center" Margin="122,208,123,0" VerticalAlignment="Top" Width="95" Height="37" Foreground="#FFE1DDEE" Click="saveBTN_Click"/>
+            <Button Name="saveBTN" Style="{DynamicResource RoundCorner2}" Content="Save" HorizontalAlignment="Center" Margin="117,209,466,0" VerticalAlignment="Top" Width="95" Height="37" Foreground="#FFE1DDEE" Click="saveBTN_Click"/>
             <CheckBox Name="weatherCKB" Content="Activate Weather Command: OFF" HorizontalAlignment="Left" Margin="69,307,0,0" VerticalAlignment="Top" Checked="weatherCKB_Checked" Unchecked="weatherCKB_Unchecked"/>
             <CheckBox Name="joinedCKB" Content="Display user joiend chat message: OFF" HorizontalAlignment="Left" Margin="55,253,0,0" VerticalAlignment="Top" Checked="joinedCKB_Checked" Unchecked="joinedCKB_Unchecked"/>
-            <ComboBox Name="weaherUnits" IsEditable="False" Text="Celsius" HorizontalAlignment="Left" Margin="129,277,0,0" VerticalAlignment="Top" Width="83" SelectionChanged="weaherUnits_SelectionChanged">
+            <ComboBox Name="weaherUnits" IsEditable="False" Text="Celsius" HorizontalAlignment="Left" Margin="124,277,0,0" VerticalAlignment="Top" Width="83" SelectionChanged="weaherUnits_SelectionChanged">
                 <ComboBoxItem >
-                   Celsius
+                    Celsius
                 </ComboBoxItem>
                 <ComboBoxItem >
                     Fahrenheit
                 </ComboBoxItem>
             </ComboBox>
             <CheckBox x:Name="songReqCKB" Content="Activate YT Song Rquest: OFF" HorizontalAlignment="Left" Margin="79,334,0,0" VerticalAlignment="Top" Checked="songReqCKB_Checked" Unchecked="songReqCKB_Unchecked"/>
+            <ListView x:Name="modsListV" FontSize="14" HorizontalAlignment="Left" Height="185" Margin="376,83,0,0" VerticalAlignment="Top" Width="258"/>
+            <Button x:Name="addModBTN" Style="{DynamicResource RoundCorner2}" Content="Add Mods" HorizontalAlignment="Center" Margin="376,315,207,0" VerticalAlignment="Top" Width="95" Height="37" Foreground="#FFE1DDEE" Click="addModBTN_Click"/>
+            <Button x:Name="delModBTN" Style="{DynamicResource RoundCorner2}" Content="Delete Mods" HorizontalAlignment="Center" Margin="539,315,44,0" VerticalAlignment="Top" Width="95" Height="37" Foreground="#FFE1DDEE" Click="delModBTN_Click"/>
+            <TextBox Style="{StaticResource MyWaterMarkStyle}" FontSize="14" adorners:Watermark.Text="Type here the mod username" TextAlignment="Center" x:Name="modNameTXT" HorizontalAlignment="Left" Height="32" Margin="376,277,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="258">
+                <adorners:Watermark.TextStyle>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="Opacity" Value="0.5" />
+                        <Setter Property="VerticalAlignment" Value="Center" />
+                        <Setter Property="HorizontalAlignment" Value="Center" />
+                    </Style>
+                </adorners:Watermark.TextStyle>
+            </TextBox>
+            <Label FontSize="14" Content="Moderators List:" HorizontalAlignment="Left" Margin="371,50,0,0" VerticalAlignment="Top" Height="28" RenderTransformOrigin="0.282,0.429"/>
+
         </Grid>
 
 
