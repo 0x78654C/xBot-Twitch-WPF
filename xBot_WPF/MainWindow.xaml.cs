@@ -510,7 +510,7 @@ namespace xBot_WPF
             client.OnUserJoined += Client_OnUserJoinedArgs;
             client.OnUserLeft += Client_OnUserLeftArgs;
             client.OnRaidNotification += Client_OnRaidNotificationArgs;
-           // client.OnBeingHosted += Client_OnBeingHosted; //disbaled untill we get respons from TwitchLib Devs
+            client.OnBeingHosted += Client_OnBeingHosted; //enabled for test only
             client.AutoReListenOnException = true;
             client.Connect();
         
@@ -584,7 +584,8 @@ namespace xBot_WPF
         }
 
   
-        /*  //disbaled untill we get respons from TwitchLib Devs
+          //disbaled untill we get respons from TwitchLib Devs
+          //enabled for test only
           private void Client_OnBeingHosted(object sender, OnBeingHostedArgs e)
           {
 
@@ -593,14 +594,12 @@ namespace xBot_WPF
               CLog.LogWrite("[BOT] " + e.BeingHostedNotification.Channel + " is hosted with " + e.BeingHostedNotification.Viewers + " viewers by " + e.BeingHostedNotification.HostedByChannel);
 
           }
-          */
+          
         private void Client_OnConnected(object sender, OnConnectedArgs e)
         {
             date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
             CLog.LogWrite("[" + date + $"] Connected to {e.AutoJoinChannel} channel !");
         }
-
-
 
 
         private void Client_OnJoinedChannel(object sender, OnJoinedChannelArgs e)
@@ -928,6 +927,7 @@ namespace xBot_WPF
                 if (e.ChatMessage.Message.StartsWith("!showrequest"))
                 {
                     string[] playList = File.ReadAllLines(playListRequest);
+
                     //we clear for reaload of list
                     qList.Clear();
 
