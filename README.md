@@ -58,6 +58,7 @@ Project ongoing live on: https://www.twitch.tv/x_coding
 		!showrequest - displays the requested songs by viewers
 	---------------------------------------	
     display raiders and shout out the streamer who raided
+    display if streamer is being hosted
 
 
 (more to come)
