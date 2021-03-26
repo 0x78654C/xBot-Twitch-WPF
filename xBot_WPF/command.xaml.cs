@@ -32,7 +32,7 @@ namespace xBot_WPF
         private static string[] cmd_line;
         private static string[] cmd_lineA;
         private static string listCMD;
-        private static string[] predefinedCMD= { "time","help","yt","weather","ss","gl","playlist","rsong","showrequest" };
+        private static string[] predefinedCMD= { "time","help","yt","weather","ss","gl","playlist","rsong","showrequest","8ball" };
         //----------------------------------
 
         public command()

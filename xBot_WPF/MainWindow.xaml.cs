@@ -160,6 +160,11 @@ namespace xBot_WPF
         string[] mods = null;
         //--------------------------------
 
+        //declare variables for Magic 8ball game
+        readonly static string ballAnswer = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\data\8ball_answers.txt";
+        Random r8 = new Random();
+        //--------------------------------
+
         public MainWindow()
         {
             InitializeComponent();
@@ -240,6 +245,12 @@ namespace xBot_WPF
             }
             //---------------------------------------------------
 
+            //8Ball system file autocreate
+            if (!File.Exists(ballAnswer))
+            {
+                File.Create(ballAnswer);
+            }
+            //------------------------------------------------
 
 
             //Checking if reg keys and subkeys exist and if not we recreate
@@ -684,18 +695,18 @@ namespace xBot_WPF
             {
                 if (e.ChatMessage.Message == "!help")
                 {
-                    client.SendMessage(e.ChatMessage.Channel, "List of commands is: " + listCMD + "; !yt; !weather; !time");
-                    logWrite("[BOT] List of commands is: " + listCMD + "; !yt; !weather; !time");
-                    CLog.LogWrite("[BOT] List of commands is: " + listCMD + "; !yt; !weather; !time ");
+                    client.SendMessage(e.ChatMessage.Channel, "List of commands is: " + listCMD + "; !yt; !weather; !time, !8ball");
+                    logWrite("[BOT] List of commands is: " + listCMD + "; !yt; !weather; !time, !8ball");
+                    CLog.LogWrite("[BOT] List of commands is: " + listCMD + "; !yt; !weather; !time, !8ball ");
                 }
             }
             else
             {
                 if (e.ChatMessage.Message == "!help")
                 {
-                    client.SendMessage(e.ChatMessage.Channel, "List of commands is: " + listCMD + "; !yt; !time ");
-                    logWrite("[BOT] List of commands is: " + listCMD + "; !yt; !time ");
-                    CLog.LogWrite("[BOT] List of commands is: " + listCMD + "; !yt; !time ");
+                    client.SendMessage(e.ChatMessage.Channel, "List of commands is: " + listCMD + "; !yt; !time, !8ball ");
+                    logWrite("[BOT] List of commands is: " + listCMD + "; !yt; !time, !8ball ");
+                    CLog.LogWrite("[BOT] List of commands is: " + listCMD + "; !yt; !time, !8ball ");
                 }
             }
             //----------------------------
@@ -1042,6 +1053,51 @@ namespace xBot_WPF
             {
                 client.SendMessage(e.ChatMessage.Channel, "Weather command is disabled for the moment!");
                 logWrite("[BOT] Weather command is disabled for the moment!");
+            }
+            //----------------------------
+
+            //Magic 8Ball game command
+            if (e.ChatMessage.Message.StartsWith("!8ball"))
+            {
+                if (e.ChatMessage.Message.Contains("?"))
+                {
+
+                    List<string> randomM = new List<string>();
+                    if (File.Exists(ballAnswer))
+                    {
+                        bool c = false;
+                        string[] rand_list = File.ReadAllLines(ballAnswer);
+                        foreach (var line in rand_list)
+                        {
+                            if (line.Length > 0)
+                            {
+                                randomM.Add(line);
+                            }
+                            else
+                            {
+                                if (c == false)
+                                {
+                                    logWrite("[" + date + "][BOT] 8Ball - Answers files is empty! You need to add something");
+                                    c = true;
+                                }
+                            }
+                        }
+                        int index = r8.Next(randomM.Count);
+                        string rand = randomM[index];
+                        date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+                        logWrite("[" + date + "][BOT] Scott says: " + rand);
+                        client.SendMessage(e.ChatMessage.Channel, "Scott says: " + rand);
+                        CLog.LogWrite("[" + date + "][BOT] Scott says: " + rand);
+                    }
+                }
+                else
+                {
+                    date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+                    logWrite("[" + date + "][BOT] Your question must contain ? for Scott to answer!");
+                    client.SendMessage(e.ChatMessage.Channel,"Your question must contain ? for Scott to answer!");
+                    CLog.LogWrite("[" + date + "][BOT] Your question must contain ? for Scott to answer!");
+
+                }
             }
             //----------------------------
         }
