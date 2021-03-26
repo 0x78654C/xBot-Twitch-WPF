@@ -59,6 +59,7 @@ Project ongoing live on: https://www.twitch.tv/x_coding
 	---------------------------------------	
     display raiders and shout out the streamer who raided
     display if streamer is being hosted
+    hardcoded !8ball command for Magic 8Ball game. Ex: !8ball Should I get a car?
 
 
 (more to come)
