@@ -64,12 +64,29 @@ namespace xBot_WPF
             if (banActivate == "1")
             {
                 banWordCKB.IsChecked = true;
+                banUserCKB.IsChecked = false;
+                banUserCKB.IsEnabled = false;
+                banTimeTXT.IsEnabled = true;
                 banWordCKB.Content = "Activate Chat Ban: ON";
+                banUserCKB.Content = "Activate User Ban: OFF";
+
+            }
+            else if (banActivate == "2")
+            {
+                banWordCKB.IsChecked = false;
+                banUserCKB.IsChecked = true;
+                banWordCKB.IsEnabled = false;
+                banTimeTXT.IsEnabled = false;
+                banWordCKB.Content = "Activate Chat Ban: OFF";
+                banUserCKB.Content = "Activate Ban User: ON";
             }
             else
             {
                 banWordCKB.IsChecked = false;
+                banUserCKB.IsChecked = false;
+                banTimeTXT.IsEnabled = true;
                 banWordCKB.Content = "Activate Chat Ban: OFF";
+                banUserCKB.Content = "Activate User Ban: OFF";
             }
             //---------------------------------------------
         }
@@ -152,6 +169,8 @@ namespace xBot_WPF
             Reg.regKey_WriteSubkey(keyName, "BadWord", "1");
             date = DateTime.Now.ToString("yyyy MM dd HH:mm:ss");
             CLog.LogWrite("[" + date + "]" + "Bad words check activated!");
+            banUserCKB.IsEnabled = false;
+            banUserCKB.IsChecked = false;
         }
 
         /// <summary>
@@ -165,6 +184,8 @@ namespace xBot_WPF
             Reg.regKey_WriteSubkey(keyName, "BadWord", "0");
             date = DateTime.Now.ToString("yyyy MM dd HH:mm:ss");
             CLog.LogWrite("[" + date + "]" + "Bad words check deactivated!");
+            banUserCKB.IsChecked = false;
+            banUserCKB.IsEnabled = true;
         }
         /// <summary>
         /// Write automaticly the ban time in registry
@@ -227,6 +248,39 @@ namespace xBot_WPF
                 MessageBox.Show("File " + badWordDir + " dose not exist!");
                 this.Close();
             }
+        }
+
+        /// <summary>
+        /// Writes 2 in registry for ban user activation
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void banUserCKB_Checked(object sender, RoutedEventArgs e)
+        {
+            banUserCKB.Content = "Activate User Ban: ON";
+            Reg.regKey_WriteSubkey(keyName, "BadWord", "2");
+            date = DateTime.Now.ToString("yyyy MM dd HH:mm:ss");
+            CLog.LogWrite("[" + date + "]" + "Bad words/spam check deactivated!");          
+            banWordCKB.IsEnabled = false;
+            banWordCKB.IsChecked = false;
+            banTimeTXT.IsEnabled = false;
+        }
+
+        /// <summary>
+        /// Writes 0 in registry for ban user deactivation
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void banUserCKB_Unchecked(object sender, RoutedEventArgs e)
+        {
+            banUserCKB.Content = "Activate User Ban: OFF";
+            Reg.regKey_WriteSubkey(keyName, "BadWord", "0");
+            date = DateTime.Now.ToString("yyyy MM dd HH:mm:ss");
+            CLog.LogWrite("[" + date + "]" + "Bad words/spam check deactivated!");
+            banWordCKB.IsChecked = false;
+            banWordCKB.IsEnabled= true;
+            banTimeTXT.IsEnabled = true;
         }
     }
 }
