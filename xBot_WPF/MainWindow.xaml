@@ -149,7 +149,7 @@
                     <ListViewItem ToolTip="Chat Ban" Height="44" Foreground="#FFDCDCDC" FontSize="23" PreviewMouseDown="ListViewItem_PreviewMouseDownBAD">
                         <StackPanel Orientation="Horizontal" >
                             <materialDesign:PackIcon Kind="Wordpress" Margin="9" Width="25" Height="25" VerticalAlignment="Center"/>
-                            <TextBlock Text=" Chat Ban" VerticalAlignment="Center"/>
+                            <TextBlock Text=" Ban System" VerticalAlignment="Center"/>
 
                         </StackPanel>
                     </ListViewItem>
