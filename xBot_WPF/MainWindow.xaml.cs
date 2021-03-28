@@ -165,6 +165,7 @@ namespace xBot_WPF
         Random r8 = new Random();
         //--------------------------------
 
+
         public MainWindow()
         {
             InitializeComponent();
@@ -252,7 +253,7 @@ namespace xBot_WPF
             }
             //------------------------------------------------
 
-
+     
             //Checking if reg keys and subkeys exist and if not we recreate
 
             if (Reg.regKey_Read(keyName, "UserName") == "")
@@ -637,7 +638,7 @@ namespace xBot_WPF
             //-----------
 
 
-            //on bad workd received
+            //on bad word/spam received (chat ban or user ban)
 
             if (bWord == "1")
             {
@@ -652,6 +653,25 @@ namespace xBot_WPF
                             client.TimeoutUser(e.ChatMessage.Channel, e.ChatMessage.Username, TimeSpan.FromMinutes(timeBan), "Bad word ban! " + Convert.ToString(timeBan) + " minute(s) timeout!");
                             logWrite(e.ChatMessage.Channel + " | " + e.ChatMessage.Username + " | " + TimeSpan.FromMinutes(timeBan) + " | " + "[BOT] Bad word ban! " + Convert.ToString(timeBan) + " minute(s) timeout!");
                             CLog.LogWrite(e.ChatMessage.Channel + " | " + e.ChatMessage.Username + " | " + TimeSpan.FromMinutes(timeBan) + " | " + "[BOT] Bad word ban! " + Convert.ToString(timeBan) + " minute(s) timeout!");
+                        }
+                    }
+                }
+
+            }
+            if (bWord == "2")
+            {
+               
+                badWordList = File.ReadAllLines(badWordDir);
+                foreach (var bad in badWordList)//here we check every bad word from list
+                {
+                    if (bad.Length > 0)
+                    {
+                        if (e.ChatMessage.Message.Contains(bad))
+                        {
+                            date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+                            client.BanUser(e.ChatMessage.Channel, e.ChatMessage.Username, "Spam message!");
+                            logWrite("[" + date + "][BOT] User banned: " + e.ChatMessage.Username);
+                            CLog.LogWrite("[" + date + "][BOT] User banned: " + e.ChatMessage.Username);
                         }
                     }
                 }
@@ -1055,7 +1075,7 @@ namespace xBot_WPF
                 logWrite("[BOT] Weather command is disabled for the moment!");
             }
             //----------------------------
-
+            
             //Magic 8Ball game command
             if (e.ChatMessage.Message.StartsWith("!8ball"))
             {
@@ -1100,18 +1120,10 @@ namespace xBot_WPF
                 }
             }
             //----------------------------
+
         }
       
-        /* disabled for now untill I figure out with the owners of TwitchLib what is the issue
-        private void Client_OnWhisperReceived(object sender, OnWhisperReceivedArgs e)
-        {
-         
-            client.SendWhisper(e.WhisperMessage.Username, " : Hello. Sorry, I'm just a bot!");
-            logWrite("[BOT] Whisper sent to: "+ e.WhisperMessage.Username+ " : Hello. Sorry, I'm just a bot!");
-            CLog.LogWrite("[BOT] Whisper sent to: " + e.WhisperMessage.Username + " : Hello. Sorry, I'm just a bot ");
-            
-        }
-      */  
+ 
 
        
         private void Client_OnNewSubscriber(object sender, OnNewSubscriberArgs e)
