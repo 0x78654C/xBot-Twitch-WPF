@@ -635,8 +635,275 @@ namespace xBot_WPF
                 logWrite("[" + date2 + "] " + e.ChatMessage.Username + " : " + e.ChatMessage.Message);
                 CLog.LogWrite("[" + date2 + "] " + e.ChatMessage.Username + " : " + e.ChatMessage.Message);
             }
-            //-----------
+            //--------------------------------------------
 
+
+            //Text commands mamagement for mods. Example:
+            //!create-!test-message
+            //!update-!test-message2
+            //!delete-!test
+            using (var sReader = new StringReader(e.ChatMessage.Message))
+            {
+
+                string line;
+                while ((line = sReader.ReadLine()) != null)
+                {
+                   
+                    if (line.StartsWith("!update"))
+                    {
+                        List<string> mod = new List<string>();
+                        foreach (var m in mods)
+                        {
+                            if (m.Length > 0)
+                            {
+                                mod.Add(m.ToLower());
+                            }
+                        }
+
+                        string modList = string.Join("|", mod);
+
+                        if (modList.Contains(e.ChatMessage.Username) || e.ChatMessage.Username == t_userName)
+                        {
+                            string cmd_lst = File.ReadAllText(comDirectory);
+                            string[] cmd_lineA = File.ReadAllLines(comDirectory);
+                            List<string> fList = new List<string>();
+                            //Grab only comands list not the message 
+                            List<string> clst = new List<string>();
+                            foreach (var lineC in cmd_lineA)
+                            {
+                                if (lineC.Length > 0)
+                                {
+                                    string[] cmdS = lineC.Split(':');
+                                    clst.Add(cmdS[0]);
+                                    fList.Add(lineC);
+                                }
+                            }
+
+                            //------------------------------------
+
+                            string[] command = e.ChatMessage.Message.Split('-');
+                            string finalCommand;
+                            try
+                            {
+                                date2 = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                                if (clst.Contains(command[1]))
+                                {
+                                    foreach (var cLine in cmd_lineA)
+                                    {
+                                        if (cLine.StartsWith(command[1]))
+                                        {
+                                            fList.Remove(cLine);
+                                        }
+                                    }
+
+                                    if (!command[2].Contains("!") && !command[2].Contains(":") && !command[2].Contains("-"))
+                                    {
+                                        if (command[1].StartsWith("!"))
+                                        {
+                                            finalCommand = command[1] + ":" + command[2];
+                                            fList.Add(finalCommand);
+                                            string FinalCommandList = string.Join(Environment.NewLine, fList);
+                                            File.WriteAllText(comDirectory, FinalCommandList);
+                                            logWrite("[" + date2 + "] Command " + command[1] + " was updated by " + e.ChatMessage.Username);
+                                            CLog.LogWrite("[" + date2 + "] Command " + command[1] + " was updated by " + e.ChatMessage.Username);
+                                            client.SendMessage(e.ChatMessage.Channel, "Command " + command[1] + " was updated by " + e.ChatMessage.Username);
+                                        }
+                                        else
+                                        {
+                                            logWrite("@" + e.ChatMessage.Username + ", the command you want to update must start with character: ! ");
+                                            CLog.LogWrite("@" + e.ChatMessage.Username + ", the command you want to update must start with character: ! ");
+                                            client.SendMessage(e.ChatMessage.Channel, "@" + e.ChatMessage.Username + ", the command you want to update must start with character: ! ");
+                                        }
+                                    }
+                                    else
+                                    {
+                                        logWrite("[" + date2 + "] @" + e.ChatMessage.Username + ", command message should not contain following characters: !, :, -");
+                                        CLog.LogWrite("[" + date2 + "] @" + e.ChatMessage.Username + ", command message should not contain following characters: !, :, -");
+                                        client.SendMessage(e.ChatMessage.Channel, "@" + e.ChatMessage.Username + ", command message should not contain following characters: !, :, -");
+                                    }
+
+                                }
+                                else
+                                {
+                                    logWrite("[" + date2 + "] @" + e.ChatMessage.Username + ", command " + command[1] + " dose not exist!");
+                                    CLog.LogWrite("[" + date2 + "] @" + e.ChatMessage.Username + ", command " + command[1] + " dose not exist!");
+                                    client.SendMessage(e.ChatMessage.Channel, "@" + e.ChatMessage.Username + ", command " + command[1] + " dose not exist!");
+                                }
+                            }
+                            catch (Exception c)
+                            {
+                                logWrite("[" + date2 + "]Error: Command update, check logs!");
+                                CLog.LogWriteError("[" + date2 + "]Error: Command update:" + c.ToString());
+                            }
+                        }
+                    }
+                    else if (line.StartsWith("!create"))
+                    {
+
+                        List<string> mod = new List<string>();
+                        foreach (var m in mods)
+                        {
+                            if (m.Length > 0)
+                            {
+                                mod.Add(m.ToLower());
+                            }
+                        }
+
+                        string modList = string.Join("|", mod);
+
+                        if (modList.Contains(e.ChatMessage.Username) || e.ChatMessage.Username == t_userName)
+                        {
+
+                            string cmd_lst = File.ReadAllText(comDirectory);
+                            string[] cmd_lineA = File.ReadAllLines(comDirectory);
+                            List<string> fList = new List<string>();
+                            //Grab only comands list not the message 
+                            List<string> clst = new List<string>();
+                            foreach (var lineC in cmd_lineA)
+                            {
+                                if (lineC.Length > 0)
+                                {
+                                    string[] cmdS = lineC.Split(':');
+                                    clst.Add(cmdS[0]);
+                                    fList.Add(lineC);
+                                }
+                            }
+
+                            //------------------------------------
+
+                            string[] command = e.ChatMessage.Message.Split('-');
+                            string finalCommand;
+                            try
+                            {
+                                date2 = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                                if (!clst.Contains(command[1]))
+                                {
+
+                                    if (!command[2].Contains("!") && !command[2].Contains(":") && !command[2].Contains("-"))
+                                    {
+                                        if (command[1].StartsWith("!"))
+                                        {
+                                            finalCommand = command[1] + ":" + command[2];
+                                            fList.Add(finalCommand);
+                                            string FinalCommandList = string.Join(Environment.NewLine, fList);
+                                            File.WriteAllText(comDirectory, FinalCommandList);
+                                            logWrite("[" + date2 + "] Command " + command[1] + " was created by " + e.ChatMessage.Username);
+                                            CLog.LogWrite("[" + date2 + "] Command " + command[1] + " was created by " + e.ChatMessage.Username);
+                                            client.SendMessage(e.ChatMessage.Channel, "Command " + command[1] + " was created by " + e.ChatMessage.Username);
+                                        }
+                                        else
+                                        {
+                                            logWrite("@" + e.ChatMessage.Username + ", the command you want to created must start with character: ! ");
+                                            CLog.LogWrite("@" + e.ChatMessage.Username + ", the command you want to created must start with character: ! ");
+                                            client.SendMessage(e.ChatMessage.Channel, "@" + e.ChatMessage.Username + ", the command you want to create must start with character: ! ");
+                                        }
+                                    }
+                                    else
+                                    {
+                                        logWrite("[" + date2 + "] @" + e.ChatMessage.Username + ", command message should not contain following characters: !, :, -");
+                                        CLog.LogWrite("[" + date2 + "] @" + e.ChatMessage.Username + ", command message should not contain following characters: !, :, -");
+                                        client.SendMessage(e.ChatMessage.Channel, "@" + e.ChatMessage.Username + ", command message should not contain following characters: !, :, -");
+                                    }
+
+                                }
+                                else
+                                {
+                                    logWrite("[" + date2 + "] @" + e.ChatMessage.Username + ", command " + command[1] + " already exist!");
+                                    CLog.LogWrite("[" + date2 + "] @" + e.ChatMessage.Username + ", command " + command[1] + " already exist!");
+                                    client.SendMessage(e.ChatMessage.Channel, "@" + e.ChatMessage.Username + ", command " + command[1] + " already exist!");
+                                }
+                            }
+                            catch (Exception c)
+                            {
+                                logWrite("[" + date2 + "]Error: Command create, check logs!");
+                                CLog.LogWriteError("[" + date2 + "]Error: Command create:" + c.ToString());
+                            }
+                        }
+                    }
+                    else if (line.StartsWith("!delete"))
+                    {
+                        List<string> mod = new List<string>();
+                        foreach (var m in mods)
+                        {
+                            if (m.Length > 0)
+                            {
+                                mod.Add(m.ToLower());
+                            }
+                        }
+
+                        string modList = string.Join("|", mod);
+
+                        if (modList.Contains(e.ChatMessage.Username) || e.ChatMessage.Username == t_userName)
+                        {
+
+                            string cmd_lst = File.ReadAllText(comDirectory);
+                            string[] cmd_lineA = File.ReadAllLines(comDirectory);
+                            List<string> fList = new List<string>();
+                            //Grab only comands list not the message 
+                            List<string> clst = new List<string>();
+                            foreach (var lineC in cmd_lineA)
+                            {
+                                if (lineC.Length > 0)
+                                {
+                                    string[] cmdS = lineC.Split(':');
+                                    clst.Add(cmdS[0]);
+                                    fList.Add(lineC);
+                                }
+                            }
+
+                            //------------------------------------
+
+                            string[] command = e.ChatMessage.Message.Split('-');
+                            string finalCommand;
+                            try
+                            {
+                                date2 = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                                if (clst.Contains(command[1]))
+                                {
+                                    foreach (var cLine in cmd_lineA)
+                                    {
+                                        if (cLine.StartsWith(command[1]))
+                                        {
+                                            fList.Remove(cLine);
+                                        }
+                                    }
+
+                                    if (command[1].StartsWith("!"))
+                                    {
+                                        string FinalCommandList = string.Join(Environment.NewLine, fList);
+                                        File.WriteAllText(comDirectory, FinalCommandList);
+                                        logWrite("[" + date2 + "] Command " + command[1] + " was deleted by " + e.ChatMessage.Username);
+                                        CLog.LogWrite("[" + date2 + "] Command " + command[1] + " was deleted by " + e.ChatMessage.Username);
+                                        client.SendMessage(e.ChatMessage.Channel, "Command " + command[1] + " was deleted by " + e.ChatMessage.Username);
+                                    }
+                                    else
+                                    {
+                                        logWrite("@" + e.ChatMessage.Username + ", the command you want to delete must start with character: ! ");
+                                        CLog.LogWrite("@" + e.ChatMessage.Username + ", the command you want to delete must start with character: ! ");
+                                        client.SendMessage(e.ChatMessage.Channel, "@" + e.ChatMessage.Username + ", the command you want to delete must start with character: ! ");
+                                    }
+
+
+                                }
+                                else
+                                {
+                                    logWrite("[" + date2 + "] @" + e.ChatMessage.Username + ", command " + command[1] + " dose not exist!");
+                                    CLog.LogWrite("[" + date2 + "] @" + e.ChatMessage.Username + ", command " + command[1] + " dose not exist!");
+                                    client.SendMessage(e.ChatMessage.Channel, "@" + e.ChatMessage.Username + ", command " + command[1] + " dose not exist!");
+                                }
+                            }
+                            catch (Exception c)
+                            {
+                                logWrite("[" + date2 + "]Error: Command delete, check logs!");
+                                CLog.LogWriteError("[" + date2 + "]Error: Command delete:" + c.ToString());
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            //---------------------------------------------
 
             //on bad word/spam received (chat ban or user ban)
 
@@ -803,7 +1070,7 @@ namespace xBot_WPF
                             }
                         }
                         string modList = string.Join("|", mod);
-                        if (modList.Contains(e.ChatMessage.Username) && e.ChatMessage.Username == t_userName)
+                        if (modList.Contains(e.ChatMessage.Username) || e.ChatMessage.Username == t_userName)
                         {
                             string[] lS = line.Split('@');
                             try
@@ -1736,9 +2003,26 @@ namespace xBot_WPF
                     }
                     int index = r.Next(randomM.Count);
                     string rand = randomM[index];
-                    client.SendMessage(t_userName, rand);//sending the random message from list
-                    logWrite("[Random Message] [Interval set to: " + rTime + " minutes]" + rand);
-                    CLog.LogWrite("[" + dateSent + "]Random Message: " + rand);
+                   
+                    try
+                    {
+                        if (client.IsConnected)
+                        {
+                            client.SendMessage(t_userName, rand);//sending the random message from list
+                            logWrite("[Random Message] [Interval set to: " + rTime + " minutes]" + rand);
+                            CLog.LogWrite("[" + dateSent + "]Random Message: " + rand);
+                        }
+                        else
+                        {
+                            logWrite("[Random Message] Client is disconnected!");
+                            CLog.LogWriteError("[" + dateSent + "]Random Message: " + rand);
+                        }
+                    }
+                    catch(Exception ex)
+                    {
+                        CLog.LogWriteError("[" + dateSent + "]Error - Random Message: " + ex.ToString());
+                    }
+
                     if (Convert.ToInt32(rTime) > 0)
                     {
                         //set timer interval for nex resend
