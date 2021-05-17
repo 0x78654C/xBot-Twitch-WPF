@@ -682,7 +682,7 @@ namespace xBot_WPF
                             //------------------------------------
 
                             string[] command = e.ChatMessage.Message.Split('-');
-                            string finalCommand;
+                            string finalCommand=string.Empty;
                             try
                             {
                                 date2 = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
@@ -1005,7 +1005,7 @@ namespace xBot_WPF
                 string line;
                 while ((line = sReader.ReadLine()) != null)
                 {
-                    if (line.StartsWith("!ss"))
+                    if (line.StartsWith("!so"))
                     {
                         List<string> mod=new List<string>();
                         foreach(var m in mods)
@@ -1042,9 +1042,9 @@ namespace xBot_WPF
                         }
                         else
                         {
-                            client.SendMessage(e.ChatMessage.Channel, "Only @" + t_userName + " can use the !ss command!");
-                            logWrite("[BOT] Only @" + t_userName + " can use the !ss command!");
-                            CLog.LogWrite("[BOT] Only @" + t_userName + " can use the !ss command!");
+                            client.SendMessage(e.ChatMessage.Channel, "Only @" + t_userName + " and moderators can use the !so command!");
+                            logWrite("[BOT] Only @" + t_userName + " and moderators can use the !so command!");
+                            CLog.LogWrite("[BOT] Only @" + t_userName + " and moderators can use the !so command!");
                         }
                     }
 
