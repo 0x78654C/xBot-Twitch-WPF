@@ -1,19 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+﻿using System.IO;
 using System.Net;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace xBot_WPF
 {
@@ -31,13 +20,13 @@ namespace xBot_WPF
             InitializeComponent();
 
             //loading the youtube links to file
-          
+
             if (File.Exists(playListRequest))
             {
                 int index = 0;
                 string[] requestList = File.ReadAllLines(playListRequest);
                 wClient = new WebClient();
-                foreach(var line in requestList)
+                foreach (var line in requestList)
                 {
                     if (line.Length > 0)
                     {
@@ -52,7 +41,7 @@ namespace xBot_WPF
 
                         //store the title
                         string ytTitle = titleParse.Substring(pFrom, pTo - pFrom);
-                        rPlayList.Items.Add(index.ToString()+" | "+ytTitle+" | "+s[1]);
+                        rPlayList.Items.Add(index.ToString() + " | " + ytTitle + " | " + s[1]);
                     }
                 }
                 index = 0;

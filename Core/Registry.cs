@@ -1,9 +1,5 @@
 ﻿using Microsoft.Win32;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Core
 {
@@ -58,7 +54,7 @@ namespace Core
         {
             string key = string.Empty;
 
-            string InstallPath = (string)Registry.GetValue(@"HKEY_CURRENT_USER\"+keyName, subKeyName, null);
+            string InstallPath = (string)Registry.GetValue(@"HKEY_CURRENT_USER\" + keyName, subKeyName, null);
             if (InstallPath != null)
             {
                 key = InstallPath;
@@ -100,5 +96,26 @@ namespace Core
             key.Close();
         }
 
+        /// <summary>
+        /// Check regsitry if eqals a value and if not create with 0 value.
+        /// </summary>
+        /// <param name="regKeyList"></param>
+        /// <param name="keyName"></param>
+        /// <param name="subKeyValue"></param>
+        public static void CheckRegKeysStart(List<string> regKeyList, string keyName, string subKeyValue, bool zero)
+        {
+            foreach (var key in regKeyList)
+            {
+                if (zero)
+                {
+                    if (regKey_Read(keyName, key) == subKeyValue)
+                        regKey_CreateKey(keyName, key, "0");
+                }
+
+                if (regKey_Read(keyName, key) == subKeyValue)
+                    regKey_CreateKey(keyName, key, subKeyValue);
+            }
+        }
     }
 }
+

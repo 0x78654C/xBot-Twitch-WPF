@@ -1,21 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Core;
+using System;
+using System.IO;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using System.Diagnostics;
-using System.IO;
-using Core;
-using System.Text.RegularExpressions;
 
 namespace xBot_WPF
 {
@@ -42,10 +32,10 @@ namespace xBot_WPF
             //Load bad words list in listview
             if (File.Exists(badWordDir))
             {
-              
+
                 //we add every word from external file to listbox
                 string[] bList = File.ReadAllLines(badWordDir);
-                foreach(var line in bList)
+                foreach (var line in bList)
                 {
                     if (line.Length > 0)
                     {
@@ -55,7 +45,7 @@ namespace xBot_WPF
             }
             else
             {
-                MessageBox.Show("File "+badWordDir+" dose not exist!");
+                MessageBox.Show("File " + badWordDir + " dose not exist!");
                 this.Close();
             }
             //-----------------------------------------
@@ -261,7 +251,7 @@ namespace xBot_WPF
             banUserCKB.Content = "Activate User Ban: ON";
             Reg.regKey_WriteSubkey(keyName, "BadWord", "2");
             date = DateTime.Now.ToString("yyyy MM dd HH:mm:ss");
-            CLog.LogWrite("[" + date + "]" + "Bad words/spam check deactivated!");          
+            CLog.LogWrite("[" + date + "]" + "Bad words/spam check activated!");
             banWordCKB.IsEnabled = false;
             banWordCKB.IsChecked = false;
             banTimeTXT.IsEnabled = false;
@@ -279,7 +269,7 @@ namespace xBot_WPF
             date = DateTime.Now.ToString("yyyy MM dd HH:mm:ss");
             CLog.LogWrite("[" + date + "]" + "Bad words/spam check deactivated!");
             banWordCKB.IsChecked = false;
-            banWordCKB.IsEnabled= true;
+            banWordCKB.IsEnabled = true;
             banTimeTXT.IsEnabled = true;
         }
     }

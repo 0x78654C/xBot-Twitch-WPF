@@ -136,6 +136,7 @@
     <Compile Include="settings.xaml.cs">
       <DependentUpon>settings.xaml</DependentUpon>
     </Compile>
+    <Compile Include="test.cs" />
     <Compile Include="youtube.xaml.cs">
       <DependentUpon>youtube.xaml</DependentUpon>
     </Compile>

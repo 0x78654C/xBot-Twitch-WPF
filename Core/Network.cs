@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.NetworkInformation;
-using System.Text;
-using System.Threading.Tasks;
-using System.Net;
 using System.Net.Sockets;
-using System.IO;
 using System.Threading;
 
 namespace Core
@@ -25,7 +19,7 @@ namespace Core
         /// </summary>
         /// <param name="ip">Enter the hostname/IP address.</param>
         /// <returns>string</returns>
-       
+
         public static bool pingH(string ip)
         {
             bool pingable = false;
@@ -41,7 +35,7 @@ namespace Core
             catch (PingException p)
             {
                 date = DateTime.Now.ToString("yyyy-dd-HH:mm");
-                CLog.LogWriteError("["+date+"]Core - pingH: " + p.ToString());
+                CLog.LogWriteError("[" + date + "]Core - pingH: " + p.ToString());
             }
             finally
             {
@@ -76,7 +70,7 @@ namespace Core
         /// <param name="address">Add the ip/hostname address</param>
         /// <param name="port">Port</param>
         /// <returns>bool</returns>
-        public static bool portCheck(string address,int port)
+        public static bool portCheck(string address, int port)
         {
             var connect = new TcpClient(address, port);
             if (connect.Connected)

@@ -1,20 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using Core;
+﻿using Core;
+using System;
 using System.IO;
 using System.Reflection;
 using System.Text.RegularExpressions;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace xBot_WPF
 {
@@ -36,7 +27,7 @@ namespace xBot_WPF
             InitializeComponent();
             //Load variable value from registry and display it
             botMSGtxt.Text = Reg.regKey_Read(keyName, "StartMessage");
-            rTimetxt.Text  = Reg.regKey_Read(keyName, "rTime");
+            rTimetxt.Text = Reg.regKey_Read(keyName, "rTime");
             //--------------------------------------------------------
 
 
@@ -197,7 +188,7 @@ namespace xBot_WPF
                 string[] rList = File.ReadAllLines(randomListFile);
                 string rRead = File.ReadAllText(randomListFile);
 
-                foreach(var line in rList)
+                foreach (var line in rList)
                 {
                     if (line.StartsWith(rL))
                     {
@@ -231,10 +222,10 @@ namespace xBot_WPF
         private void addBTNMSG_Click(object sender, RoutedEventArgs e)
         {
             if (randomMSGtxt.Text.Length > 0)
-            {    
-          
+            {
+
                 randomList.Items.Add(randomMSGtxt.Text);
-                File.AppendAllText(randomListFile, randomMSGtxt.Text+Environment.NewLine);
+                File.AppendAllText(randomListFile, randomMSGtxt.Text + Environment.NewLine);
                 MessageBox.Show("Message '" + randomMSGtxt.Text + "' added!");
                 randomMSGtxt.Clear();
             }
@@ -242,7 +233,7 @@ namespace xBot_WPF
             {
                 MessageBox.Show("You must type a message to add for random list!");
             }
-        } 
+        }
 
         /// <summary>
         /// Store the display time interval(minutes) in registry
@@ -251,11 +242,11 @@ namespace xBot_WPF
         /// <param name="e"></param>
         private void rTimeBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (rTimetxt.Text.Length>0)
+            if (rTimetxt.Text.Length > 0)
             {
 
                 Reg.regKey_WriteSubkey(keyName, "rTime", rTimetxt.Text);
-                MessageBox.Show("Display interval time is set to "+rTimetxt.Text+" minutes!");
+                MessageBox.Show("Display interval time is set to " + rTimetxt.Text + " minutes!");
             }
             else
             {

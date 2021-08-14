@@ -1,20 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Core;
+using System;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using Core;
 
 namespace xBot_WPF
 {
@@ -49,7 +40,7 @@ namespace xBot_WPF
 
                     t_streamKey = Encryption._decryptData(Reg.regKey_Read(keyName, "StreamKey"));
                 }
-                catch(Exception e)
+                catch (Exception e)
                 {
                     CLog.LogWriteError("Settigns - decrypt oAuth Key: " + e.ToString());
                 }
@@ -75,10 +66,10 @@ namespace xBot_WPF
             else
             {
                 songReqCKB.Content = "Activate YT Song Rquest: OFF";
-                songReqCKB.IsChecked = false; 
+                songReqCKB.IsChecked = false;
             }
             //---------------------------------
-            
+
             //load weaheter checkbox msg ar deactivate
 
             if (weatherKey == "1")
@@ -123,11 +114,11 @@ namespace xBot_WPF
             //load weather units key control
             if (weatherUnits == "1")
             {
-                weaherUnits.SelectedIndex = 0;              
+                weaherUnits.SelectedIndex = 0;
             }
             else
             {
-                weaherUnits.SelectedIndex = 1;              
+                weaherUnits.SelectedIndex = 1;
             }
             //----------------------------------------
 
@@ -147,7 +138,7 @@ namespace xBot_WPF
             }
             else
             {
-                MessageBox.Show("File " + modFile+ " dose not exist!");
+                MessageBox.Show("File " + modFile + " dose not exist!");
             }
             //-----------------------------------------
 
@@ -203,7 +194,7 @@ namespace xBot_WPF
             }
             else
             {
-                
+
                 Reg.regKey_WriteSubkey(keyName, "StreamKey", streamOauthKeyTXT.Password);
             }
 
@@ -238,7 +229,7 @@ namespace xBot_WPF
 
             //change the label content to off
             weatherCKB.Content = "Activate Weather Command: OFF";
-            weaherUnits.IsEnabled = false ;
+            weaherUnits.IsEnabled = false;
         }
         #endregion
 
@@ -265,14 +256,14 @@ namespace xBot_WPF
         #region saveing yt song request settings
         private void songReqCKB_Checked(object sender, RoutedEventArgs e)
         {
-        
+
             Reg.regKey_WriteSubkey(keyName, "ytRequest", "1");
             songReqCKB.Content = "Activate YT Song Rquest: ON";
         }
 
         private void songReqCKB_Unchecked(object sender, RoutedEventArgs e)
         {
-            
+
             Reg.regKey_WriteSubkey(keyName, "ytRequest", "0");
             songReqCKB.Content = "Activate YT Song Rquest: OFF";
         }
@@ -284,7 +275,7 @@ namespace xBot_WPF
         /// <param name="e"></param>
         private void weaherUnits_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (weaherUnits.SelectedItem.ToString().Contains("Celsius")) 
+            if (weaherUnits.SelectedItem.ToString().Contains("Celsius"))
             {
                 Reg.regKey_WriteSubkey(keyName, "weatherUnits", "1");
             }
@@ -323,7 +314,7 @@ namespace xBot_WPF
             }
             else
             {
-                MessageBox.Show("File " +modFile + " dose not exist!");
+                MessageBox.Show("File " + modFile + " dose not exist!");
             }
         }
 

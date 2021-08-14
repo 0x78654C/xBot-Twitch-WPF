@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Core
+﻿namespace Core
 {
     public class Dameru
     {
@@ -17,7 +11,7 @@ namespace Core
         /// <returns></returns>
         private static int Minimum(int a, int b) => a < b ? a : b;
 
-       private static int Minimum(int a, int b, int c) => (a = a < b ? a : b) < c ? a : c;
+        private static int Minimum(int a, int b, int c) => (a = a < b ? a : b) < c ? a : c;
         /// <summary>
         /// Damerau Levenshtein alogrithm 
         /// </summary>

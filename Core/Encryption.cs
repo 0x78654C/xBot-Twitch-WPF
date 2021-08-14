@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web;
-using System.Web.Security;
 using UHWID;
 
 namespace Core
@@ -19,7 +13,7 @@ namespace Core
         //Declare variables for HWID strings
         private static string SimpleUID = UHWIDEngine.SimpleUid;
         private static string AdvancedUID = UHWIDEngine.AdvancedUid;
-        private static string _KEY = SimpleUID+AdvancedUID;
+        private static string _KEY = SimpleUID + AdvancedUID;
         //--------------------------------------
 
         //declare date variable
@@ -34,7 +28,7 @@ namespace Core
         /// <returns>String</returns>
         public static string _decryptData(string data)
         {
-            string DecryptedData=string.Empty;
+            string DecryptedData = string.Empty;
             try
             {
                 string InputText = data;
@@ -52,7 +46,7 @@ namespace Core
                 cryptoStream.Close();
                 DecryptedData = System.Text.Encoding.Unicode.GetString(PlainText, 0, DecryptedCount);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 date = DateTime.Now.ToString("yyyy-dd-HH:mm");
                 CLog.LogWriteError("[" + date + "]Core - Decryption error: " + e.ToString());
@@ -85,10 +79,10 @@ namespace Core
                 byte[] CipherBytes = memoryStream.ToArray();
                 memoryStream.Close();
                 cryptoStream.Close();
-               EncryptedData = Convert.ToBase64String(CipherBytes);
-              
+                EncryptedData = Convert.ToBase64String(CipherBytes);
+
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 date = DateTime.Now.ToString("yyyy-dd-HH:mm");
                 CLog.LogWriteError("[" + date + "]Core - Encryption error: " + e.ToString());
@@ -96,6 +90,6 @@ namespace Core
             return EncryptedData;
 
         }
-       
+
     }
 }

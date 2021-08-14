@@ -1,19 +1,18 @@
-﻿using System;
+﻿using Core;
+using System;
 using System.Collections.Generic;
-using System.Drawing;
+using System.ComponentModel;
+using System.IO;
 using System.Linq;
-using System.Text;
+using System.Net;
+using System.Net.Http;
+using System.Reflection;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Windows.Forms;
 using TwitchLib.Client;
 using TwitchLib.Client.Enums;
 using TwitchLib.Client.Events;
@@ -21,17 +20,6 @@ using TwitchLib.Client.Extensions;
 using TwitchLib.Client.Models;
 using TwitchLib.Communication.Clients;
 using TwitchLib.Communication.Models;
-using TwitchLib.Api;
-using TwitchLib.Api.Helix.Models.Users;
-using TwitchLib.Api.V5.Models.Subscriptions;
-using System.IO;
-using System.Reflection;
-using Core;
-using Microsoft.Win32;
-using System.Threading;
-using System.Net.Http;
-using System.ComponentModel;
-using System.Net;
 
 namespace xBot_WPF
 {
@@ -51,118 +39,123 @@ namespace xBot_WPF
        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
        SOFTWARE.
      */
-    
+
     public partial class MainWindow : Window
     {
-     
+
         //declare twitch client variable
         TwitchClient client = new TwitchClient();
         //------------------------------------------------
 
         //data and log directory declare
-        readonly static string dataDirectory = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\data";
-        readonly static string logDirectory = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\log";
-        readonly static string logErrorDirectory = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\log\errors";
+        private readonly static string s_DataDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\data";
+        private readonly static string s_LogDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\log";
+        private readonly static string s_LogErrorDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\log\errors";
         //------------------------------------------------
 
 
         //Declare keyname and subkey
-        readonly static string keyName = "xBot";
-        private static string weatherKey = "0";
-        private static string botMSGKey = "0";
-        private static string botMSGControl = "0";
-        private static string weatherUnits = "0";
-        private static string menuStatus = "0";
+        private readonly static string s_KeyName = "xBot";
+        private static string s_WeatherKey = "0";
+        private static string s_BotMSGKey = "0";
+        private static string s_BotMSGControl = "0";
+        private static string s_WeatherUnits = "0";
+        private static string s_MenuStatus = "0";
         //------------------------------------------------
 
         //declare twitch credential info
-        private static string t_userName;
-        private static string t_streamKey;
+        private static string s_UserName;
+        private static string s_StreamKey;
         //-------------------------------------------------
 
 
         //command file variables
-        readonly static string comDirectory = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\data\command.txt";
-        private static string[] comandList;
+        private readonly static string s_ComDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\data\command.txt";
+        private static string[] s_ComandList;
         //-------------------------------------------------
 
 
         //bad word lists path declaration and variable
-        readonly static string badWordDir = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\data\badwords.txt";
-        private static string[] badWordList;
-        private static string bWord = "0";
-        int timeBan = 0;
+        readonly static string s_BadWordDir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\data\badwords.txt";
+        private static string[] s_BadWordList;
+        private static string s_BadWord = "0";
+        int _TimeBan = 0;
         //-------------------------------------------------
 
         //date variable declar
-        private static string date;
+        private static string s_Date;
         //-------------------------------------------------
 
         //declare path to bot message
-        private static string StartMessage;
+        private static string s_StartMessage;
         //-------------------------------------------------
 
         //Media player declaration
-        readonly static string playListFile = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\data\playList.txt";
-        private static string YtLink;
-        private static string ytControl = "0";
-        private static string YtWin = "0";
-        private static string ytRequest = "0";
-        readonly static string playListRequest = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\data\playListRequest.txt";
-        List<string> cList = new List<string>();
-        List<string> pList = new List<string>();
-        List<string> qList = new List<string>();
+        private readonly static string s_PlayListFile = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\data\playList.txt";
+        private static string s_YtLink;
+        private static string s_YtControl = "0";
+        private static string s_YtWin = "0";
+        private static string s_ytRequest = "0";
+        readonly static string s_PlayListRequest = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\data\playListRequest.txt";
+        List<string> CList = new List<string>();
+        List<string> PList = new List<string>();
+        List<string> QList = new List<string>();
+        List<string> RegistryKeys = new List<string>() { "UserName", "StreamKey", "WeatherAPIKey", "StartMessage", "YtLink", "YtUrl" };
+        List<string> RegistryKeysNull = new List<string>() { "WeatherMSG", "BotMSG", "BadWord", "WordBanTime", "YTControl", "YtWin", "botMSGControl", "weatherUnits", "Menu", "randomC", "rTime", "ytRequest" };
+        List<string> FilesList = new List<string>() { s_ModsFile, s_BadWordDir, s_ComDirectory, s_PlayListFile, s_PlayListRequest, s_RandomListFile, s_PlayListRequest, s_RandomListFile, s_BallAnswer };
+        List<string> DirectoryList = new List<string> { s_DataDirectory, s_LogDirectory, s_LogErrorDirectory };
         //-------------------------------------------------
 
 
         //declare weather variables
-        private static string apiKey = string.Empty;
-        private static string weatheCond = string.Empty;
-        static readonly HttpClient clientH = new HttpClient();
+        private static string s_ApiKey = string.Empty;
+        private static string s_WeatheCond = string.Empty;
+        static readonly HttpClient s_ClientH = new HttpClient();
         //--------------------------------------------------
 
         //declare the bot forms variables
-        settings sT;
-        botMSG bM;
-        command cmD;
-        badWords bW;
-        youtube yT;
-        about aB;
+        settings Settings;
+        botMSG BotMessage;
+        command Command;
+        badWords BadWords;
+        youtube YouTube;
+        about About;
         //--------------------------------
 
         //Define the background worker for bot start and random message
-        BackgroundWorker worker;
+        BackgroundWorker Worker;
+        BackgroundWorker WorkerForPlayList;
         //--------------------------------
 
         //Declare mutex variable for startup instance check
-        Mutex myMutex;
+        Mutex MyMutex;
         //---------------------------------
 
 
         //declare timer for load icons and variables read value
-        System.Windows.Threading.DispatcherTimer dispatcherTimer;
+        System.Windows.Threading.DispatcherTimer DispatcherTimer;
         //--------------------------------
 
-        int Viewers = 0;
-        int SubsCount = 0;
+        private int s_Viewers = 0;
+        private int s_SubsCount = 0;
 
         //declare variables for random message system
-        readonly static string randomListFile = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\data\random_msg.txt";
-        private static string randomC;
-        System.Windows.Threading.DispatcherTimer dispatcherTimerR;
-        string[] rand_list;
-        private static string rTime;
-        Random r = new Random();
+        private readonly static string s_RandomListFile = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\data\random_msg.txt";
+        private static string s_RandomC;
+        System.Windows.Threading.DispatcherTimer DispatcherTimerR;
+        private string[] s_Rand_list;
+        private static string s_RTime;
+        Random Random = new Random();
         //--------------------------------
 
         //declare variables for mod section
-        readonly static string modFile = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\data\mods.txt";
-        string[] mods = null;
+        private readonly static string s_ModsFile = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\data\mods.txt";
+        private string[] s_Mods = null;
         //--------------------------------
 
         //declare variables for Magic 8ball game
-        readonly static string ballAnswer = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\data\8ball_answers.txt";
-        Random r8 = new Random();
+        readonly static string s_BallAnswer = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\data\8ball_answers.txt";
+        Random Random8 = new Random();
         //--------------------------------
 
 
@@ -170,267 +163,56 @@ namespace xBot_WPF
         {
             InitializeComponent();
 
-            //aplication startup instance check
+            // Aplication startup instance check
             Application_Startup();
             //---------------------------------------------
-            //Bot start message
+            // Bot start message
             this.Dispatcher.Invoke(() =>
             {
                 logViewRTB.Document.Blocks.Clear();
             });
             logWrite("Welcome to xBot! The Twitch bot that was entirely build on live stream :D");
-            //----------------------------------------------
+
+            // Check existence for necesary directory and files.
+            CheckDirectoryStartUp(DirectoryList);
+            CheckFileStartUp(FilesList);
+
+            // Checking if reg keys and subkeys exist and if not we recreate.
+            Reg.CheckRegKeysStart(RegistryKeys, s_KeyName, "", false);
+            Reg.CheckRegKeysStart(RegistryKeysNull, s_KeyName, "", true);
+
+            // Load variables stored in registry.
+            ReadRegistryVariables();
 
 
-            //data directory check and create if not exists
-            if (!File.Exists(modFile))
-            {
-              File.Create(modFile);
-            }
-            //------------------------------------------------
-
-            //data directory check and create if not exists
-            if (!Directory.Exists(dataDirectory))
-            {
-                Directory.CreateDirectory(dataDirectory);
-            }
-            //------------------------------------------------
+            // Menu state check and apply
+            MenuStatusChange(s_MenuStatus);
 
 
-            //log/error directory check and create if not exists
-            if (!Directory.Exists(logDirectory))
-            {
-                Directory.CreateDirectory(logDirectory);
-
-            }
-
-            if (!Directory.Exists(logErrorDirectory))
-            {
-                Directory.CreateDirectory(logErrorDirectory);
-            }
-            //------------------------------------------------
-
-            //check if badwords file exits and if not we recreate
-            if (!File.Exists(badWordDir))
-            {
-                File.WriteAllText(badWordDir, "");
-            }
-            //---------------------------------------------------
-
-            //check if comands file exits and if not we recreate
-            if (!File.Exists(comDirectory))
-            {
-                File.WriteAllText(comDirectory, "");
-            }
-            //---------------------------------------------------
-
-
-            //check if youtube playlist file exits and if not we recreate
-            if (!File.Exists(playListFile))
-            {
-                File.WriteAllText(playListFile, "");
-            }
-            //---------------------------------------------------
-
-            //check if youtube playlist file exits and if not we recreate
-            if (!File.Exists(playListRequest))
-            {
-                File.WriteAllText(playListRequest, "");
-            }
-            //---------------------------------------------------
-
-            //check if random list file exits and if not we recreate
-            if (!File.Exists(randomListFile))
-            {
-                File.WriteAllText(randomListFile, "");
-            }
-            //---------------------------------------------------
-
-            //8Ball system file autocreate
-            if (!File.Exists(ballAnswer))
-            {
-                File.Create(ballAnswer);
-            }
-            //------------------------------------------------
-
-     
-            //Checking if reg keys and subkeys exist and if not we recreate
-
-            if (Reg.regKey_Read(keyName, "UserName") == "")
-            {
-                Reg.regKey_CreateKey(keyName, "UserName", "");
-            }
-
-            if (Reg.regKey_Read(keyName, "StreamKey") == "")
-            {
-                Reg.regKey_CreateKey(keyName, "StreamKey", "");
-            }
-
-
-            if (Reg.regKey_Read(keyName, "WeatherAPIKey") == "")
-            {
-                Reg.regKey_CreateKey(keyName, "WeatherAPIKey", "");
-            }
-
-            if (Reg.regKey_Read(keyName, "WeatherMSG") == "")
-            {
-                Reg.regKey_CreateKey(keyName, "WeatherMSG", "0");
-            }
-
-            if (Reg.regKey_Read(keyName, "BotMSG") == "")
-            {
-                Reg.regKey_CreateKey(keyName, "BotMSG", "0");
-            }
-
-            if (Reg.regKey_Read(keyName, "BadWord") == "")
-            {
-                Reg.regKey_CreateKey(keyName, "BadWord", "0");
-            }
-
-            if (Reg.regKey_Read(keyName, "WordBanTime") == "")
-            {
-                Reg.regKey_CreateKey(keyName, "WordBanTime", "0");
-            }
-
-            if (Reg.regKey_Read(keyName, "YTControl") == "")
-            {
-                Reg.regKey_CreateKey(keyName, "YTControl", "0");
-            }
-
-            if (Reg.regKey_Read(keyName, "YtWin") == "")
-            {
-                Reg.regKey_CreateKey(keyName, "YtWin", "0");
-            }
-
-            if (Reg.regKey_Read(keyName, "StartMessage") == "")
-            {
-                Reg.regKey_CreateKey(keyName, "StartMessage", " ");
-            }
-
-            if (Reg.regKey_Read(keyName, "YtLink") == "")
-            {
-                Reg.regKey_CreateKey(keyName, "YtLink", " ");
-            }
-
-            if (Reg.regKey_Read(keyName, "YtUrl") == "")
-            {
-                Reg.regKey_CreateKey(keyName, "YtUrl", " ");
-            }
-
-            if (Reg.regKey_Read(keyName, "botMSGControl") == "")
-            {
-                Reg.regKey_CreateKey(keyName, "botMSGControl", "0");
-            }
-
-            if (Reg.regKey_Read(keyName, "weatherUnits") == "")
-            {
-                Reg.regKey_CreateKey(keyName, "weatherUnits", "0");
-            }
-
-            if (Reg.regKey_Read(keyName, "Menu") == "")
-            {
-                Reg.regKey_CreateKey(keyName, "Menu", "0");
-            }
-
-            if (Reg.regKey_Read(keyName, "randomC") == "")
-            {
-                Reg.regKey_CreateKey(keyName, "randomC", "0");
-            }
-
-            if (Reg.regKey_Read(keyName, "rTime") == "")
-            {
-                Reg.regKey_CreateKey(keyName, "rTime", "0");
-            }
-
-            if (Reg.regKey_Read(keyName, "ytRequest") == "")
-            {
-                Reg.regKey_CreateKey(keyName, "ytRequest", "0");
-            }
-            
-            //-----------------------------------------
-
-
-            #region Load and display username, streamkey and dark mode control from registry
-
-            t_userName = Reg.regKey_Read(keyName, "UserName");
-
-            try
-            {
-
-                t_streamKey = Encryption._decryptData(Reg.regKey_Read(keyName, "StreamKey"));
-            }
-            catch (Exception x)
-            {
-                CLog.LogWriteError("oAuth decrypt error: " + x.ToString());
-                t_streamKey = "error_key";
-            }
-
-
-            botMSGKey = Reg.regKey_Read(keyName, "BotMSG");
-            timeBan = Int32.Parse(Reg.regKey_Read(keyName, "WordBanTime"));
-            bWord = Reg.regKey_Read(keyName, "BadWord");
-            apiKey = Reg.regKey_Read(keyName, "WeatherAPIKey");
-            ytControl = Reg.regKey_Read(keyName, "YTControl");
-            weatherKey = Reg.regKey_Read(keyName, "WeatherMSG");
-            YtWin = Reg.regKey_Read(keyName, "YtWin");
-            StartMessage = Reg.regKey_Read(keyName, "StartMessage");
-            YtLink = Reg.regKey_Read(keyName, "YtLink");
-            botMSGControl = Reg.regKey_Read(keyName, "botMSGControl");
-            weatherUnits = Reg.regKey_Read(keyName, "weatherUnits");
-            menuStatus = Reg.regKey_Read(keyName, "Menu");
-            randomC = Reg.regKey_Read(keyName, "randomC");
-            rTime = Reg.regKey_Read(keyName, "rTime");
-            ytRequest = Reg.regKey_Read(keyName, "ytRequest");
-            #endregion
-
-
-            //Menu state check and apply
-            if (menuStatus == "1")
-            {
-                GridMenu.Width = 199;
-                btnOpenMenu.Visibility = Visibility.Collapsed;
-                btnCloseMenu.Visibility = Visibility.Visible;
-                startBotBTN.Visibility = Visibility.Visible;
-                logViewRTB.Margin = new Thickness(199, 50, 0, 0);
-
-            }
-            else
-            {
-                GridMenu.Width = 50;
-                logViewRTB.Margin = new Thickness(50, 50, 0, 0);
-                btnOpenMenu.Visibility = Visibility.Visible;
-                btnCloseMenu.Visibility = Visibility.Collapsed;
-                startBotBTN.Visibility = Visibility.Hidden;
-
-            }
-            //---------------------------------
-
-
-            //staus check timer declaration
-            dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
-            dispatcherTimer.Tick += StatusLoadIcon;
-            dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
+            // Staus check timer declaration
+            DispatcherTimer = new System.Windows.Threading.DispatcherTimer();
+            DispatcherTimer.Tick += StatusLoadIcon;
+            DispatcherTimer.Interval = new TimeSpan(0, 0, 1);
             //----------------------------------
 
             //timer declaration for random message send
-            dispatcherTimerR = new System.Windows.Threading.DispatcherTimer();
-            dispatcherTimerR.Tick += randomMessage;
-            if (Convert.ToInt32(rTime) > 0)
+            DispatcherTimerR = new System.Windows.Threading.DispatcherTimer();
+            DispatcherTimerR.Tick += RandomMessage;
+            if (Convert.ToInt32(s_RTime) > 0)
             {
                 // logWrite(Convert.ToInt32(rTime).ToString());
-                dispatcherTimerR.Interval = new TimeSpan(0, Convert.ToInt32(rTime), 0);
+                DispatcherTimerR.Interval = new TimeSpan(0, Convert.ToInt32(s_RTime), 0);
             }
             else
             {
-                dispatcherTimerR.Interval = new TimeSpan(0, 10, 0);
+                DispatcherTimerR.Interval = new TimeSpan(0, 10, 0);
             }
-            dispatcherTimerR.Stop();
+            DispatcherTimerR.Stop();
             //----------------------------------
 
-            //reset Youtube Controler/request song and window on bot start in case of cras
-            Reg.regKey_WriteSubkey(keyName, "YTControl", "0");
-            Reg.regKey_WriteSubkey(keyName, "YtWin", "0");
-           // Reg.regKey_WriteSubkey(keyName, "ytRequest", "0");
+            //reset Youtube Controler/request song and window on bot start in case of crash
+            Reg.regKey_WriteSubkey(s_KeyName, "YTControl", "0");
+            Reg.regKey_WriteSubkey(s_KeyName, "YtWin", "0");
             //-----------------------------------
 
             //load connection icon
@@ -440,35 +222,29 @@ namespace xBot_WPF
             });
             //---------------------------------
 
-            //load playlist/ and qlist and titles for song request command
-            playListLoad();
-            queueListLoad();
-            //---------------------------------
-
             //read mods from file
-            if (File.Exists(modFile))
+            if (File.Exists(s_ModsFile))
             {
-                mods = File.ReadAllLines(modFile);
+                s_Mods = File.ReadAllLines(s_ModsFile);
             }
             //-----------------------------------
 
         }
 
 
+
         /// <summary>
-        /// Check aplication start instace and close if is already opened
+        /// Check aplication start instace and close if is already opened.
         /// </summary>
         private void Application_Startup()
         {
-            bool aIsNewInstance = false;
-            myMutex = new Mutex(true, "xBot", out aIsNewInstance);
+            MyMutex = new Mutex(true, "xBot", out bool aIsNewInstance);
             if (!aIsNewInstance)
             {
                 System.Windows.Forms.MessageBox.Show("xBot is already running...");
                 App.Current.Shutdown();
             }
         }
-
 
 
         /// <summary>
@@ -486,7 +262,6 @@ namespace xBot_WPF
                     logViewRTB.ScrollToEnd();
                 }
             });
-
         }
 
 
@@ -503,10 +278,10 @@ namespace xBot_WPF
                 logViewRTB.Document.Blocks.Clear();
             });
 
-            date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
-            logWrite("[" + date + "] xBot connecting to " + t_userName + " channel....");
+            s_Date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+            logWrite("[" + s_Date + "] xBot connecting to " + s_UserName + " channel....");
 
-            ConnectionCredentials credentials = new ConnectionCredentials(t_userName, t_streamKey, null, true);
+            ConnectionCredentials credentials = new ConnectionCredentials(s_UserName, s_StreamKey, null, true);
             var clientOptions = new ClientOptions
             {
                 MessagesAllowedInPeriod = 750,
@@ -514,7 +289,7 @@ namespace xBot_WPF
             };
             WebSocketClient customClient = new WebSocketClient(clientOptions);
             client = new TwitchClient(customClient);
-            client.Initialize(credentials, t_userName);
+            client.Initialize(credentials, s_UserName);
             client.OnJoinedChannel += Client_OnJoinedChannel;
             client.OnMessageReceived += Client_OnMessageReceived;
             client.OnNewSubscriber += Client_OnNewSubscriber;
@@ -525,21 +300,19 @@ namespace xBot_WPF
             client.OnBeingHosted += Client_OnBeingHosted; //enabled for test only
             client.AutoReListenOnException = true;
             client.Connect();
-        
+
             //we check if bot is connected and display the log info
             if (client.IsConnected)
             {
-                logWrite("[" + date + "] xBot Connected to " + t_userName + " channel !");
-                Thread.Sleep(1);
+                logWrite("[" + s_Date + "] xBot Connected to " + s_UserName + " channel !");
+                Task.Delay(2);
                 this.Dispatcher.Invoke(() =>
                 {
                     statIMG.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/green_dot.png"));
 
                     startBotBTN.Content = "STOP";
                 });
-
             }
-
         }
 
         /// <summary>
@@ -550,8 +323,8 @@ namespace xBot_WPF
             if (client.IsConnected)
             {
                 client.Disconnect();
-                dispatcherTimer.Stop();
-                dispatcherTimerR.Stop();
+                DispatcherTimer.Stop();
+                DispatcherTimerR.Stop();
                 this.Dispatcher.Invoke(() =>
                 {
                     statIMG.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/red_dot.png"));
@@ -559,16 +332,16 @@ namespace xBot_WPF
             }
             if (!client.IsConnected)
             {
-                date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
-                logWrite("[" + date + "] xBot Disconncted!");
-                CLog.LogWrite("[" + date + "] xBot Disconncted!");
+                s_Date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+                logWrite("[" + s_Date + "] xBot Disconncted!");
+                CLog.LogWrite("[" + s_Date + "] xBot Disconncted!");
                 startBotBTN.Content = "START";
 
                 //reset viewers/new subs counter
-                Viewers = 0;
+                s_Viewers = 0;
                 viewersLbL.Content = "0";
 
-                SubsCount = 0;
+                s_SubsCount = 0;
                 subsLbL.Content = "0";
                 //---------------------
             }
@@ -588,52 +361,72 @@ namespace xBot_WPF
         */
 
 
+        // We write log in RTB/File/Both
+        private void FullLogWrite(string logData, LogTypeArg type)
+        {
+            switch (type)
+            {
+                case LogTypeArg.Display: // Write in display
+                    logWrite(logData);
+                    break;
+                case LogTypeArg.File: // Write in file
+                    CLog.LogWrite(logData);
+                    break;
+                case LogTypeArg.Both: //Write both
+                    logWrite(logData);
+                    CLog.LogWrite(logData);
+                    break;
+            }
+        }
+
+        // We enumerate the types of Log types
+        private enum LogTypeArg
+        {
+            Display = 1,
+            File = 2,
+            Both = 3
+        }
+
         private void Client_OnRaidNotificationArgs(object sender, OnRaidNotificationArgs e)
         {
             client.SendMessage(e.Channel, "We are RAIDED by " + e.RaidNotification.DisplayName + ". Shoutout for @" + e.RaidNotification.DisplayName + " which is also a streamer! https://twitch.tv/" + e.RaidNotification.DisplayName);
-            logWrite("[BOT] We are raided by " + e.RaidNotification.DisplayName);
-            CLog.LogWrite("[BOT] We are raided by " + e.RaidNotification.DisplayName);
+            FullLogWrite("[BOT] We are raided by " + e.RaidNotification.DisplayName, LogTypeArg.Both);
         }
 
-  
-          //disbaled untill we get respons from TwitchLib Devs
-          //enabled for test only
-          private void Client_OnBeingHosted(object sender, OnBeingHostedArgs e)
-          {
 
-              client.SendMessage(t_userName, e.BeingHostedNotification.Channel + " is hosted with " + e.BeingHostedNotification.Viewers + " viewers by " + e.BeingHostedNotification.HostedByChannel);
-              logWrite("[BOT] " + e.BeingHostedNotification.Channel + " is hosted with " + e.BeingHostedNotification.Viewers + " viewers by " + e.BeingHostedNotification.HostedByChannel);
-              CLog.LogWrite("[BOT] " + e.BeingHostedNotification.Channel + " is hosted with " + e.BeingHostedNotification.Viewers + " viewers by " + e.BeingHostedNotification.HostedByChannel);
+        //disbaled untill we get respons from TwitchLib Devs
+        //enabled for test only
+        private void Client_OnBeingHosted(object sender, OnBeingHostedArgs e)
+        {
+            client.SendMessage(s_UserName, e.BeingHostedNotification.Channel + " is hosted with " + e.BeingHostedNotification.Viewers + " viewers by " + e.BeingHostedNotification.HostedByChannel);
+            FullLogWrite("[BOT] " + e.BeingHostedNotification.Channel + " is hosted with " + e.BeingHostedNotification.Viewers + " viewers by " + e.BeingHostedNotification.HostedByChannel, LogTypeArg.Both);
+        }
 
-          }
-          
         private void Client_OnConnected(object sender, OnConnectedArgs e)
         {
-            date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
-            CLog.LogWrite("[" + date + $"] Connected to {e.AutoJoinChannel} channel !");
+            s_Date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+            FullLogWrite("[" + s_Date + $"] Connected to {e.AutoJoinChannel} channel !", LogTypeArg.File);
         }
 
 
         private void Client_OnJoinedChannel(object sender, OnJoinedChannelArgs e)
         {
-            if (botMSGControl == "1")
+            if (s_BotMSGControl == "1")
             {
-                logWrite("[Bot Start Message]: " + StartMessage);
-                CLog.LogWrite("[Bot Start Message]: " + StartMessage);
-                client.SendMessage(e.Channel, StartMessage);
+                client.SendMessage(e.Channel, s_StartMessage);
+                FullLogWrite("[Bot Start Message]: " + s_StartMessage, LogTypeArg.Both);
             }
         }
 
-       
 
-        private void Client_OnMessageReceived(object sender, OnMessageReceivedArgs e)
+
+        private async void Client_OnMessageReceived(object sender, OnMessageReceivedArgs e)
         {
             //Display in logwindow the chat messages
             string date2 = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             if (e.ChatMessage.Message.Length > 0)
             {
-                logWrite("[" + date2 + "] " + e.ChatMessage.Username + " : " + e.ChatMessage.Message);
-                CLog.LogWrite("[" + date2 + "] " + e.ChatMessage.Username + " : " + e.ChatMessage.Message);
+                FullLogWrite("[" + date2 + "] " + e.ChatMessage.Username + " : " + e.ChatMessage.Message, LogTypeArg.Both);
             }
             //--------------------------------------------
 
@@ -648,11 +441,11 @@ namespace xBot_WPF
                 string line;
                 while ((line = sReader.ReadLine()) != null)
                 {
-                   
+
                     if (line.StartsWith("!update"))
                     {
                         List<string> mod = new List<string>();
-                        foreach (var m in mods)
+                        foreach (var m in s_Mods)
                         {
                             if (m.Length > 0)
                             {
@@ -662,10 +455,10 @@ namespace xBot_WPF
 
                         string modList = string.Join("|", mod);
 
-                        if (modList.Contains(e.ChatMessage.Username) || e.ChatMessage.Username == t_userName)
+                        if (modList.Contains(e.ChatMessage.Username) || e.ChatMessage.Username == s_UserName)
                         {
-                            string cmd_lst = File.ReadAllText(comDirectory);
-                            string[] cmd_lineA = File.ReadAllLines(comDirectory);
+                            string cmd_lst = File.ReadAllText(s_ComDirectory);
+                            string[] cmd_lineA = File.ReadAllLines(s_ComDirectory);
                             List<string> fList = new List<string>();
                             //Grab only comands list not the message 
                             List<string> clst = new List<string>();
@@ -682,7 +475,7 @@ namespace xBot_WPF
                             //------------------------------------
 
                             string[] command = e.ChatMessage.Message.Split('-');
-                            string finalCommand=string.Empty;
+                            string finalCommand = string.Empty;
                             try
                             {
                                 date2 = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
@@ -703,30 +496,26 @@ namespace xBot_WPF
                                             finalCommand = command[1] + ":" + command[2];
                                             fList.Add(finalCommand);
                                             string FinalCommandList = string.Join(Environment.NewLine, fList);
-                                            File.WriteAllText(comDirectory, FinalCommandList);
-                                            logWrite("[" + date2 + "] Command " + command[1] + " was updated by " + e.ChatMessage.Username);
-                                            CLog.LogWrite("[" + date2 + "] Command " + command[1] + " was updated by " + e.ChatMessage.Username);
+                                            File.WriteAllText(s_ComDirectory, FinalCommandList);
+                                            FullLogWrite("[" + date2 + "] Command " + command[1] + " was updated by " + e.ChatMessage.Username, LogTypeArg.Both);
                                             client.SendMessage(e.ChatMessage.Channel, "Command " + command[1] + " was updated by " + e.ChatMessage.Username);
                                         }
                                         else
                                         {
-                                            logWrite("@" + e.ChatMessage.Username + ", the command you want to update must start with character: ! ");
-                                            CLog.LogWrite("@" + e.ChatMessage.Username + ", the command you want to update must start with character: ! ");
+                                            FullLogWrite("@" + e.ChatMessage.Username + ", the command you want to update must start with character: ! ", LogTypeArg.Both);
                                             client.SendMessage(e.ChatMessage.Channel, "@" + e.ChatMessage.Username + ", the command you want to update must start with character: ! ");
                                         }
                                     }
                                     else
                                     {
-                                        logWrite("[" + date2 + "] @" + e.ChatMessage.Username + ", command message should not contain following characters: !, :, -");
-                                        CLog.LogWrite("[" + date2 + "] @" + e.ChatMessage.Username + ", command message should not contain following characters: !, :, -");
+                                        FullLogWrite("[" + date2 + "] @" + e.ChatMessage.Username + ", command message should not contain following characters: !, :, -", LogTypeArg.Both);
                                         client.SendMessage(e.ChatMessage.Channel, "@" + e.ChatMessage.Username + ", command message should not contain following characters: !, :, -");
                                     }
 
                                 }
                                 else
                                 {
-                                    logWrite("[" + date2 + "] @" + e.ChatMessage.Username + ", command " + command[1] + " dose not exist!");
-                                    CLog.LogWrite("[" + date2 + "] @" + e.ChatMessage.Username + ", command " + command[1] + " dose not exist!");
+                                    FullLogWrite("[" + date2 + "] @" + e.ChatMessage.Username + ", command " + command[1] + " dose not exist!", LogTypeArg.Both);
                                     client.SendMessage(e.ChatMessage.Channel, "@" + e.ChatMessage.Username + ", command " + command[1] + " dose not exist!");
                                 }
                             }
@@ -741,7 +530,7 @@ namespace xBot_WPF
                     {
 
                         List<string> mod = new List<string>();
-                        foreach (var m in mods)
+                        foreach (var m in s_Mods)
                         {
                             if (m.Length > 0)
                             {
@@ -751,11 +540,11 @@ namespace xBot_WPF
 
                         string modList = string.Join("|", mod);
 
-                        if (modList.Contains(e.ChatMessage.Username) || e.ChatMessage.Username == t_userName)
+                        if (modList.Contains(e.ChatMessage.Username) || e.ChatMessage.Username == s_UserName)
                         {
 
-                            string cmd_lst = File.ReadAllText(comDirectory);
-                            string[] cmd_lineA = File.ReadAllLines(comDirectory);
+                            string cmd_lst = File.ReadAllText(s_ComDirectory);
+                            string[] cmd_lineA = File.ReadAllLines(s_ComDirectory);
                             List<string> fList = new List<string>();
                             //Grab only comands list not the message 
                             List<string> clst = new List<string>();
@@ -768,7 +557,6 @@ namespace xBot_WPF
                                     fList.Add(lineC);
                                 }
                             }
-
                             //------------------------------------
 
                             string[] command = e.ChatMessage.Message.Split('-');
@@ -786,30 +574,26 @@ namespace xBot_WPF
                                             finalCommand = command[1] + ":" + command[2];
                                             fList.Add(finalCommand);
                                             string FinalCommandList = string.Join(Environment.NewLine, fList);
-                                            File.WriteAllText(comDirectory, FinalCommandList);
-                                            logWrite("[" + date2 + "] Command " + command[1] + " was created by " + e.ChatMessage.Username);
-                                            CLog.LogWrite("[" + date2 + "] Command " + command[1] + " was created by " + e.ChatMessage.Username);
+                                            File.WriteAllText(s_ComDirectory, FinalCommandList);
+                                            FullLogWrite("[" + date2 + "] Command " + command[1] + " was created by " + e.ChatMessage.Username, LogTypeArg.Both);
                                             client.SendMessage(e.ChatMessage.Channel, "Command " + command[1] + " was created by " + e.ChatMessage.Username);
                                         }
                                         else
                                         {
-                                            logWrite("@" + e.ChatMessage.Username + ", the command you want to created must start with character: ! ");
-                                            CLog.LogWrite("@" + e.ChatMessage.Username + ", the command you want to created must start with character: ! ");
+                                            FullLogWrite("@" + e.ChatMessage.Username + ", the command you want to created must start with character: ! ", LogTypeArg.Display);
                                             client.SendMessage(e.ChatMessage.Channel, "@" + e.ChatMessage.Username + ", the command you want to create must start with character: ! ");
                                         }
                                     }
                                     else
                                     {
-                                        logWrite("[" + date2 + "] @" + e.ChatMessage.Username + ", command message should not contain following characters: !, :, -");
-                                        CLog.LogWrite("[" + date2 + "] @" + e.ChatMessage.Username + ", command message should not contain following characters: !, :, -");
+                                        FullLogWrite("[" + date2 + "] @" + e.ChatMessage.Username + ", command message should not contain following characters: !, :, -", LogTypeArg.Both);
                                         client.SendMessage(e.ChatMessage.Channel, "@" + e.ChatMessage.Username + ", command message should not contain following characters: !, :, -");
                                     }
 
                                 }
                                 else
                                 {
-                                    logWrite("[" + date2 + "] @" + e.ChatMessage.Username + ", command " + command[1] + " already exist!");
-                                    CLog.LogWrite("[" + date2 + "] @" + e.ChatMessage.Username + ", command " + command[1] + " already exist!");
+                                    FullLogWrite("[" + date2 + "] @" + e.ChatMessage.Username + ", command " + command[1] + " already exist!", LogTypeArg.Both);
                                     client.SendMessage(e.ChatMessage.Channel, "@" + e.ChatMessage.Username + ", command " + command[1] + " already exist!");
                                 }
                             }
@@ -823,7 +607,7 @@ namespace xBot_WPF
                     else if (line.StartsWith("!delete"))
                     {
                         List<string> mod = new List<string>();
-                        foreach (var m in mods)
+                        foreach (var m in s_Mods)
                         {
                             if (m.Length > 0)
                             {
@@ -833,11 +617,11 @@ namespace xBot_WPF
 
                         string modList = string.Join("|", mod);
 
-                        if (modList.Contains(e.ChatMessage.Username) || e.ChatMessage.Username == t_userName)
+                        if (modList.Contains(e.ChatMessage.Username) || e.ChatMessage.Username == s_UserName)
                         {
 
-                            string cmd_lst = File.ReadAllText(comDirectory);
-                            string[] cmd_lineA = File.ReadAllLines(comDirectory);
+                            string cmd_lst = File.ReadAllText(s_ComDirectory);
+                            string[] cmd_lineA = File.ReadAllLines(s_ComDirectory);
                             List<string> fList = new List<string>();
                             //Grab only comands list not the message 
                             List<string> clst = new List<string>();
@@ -854,7 +638,6 @@ namespace xBot_WPF
                             //------------------------------------
 
                             string[] command = e.ChatMessage.Message.Split('-');
-                            string finalCommand;
                             try
                             {
                                 date2 = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
@@ -871,24 +654,19 @@ namespace xBot_WPF
                                     if (command[1].StartsWith("!"))
                                     {
                                         string FinalCommandList = string.Join(Environment.NewLine, fList);
-                                        File.WriteAllText(comDirectory, FinalCommandList);
-                                        logWrite("[" + date2 + "] Command " + command[1] + " was deleted by " + e.ChatMessage.Username);
-                                        CLog.LogWrite("[" + date2 + "] Command " + command[1] + " was deleted by " + e.ChatMessage.Username);
+                                        File.WriteAllText(s_ComDirectory, FinalCommandList);
+                                        FullLogWrite("[" + date2 + "] Command " + command[1] + " was deleted by " + e.ChatMessage.Username, LogTypeArg.Both);
                                         client.SendMessage(e.ChatMessage.Channel, "Command " + command[1] + " was deleted by " + e.ChatMessage.Username);
                                     }
                                     else
                                     {
-                                        logWrite("@" + e.ChatMessage.Username + ", the command you want to delete must start with character: ! ");
-                                        CLog.LogWrite("@" + e.ChatMessage.Username + ", the command you want to delete must start with character: ! ");
+                                        FullLogWrite("@" + e.ChatMessage.Username + ", the command you want to delete must start with character: ! ", LogTypeArg.Display);
                                         client.SendMessage(e.ChatMessage.Channel, "@" + e.ChatMessage.Username + ", the command you want to delete must start with character: ! ");
                                     }
-
-
                                 }
                                 else
                                 {
-                                    logWrite("[" + date2 + "] @" + e.ChatMessage.Username + ", command " + command[1] + " dose not exist!");
-                                    CLog.LogWrite("[" + date2 + "] @" + e.ChatMessage.Username + ", command " + command[1] + " dose not exist!");
+                                    FullLogWrite("[" + date2 + "] @" + e.ChatMessage.Username + ", command " + command[1] + " dose not exist!", LogTypeArg.Both);
                                     client.SendMessage(e.ChatMessage.Channel, "@" + e.ChatMessage.Username + ", command " + command[1] + " dose not exist!");
                                 }
                             }
@@ -907,38 +685,36 @@ namespace xBot_WPF
 
             //on bad word/spam received (chat ban or user ban)
 
-            if (bWord == "1")
+            if (s_BadWord == "1")
             {
 
-                badWordList = File.ReadAllLines(badWordDir);
-                foreach (var bad in badWordList)//here we check every bad word from list
+                s_BadWordList = File.ReadAllLines(s_BadWordDir);
+                foreach (var bad in s_BadWordList)//here we check every bad word from list
                 {
                     if (bad.Length > 0)
                     {
                         if (e.ChatMessage.Message.Contains(bad))
                         {
-                            client.TimeoutUser(e.ChatMessage.Channel, e.ChatMessage.Username, TimeSpan.FromMinutes(timeBan), "Bad word ban! " + Convert.ToString(timeBan) + " minute(s) timeout!");
-                            logWrite(e.ChatMessage.Channel + " | " + e.ChatMessage.Username + " | " + TimeSpan.FromMinutes(timeBan) + " | " + "[BOT] Bad word ban! " + Convert.ToString(timeBan) + " minute(s) timeout!");
-                            CLog.LogWrite(e.ChatMessage.Channel + " | " + e.ChatMessage.Username + " | " + TimeSpan.FromMinutes(timeBan) + " | " + "[BOT] Bad word ban! " + Convert.ToString(timeBan) + " minute(s) timeout!");
+                            FullLogWrite(e.ChatMessage.Channel + " | " + e.ChatMessage.Username + " | " + TimeSpan.FromMinutes(_TimeBan) + " | " + "[BOT] Bad word ban! " + Convert.ToString(_TimeBan) + " minute(s) timeout!", LogTypeArg.Both);
+                            client.TimeoutUser(e.ChatMessage.Channel, e.ChatMessage.Username, TimeSpan.FromMinutes(_TimeBan), "Bad word ban! " + Convert.ToString(_TimeBan) + " minute(s) timeout!");
                         }
                     }
                 }
 
             }
-            if (bWord == "2")
+            if (s_BadWord == "2")
             {
-               
-                badWordList = File.ReadAllLines(badWordDir);
-                foreach (var bad in badWordList)//here we check every bad word from list
+
+                s_BadWordList = File.ReadAllLines(s_BadWordDir);
+                foreach (var bad in s_BadWordList)//here we check every bad word from list
                 {
                     if (bad.Length > 0)
                     {
                         if (e.ChatMessage.Message.Contains(bad))
                         {
-                            date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+                            s_Date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
                             client.BanUser(e.ChatMessage.Channel, e.ChatMessage.Username, "Spam message!");
-                            logWrite("[" + date + "][BOT] User banned: " + e.ChatMessage.Username);
-                            CLog.LogWrite("[" + date + "][BOT] User banned: " + e.ChatMessage.Username);
+                            FullLogWrite("[" + s_Date + "][BOT] User banned: " + e.ChatMessage.Username, LogTypeArg.Both);
                         }
                     }
                 }
@@ -947,8 +723,8 @@ namespace xBot_WPF
             //-----------------------------------------------
 
             //on command received
-            comandList = File.ReadAllLines(comDirectory);
-            foreach (var com in comandList)
+            s_ComandList = File.ReadAllLines(s_ComDirectory);
+            foreach (var com in s_ComandList)
             {
                 if (com.Length > 0)
                 {
@@ -966,7 +742,7 @@ namespace xBot_WPF
             //-------------------------------------------------
 
             //help message display
-            string[] cmdList = File.ReadAllLines(comDirectory);
+            string[] cmdList = File.ReadAllLines(s_ComDirectory);
             string listCMD;
             List<string> lst = new List<string>();
             foreach (var line in cmdList)
@@ -978,13 +754,12 @@ namespace xBot_WPF
                 }
             }
             listCMD = string.Join("; ", lst);
-            if (weatherKey == "1")// we check if weather command is activated and set
+            if (s_WeatherKey == "1")// we check if weather command is activated and set
             {
                 if (e.ChatMessage.Message == "!help")
                 {
                     client.SendMessage(e.ChatMessage.Channel, "List of commands is: " + listCMD + "; !yt; !weather; !time, !8ball");
-                    logWrite("[BOT] List of commands is: " + listCMD + "; !yt; !weather; !time, !8ball");
-                    CLog.LogWrite("[BOT] List of commands is: " + listCMD + "; !yt; !weather; !time, !8ball ");
+                    FullLogWrite("[BOT] List of commands is: " + listCMD + "; !yt; !weather; !time, !8ball", LogTypeArg.Both);
                 }
             }
             else
@@ -992,8 +767,7 @@ namespace xBot_WPF
                 if (e.ChatMessage.Message == "!help")
                 {
                     client.SendMessage(e.ChatMessage.Channel, "List of commands is: " + listCMD + "; !yt; !time, !8ball ");
-                    logWrite("[BOT] List of commands is: " + listCMD + "; !yt; !time, !8ball ");
-                    CLog.LogWrite("[BOT] List of commands is: " + listCMD + "; !yt; !time, !8ball ");
+                    FullLogWrite("[BOT] List of commands is: " + listCMD + "; !yt; !time, !8ball ", LogTypeArg.Both);
                 }
             }
             //----------------------------
@@ -1001,14 +775,14 @@ namespace xBot_WPF
             //shout streamer commad
             using (var sReader = new StringReader(e.ChatMessage.Message))
             {
-              
+
                 string line;
                 while ((line = sReader.ReadLine()) != null)
                 {
-                    if (line.StartsWith("!so"))
+                    if (line.StartsWith("!so") && !line.Contains("sorry")) //fixing the !sorry command 
                     {
-                        List<string> mod=new List<string>();
-                        foreach(var m in mods)
+                        List<string> mod = new List<string>();
+                        foreach (var m in s_Mods)
                         {
                             if (m.Length > 0)
                             {
@@ -1016,7 +790,7 @@ namespace xBot_WPF
                             }
                         }
                         string modList = string.Join("|", mod);
-                        if (modList.Contains(e.ChatMessage.Username) || e.ChatMessage.Username == t_userName)
+                        if (modList.Contains(e.ChatMessage.Username) || e.ChatMessage.Username == s_UserName)
                         {
                             string[] lS = line.Split('@');
                             try
@@ -1024,27 +798,24 @@ namespace xBot_WPF
                                 if (lS[1].Length > 0)
                                 {
                                     client.SendMessage(e.ChatMessage.Channel, "Shoutout for @" + lS[1] + " which is also a streamer! https://twitch.tv/" + lS[1]);
-                                    logWrite("[BOT] Shoutout for @" + lS[1] + " which is also a streamer! https://twitch.tv/" + lS[1]);
-                                    CLog.LogWrite("[BOT] Shoutout for @" + lS[1] + " which is also a streamer! https://twitch.tv/" + lS[1]);
+                                    FullLogWrite("[BOT] Shoutout for @" + lS[1] + " which is also a streamer! https://twitch.tv/" + lS[1], LogTypeArg.Both);
                                 }
                                 else
                                 {
                                     client.SendMessage(e.ChatMessage.Channel, "You must add the name of streamer for shoutout with @ character!");
-                                    logWrite("[BOT] You must add the name of streamer for shoutout with @ character!");
-                                    CLog.LogWrite("[BOT] You must add the name of streamer for shoutout with @ character!");
+                                    FullLogWrite("[BOT] You must add the name of streamer for shoutout with @ character!", LogTypeArg.Both);
                                 }
                             }
                             catch
                             {
                                 client.SendMessage(e.ChatMessage.Channel, "[BOT] You must add the name of streamer for shoutout with @ character!");
-                                logWrite("[BOT] You must add the name of streamer for shoutout with @ character!");
+                                FullLogWrite("[BOT] You must add the name of streamer for shoutout with @ character!", LogTypeArg.Display);
                             }
                         }
                         else
                         {
-                            client.SendMessage(e.ChatMessage.Channel, "Only @" + t_userName + " and moderators can use the !so command!");
-                            logWrite("[BOT] Only @" + t_userName + " and moderators can use the !so command!");
-                            CLog.LogWrite("[BOT] Only @" + t_userName + " and moderators can use the !so command!");
+                            client.SendMessage(e.ChatMessage.Channel, "Only @" + s_UserName + " and moderators can use the !so command!");
+                            FullLogWrite("[BOT] Only @" + s_UserName + " and moderators can use the !so command!", LogTypeArg.Both);
                         }
                     }
 
@@ -1062,7 +833,7 @@ namespace xBot_WPF
                     if (line.StartsWith("!gl"))
                     {
                         List<string> mod = new List<string>();
-                        foreach (var m in mods)
+                        foreach (var m in s_Mods)
                         {
                             if (m.Length > 0)
                             {
@@ -1070,7 +841,7 @@ namespace xBot_WPF
                             }
                         }
                         string modList = string.Join("|", mod);
-                        if (modList.Contains(e.ChatMessage.Username) || e.ChatMessage.Username == t_userName)
+                        if (modList.Contains(e.ChatMessage.Username) || e.ChatMessage.Username == s_UserName)
                         {
                             string[] lS = line.Split('@');
                             try
@@ -1078,27 +849,24 @@ namespace xBot_WPF
                                 if (lS[1].Length > 0)
                                 {
                                     client.SendMessage(e.ChatMessage.Channel, e.ChatMessage.Username + " wishes " + lS[1] + " good luck. May you succeed in whatever you're planning to do!");
-                                    logWrite("[BOT] " + e.ChatMessage.Username + " wishes " + lS[1] + " good luck. May you succeed in whatever you're planning to do!");
-                                    CLog.LogWrite("[BOT] " + e.ChatMessage.Username + " wishes " + lS[1] + " good luck. May you succeed in whatever you're planning to do!");
+                                    FullLogWrite("[BOT] " + e.ChatMessage.Username + " wishes " + lS[1] + " good luck. May you succeed in whatever you're planning to do!", LogTypeArg.Both);
                                 }
                                 else
                                 {
                                     client.SendMessage(e.ChatMessage.Channel, "You must add the name of chatter for good luck command with @ character!");
-                                    logWrite("[BOT] You must add the name of chatter for good luck command with @ character!");
-                                    CLog.LogWrite("[BOT] You must add the name of chatter for good luck command with @ character!");
+                                    FullLogWrite("[BOT] You must add the name of chatter for good luck command with @ character!", LogTypeArg.Both);
                                 }
                             }
                             catch
                             {
                                 client.SendMessage(e.ChatMessage.Channel, "[BOT] You must add the name of chatter for good luck command with @ character!");
-                                logWrite("[BOT] You must add the name of chatter for good luck command with @ character!");
+                                FullLogWrite("[BOT] You must add the name of chatter for good luck command with @ character!", LogTypeArg.Display);
                             }
                         }
                         else
                         {
-                            client.SendMessage(e.ChatMessage.Channel, "Only @" + t_userName + " can use the !gl command!");
-                            logWrite("[BOT] Only @" + t_userName + " can use the !gl command!");
-                            CLog.LogWrite("[BOT] Only @" + t_userName + " can use the !gl command!");
+                            client.SendMessage(e.ChatMessage.Channel, "Only @" + s_UserName + " can use the !gl command!");
+                            FullLogWrite("[BOT] Only @" + s_UserName + " can use the !gl command!", LogTypeArg.Both);
                         }
                     }
                 }
@@ -1106,10 +874,10 @@ namespace xBot_WPF
             //----------------------------
 
             //timezone data display 
-            weatheCond = e.ChatMessage.Message;
+            s_WeatheCond = e.ChatMessage.Message;
             try
             {
-                string[] we = weatheCond.Split(' ');
+                string[] we = s_WeatheCond.Split(' ');
                 string cn1 = string.Empty;
                 string cn2 = string.Empty;
                 if (we[0].StartsWith("!time"))
@@ -1118,39 +886,32 @@ namespace xBot_WPF
                     cn2 = we[2]; //grab City Name
                     if (cn1.Length > 0 && cn2.Length > 0)
                     {
-
                         client.SendMessage(e.ChatMessage.Channel, "The time in " + cn2 + " (" + cn1 + ") is:" + Environment.NewLine + TimeZone(cn1, cn2));
-                        logWrite("[BOT] The time in " + cn2 + " (" + cn1 + ") is:" + Environment.NewLine + TimeZone(cn1, cn2));
-                        CLog.LogWrite("[BOT] The time in " + cn2 + " (" + cn1 + ") is:" + Environment.NewLine + TimeZone(cn1, cn2));
-
-
+                        FullLogWrite("[BOT] The time in " + cn2 + " (" + cn1 + ") is:" + Environment.NewLine + TimeZone(cn1, cn2), LogTypeArg.Both);
                     }
                     else
                     {
                         client.SendMessage(e.ChatMessage.Channel, "The time command should look like this: !time Continet City_Name");
-                        logWrite("[BOT] The time command should look like this: !time Continet City_Name");
-                        CLog.LogWrite("[BOT] The time command should look like this: !time Continet City_Name");
+                        FullLogWrite("[BOT] The time command should look like this: !time Continet City_Name", LogTypeArg.Both);
                     }
                 }
             }
             catch
             {
                 client.SendMessage(e.ChatMessage.Channel, "The time command should look like this: !time Continet City_Name. Or some information is wrong. Only Cities avaible on http://worldtimeapi.org are displyed!");
-                logWrite("[BOT] The time command should look like this: !time Continet City_Name. Or some information is wrong.  Only Cities avaible on http://worldtimeapi.org are displyed!");
-               
+                FullLogWrite("[BOT] The time command should look like this: !time Continet City_Name. Or some information is wrong.  Only Cities avaible on http://worldtimeapi.org are displyed!", LogTypeArg.Display);
             }
 
             //----------------------------
 
             //!yt command display play link
 
-            if (ytControl == "1")
+            if (s_YtControl == "1")
             {
                 if (e.ChatMessage.Message == "!yt")
                 {
-                    client.SendMessage(e.ChatMessage.Channel, "Now playing: " + YtLink);
-                    logWrite("[BOT] Now playing: " + YtLink);
-                    CLog.LogWrite("[BOT] Now playing: " + YtLink);
+                    client.SendMessage(e.ChatMessage.Channel, "Now playing: " + s_YtLink);
+                    FullLogWrite("[BOT] Now playing: " + s_YtLink, LogTypeArg.Both);
                 }
             }
             else
@@ -1158,29 +919,26 @@ namespace xBot_WPF
                 if (e.ChatMessage.Message == "!yt")
                 {
                     client.SendMessage(e.ChatMessage.Channel, "Nothing playing at the moment! ");
-                    logWrite("[BOT] Nothing playing at the moment! ");
-                    CLog.LogWrite("[BOT] Nothing playing at the moment! ");
+                    FullLogWrite("[BOT] Nothing playing at the moment! ", LogTypeArg.Both);
                 }
             }
             //----------------------------
 
 
             //!playlist command
-            if (ytRequest == "1")
+            if (s_ytRequest == "1")
             {
 
                 if (e.ChatMessage.Message == "!playlist")
                 {
-                    playListLoad();//we reload the playlist to catch the new songs added
-                    string pOut = string.Join("", pList);
+                    await PlayListLoad();//we reload the playlist to catch the new songs added
+                    string pOut = string.Join("", PList);
                     client.SendMessage(e.ChatMessage.Username, "Current playlist: " + Environment.NewLine + pOut + Environment.NewLine);
-                    logWrite("[BOT] Current playlist: " + Environment.NewLine + pOut);
-                    CLog.LogWrite("[BOT] Current playlist: " + Environment.NewLine + pOut);
-
+                    FullLogWrite("[BOT] Current playlist: " + Environment.NewLine + pOut, LogTypeArg.Both);
                 }
 
 
-           
+
                 if (e.ChatMessage.Message.StartsWith("!rsong"))
                 {
                     string sR = e.ChatMessage.Message;
@@ -1188,7 +946,7 @@ namespace xBot_WPF
                     WebClient wClient = new WebClient();
                     try
                     {
-                        foreach (var line in cList)
+                        foreach (var line in CList)
                         {
                             Thread.Sleep(200);//i hope is anty spam
                             string[] s = line.Split('|');
@@ -1204,15 +962,15 @@ namespace xBot_WPF
 
                                 //store the title
                                 string ytTitle = titleParse.Substring(pFrom, pTo - pFrom);
-                                int c = File.ReadAllLines(playListRequest).Count();
+                                int c = File.ReadAllLines(s_PlayListRequest).Count();
                                 int i = c + 1;
-                                File.AppendAllText(playListRequest, i + "|" + s[1]);
+                                File.AppendAllText(s_PlayListRequest, i + "|" + s[1]);
                                 client.SendMessage(e.ChatMessage.Username, "Song added in queue: " + ytTitle);
-                                logWrite("[BOT] Song added in queue: " + ytTitle);
-                                CLog.LogWrite("[BOT] Song added in queue: " + ytTitle);
+                                FullLogWrite("[BOT] Song added in queue: " + ytTitle, LogTypeArg.Both);
                             }
                         }
-                    }catch(Exception ex)
+                    }
+                    catch (Exception ex)
                     {
                         client.SendMessage(e.ChatMessage.Username, "Something went wrong with adding song in queue! ");
                         logWrite("[BOT] Something went wrong with adding song in queue! ");
@@ -1220,18 +978,18 @@ namespace xBot_WPF
                     }
 
 
-                    
+
                 }
                 if (e.ChatMessage.Message.StartsWith("!showrequest"))
                 {
-                    string[] playList = File.ReadAllLines(playListRequest);
+                    string[] playList = File.ReadAllLines(s_PlayListRequest);
 
                     //we clear for reaload of list
-                    qList.Clear();
+                    QList.Clear();
 
                     WebClient wClient = new WebClient();
 
-                    if (File.Exists(playListRequest))
+                    if (File.Exists(s_PlayListRequest))
                     {
 
                         int index = 0;
@@ -1254,7 +1012,7 @@ namespace xBot_WPF
                                     //store the title
                                     string ytTitle = titleParse.Substring(pFrom, pTo - pFrom);
                                     index++;
-                                    qList.Add(index.ToString() + " | " + ytTitle + "  " + Environment.NewLine);
+                                    QList.Add(index.ToString() + " | " + ytTitle + "  " + Environment.NewLine);
                                 }
                                 catch (Exception ex)
                                 {
@@ -1272,19 +1030,16 @@ namespace xBot_WPF
                         index = 0;
                     }
 
-                    if (qList.Count > 0)
+                    if (QList.Count > 0)
                     {
-                        
-                        string pOut = string.Join(" ", qList);
+                        string pOut = string.Join(" ", QList);
                         client.SendMessage(e.ChatMessage.Username, "Request playlist: " + Environment.NewLine + pOut + Environment.NewLine);
-                        logWrite("[BOT] Request playlist: " + Environment.NewLine + pOut);
-                        CLog.LogWrite("[BOT] Request playlist: " + Environment.NewLine + pOut);
+                        FullLogWrite("[BOT] Request playlist: " + Environment.NewLine + pOut, LogTypeArg.Both);
                     }
                     else
                     {
                         client.SendMessage(e.ChatMessage.Username, "There are no songs in request queue!");
-                        logWrite("[BOT] There are no songs in request queue!");
-                        CLog.LogWrite("[BOT] There are no songs in request queue!");
+                        FullLogWrite("[BOT] There are no songs in request queue!", LogTypeArg.Both);
                     }
                 }
 
@@ -1295,7 +1050,7 @@ namespace xBot_WPF
 
 
             //weather data display 
-            if (weatherKey == "1" && apiKey != "")
+            if (s_WeatherKey == "1" && s_ApiKey != "")
             {
                 string timeC = e.ChatMessage.Message;
                 try
@@ -1307,42 +1062,37 @@ namespace xBot_WPF
                         cn = we[1];
                         if (cn.Length > 0)
                         {
-                            if (weatherUnits == "1")
+                            if (s_WeatherUnits == "1")
                             {
-                                client.SendMessage(e.ChatMessage.Channel, "The weather(Celsius) on " + cn + " is:" + Environment.NewLine + weatherForecast(cn));
-                                logWrite("[BOT] The weather(Celsius) in " + cn + " is:" + Environment.NewLine + weatherForecast(cn));
-                                CLog.LogWrite("[BOT] The weather(Celsius) in " + cn + " is:" + Environment.NewLine + weatherForecast(cn));
+                                client.SendMessage(e.ChatMessage.Channel, "The weather(Celsius) on " + cn + " is:" + Environment.NewLine + WeatherForecast(cn));
+                                FullLogWrite("[BOT] The weather(Celsius) in " + cn + " is:" + Environment.NewLine + WeatherForecast(cn), LogTypeArg.Both);
                             }
                             else
                             {
-                                client.SendMessage(e.ChatMessage.Channel, "The weather(Fahrenheit) on " + cn + " is:" + Environment.NewLine + weatherForecast(cn));
-                                logWrite("[BOT] The weather(Fahrenheit) in " + cn + " is:" + Environment.NewLine + weatherForecast(cn));
-                                CLog.LogWrite("[BOT] The weather(Fahrenheit) in " + cn + " is:" + Environment.NewLine + weatherForecast(cn));
-
+                                client.SendMessage(e.ChatMessage.Channel, "The weather(Fahrenheit) on " + cn + " is:" + Environment.NewLine + WeatherForecast(cn));
+                                FullLogWrite("[BOT] The weather(Fahrenheit) in " + cn + " is:" + Environment.NewLine + WeatherForecast(cn), LogTypeArg.Both);
                             }
                         }
                         else
                         {
                             client.SendMessage(e.ChatMessage.Channel, "Weathr not avaible on this City or API Key tries excided!");
-                            logWrite("[BOT] Weathr not avaible on this City or API Key tries excided!");
-                            CLog.LogWrite("[BOT] Weathr not avaible on this City or API Key tries excided!");
+                            FullLogWrite("[BOT] Weathr not avaible on this City or API Key tries excided!", LogTypeArg.Both);
                         }
                     }
                 }
                 catch
                 {
                     client.SendMessage(e.ChatMessage.Channel, "Check the City name please!");
-                    logWrite("[BOT] Check the City name please!");
-
+                    FullLogWrite("[BOT] Check the City name please!", LogTypeArg.Display);
                 }
             }
             else
             {
                 client.SendMessage(e.ChatMessage.Channel, "Weather command is disabled for the moment!");
-                logWrite("[BOT] Weather command is disabled for the moment!");
+                FullLogWrite("[BOT] Weather command is disabled for the moment!", LogTypeArg.Display);
             }
             //----------------------------
-            
+
             //Magic 8Ball game command
             if (e.ChatMessage.Message.StartsWith("!8ball"))
             {
@@ -1350,10 +1100,10 @@ namespace xBot_WPF
                 {
 
                     List<string> randomM = new List<string>();
-                    if (File.Exists(ballAnswer))
+                    if (File.Exists(s_BallAnswer))
                     {
                         bool c = false;
-                        string[] rand_list = File.ReadAllLines(ballAnswer);
+                        string[] rand_list = File.ReadAllLines(s_BallAnswer);
                         foreach (var line in rand_list)
                         {
                             if (line.Length > 0)
@@ -1364,77 +1114,68 @@ namespace xBot_WPF
                             {
                                 if (c == false)
                                 {
-                                    logWrite("[" + date + "][BOT] 8Ball - Answers files is empty! You need to add something");
+                                    FullLogWrite("[" + s_Date + "][BOT] 8Ball - Answers files is empty! You need to add something", LogTypeArg.Display);
                                     c = true;
                                 }
                             }
                         }
-                        int index = r8.Next(randomM.Count);
+                        int index = Random8.Next(randomM.Count);
                         string rand = randomM[index];
-                        date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
-                        logWrite("[" + date + "][BOT] Scott says: " + rand);
+                        s_Date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
                         client.SendMessage(e.ChatMessage.Channel, "Scott says: " + rand);
-                        CLog.LogWrite("[" + date + "][BOT] Scott says: " + rand);
+                        FullLogWrite("[" + s_Date + "][BOT] Scott says: " + rand, LogTypeArg.Both);
                     }
                 }
                 else
                 {
-                    date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
-                    logWrite("[" + date + "][BOT] Your question must contain ? for Scott to answer!");
-                    client.SendMessage(e.ChatMessage.Channel,"Your question must contain ? for Scott to answer!");
-                    CLog.LogWrite("[" + date + "][BOT] Your question must contain ? for Scott to answer!");
-
+                    s_Date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+                    client.SendMessage(e.ChatMessage.Channel, "Your question must contain ? for Scott to answer!");
+                    FullLogWrite("[" + s_Date + "][BOT] Your question must contain ? for Scott to answer!", LogTypeArg.Both);
                 }
             }
             //----------------------------
 
         }
-      
- 
 
-       
+
         private void Client_OnNewSubscriber(object sender, OnNewSubscriberArgs e)
         {
             if (e.Subscriber.SubscriptionPlan == SubscriptionPlan.Prime)
             {
                 client.SendMessage(e.Channel, $"Welcome {e.Subscriber.DisplayName} to the substers! You just earned 500 points! So kind of you to use your Twitch Prime on this channel!");
-                logWrite(e.Channel + $":  Welcome {e.Subscriber.DisplayName} to the substers! You just earned 500 points! So kind of you to use your Twitch Prime on this channel!");
-                CLog.LogWrite(e.Channel + $":  Welcome {e.Subscriber.DisplayName} to the substers! You just earned 500 points! So kind of you to use your Twitch Prime on this channel!");
+                FullLogWrite(e.Channel + $":  Welcome {e.Subscriber.DisplayName} to the substers! You just earned 500 points! So kind of you to use your Twitch Prime on this channel!", LogTypeArg.Both);
             }
             else
             {
                 client.SendMessage(e.Channel, $" Welcome {e.Subscriber.DisplayName} to the substers! You just earned 500 points!");
-                logWrite(e.Channel + $":  Welcome {e.Subscriber.DisplayName} to the substers! You just earned 500 points!");
-                CLog.LogWrite(e.Channel + $":  Welcome {e.Subscriber.DisplayName} to the substers! You just earned 500 points!");
+                FullLogWrite(e.Channel + $":  Welcome {e.Subscriber.DisplayName} to the substers! You just earned 500 points!", LogTypeArg.Both);
             }
 
             //increase subs count
-            SubsCount++;
+            s_SubsCount++;
         }
 
         private void Client_OnUserJoinedArgs(object sender, OnUserJoinedArgs e)
         {
             //Enebale user joiend chat only when check is on.
-            if (botMSGKey == "1")
+            if (s_BotMSGKey == "1")
             {
                 client.SendMessage(e.Channel, $"Welcome to my channel {e.Username}. and thank you for joining. For more commands type !help");
-                logWrite(e.Channel + $"  Welcome to my channel {e.Username}. and thank you for joining. For more commands type !help");
-                CLog.LogWrite(e.Channel + $"  Welcome to my channel {e.Username}. and thank you for joining. For more commands type !help");
+                FullLogWrite(e.Channel + $"  Welcome to my channel {e.Username}. and thank you for joining. For more commands type !help", LogTypeArg.Both);
             }
+
             //we increment with 1 integer when a person has joined the chat room
-            Viewers++;
+            s_Viewers++;
         }
 
         private void Client_OnUserLeftArgs(object sender, OnUserLeftArgs e)
         {
             //we decrement with 1 integer when a person left the chat
-            if (Viewers > 0)
+            if (s_Viewers > 0)
             {
-                Viewers--;
+                s_Viewers--;
             }
         }
-
-
         #endregion
 
 
@@ -1454,7 +1195,7 @@ namespace xBot_WPF
             try
             {
 
-                HttpResponseMessage response = clientH.GetAsync(string.Format(html, Region, CityName)).GetAwaiter().GetResult();
+                HttpResponseMessage response = s_ClientH.GetAsync(string.Format(html, Region, CityName)).GetAwaiter().GetResult();
                 response.EnsureSuccessStatusCode();
                 string responseBody = response.Content.ReadAsStringAsync().Result;
 
@@ -1508,7 +1249,7 @@ namespace xBot_WPF
         /// </summary>
         /// <param name="CityName"></param>
         /// <returns></returns>
-        private string weatherForecast(string CityName)
+        private string WeatherForecast(string CityName)
         {
 
             string _date = DateTime.Now.ToString("yyyy_MM_dd");
@@ -1518,12 +1259,12 @@ namespace xBot_WPF
             try
             {
 
-                if (apiKey.Length > 0) // we check the lenght
+                if (s_ApiKey.Length > 0) // we check the lenght
                 {
                     //Open weather map API link with celsius 
                     // TODO: will decide if I put switch for ferenhait
                     string html = @"https://api.openweathermap.org/data/2.5/weather?q={0}&appid={1}&units=metric";
-                    if (weatherUnits == "1")
+                    if (s_WeatherUnits == "1")
                     {
                         html = @"https://api.openweathermap.org/data/2.5/weather?q={0}&appid={1}&units=metric";
                     }
@@ -1532,7 +1273,7 @@ namespace xBot_WPF
                         html = @"https://api.openweathermap.org/data/2.5/weather?q={0}&appid={1}&units=imperial";
                     }
 
-                    HttpResponseMessage response = clientH.GetAsync(string.Format(html, CityName, Encryption._decryptData(apiKey))).GetAwaiter().GetResult();
+                    HttpResponseMessage response = s_ClientH.GetAsync(string.Format(html, CityName, Encryption._decryptData(s_ApiKey))).GetAwaiter().GetResult();
                     response.EnsureSuccessStatusCode();
                     string responseBody = response.Content.ReadAsStringAsync().Result;
 
@@ -1641,46 +1382,18 @@ namespace xBot_WPF
         private void StatusLoadIcon(object sender, EventArgs e)
         {
             //Display total chat users and subs from stream
-            viewersLbL.Content = Viewers.ToString();
-            subsLbL.Content = SubsCount.ToString();
+            viewersLbL.Content = s_Viewers.ToString();
+            subsLbL.Content = s_SubsCount.ToString();
             //todo: add subs count on label
             //-----------------------------------
 
-            //read variables form registry
-            t_userName = Reg.regKey_Read(keyName, "UserName");
-
-            try
-            {
-
-                t_streamKey = Encryption._decryptData(Reg.regKey_Read(keyName, "StreamKey"));
-            }
-            catch (Exception x)
-            {
-                CLog.LogWriteError("oAuth decrypt error: " + x.ToString());
-                t_streamKey = "error_key";
-            }
-
-            botMSGKey = Reg.regKey_Read(keyName, "BotMSG");
-            timeBan = Int32.Parse(Reg.regKey_Read(keyName, "WordBanTime"));
-            bWord = Reg.regKey_Read(keyName, "BadWord");
-            apiKey = Reg.regKey_Read(keyName, "WeatherAPIKey");
-            ytControl = Reg.regKey_Read(keyName, "YTControl");
-            weatherKey = Reg.regKey_Read(keyName, "WeatherMSG");
-            YtWin = Reg.regKey_Read(keyName, "YtWin");
-            StartMessage = Reg.regKey_Read(keyName, "StartMessage");
-            YtLink = Reg.regKey_Read(keyName, "YtLink");
-            botMSGControl = Reg.regKey_Read(keyName, "botMSGControl");
-            weatherUnits = Reg.regKey_Read(keyName, "weatherUnits");
-            randomC = Reg.regKey_Read(keyName, "randomC");
-            rTime = Reg.regKey_Read(keyName, "rTime");
-            ytRequest = Reg.regKey_Read(keyName, "ytRequest");
-            //-----------------------------------
-
+            // Load variables stored in registry.
+            ReadRegistryVariables();
 
             //read mods from file
-            if (File.Exists(modFile))
+            if (File.Exists(s_ModsFile))
             {
-                mods = File.ReadAllLines(modFile);
+                s_Mods = File.ReadAllLines(s_ModsFile);
             }
             //-----------------------------------
 
@@ -1701,7 +1414,7 @@ namespace xBot_WPF
                     {
                         statIMG.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/orange_dot.png"));
                     });
-                    date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+                    s_Date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
                     client.Connect();
                     if (client.IsConnected)
                     {
@@ -1709,8 +1422,7 @@ namespace xBot_WPF
                         {
                             startBotBTN.Content = "STOP";
                         });
-                        logWrite("[" + date + "]Internet up. Reconnected to " + t_userName + " channel !");
-                        CLog.LogWrite("[" + date + "]Internet up. Reconnected to " + t_userName + " channel !");
+                        FullLogWrite("[" + s_Date + "]Internet up. Reconnected to " + s_UserName + " channel !", LogTypeArg.Both);
                     }
                 }
             }
@@ -1719,23 +1431,22 @@ namespace xBot_WPF
                 if (!client.IsConnected)
                 {
                     //we reset the people chat room and new subs counters
-                    Viewers = 0;
+                    s_Viewers = 0;
                     viewersLbL.Content = "0";
 
-                    SubsCount = 0;
+                    s_SubsCount = 0;
                     subsLbL.Content = "0";
                     //-------------------------------------------
                     this.Dispatcher.Invoke(() =>
                     {
                         startBotBTN.Content = "START";
-                        date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+                        s_Date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
                         statIMG.Source = new BitmapImage(new Uri("pack://application:,,,/Resources/red_dot.png"));
                     });
                     string oRTB = ConvertRichTextBoxContentsToString(logViewRTB);
-                    if (!oRTB.Contains("[" + date + "] No internet connection at the moment. Trying to reconnect..."))
+                    if (!oRTB.Contains("[" + s_Date + "] No internet connection at the moment. Trying to reconnect..."))
                     {
-                        logWrite("[" + date + "] No internet connection at the moment. Trying to reconnect...");
-                        CLog.LogWrite("[" + date + "] No internet connection at the moment. Trying to reconnect...");
+                        FullLogWrite("[" + s_Date + "] No internet connection at the moment. Trying to reconnect...", LogTypeArg.Both);
                     }
                 }
             }
@@ -1791,17 +1502,17 @@ namespace xBot_WPF
                 {
 
                     //read Twitch chanel name and bot oAuth Key
-                    t_userName = Reg.regKey_Read(keyName, "UserName");
+                    s_UserName = Reg.regKey_Read(s_KeyName, "UserName");
 
                     try
                     {
 
-                        t_streamKey = Encryption._decryptData(Reg.regKey_Read(keyName, "StreamKey"));
+                        s_StreamKey = Encryption._decryptData(Reg.regKey_Read(s_KeyName, "StreamKey"));
                     }
                     catch (Exception x)
                     {
-                        CLog.LogWriteError("oAuth decrypt error: " + x.ToString());
-                        t_streamKey = "error_key";
+                        FullLogWrite("oAuth decrypt error: " + x.Message, LogTypeArg.Both);
+                        s_StreamKey = "error_key";
                     }
                     //-------------------------------------
 
@@ -1811,39 +1522,40 @@ namespace xBot_WPF
                     }
                     else
                     {
-                        if (t_userName.Length > 0)
+                        if (s_UserName.Length > 0)
                         {
 
-                            if (t_streamKey != "error_key")
+                            if (s_StreamKey != "error_key")
                             {
-                                dispatcherTimer.Stop();
-                                dispatcherTimerR.Stop();
-                                worker = new BackgroundWorker();
-                                worker.DoWork += BotStart;
-                                worker.RunWorkerAsync();
-                                dispatcherTimer.Start();
-                                dispatcherTimerR.Start();
+                                DispatcherTimer.Stop();
+                                DispatcherTimerR.Stop();
+                                Worker = new BackgroundWorker();
+                                Worker.DoWork += BotStart;
+                                Worker.RunWorkerAsync();
+                                DispatcherTimer.Start();
+                                DispatcherTimerR.Start();
                             }
                             else
                             {
-                                logWrite("Please fill in settings your oAuth Twitch key generated from https://twitchapps.com/tmi/ !");
+                                FullLogWrite("Please fill in settings your oAuth Twitch key generated from https://twitchapps.com/tmi/ !", LogTypeArg.Display);
+
                             }
                         }
                         else
                         {
                             logWrite("Please fill in settings the user name for the Twitch Channel that you want to connect!");
+                            FullLogWrite("Please fill in settings the user name for the Twitch Channel that you want to connect!", LogTypeArg.Display);
                         }
                     }
                 }
                 else
                 {
-                    logWrite("Twitch tmi.twitch.tv server is down!");
+                    FullLogWrite("Twitch tmi.twitch.tv server is down!", LogTypeArg.Display);
                 }
             }
             else
             {
-                logWrite("No internet connection!");
-
+                FullLogWrite("No internet connection", LogTypeArg.Display);
             }
         }
         /// <summary>
@@ -1857,7 +1569,7 @@ namespace xBot_WPF
             btnCloseMenu.Visibility = Visibility.Visible;
             startBotBTN.Visibility = Visibility.Visible;
             logViewRTB.Margin = new Thickness(199, 50, 0, 0);
-            Reg.regKey_WriteSubkey(keyName, "Menu", "1");
+            Reg.regKey_WriteSubkey(s_KeyName, "Menu", "1");
         }
 
         /// <summary>
@@ -1871,7 +1583,7 @@ namespace xBot_WPF
             btnOpenMenu.Visibility = Visibility.Visible;
             btnCloseMenu.Visibility = Visibility.Collapsed;
             startBotBTN.Visibility = Visibility.Hidden;
-            Reg.regKey_WriteSubkey(keyName, "Menu", "0");
+            Reg.regKey_WriteSubkey(s_KeyName, "Menu", "0");
         }
 
 
@@ -1891,8 +1603,8 @@ namespace xBot_WPF
         /// <param name="e"></param>
         private void ListViewItem_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
-            sT = new settings();
-            sT.ShowDialog();
+            Settings = new settings();
+            Settings.ShowDialog();
         }
 
         //closing all windows
@@ -1900,9 +1612,9 @@ namespace xBot_WPF
         {
             try
             {
-                if (yT.IsVisible)
+                if (YouTube.IsVisible)
                 {
-                    yT.Close();
+                    YouTube.Close();
                 }
             }
             catch
@@ -1918,8 +1630,8 @@ namespace xBot_WPF
         /// <param name="e"></param>
         private void ListViewItem_PreviewMouseDownBot(object sender, MouseButtonEventArgs e)
         {
-            bM = new botMSG();
-            bM.ShowDialog();
+            BotMessage = new botMSG();
+            BotMessage.ShowDialog();
         }
 
         /// <summary>
@@ -1939,8 +1651,8 @@ namespace xBot_WPF
         /// <param name="e"></param>
         private void ListViewItem_PreviewMouseDownCMD(object sender, MouseButtonEventArgs e)
         {
-            cmD = new command();
-            cmD.ShowDialog();
+            Command = new command();
+            Command.ShowDialog();
         }
 
         /// <summary>
@@ -1950,8 +1662,8 @@ namespace xBot_WPF
         /// <param name="e"></param>
         private void ListViewItem_PreviewMouseDownBAD(object sender, MouseButtonEventArgs e)
         {
-            bW = new badWords();
-            bW.ShowDialog();
+            BadWords = new badWords();
+            BadWords.ShowDialog();
         }
 
         /// <summary>
@@ -1961,12 +1673,12 @@ namespace xBot_WPF
         /// <param name="e"></param>
         private void ListViewItem_PreviewMouseDownYT(object sender, MouseButtonEventArgs e)
         {
-            yT = new youtube();
+            YouTube = new youtube();
 
             //check youtube window control status number
-            if (YtWin == "0")
+            if (s_YtWin == "0")
             {
-                yT.Show();
+                YouTube.Show();
             }
             //------------------------------
         }
@@ -1979,8 +1691,8 @@ namespace xBot_WPF
         /// <param name="e"></param>
         private void aboutBTN_Click(object sender, RoutedEventArgs e)
         {
-            aB = new about();
-            aB.ShowDialog();
+            About = new about();
+            About.ShowDialog();
         }
 
         /// <summary>
@@ -1988,28 +1700,28 @@ namespace xBot_WPF
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void randomMessage(object sender, EventArgs e)
+        private void RandomMessage(object sender, EventArgs e)
         {
             string dateSent = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
-            if (randomC == "1")
+            if (s_RandomC == "1")
             {
                 List<string> randomM = new List<string>();
-                if (File.Exists(randomListFile))
+                if (File.Exists(s_RandomListFile))
                 {
-                    rand_list = File.ReadAllLines(randomListFile);
-                    foreach (var line in rand_list)
+                    s_Rand_list = File.ReadAllLines(s_RandomListFile);
+                    foreach (var line in s_Rand_list)
                     {
                         randomM.Add(line);
                     }
-                    int index = r.Next(randomM.Count);
+                    int index = Random.Next(randomM.Count);
                     string rand = randomM[index];
-                   
+
                     try
                     {
                         if (client.IsConnected)
                         {
-                            client.SendMessage(t_userName, rand);//sending the random message from list
-                            logWrite("[Random Message] [Interval set to: " + rTime + " minutes]" + rand);
+                            client.SendMessage(s_UserName, rand);//sending the random message from list
+                            logWrite("[Random Message] [Interval set to: " + s_RTime + " minutes]" + rand);
                             CLog.LogWrite("[" + dateSent + "]Random Message: " + rand);
                         }
                         else
@@ -2018,40 +1730,40 @@ namespace xBot_WPF
                             CLog.LogWriteError("[" + dateSent + "]Random Message: " + rand);
                         }
                     }
-                    catch(Exception ex)
+                    catch (Exception ex)
                     {
                         CLog.LogWriteError("[" + dateSent + "]Error - Random Message: " + ex.ToString());
                     }
 
-                    if (Convert.ToInt32(rTime) > 0)
+                    if (Convert.ToInt32(s_RTime) > 0)
                     {
                         //set timer interval for nex resend
-                        dispatcherTimerR.Interval = new TimeSpan(0, Convert.ToInt32(rTime), 0);
+                        DispatcherTimerR.Interval = new TimeSpan(0, Convert.ToInt32(s_RTime), 0);
                     }
                     else
                     {
-                        dispatcherTimerR.Interval = new TimeSpan(0, 10, 0);
+                        DispatcherTimerR.Interval = new TimeSpan(0, 10, 0);
                     }
                 }
                 else
                 {
-                    logWrite("[Random Message Error] File " + randomListFile + " dose not exist!");
-                    CLog.LogWriteError("File " + randomListFile + " dose not exist!");
+                    logWrite("[Random Message Error] File " + s_RandomListFile + " dose not exist!");
+                    CLog.LogWriteError("File " + s_RandomListFile + " dose not exist!");
                 }
             }
         }
         /// <summary>
         /// Load playlist and add index number for every song
         /// </summary>
-        private void playListLoad()
+        private async Task PlayListLoad()
         {
-            string[] playList = File.ReadAllLines(playListFile);
-          
+            string[] playList = File.ReadAllLines(s_PlayListFile);
             WebClient wClient = new WebClient();
-            //we clear for reaload of list
-            pList.Clear();
-            cList.Clear();
-            if (File.Exists(playListFile))
+
+            // We clear for reaload of list.
+            PList.Clear();
+            CList.Clear();
+            if (File.Exists(s_PlayListFile))
             {
                 try
                 {
@@ -2059,47 +1771,49 @@ namespace xBot_WPF
 
                     foreach (var line in playList)
                     {
-                        Thread.Sleep(200);//i hope is anty spam
-                        //Download youtube link source code
-                        string titleParse = wClient.DownloadString(line);
-                        
-                        //grabing the title from source
+                        await Task.Delay(200);//i hope is anty spam
+
+                        // Download youtube link source code
+                        string titleParse = await wClient.DownloadStringTaskAsync(line);
+
+                        // Grabing the title from source
                         int pFrom = titleParse.IndexOf("<title>") + "<title>".Length;
                         int pTo = titleParse.LastIndexOf("</title>");
 
-                        //store the title
+                        // Store the title
                         string ytTitle = titleParse.Substring(pFrom, pTo - pFrom);
                         index++;
-
-                        pList.Add(index.ToString() + " | " + ytTitle + "  " + Environment.NewLine);
-                        cList.Add(index.ToString() + "|" + line + Environment.NewLine);
+                        PList.Add(index.ToString() + " | " + ytTitle + "  " + Environment.NewLine);
+                        CList.Add(index.ToString() + "|" + line + Environment.NewLine);
                     }
+
                     index = 0;
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
-                    CLog.LogWriteError("[BOT] playListLoad: "+ex.ToString());
+                    CLog.LogWriteError("[BOT] playListLoad: " + ex.ToString());
                 }
             }
             else
             {
-                logWrite("[BOT] File " + playListFile + "dose not exist! Restart application for recreate!");
-                CLog.LogWriteError("[BOT] File " + playListFile + "dose not exist! Restart application for recreate!");
+                FullLogWrite("[BOT] File " + s_PlayListFile + "dose not exist! Restart application for recreate!", LogTypeArg.Both);
             }
         }
+
+
 
         /// <summary>
         /// we load the list with the requested songs 
         /// </summary>
-        private void queueListLoad()
+        private async Task QueueListLoad()
         {
-            string[] playList = File.ReadAllLines(playListRequest);
+            string[] playList = File.ReadAllLines(s_PlayListRequest);
             //we clear for reaload of list
-            qList.Clear();
+            QList.Clear();
 
             WebClient wClient = new WebClient();
 
-            if (File.Exists(playListRequest))
+            if (File.Exists(s_PlayListRequest))
             {
 
                 int index = 0;
@@ -2108,12 +1822,12 @@ namespace xBot_WPF
                 {
                     if (line.Length > 0)
                     {
-                        Thread.Sleep(200);//I hope is anty spam
+                        await Task.Delay(200);//I hope is anty spam
                         try
                         {
                             //Download youtube link source code
                             string[] s = line.Split('|');
-                            string titleParse = wClient.DownloadString(s[1]);
+                            string titleParse = await wClient.DownloadStringTaskAsync(s[1]);
 
                             //grabing the title from source
                             int pFrom = titleParse.IndexOf("<title>") + "<title>".Length;
@@ -2122,11 +1836,11 @@ namespace xBot_WPF
                             //store the title
                             string ytTitle = titleParse.Substring(pFrom, pTo - pFrom);
                             index++;
-                            qList.Add(index.ToString() + " | " + ytTitle + "  " + Environment.NewLine);
-                        }catch(Exception ex)
+                            QList.Add(index.ToString() + " | " + ytTitle + "  " + Environment.NewLine);
+                        }
+                        catch (Exception ex)
                         {
-                            CLog.LogWriteError("[BOT] Queuelistload: " + ex.ToString());
-
+                            FullLogWrite("[BOT] Queuelistload: " + ex.Message, LogTypeArg.Both);
                         }
                     }
 
@@ -2135,9 +1849,88 @@ namespace xBot_WPF
             }
             else
             {
-                logWrite("[BOT] File " + playListRequest + "dose not exist! Restart application for recreate!");
-                CLog.LogWriteError("[BOT] File " + playListRequest + "dose not exist! Restart application for recreate!");
+                FullLogWrite("[BOT] File " + s_PlayListRequest + "dose not exist! Restart application for recreate!", LogTypeArg.Both);
             }
-        } 
+        }
+
+
+        // Check the file existence and if not exist create it .
+        // Used on bot StartUp
+        private static void CheckFileStartUp(List<string> files)
+        {
+            foreach (var fileName in files)
+            {
+                if (!File.Exists(fileName))
+                    File.Create(fileName);
+            }
+        }
+
+        // Check the directory existence and if not exist create it .
+        // Used on bot StartUp
+        private static void CheckDirectoryStartUp(List<string> directories)
+        {
+            foreach (var directoryName in directories)
+            {
+                if (!Directory.Exists(directoryName))
+                    Directory.CreateDirectory(directoryName);
+            }
+        }
+
+        // We load the varibles stored on registry.
+        private void ReadRegistryVariables()
+        {
+            s_UserName = Reg.regKey_Read(s_KeyName, "UserName");
+
+            try
+            {
+
+                s_StreamKey = Encryption._decryptData(Reg.regKey_Read(s_KeyName, "StreamKey"));
+            }
+            catch (Exception x)
+            {
+                CLog.LogWriteError("oAuth decrypt error: " + x.ToString());
+                s_StreamKey = "error_key";
+            }
+
+            s_BotMSGKey = Reg.regKey_Read(s_KeyName, "BotMSG");
+            _TimeBan = Int32.Parse(Reg.regKey_Read(s_KeyName, "WordBanTime"));
+            s_BadWord = Reg.regKey_Read(s_KeyName, "BadWord");
+            s_ApiKey = Reg.regKey_Read(s_KeyName, "WeatherAPIKey");
+            s_YtControl = Reg.regKey_Read(s_KeyName, "YTControl");
+            s_WeatherKey = Reg.regKey_Read(s_KeyName, "WeatherMSG");
+            s_YtWin = Reg.regKey_Read(s_KeyName, "YtWin");
+            s_StartMessage = Reg.regKey_Read(s_KeyName, "StartMessage");
+            s_YtLink = Reg.regKey_Read(s_KeyName, "YtLink");
+            s_BotMSGControl = Reg.regKey_Read(s_KeyName, "botMSGControl");
+            s_WeatherUnits = Reg.regKey_Read(s_KeyName, "weatherUnits");
+            s_RandomC = Reg.regKey_Read(s_KeyName, "randomC");
+            s_RTime = Reg.regKey_Read(s_KeyName, "rTime");
+            s_ytRequest = Reg.regKey_Read(s_KeyName, "ytRequest");
+        }
+
+        // Set state of menu bar from small to large dependeing on status read from registry and previous stored
+        private void MenuStatusChange(string menuStatus)
+        {
+            if (menuStatus == "1")
+            {
+                GridMenu.Width = 199;
+                btnOpenMenu.Visibility = Visibility.Collapsed;
+                btnCloseMenu.Visibility = Visibility.Visible;
+                startBotBTN.Visibility = Visibility.Visible;
+                logViewRTB.Margin = new Thickness(199, 50, 0, 0);
+                return;
+            }
+            GridMenu.Width = 50;
+            logViewRTB.Margin = new Thickness(50, 50, 0, 0);
+            btnOpenMenu.Visibility = Visibility.Visible;
+            btnCloseMenu.Visibility = Visibility.Collapsed;
+            startBotBTN.Visibility = Visibility.Hidden;
+        }
+
+        // Load playlist/ and qlist and titles for song request command
+        private async void xBot_Loaded(object sender, RoutedEventArgs e)
+        {
+            await Task.WhenAll(new Task[] { Task.Run(() => PlayListLoad()), Task.Run(() => QueueListLoad()) });
+        }
     }
 }

@@ -2,19 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using Core;
-using System.Text.RegularExpressions;
 
 namespace xBot_WPF
 {
@@ -32,7 +23,7 @@ namespace xBot_WPF
         private static string[] cmd_line;
         private static string[] cmd_lineA;
         private static string listCMD;
-        private static string[] predefinedCMD= { "time","help","yt","weather","ss","gl","playlist","rsong","showrequest","8ball","!update", "!create", "!delete"};
+        private static string[] predefinedCMD = { "time", "help", "yt", "weather", "ss", "gl", "playlist", "rsong", "showrequest", "8ball", "!update", "!create", "!delete" };
         //----------------------------------
 
         public command()
@@ -115,73 +106,73 @@ namespace xBot_WPF
 
                 //Check for empty command text
 
-                if (cmd.Length>0)
+                if (cmd.Length > 0)
                 {
-                             
-                        //check for predefined commands exists
-                        if (!predefinedCMD.Contains(cmd))
+
+                    //check for predefined commands exists
+                    if (!predefinedCMD.Contains(cmd))
+                    {
+                        //check for separator oparator to not be present in our message
+                        if (!msg.Contains(":"))
                         {
-                            //check for separator oparator to not be present in our message
-                            if (!msg.Contains(":"))
+                            if (!cmd.Contains("!") && !cmd.Contains(":"))
                             {
-                                if (!cmd.Contains("!") && !cmd.Contains(":"))
+                                //check if command already exists
+                                if (!listCMD.Contains(cmd))
                                 {
-                                    //check if command already exists
-                                    if (!listCMD.Contains(cmd))
-                                    {
-                                        //remove empty lines
-                                        cmd_lst = Regex.Replace(cmd_lst, @"^\s+$[\r\n]*", string.Empty, RegexOptions.Multiline);
-                                        File.AppendAllText(comFile, "!" + cmd + ":" + msg + Environment.NewLine);
-                                        commandList.Items.Add("!" + cmd + ":" + msg);
-                                        nameTXT.Clear();
-                                        contentTXT.Clear();
-                                        MessageBox.Show("Command: '" + cmd + "' with message: '" + msg + "' added to list");
+                                    //remove empty lines
+                                    cmd_lst = Regex.Replace(cmd_lst, @"^\s+$[\r\n]*", string.Empty, RegexOptions.Multiline);
+                                    File.AppendAllText(comFile, "!" + cmd + ":" + msg + Environment.NewLine);
+                                    commandList.Items.Add("!" + cmd + ":" + msg);
+                                    nameTXT.Clear();
+                                    contentTXT.Clear();
+                                    MessageBox.Show("Command: '" + cmd + "' with message: '" + msg + "' added to list");
 
-                                    }
-                                    else
-                                    {
-                                        if (commandList.SelectedIndex != -1 && commandList.SelectedItem.ToString().Contains(cmd))
-                                        {
-                                            string[] cL = commandList.SelectedItem.ToString().Split(':');
-                                            foreach (var line in cmd_lineA)
-                                            {
-                                                //check if command already exists in line
-                                                if (line.Contains(cL[0]))
-                                                {
-                                                    cmd_lst = cmd_lst.Replace(line, "!" + cmd + ":" + msg);
-                                                }
-                                            }
-
-                                            cmd_lst = Regex.Replace(cmd_lst, @"^\s+$[\r\n]*", string.Empty, RegexOptions.Multiline);//remove empty lines
-                                            File.WriteAllText(comFile, cmd_lst);
-
-
-                                            commandList.Items.Remove(commandList.SelectedItem);
-                                            commandList.Items.Add("!" + cmd + ":" + msg);
-                                            contentTXT.Clear();
-                                            nameTXT.Clear();
-                                            MessageBox.Show("The command '!" + cmd + "' was updated with message: '" + msg + "'");
-                                        }
-
-
-                                    }
                                 }
                                 else
                                 {
-                                    MessageBox.Show("The message should not contain the symbol ':' or '!' !"); ;
+                                    if (commandList.SelectedIndex != -1 && commandList.SelectedItem.ToString().Contains(cmd))
+                                    {
+                                        string[] cL = commandList.SelectedItem.ToString().Split(':');
+                                        foreach (var line in cmd_lineA)
+                                        {
+                                            //check if command already exists in line
+                                            if (line.Contains(cL[0]))
+                                            {
+                                                cmd_lst = cmd_lst.Replace(line, "!" + cmd + ":" + msg);
+                                            }
+                                        }
+
+                                        cmd_lst = Regex.Replace(cmd_lst, @"^\s+$[\r\n]*", string.Empty, RegexOptions.Multiline);//remove empty lines
+                                        File.WriteAllText(comFile, cmd_lst);
+
+
+                                        commandList.Items.Remove(commandList.SelectedItem);
+                                        commandList.Items.Add("!" + cmd + ":" + msg);
+                                        contentTXT.Clear();
+                                        nameTXT.Clear();
+                                        MessageBox.Show("The command '!" + cmd + "' was updated with message: '" + msg + "'");
+                                    }
+
+
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("The message should not contain the symbol ':' !"); ;
+                                MessageBox.Show("The message should not contain the symbol ':' or '!' !"); ;
                             }
                         }
-
                         else
                         {
-                            MessageBox.Show("You cannot add command '" + cmd + "' because is predifined!"); ;
+                            MessageBox.Show("The message should not contain the symbol ':' !"); ;
                         }
-                    
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("You cannot add command '" + cmd + "' because is predifined!"); ;
+                    }
+
                 }
                 else
                 {
@@ -191,7 +182,7 @@ namespace xBot_WPF
             else
             {
                 MessageBox.Show(comFile + " file not found!");
-                
+
             }
         }
 

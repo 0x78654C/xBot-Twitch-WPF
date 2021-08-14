@@ -1,22 +1,13 @@
-﻿using System;
+﻿using Core;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.IO;
-using System.Reflection;
-using System.Threading;
-using System.Text.RegularExpressions;
-using Core;
+using System.Linq;
 using System.Net;
+using System.Reflection;
+using System.Text.RegularExpressions;
+using System.Windows;
+using System.Windows.Input;
 
 namespace xBot_WPF
 {
@@ -89,7 +80,7 @@ namespace xBot_WPF
             {
                 if (line.Length > 0)
                 {
-                    playList.Items.Add(line) ;
+                    playList.Items.Add(line);
                 }
             }
             //---------------------------
@@ -107,7 +98,7 @@ namespace xBot_WPF
             {
                 if (line.Length > 0)
                 {
-                   
+
                     ListRequestedSongs.Add(line);
                 }
             }
@@ -140,7 +131,7 @@ namespace xBot_WPF
             {
                 this.ytBrowser.NavigateToString(string.Format(html, url.Split('=')[1]));
                 Reg.regKey_WriteSubkey(keyName, "YTControl", "1");
-                
+
 
 
                 //Download youtube link source code
@@ -151,7 +142,7 @@ namespace xBot_WPF
                 int pTo = titleParse.LastIndexOf("</title>");
 
                 //store the title
-                ytTitle=titleParse.Substring(pFrom, pTo - pFrom);
+                ytTitle = titleParse.Substring(pFrom, pTo - pFrom);
                 playLink = url;
 
                 //store youtube title in registry
@@ -217,7 +208,7 @@ namespace xBot_WPF
         /// <param name="e"></param>
         private void playBTN_Click(object sender, RoutedEventArgs e)
         {
-           // playNext();
+            // playNext();
             if (playBTN.Content.ToString() == "Play")
             {
                 reload_YT(playLink);
@@ -314,10 +305,10 @@ namespace xBot_WPF
         {
             reload_YT(playList.SelectedItem.ToString());
             //store title + youtube link in registry
-            Reg.regKey_WriteSubkey(keyName, "YtLink",ytTitle+ ": " + playList.SelectedItem.ToString());
+            Reg.regKey_WriteSubkey(keyName, "YtLink", ytTitle + ": " + playList.SelectedItem.ToString());
 
             //store youtube link only in registry
-            Reg.regKey_WriteSubkey(keyName, "YtUrl",playList.SelectedItem.ToString());
+            Reg.regKey_WriteSubkey(keyName, "YtUrl", playList.SelectedItem.ToString());
             playBTN.Content = "Stop";
         }
 
@@ -339,11 +330,11 @@ namespace xBot_WPF
                         playL = playL.Replace(line, "");
                     }
                 }
-                
+
 
                 playList.Items.Remove(playList.SelectedItem);
-                playL= Regex.Replace(playL, @"^\s+$[\r\n]*", string.Empty, RegexOptions.Multiline);
-                using(var sW = new StreamWriter(playListFile))
+                playL = Regex.Replace(playL, @"^\s+$[\r\n]*", string.Empty, RegexOptions.Multiline);
+                using (var sW = new StreamWriter(playListFile))
                 {
                     sW.Write(playL);
                     sW.Flush();
@@ -381,14 +372,16 @@ namespace xBot_WPF
 
                 //convert from milliseconds to secdons
                 return yDuration / 1000;
-            }catch{
+            }
+            catch
+            {
 
                 //we return 0 in case of live videos
                 return 0;
             }
         }
 
-       
+
         /// <summary>
         /// Play next song from listbox
         /// </summary>
@@ -398,7 +391,7 @@ namespace xBot_WPF
             {
                 if (playLink.Length > 0)
                 {
-                    int i= playList.Items.IndexOf(playLink);
+                    int i = playList.Items.IndexOf(playLink);
                     int c = playList.Items.Count;
                     playList.SelectedIndex = i + 1;
                     if (playList.SelectedIndex > c - 1)
@@ -427,11 +420,12 @@ namespace xBot_WPF
 
                 }
 
-            }catch(Exception e)
+            }
+            catch (Exception e)
             {
-               string date2 = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+                string date2 = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
                 CLog.LogWriteError("[" + date2 + "] YouTube Error: " + e.ToString() + Environment.NewLine);
-               
+
 
             }
         }
@@ -515,9 +509,9 @@ namespace xBot_WPF
         {
             string[] lines = File.ReadAllLines(playListRequest);
             ListRequestedSongs.Clear();
-            foreach(var line in lines)
+            foreach (var line in lines)
             {
-                if(line.Length > 0)
+                if (line.Length > 0)
                 {
                     ListRequestedSongs.Add(line);
                 }
@@ -538,7 +532,7 @@ namespace xBot_WPF
 
 
                 //check if count is not null
-                if (c > 0 )
+                if (c > 0)
                 {
                     //we decrement the count because list index start from 0
                     int i = c - 1;
@@ -559,10 +553,10 @@ namespace xBot_WPF
                     Reg.regKey_WriteSubkey(keyName, "YtUrl", playLink);
 
                     //we removed played song 
-                
+
                     ListRequestedSongs.Remove(ListRequestedSongs.ElementAt(i));
                     string playReqD = string.Join(Environment.NewLine, ListRequestedSongs);
-                   
+
                     File.WriteAllText(playListRequest, playReqD);
                 }
 
