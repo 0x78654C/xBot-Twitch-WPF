@@ -20,6 +20,8 @@ using TwitchLib.Client.Extensions;
 using TwitchLib.Client.Models;
 using TwitchLib.Communication.Clients;
 using TwitchLib.Communication.Models;
+using LogType = xBot_WPF.Utils.LogWriter.LogTypeArg;
+using TimeZone = Core.Utils.TimeZone;
 
 namespace xBot_WPF
 {
@@ -158,6 +160,9 @@ namespace xBot_WPF
         Random Random8 = new Random();
         //--------------------------------
 
+        // LogWriter instance declarations
+        Utils.LogWriter logWriter = new Utils.LogWriter();
+        //--------------------------------
 
         public MainWindow()
         {
@@ -171,7 +176,7 @@ namespace xBot_WPF
             {
                 logViewRTB.Document.Blocks.Clear();
             });
-            logWrite("Welcome to xBot! The Twitch bot that was entirely build on live stream :D");
+            logWriter.FullLogWrite("Welcome to xBot! The Twitch bot that was entirely build on live stream :D", logViewRTB, LogType.Display);
 
             // Check existence for necesary directory and files.
             CheckDirectoryStartUp(DirectoryList);
@@ -246,25 +251,6 @@ namespace xBot_WPF
             }
         }
 
-
-        /// <summary>
-        /// Log writer
-        /// </summary>
-        /// <param name="data"></param>
-        private void logWrite(string data)
-        {
-            this.Dispatcher.Invoke(() =>
-            {
-                if (!string.IsNullOrEmpty(data))
-                {
-                    //outs += data + Environment.NewLine;
-                    logViewRTB.Document.Blocks.Add(new Paragraph(new Run(data)));
-                    logViewRTB.ScrollToEnd();
-                }
-            });
-        }
-
-
         /// <summary>
         /// Bot Start function
         /// </summary>
@@ -279,7 +265,7 @@ namespace xBot_WPF
             });
 
             s_Date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
-            logWrite("[" + s_Date + "] xBot connecting to " + s_UserName + " channel....");
+            logWriter.FullLogWrite("[" + s_Date + "] xBot connecting to " + s_UserName + " channel....", logViewRTB, LogType.Display);
 
             ConnectionCredentials credentials = new ConnectionCredentials(s_UserName, s_StreamKey, null, true);
             var clientOptions = new ClientOptions
@@ -304,7 +290,7 @@ namespace xBot_WPF
             //we check if bot is connected and display the log info
             if (client.IsConnected)
             {
-                logWrite("[" + s_Date + "] xBot Connected to " + s_UserName + " channel !");
+                logWriter.FullLogWrite("[" + s_Date + "] xBot Connected to " + s_UserName + " channel !",logViewRTB,LogType.Display);
                 Task.Delay(2);
                 this.Dispatcher.Invoke(() =>
                 {
@@ -333,7 +319,7 @@ namespace xBot_WPF
             if (!client.IsConnected)
             {
                 s_Date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
-                logWrite("[" + s_Date + "] xBot Disconncted!");
+                logWriter.FullLogWrite("[" + s_Date + "] xBot Disconncted!", logViewRTB, LogType.Display);
                 CLog.LogWrite("[" + s_Date + "] xBot Disconncted!");
                 startBotBTN.Content = "START";
 
@@ -361,36 +347,11 @@ namespace xBot_WPF
         */
 
 
-        // We write log in RTB/File/Both
-        private void FullLogWrite(string logData, LogTypeArg type)
-        {
-            switch (type)
-            {
-                case LogTypeArg.Display: // Write in display
-                    logWrite(logData);
-                    break;
-                case LogTypeArg.File: // Write in file
-                    CLog.LogWrite(logData);
-                    break;
-                case LogTypeArg.Both: //Write both
-                    logWrite(logData);
-                    CLog.LogWrite(logData);
-                    break;
-            }
-        }
-
-        // We enumerate the types of Log types
-        private enum LogTypeArg
-        {
-            Display = 1,
-            File = 2,
-            Both = 3
-        }
 
         private void Client_OnRaidNotificationArgs(object sender, OnRaidNotificationArgs e)
         {
             client.SendMessage(e.Channel, "We are RAIDED by " + e.RaidNotification.DisplayName + ". Shoutout for @" + e.RaidNotification.DisplayName + " which is also a streamer! https://twitch.tv/" + e.RaidNotification.DisplayName);
-            FullLogWrite("[BOT] We are raided by " + e.RaidNotification.DisplayName, LogTypeArg.Both);
+            logWriter.FullLogWrite("[BOT] We are raided by " + e.RaidNotification.DisplayName, logViewRTB, LogType.Both);
         }
 
 
@@ -399,13 +360,13 @@ namespace xBot_WPF
         private void Client_OnBeingHosted(object sender, OnBeingHostedArgs e)
         {
             client.SendMessage(s_UserName, e.BeingHostedNotification.Channel + " is hosted with " + e.BeingHostedNotification.Viewers + " viewers by " + e.BeingHostedNotification.HostedByChannel);
-            FullLogWrite("[BOT] " + e.BeingHostedNotification.Channel + " is hosted with " + e.BeingHostedNotification.Viewers + " viewers by " + e.BeingHostedNotification.HostedByChannel, LogTypeArg.Both);
+            logWriter.FullLogWrite("[BOT] " + e.BeingHostedNotification.Channel + " is hosted with " + e.BeingHostedNotification.Viewers + " viewers by " + e.BeingHostedNotification.HostedByChannel, logViewRTB, LogType.Both);
         }
 
         private void Client_OnConnected(object sender, OnConnectedArgs e)
         {
             s_Date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
-            FullLogWrite("[" + s_Date + $"] Connected to {e.AutoJoinChannel} channel !", LogTypeArg.File);
+            logWriter.FullLogWrite("[" + s_Date + $"] Connected to {e.AutoJoinChannel} channel !", logViewRTB, LogType.File);
         }
 
 
@@ -414,7 +375,7 @@ namespace xBot_WPF
             if (s_BotMSGControl == "1")
             {
                 client.SendMessage(e.Channel, s_StartMessage);
-                FullLogWrite("[Bot Start Message]: " + s_StartMessage, LogTypeArg.Both);
+                logWriter.FullLogWrite("[Bot Start Message]: " + s_StartMessage, logViewRTB, LogType.Both);
             }
         }
 
@@ -426,7 +387,7 @@ namespace xBot_WPF
             string date2 = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             if (e.ChatMessage.Message.Length > 0)
             {
-                FullLogWrite("[" + date2 + "] " + e.ChatMessage.Username + " : " + e.ChatMessage.Message, LogTypeArg.Both);
+                logWriter.FullLogWrite("[" + date2 + "] " + e.ChatMessage.Username + " : " + e.ChatMessage.Message, logViewRTB, LogType.Both);
             }
             //--------------------------------------------
 
@@ -497,31 +458,31 @@ namespace xBot_WPF
                                             fList.Add(finalCommand);
                                             string FinalCommandList = string.Join(Environment.NewLine, fList);
                                             File.WriteAllText(s_ComDirectory, FinalCommandList);
-                                            FullLogWrite("[" + date2 + "] Command " + command[1] + " was updated by " + e.ChatMessage.Username, LogTypeArg.Both);
+                                            logWriter.FullLogWrite("[" + date2 + "] Command " + command[1] + " was updated by " + e.ChatMessage.Username, logViewRTB, LogType.Both);
                                             client.SendMessage(e.ChatMessage.Channel, "Command " + command[1] + " was updated by " + e.ChatMessage.Username);
                                         }
                                         else
                                         {
-                                            FullLogWrite("@" + e.ChatMessage.Username + ", the command you want to update must start with character: ! ", LogTypeArg.Both);
+                                            logWriter.FullLogWrite("@" + e.ChatMessage.Username + ", the command you want to update must start with character: ! ", logViewRTB, LogType.Both);
                                             client.SendMessage(e.ChatMessage.Channel, "@" + e.ChatMessage.Username + ", the command you want to update must start with character: ! ");
                                         }
                                     }
                                     else
                                     {
-                                        FullLogWrite("[" + date2 + "] @" + e.ChatMessage.Username + ", command message should not contain following characters: !, :, -", LogTypeArg.Both);
+                                        logWriter.FullLogWrite("[" + date2 + "] @" + e.ChatMessage.Username + ", command message should not contain following characters: !, :, -", logViewRTB, LogType.Both);
                                         client.SendMessage(e.ChatMessage.Channel, "@" + e.ChatMessage.Username + ", command message should not contain following characters: !, :, -");
                                     }
 
                                 }
                                 else
                                 {
-                                    FullLogWrite("[" + date2 + "] @" + e.ChatMessage.Username + ", command " + command[1] + " dose not exist!", LogTypeArg.Both);
+                                    logWriter.FullLogWrite("[" + date2 + "] @" + e.ChatMessage.Username + ", command " + command[1] + " dose not exist!", logViewRTB, LogType.Both);
                                     client.SendMessage(e.ChatMessage.Channel, "@" + e.ChatMessage.Username + ", command " + command[1] + " dose not exist!");
                                 }
                             }
                             catch (Exception c)
                             {
-                                logWrite("[" + date2 + "]Error: Command update, check logs!");
+                                logWriter.FullLogWrite("[" + date2 + "]Error: Command update, check logs!", logViewRTB, LogType.Display);
                                 CLog.LogWriteError("[" + date2 + "]Error: Command update:" + c.ToString());
                             }
                         }
@@ -575,31 +536,31 @@ namespace xBot_WPF
                                             fList.Add(finalCommand);
                                             string FinalCommandList = string.Join(Environment.NewLine, fList);
                                             File.WriteAllText(s_ComDirectory, FinalCommandList);
-                                            FullLogWrite("[" + date2 + "] Command " + command[1] + " was created by " + e.ChatMessage.Username, LogTypeArg.Both);
+                                            logWriter.FullLogWrite("[" + date2 + "] Command " + command[1] + " was created by " + e.ChatMessage.Username, logViewRTB, LogType.Both);
                                             client.SendMessage(e.ChatMessage.Channel, "Command " + command[1] + " was created by " + e.ChatMessage.Username);
                                         }
                                         else
                                         {
-                                            FullLogWrite("@" + e.ChatMessage.Username + ", the command you want to created must start with character: ! ", LogTypeArg.Display);
+                                            logWriter.FullLogWrite("@" + e.ChatMessage.Username + ", the command you want to created must start with character: ! ", logViewRTB, LogType.Display);
                                             client.SendMessage(e.ChatMessage.Channel, "@" + e.ChatMessage.Username + ", the command you want to create must start with character: ! ");
                                         }
                                     }
                                     else
                                     {
-                                        FullLogWrite("[" + date2 + "] @" + e.ChatMessage.Username + ", command message should not contain following characters: !, :, -", LogTypeArg.Both);
+                                        logWriter.FullLogWrite("[" + date2 + "] @" + e.ChatMessage.Username + ", command message should not contain following characters: !, :, -", logViewRTB, LogType.Both);
                                         client.SendMessage(e.ChatMessage.Channel, "@" + e.ChatMessage.Username + ", command message should not contain following characters: !, :, -");
                                     }
 
                                 }
                                 else
                                 {
-                                    FullLogWrite("[" + date2 + "] @" + e.ChatMessage.Username + ", command " + command[1] + " already exist!", LogTypeArg.Both);
+                                    logWriter.FullLogWrite("[" + date2 + "] @" + e.ChatMessage.Username + ", command " + command[1] + " already exist!", logViewRTB, LogType.Both);
                                     client.SendMessage(e.ChatMessage.Channel, "@" + e.ChatMessage.Username + ", command " + command[1] + " already exist!");
                                 }
                             }
                             catch (Exception c)
                             {
-                                logWrite("[" + date2 + "]Error: Command create, check logs!");
+                                logWriter.FullLogWrite("[" + date2 + "]Error: Command create, check logs!", logViewRTB, LogType.Display);
                                 CLog.LogWriteError("[" + date2 + "]Error: Command create:" + c.ToString());
                             }
                         }
@@ -655,24 +616,24 @@ namespace xBot_WPF
                                     {
                                         string FinalCommandList = string.Join(Environment.NewLine, fList);
                                         File.WriteAllText(s_ComDirectory, FinalCommandList);
-                                        FullLogWrite("[" + date2 + "] Command " + command[1] + " was deleted by " + e.ChatMessage.Username, LogTypeArg.Both);
+                                        logWriter.FullLogWrite("[" + date2 + "] Command " + command[1] + " was deleted by " + e.ChatMessage.Username, logViewRTB, LogType.Both);
                                         client.SendMessage(e.ChatMessage.Channel, "Command " + command[1] + " was deleted by " + e.ChatMessage.Username);
                                     }
                                     else
                                     {
-                                        FullLogWrite("@" + e.ChatMessage.Username + ", the command you want to delete must start with character: ! ", LogTypeArg.Display);
+                                        logWriter.FullLogWrite("@" + e.ChatMessage.Username + ", the command you want to delete must start with character: ! ", logViewRTB, LogType.Display);
                                         client.SendMessage(e.ChatMessage.Channel, "@" + e.ChatMessage.Username + ", the command you want to delete must start with character: ! ");
                                     }
                                 }
                                 else
                                 {
-                                    FullLogWrite("[" + date2 + "] @" + e.ChatMessage.Username + ", command " + command[1] + " dose not exist!", LogTypeArg.Both);
+                                    logWriter.FullLogWrite("[" + date2 + "] @" + e.ChatMessage.Username + ", command " + command[1] + " dose not exist!", logViewRTB, LogType.Both);
                                     client.SendMessage(e.ChatMessage.Channel, "@" + e.ChatMessage.Username + ", command " + command[1] + " dose not exist!");
                                 }
                             }
                             catch (Exception c)
                             {
-                                logWrite("[" + date2 + "]Error: Command delete, check logs!");
+                                logWriter.FullLogWrite("[" + date2 + "]Error: Command delete, check logs!", logViewRTB, LogType.Display);
                                 CLog.LogWriteError("[" + date2 + "]Error: Command delete:" + c.ToString());
                             }
                         }
@@ -695,7 +656,7 @@ namespace xBot_WPF
                     {
                         if (e.ChatMessage.Message.Contains(bad))
                         {
-                            FullLogWrite(e.ChatMessage.Channel + " | " + e.ChatMessage.Username + " | " + TimeSpan.FromMinutes(_TimeBan) + " | " + "[BOT] Bad word ban! " + Convert.ToString(_TimeBan) + " minute(s) timeout!", LogTypeArg.Both);
+                            logWriter.FullLogWrite(e.ChatMessage.Channel + " | " + e.ChatMessage.Username + " | " + TimeSpan.FromMinutes(_TimeBan) + " | " + "[BOT] Bad word ban! " + Convert.ToString(_TimeBan) + " minute(s) timeout!", logViewRTB, LogType.Both);
                             client.TimeoutUser(e.ChatMessage.Channel, e.ChatMessage.Username, TimeSpan.FromMinutes(_TimeBan), "Bad word ban! " + Convert.ToString(_TimeBan) + " minute(s) timeout!");
                         }
                     }
@@ -714,7 +675,7 @@ namespace xBot_WPF
                         {
                             s_Date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
                             client.BanUser(e.ChatMessage.Channel, e.ChatMessage.Username, "Spam message!");
-                            FullLogWrite("[" + s_Date + "][BOT] User banned: " + e.ChatMessage.Username, LogTypeArg.Both);
+                            logWriter.FullLogWrite("[" + s_Date + "][BOT] User banned: " + e.ChatMessage.Username, logViewRTB, LogType.Both);
                         }
                     }
                 }
@@ -733,7 +694,7 @@ namespace xBot_WPF
                     if (e.ChatMessage.Message == s[0])
                     {
                         client.SendMessage(e.ChatMessage.Channel, s[1]);
-                        logWrite("[BOT] " + s[1]);
+                        logWriter.FullLogWrite("[BOT] " + s[1], logViewRTB, LogType.Display);
                         CLog.LogWrite("[BOT] " + s[1]);
                     }
 
@@ -759,7 +720,7 @@ namespace xBot_WPF
                 if (e.ChatMessage.Message == "!help")
                 {
                     client.SendMessage(e.ChatMessage.Channel, "List of commands is: " + listCMD + "; !yt; !weather; !time, !8ball");
-                    FullLogWrite("[BOT] List of commands is: " + listCMD + "; !yt; !weather; !time, !8ball", LogTypeArg.Both);
+                    logWriter.FullLogWrite("[BOT] List of commands is: " + listCMD + "; !yt; !weather; !time, !8ball", logViewRTB, LogType.Both);
                 }
             }
             else
@@ -767,7 +728,7 @@ namespace xBot_WPF
                 if (e.ChatMessage.Message == "!help")
                 {
                     client.SendMessage(e.ChatMessage.Channel, "List of commands is: " + listCMD + "; !yt; !time, !8ball ");
-                    FullLogWrite("[BOT] List of commands is: " + listCMD + "; !yt; !time, !8ball ", LogTypeArg.Both);
+                    logWriter.FullLogWrite("[BOT] List of commands is: " + listCMD + "; !yt; !time, !8ball ", logViewRTB, LogType.Both);
                 }
             }
             //----------------------------
@@ -798,24 +759,24 @@ namespace xBot_WPF
                                 if (lS[1].Length > 0)
                                 {
                                     client.SendMessage(e.ChatMessage.Channel, "Shoutout for @" + lS[1] + " which is also a streamer! https://twitch.tv/" + lS[1]);
-                                    FullLogWrite("[BOT] Shoutout for @" + lS[1] + " which is also a streamer! https://twitch.tv/" + lS[1], LogTypeArg.Both);
+                                    logWriter.FullLogWrite("[BOT] Shoutout for @" + lS[1] + " which is also a streamer! https://twitch.tv/" + lS[1], logViewRTB, LogType.Both);
                                 }
                                 else
                                 {
                                     client.SendMessage(e.ChatMessage.Channel, "You must add the name of streamer for shoutout with @ character!");
-                                    FullLogWrite("[BOT] You must add the name of streamer for shoutout with @ character!", LogTypeArg.Both);
+                                    logWriter.FullLogWrite("[BOT] You must add the name of streamer for shoutout with @ character!", logViewRTB, LogType.Both);
                                 }
                             }
                             catch
                             {
                                 client.SendMessage(e.ChatMessage.Channel, "[BOT] You must add the name of streamer for shoutout with @ character!");
-                                FullLogWrite("[BOT] You must add the name of streamer for shoutout with @ character!", LogTypeArg.Display);
+                                logWriter.FullLogWrite("[BOT] You must add the name of streamer for shoutout with @ character!", logViewRTB, LogType.Display);
                             }
                         }
                         else
                         {
                             client.SendMessage(e.ChatMessage.Channel, "Only @" + s_UserName + " and moderators can use the !so command!");
-                            FullLogWrite("[BOT] Only @" + s_UserName + " and moderators can use the !so command!", LogTypeArg.Both);
+                            logWriter.FullLogWrite("[BOT] Only @" + s_UserName + " and moderators can use the !so command!", logViewRTB, LogType.Both);
                         }
                     }
 
@@ -849,24 +810,24 @@ namespace xBot_WPF
                                 if (lS[1].Length > 0)
                                 {
                                     client.SendMessage(e.ChatMessage.Channel, e.ChatMessage.Username + " wishes " + lS[1] + " good luck. May you succeed in whatever you're planning to do!");
-                                    FullLogWrite("[BOT] " + e.ChatMessage.Username + " wishes " + lS[1] + " good luck. May you succeed in whatever you're planning to do!", LogTypeArg.Both);
+                                    logWriter.FullLogWrite("[BOT] " + e.ChatMessage.Username + " wishes " + lS[1] + " good luck. May you succeed in whatever you're planning to do!", logViewRTB, LogType.Both);
                                 }
                                 else
                                 {
                                     client.SendMessage(e.ChatMessage.Channel, "You must add the name of chatter for good luck command with @ character!");
-                                    FullLogWrite("[BOT] You must add the name of chatter for good luck command with @ character!", LogTypeArg.Both);
+                                    logWriter.FullLogWrite("[BOT] You must add the name of chatter for good luck command with @ character!", logViewRTB, LogType.Both);
                                 }
                             }
                             catch
                             {
                                 client.SendMessage(e.ChatMessage.Channel, "[BOT] You must add the name of chatter for good luck command with @ character!");
-                                FullLogWrite("[BOT] You must add the name of chatter for good luck command with @ character!", LogTypeArg.Display);
+                                logWriter.FullLogWrite("[BOT] You must add the name of chatter for good luck command with @ character!", logViewRTB, LogType.Display);
                             }
                         }
                         else
                         {
                             client.SendMessage(e.ChatMessage.Channel, "Only @" + s_UserName + " can use the !gl command!");
-                            FullLogWrite("[BOT] Only @" + s_UserName + " can use the !gl command!", LogTypeArg.Both);
+                            logWriter.FullLogWrite("[BOT] Only @" + s_UserName + " can use the !gl command!", logViewRTB, LogType.Both);
                         }
                     }
                 }
@@ -886,20 +847,20 @@ namespace xBot_WPF
                     cn2 = we[2]; //grab City Name
                     if (cn1.Length > 0 && cn2.Length > 0)
                     {
-                        client.SendMessage(e.ChatMessage.Channel, "The time in " + cn2 + " (" + cn1 + ") is:" + Environment.NewLine + TimeZone(cn1, cn2));
-                        FullLogWrite("[BOT] The time in " + cn2 + " (" + cn1 + ") is:" + Environment.NewLine + TimeZone(cn1, cn2), LogTypeArg.Both);
+                        client.SendMessage(e.ChatMessage.Channel, "The time in " + cn2 + " (" + cn1 + ") is:" + Environment.NewLine + TimeZone.TimeZoneData(cn1, cn2));
+                        logWriter.FullLogWrite("[BOT] The time in " + cn2 + " (" + cn1 + ") is:" + Environment.NewLine + TimeZone.TimeZoneData(cn1, cn2), logViewRTB, LogType.Both);
                     }
                     else
                     {
                         client.SendMessage(e.ChatMessage.Channel, "The time command should look like this: !time Continet City_Name");
-                        FullLogWrite("[BOT] The time command should look like this: !time Continet City_Name", LogTypeArg.Both);
+                        logWriter.FullLogWrite("[BOT] The time command should look like this: !time Continet City_Name", logViewRTB, LogType.Both);
                     }
                 }
             }
             catch
             {
                 client.SendMessage(e.ChatMessage.Channel, "The time command should look like this: !time Continet City_Name. Or some information is wrong. Only Cities avaible on http://worldtimeapi.org are displyed!");
-                FullLogWrite("[BOT] The time command should look like this: !time Continet City_Name. Or some information is wrong.  Only Cities avaible on http://worldtimeapi.org are displyed!", LogTypeArg.Display);
+                logWriter.FullLogWrite("[BOT] The time command should look like this: !time Continet City_Name. Or some information is wrong.  Only Cities avaible on http://worldtimeapi.org are displyed!", logViewRTB, LogType.Display);
             }
 
             //----------------------------
@@ -911,7 +872,7 @@ namespace xBot_WPF
                 if (e.ChatMessage.Message == "!yt")
                 {
                     client.SendMessage(e.ChatMessage.Channel, "Now playing: " + s_YtLink);
-                    FullLogWrite("[BOT] Now playing: " + s_YtLink, LogTypeArg.Both);
+                    logWriter.FullLogWrite("[BOT] Now playing: " + s_YtLink, logViewRTB, LogType.Both);
                 }
             }
             else
@@ -919,7 +880,7 @@ namespace xBot_WPF
                 if (e.ChatMessage.Message == "!yt")
                 {
                     client.SendMessage(e.ChatMessage.Channel, "Nothing playing at the moment! ");
-                    FullLogWrite("[BOT] Nothing playing at the moment! ", LogTypeArg.Both);
+                    logWriter.FullLogWrite("[BOT] Nothing playing at the moment! ", logViewRTB, LogType.Both);
                 }
             }
             //----------------------------
@@ -934,7 +895,7 @@ namespace xBot_WPF
                     await PlayListLoad();//we reload the playlist to catch the new songs added
                     string pOut = string.Join("", PList);
                     client.SendMessage(e.ChatMessage.Username, "Current playlist: " + Environment.NewLine + pOut + Environment.NewLine);
-                    FullLogWrite("[BOT] Current playlist: " + Environment.NewLine + pOut, LogTypeArg.Both);
+                    logWriter.FullLogWrite("[BOT] Current playlist: " + Environment.NewLine + pOut, logViewRTB, LogType.Both);
                 }
 
 
@@ -966,14 +927,14 @@ namespace xBot_WPF
                                 int i = c + 1;
                                 File.AppendAllText(s_PlayListRequest, i + "|" + s[1]);
                                 client.SendMessage(e.ChatMessage.Username, "Song added in queue: " + ytTitle);
-                                FullLogWrite("[BOT] Song added in queue: " + ytTitle, LogTypeArg.Both);
+                                logWriter.FullLogWrite("[BOT] Song added in queue: " + ytTitle, logViewRTB, LogType.Both);
                             }
                         }
                     }
                     catch (Exception ex)
                     {
                         client.SendMessage(e.ChatMessage.Username, "Something went wrong with adding song in queue! ");
-                        logWrite("[BOT] Something went wrong with adding song in queue! ");
+                        logWriter.FullLogWrite("[BOT] Something went wrong with adding song in queue! ", logViewRTB, LogType.Display);
                         CLog.LogWriteError("!rsong Error: " + ex.ToString());
                     }
 
@@ -1034,12 +995,12 @@ namespace xBot_WPF
                     {
                         string pOut = string.Join(" ", QList);
                         client.SendMessage(e.ChatMessage.Username, "Request playlist: " + Environment.NewLine + pOut + Environment.NewLine);
-                        FullLogWrite("[BOT] Request playlist: " + Environment.NewLine + pOut, LogTypeArg.Both);
+                        logWriter.FullLogWrite("[BOT] Request playlist: " + Environment.NewLine + pOut, logViewRTB, LogType.Both);
                     }
                     else
                     {
                         client.SendMessage(e.ChatMessage.Username, "There are no songs in request queue!");
-                        FullLogWrite("[BOT] There are no songs in request queue!", LogTypeArg.Both);
+                        logWriter.FullLogWrite("[BOT] There are no songs in request queue!", logViewRTB, LogType.Both);
                     }
                 }
 
@@ -1065,31 +1026,31 @@ namespace xBot_WPF
                             if (s_WeatherUnits == "1")
                             {
                                 client.SendMessage(e.ChatMessage.Channel, "The weather(Celsius) on " + cn + " is:" + Environment.NewLine + WeatherForecast(cn));
-                                FullLogWrite("[BOT] The weather(Celsius) in " + cn + " is:" + Environment.NewLine + WeatherForecast(cn), LogTypeArg.Both);
+                                logWriter.FullLogWrite("[BOT] The weather(Celsius) in " + cn + " is:" + Environment.NewLine + WeatherForecast(cn), logViewRTB, LogType.Both);
                             }
                             else
                             {
                                 client.SendMessage(e.ChatMessage.Channel, "The weather(Fahrenheit) on " + cn + " is:" + Environment.NewLine + WeatherForecast(cn));
-                                FullLogWrite("[BOT] The weather(Fahrenheit) in " + cn + " is:" + Environment.NewLine + WeatherForecast(cn), LogTypeArg.Both);
+                                logWriter.FullLogWrite("[BOT] The weather(Fahrenheit) in " + cn + " is:" + Environment.NewLine + WeatherForecast(cn), logViewRTB, LogType.Both);
                             }
                         }
                         else
                         {
                             client.SendMessage(e.ChatMessage.Channel, "Weathr not avaible on this City or API Key tries excided!");
-                            FullLogWrite("[BOT] Weathr not avaible on this City or API Key tries excided!", LogTypeArg.Both);
+                            logWriter.FullLogWrite("[BOT] Weathr not avaible on this City or API Key tries excided!", logViewRTB, LogType.Both);
                         }
                     }
                 }
                 catch
                 {
                     client.SendMessage(e.ChatMessage.Channel, "Check the City name please!");
-                    FullLogWrite("[BOT] Check the City name please!", LogTypeArg.Display);
+                    logWriter.FullLogWrite("[BOT] Check the City name please!", logViewRTB, LogType.Display);
                 }
             }
             else
             {
                 client.SendMessage(e.ChatMessage.Channel, "Weather command is disabled for the moment!");
-                FullLogWrite("[BOT] Weather command is disabled for the moment!", LogTypeArg.Display);
+                logWriter.FullLogWrite("[BOT] Weather command is disabled for the moment!", logViewRTB, LogType.Display);
             }
             //----------------------------
 
@@ -1114,7 +1075,7 @@ namespace xBot_WPF
                             {
                                 if (c == false)
                                 {
-                                    FullLogWrite("[" + s_Date + "][BOT] 8Ball - Answers files is empty! You need to add something", LogTypeArg.Display);
+                                    logWriter.FullLogWrite("[" + s_Date + "][BOT] 8Ball - Answers files is empty! You need to add something", logViewRTB, LogType.Display);
                                     c = true;
                                 }
                             }
@@ -1123,14 +1084,14 @@ namespace xBot_WPF
                         string rand = randomM[index];
                         s_Date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
                         client.SendMessage(e.ChatMessage.Channel, "Scott says: " + rand);
-                        FullLogWrite("[" + s_Date + "][BOT] Scott says: " + rand, LogTypeArg.Both);
+                        logWriter.FullLogWrite("[" + s_Date + "][BOT] Scott says: " + rand, logViewRTB, LogType.Both);
                     }
                 }
                 else
                 {
                     s_Date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
                     client.SendMessage(e.ChatMessage.Channel, "Your question must contain ? for Scott to answer!");
-                    FullLogWrite("[" + s_Date + "][BOT] Your question must contain ? for Scott to answer!", LogTypeArg.Both);
+                    logWriter.FullLogWrite("[" + s_Date + "][BOT] Your question must contain ? for Scott to answer!", logViewRTB, LogType.Both);
                 }
             }
             //----------------------------
@@ -1143,12 +1104,12 @@ namespace xBot_WPF
             if (e.Subscriber.SubscriptionPlan == SubscriptionPlan.Prime)
             {
                 client.SendMessage(e.Channel, $"Welcome {e.Subscriber.DisplayName} to the substers! You just earned 500 points! So kind of you to use your Twitch Prime on this channel!");
-                FullLogWrite(e.Channel + $":  Welcome {e.Subscriber.DisplayName} to the substers! You just earned 500 points! So kind of you to use your Twitch Prime on this channel!", LogTypeArg.Both);
+                logWriter.FullLogWrite(e.Channel + $":  Welcome {e.Subscriber.DisplayName} to the substers! You just earned 500 points! So kind of you to use your Twitch Prime on this channel!", logViewRTB, LogType.Both);
             }
             else
             {
                 client.SendMessage(e.Channel, $" Welcome {e.Subscriber.DisplayName} to the substers! You just earned 500 points!");
-                FullLogWrite(e.Channel + $":  Welcome {e.Subscriber.DisplayName} to the substers! You just earned 500 points!", LogTypeArg.Both);
+                logWriter.FullLogWrite(e.Channel + $":  Welcome {e.Subscriber.DisplayName} to the substers! You just earned 500 points!", logViewRTB, LogType.Both);
             }
 
             //increase subs count
@@ -1161,7 +1122,7 @@ namespace xBot_WPF
             if (s_BotMSGKey == "1")
             {
                 client.SendMessage(e.Channel, $"Welcome to my channel {e.Username}. and thank you for joining. For more commands type !help");
-                FullLogWrite(e.Channel + $"  Welcome to my channel {e.Username}. and thank you for joining. For more commands type !help", LogTypeArg.Both);
+                logWriter.FullLogWrite(e.Channel + $"  Welcome to my channel {e.Username}. and thank you for joining. For more commands type !help", logViewRTB, LogType.Both);
             }
 
             //we increment with 1 integer when a person has joined the chat room
@@ -1177,72 +1138,6 @@ namespace xBot_WPF
             }
         }
         #endregion
-
-
-        /// <summary>
-        /// TimeZone extract using http://worldtimeapi.org API
-        /// </summary>
-        /// <param name="Region">Continent</param>
-        /// <param name="CityName">City Name</param>
-        /// <returns>string</returns>
-        private string TimeZone(string Region, string CityName)
-        {
-            string _date = DateTime.Now.ToString("yyyy_MM_dd");
-            string date2 = string.Empty;
-            string errFile = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\log\errors\" + _date + "_log.txt";
-            string outs = string.Empty;
-            string html = @"http://worldtimeapi.org/api/timezone/{0}/{1}";
-            try
-            {
-
-                HttpResponseMessage response = s_ClientH.GetAsync(string.Format(html, Region, CityName)).GetAwaiter().GetResult();
-                response.EnsureSuccessStatusCode();
-                string responseBody = response.Content.ReadAsStringAsync().Result;
-
-                //parsing the https output 
-                string[] oS = responseBody.Split(',');
-                string[] oY = oS[2].Split('.');
-                oY[0] = oY[0].Replace("\"datetime\":\"", "Date: ");
-                oY[0] = oY[0].Replace("T", " Hour: ");
-                //-----------------
-
-                //return the final data
-                outs = oY[0];
-
-
-            }
-            catch (Exception e)
-            {
-                outs = "Please check City name or Continent name. Only Cities avaible on http://worldtimeapi.org are displyed!";
-                //save the entire error to file
-                date2 = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
-
-                if (File.Exists(errFile))
-                {
-                    string rErrorFile = File.ReadAllText(errFile);
-
-                    if (!rErrorFile.Contains("[" + date2 + "] TimeZone error: "))
-                    {
-                        CLog.LogWriteError("[" + date2 + "] TimeZone error: " + e.ToString() + Environment.NewLine);
-                    }
-                }
-                else
-                {
-                    File.WriteAllText(errFile, "");
-                    string rErrorFile = File.ReadAllText(errFile);
-
-                    if (!rErrorFile.Contains("[" + date2 + "] TimeZone error: "))
-                    {
-                        CLog.LogWriteError("[" + date2 + "] TimeZone error: " + e.ToString() + Environment.NewLine);
-                    }
-                }
-                //--------------------------------
-            }
-
-            return outs;
-
-        }
-
 
         /// <summary>
         /// weather api check and return the output parssed
@@ -1291,7 +1186,6 @@ namespace xBot_WPF
                     {
                         while ((line = sr.ReadLine()) != null)
                         {
-
                             //we check only for what we need, like: temp, feel, humidity, wind speed
                             if (line.Contains("temp") || line.Contains("feel") || line.Contains("humidity") || line.Contains("speed"))
                             {
@@ -1312,7 +1206,7 @@ namespace xBot_WPF
                 else
                 {
                     //we print the issue on the log viewer console
-                    logWrite("No openweathermap.org API Key saved! Please check" + Environment.NewLine);
+                    logWriter.FullLogWrite("No openweathermap.org API Key saved! Please check" + Environment.NewLine, logViewRTB, LogType.Display);
                 }
             }
             catch (Exception e)
@@ -1422,7 +1316,7 @@ namespace xBot_WPF
                         {
                             startBotBTN.Content = "STOP";
                         });
-                        FullLogWrite("[" + s_Date + "]Internet up. Reconnected to " + s_UserName + " channel !", LogTypeArg.Both);
+                        logWriter.FullLogWrite("[" + s_Date + "]Internet up. Reconnected to " + s_UserName + " channel !", logViewRTB, LogType.Both);
                     }
                 }
             }
@@ -1446,7 +1340,7 @@ namespace xBot_WPF
                     string oRTB = ConvertRichTextBoxContentsToString(logViewRTB);
                     if (!oRTB.Contains("[" + s_Date + "] No internet connection at the moment. Trying to reconnect..."))
                     {
-                        FullLogWrite("[" + s_Date + "] No internet connection at the moment. Trying to reconnect...", LogTypeArg.Both);
+                        logWriter.FullLogWrite("[" + s_Date + "] No internet connection at the moment. Trying to reconnect...", logViewRTB, LogType.Both);
                     }
                 }
             }
@@ -1511,7 +1405,7 @@ namespace xBot_WPF
                     }
                     catch (Exception x)
                     {
-                        FullLogWrite("oAuth decrypt error: " + x.Message, LogTypeArg.Both);
+                        logWriter.FullLogWrite("oAuth decrypt error: " + x.Message, logViewRTB, LogType.Both);
                         s_StreamKey = "error_key";
                     }
                     //-------------------------------------
@@ -1537,25 +1431,23 @@ namespace xBot_WPF
                             }
                             else
                             {
-                                FullLogWrite("Please fill in settings your oAuth Twitch key generated from https://twitchapps.com/tmi/ !", LogTypeArg.Display);
-
+                                logWriter.FullLogWrite("Please fill in settings your oAuth Twitch key generated from https://twitchapps.com/tmi/ !", logViewRTB, LogType.Display);
                             }
                         }
                         else
                         {
-                            logWrite("Please fill in settings the user name for the Twitch Channel that you want to connect!");
-                            FullLogWrite("Please fill in settings the user name for the Twitch Channel that you want to connect!", LogTypeArg.Display);
+                            logWriter.FullLogWrite("Please fill in settings the user name for the Twitch Channel that you want to connect!", logViewRTB, LogType.Display);
                         }
                     }
                 }
                 else
                 {
-                    FullLogWrite("Twitch tmi.twitch.tv server is down!", LogTypeArg.Display);
+                    logWriter.FullLogWrite("Twitch tmi.twitch.tv server is down!", logViewRTB, LogType.Display);
                 }
             }
             else
             {
-                FullLogWrite("No internet connection", LogTypeArg.Display);
+                logWriter.FullLogWrite("No internet connection", logViewRTB, LogType.Display);
             }
         }
         /// <summary>
@@ -1721,12 +1613,12 @@ namespace xBot_WPF
                         if (client.IsConnected)
                         {
                             client.SendMessage(s_UserName, rand);//sending the random message from list
-                            logWrite("[Random Message] [Interval set to: " + s_RTime + " minutes]" + rand);
+                            logWriter.FullLogWrite("[Random Message] [Interval set to: " + s_RTime + " minutes]" + rand, logViewRTB, LogType.Display);
                             CLog.LogWrite("[" + dateSent + "]Random Message: " + rand);
                         }
                         else
                         {
-                            logWrite("[Random Message] Client is disconnected!");
+                            logWriter.FullLogWrite("[Random Message] Client is disconnected!", logViewRTB, LogType.Display);
                             CLog.LogWriteError("[" + dateSent + "]Random Message: " + rand);
                         }
                     }
@@ -1747,7 +1639,7 @@ namespace xBot_WPF
                 }
                 else
                 {
-                    logWrite("[Random Message Error] File " + s_RandomListFile + " dose not exist!");
+                    logWriter.FullLogWrite("[Random Message Error] File " + s_RandomListFile + " dose not exist!",logViewRTB,LogType.Display);
                     CLog.LogWriteError("File " + s_RandomListFile + " dose not exist!");
                 }
             }
@@ -1796,7 +1688,7 @@ namespace xBot_WPF
             }
             else
             {
-                FullLogWrite("[BOT] File " + s_PlayListFile + "dose not exist! Restart application for recreate!", LogTypeArg.Both);
+                logWriter.FullLogWrite("[BOT] File " + s_PlayListFile + "dose not exist! Restart application for recreate!", logViewRTB, LogType.Both);
             }
         }
 
@@ -1840,7 +1732,7 @@ namespace xBot_WPF
                         }
                         catch (Exception ex)
                         {
-                            FullLogWrite("[BOT] Queuelistload: " + ex.Message, LogTypeArg.Both);
+                            logWriter.FullLogWrite("[BOT] Queuelistload: " + ex.Message, logViewRTB, LogType.Both);
                         }
                     }
 
@@ -1849,7 +1741,7 @@ namespace xBot_WPF
             }
             else
             {
-                FullLogWrite("[BOT] File " + s_PlayListRequest + "dose not exist! Restart application for recreate!", LogTypeArg.Both);
+                logWriter.FullLogWrite("[BOT] File " + s_PlayListRequest + "dose not exist! Restart application for recreate!", logViewRTB, LogType.Both);
             }
         }
 
