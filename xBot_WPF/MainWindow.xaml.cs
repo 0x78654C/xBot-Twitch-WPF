@@ -1536,7 +1536,7 @@ namespace xBot_WPF
 
                     if (Convert.ToInt32(s_RTime) > 0)
                     {
-                        //set timer interval for nex resend
+                        //set timer interval for next resend
                         DispatcherTimerR.Interval = new TimeSpan(0, Convert.ToInt32(s_RTime), 0);
                     }
                     else
