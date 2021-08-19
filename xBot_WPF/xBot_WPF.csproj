@@ -137,9 +137,11 @@
       <DependentUpon>settings.xaml</DependentUpon>
     </Compile>
     <Compile Include="test.cs" />
+    <Compile Include="Utils\LogWriter.cs" />
     <Compile Include="youtube.xaml.cs">
       <DependentUpon>youtube.xaml</DependentUpon>
     </Compile>
+    <Compile Include="YouTube\PlayList.cs" />
     <Compile Include="yTsongRequest.xaml.cs">
       <DependentUpon>yTsongRequest.xaml</DependentUpon>
     </Compile>
