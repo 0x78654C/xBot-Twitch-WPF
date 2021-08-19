@@ -22,6 +22,7 @@ using TwitchLib.Communication.Clients;
 using TwitchLib.Communication.Models;
 using LogType = xBot_WPF.Utils.LogWriter.LogTypeArg;
 using TimeZone = Core.Utils.TimeZone;
+using WeatherForecast = Core.Utils.WeatherForecast;
 
 namespace xBot_WPF
 {
@@ -290,7 +291,7 @@ namespace xBot_WPF
             //we check if bot is connected and display the log info
             if (client.IsConnected)
             {
-                logWriter.FullLogWrite("[" + s_Date + "] xBot Connected to " + s_UserName + " channel !",logViewRTB,LogType.Display);
+                logWriter.FullLogWrite("[" + s_Date + "] xBot Connected to " + s_UserName + " channel !", logViewRTB, LogType.Display);
                 Task.Delay(2);
                 this.Dispatcher.Invoke(() =>
                 {
@@ -1025,13 +1026,23 @@ namespace xBot_WPF
                         {
                             if (s_WeatherUnits == "1")
                             {
-                                client.SendMessage(e.ChatMessage.Channel, "The weather(Celsius) on " + cn + " is:" + Environment.NewLine + WeatherForecast(cn));
-                                logWriter.FullLogWrite("[BOT] The weather(Celsius) in " + cn + " is:" + Environment.NewLine + WeatherForecast(cn), logViewRTB, LogType.Both);
+                                if (WeatherForecast.WeatherForecastData(cn, s_ApiKey, s_WeatherUnits).Contains("No openweathermap.org API Key saved! Please check"))
+                                {
+                                    CLog.LogWriteError($"[{s_Date}] No openweathermap.org API Key saved! Please check");
+                                    return;
+                                }
+                                client.SendMessage(e.ChatMessage.Channel, "The weather(Celsius) on " + cn + " is:" + Environment.NewLine + WeatherForecast.WeatherForecastData(cn, s_ApiKey, s_WeatherUnits));
+                                logWriter.FullLogWrite("[BOT] The weather(Celsius) in " + cn + " is:" + Environment.NewLine + WeatherForecast.WeatherForecastData(cn, s_ApiKey, s_WeatherUnits), logViewRTB, LogType.Both);
                             }
                             else
                             {
-                                client.SendMessage(e.ChatMessage.Channel, "The weather(Fahrenheit) on " + cn + " is:" + Environment.NewLine + WeatherForecast(cn));
-                                logWriter.FullLogWrite("[BOT] The weather(Fahrenheit) in " + cn + " is:" + Environment.NewLine + WeatherForecast(cn), logViewRTB, LogType.Both);
+                                if (WeatherForecast.WeatherForecastData(cn, s_ApiKey, s_WeatherUnits).Contains("No openweathermap.org API Key saved! Please check"))
+                                {
+                                    CLog.LogWriteError($"[{s_Date}] No openweathermap.org API Key saved! Please check");
+                                    return;
+                                }
+                                client.SendMessage(e.ChatMessage.Channel, "The weather(Fahrenheit) on " + cn + " is:" + Environment.NewLine + WeatherForecast.WeatherForecastData(cn, s_ApiKey, s_WeatherUnits));
+                                logWriter.FullLogWrite("[BOT] The weather(Fahrenheit) in " + cn + " is:" + Environment.NewLine + WeatherForecast.WeatherForecastData(cn, s_ApiKey, s_WeatherUnits), logViewRTB, LogType.Both);
                             }
                         }
                         else
@@ -1139,111 +1150,7 @@ namespace xBot_WPF
         }
         #endregion
 
-        /// <summary>
-        /// weather api check and return the output parssed
-        /// </summary>
-        /// <param name="CityName"></param>
-        /// <returns></returns>
-        private string WeatherForecast(string CityName)
-        {
 
-            string _date = DateTime.Now.ToString("yyyy_MM_dd");
-            string date2 = string.Empty;
-            string errFile = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\log\errors\" + _date + "_log.txt";
-            string outs = string.Empty;
-            try
-            {
-
-                if (s_ApiKey.Length > 0) // we check the lenght
-                {
-                    //Open weather map API link with celsius 
-                    // TODO: will decide if I put switch for ferenhait
-                    string html = @"https://api.openweathermap.org/data/2.5/weather?q={0}&appid={1}&units=metric";
-                    if (s_WeatherUnits == "1")
-                    {
-                        html = @"https://api.openweathermap.org/data/2.5/weather?q={0}&appid={1}&units=metric";
-                    }
-                    else
-                    {
-                        html = @"https://api.openweathermap.org/data/2.5/weather?q={0}&appid={1}&units=imperial";
-                    }
-
-                    HttpResponseMessage response = s_ClientH.GetAsync(string.Format(html, CityName, Encryption._decryptData(s_ApiKey))).GetAwaiter().GetResult();
-                    response.EnsureSuccessStatusCode();
-                    string responseBody = response.Content.ReadAsStringAsync().Result;
-
-                    string l = "";
-                    string line = "";
-                    //parssing the oudtput
-                    responseBody = responseBody.Replace(",", Environment.NewLine);
-                    responseBody = responseBody.Replace("\"", "");
-                    responseBody = responseBody.Replace("}", "");
-                    responseBody = responseBody.Replace("{", "");
-                    responseBody = responseBody.Replace("wind:", "");
-                    responseBody = responseBody.Replace("main:", "");
-                    //---------------------------------
-                    using (var sr = new StringReader(responseBody))
-                    {
-                        while ((line = sr.ReadLine()) != null)
-                        {
-                            //we check only for what we need, like: temp, feel, humidity, wind speed
-                            if (line.Contains("temp") || line.Contains("feel") || line.Contains("humidity") || line.Contains("speed"))
-                            {
-                                l += line + Environment.NewLine;
-                            }
-                        }
-                    }
-                    outs = l;
-                    //renaming output parts
-                    outs = outs.Replace("temp:", " Temperature: ");
-                    outs = outs.Replace("feels_like:", " Feels Like: ");
-                    outs = outs.Replace("temp_min:", " Minim Temperature: ");
-                    outs = outs.Replace("temp_max:", " Maxim Temperature: ");
-                    outs = outs.Replace("humidity:", " Humidity: ");
-                    outs = outs.Replace("speed:", " Wind Speed: ");
-                    //---------------------------------
-                }
-                else
-                {
-                    //we print the issue on the log viewer console
-                    logWriter.FullLogWrite("No openweathermap.org API Key saved! Please check" + Environment.NewLine, logViewRTB, LogType.Display);
-                }
-            }
-            catch (Exception e)
-            {
-                //In case of error we output this in console.
-                outs = "Please check city name!";
-
-                //save the entire error to file
-                date2 = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
-
-                if (File.Exists(errFile))
-                {
-                    string rErrorFile = File.ReadAllText(errFile);
-
-                    if (!rErrorFile.Contains("[" + date2 + "] Weather error: "))
-                    {
-                        CLog.LogWriteError("[" + date2 + "] Weather error: " + e.ToString() + Environment.NewLine);
-                    }
-                }
-                else
-                {
-                    File.WriteAllText(errFile, "");
-                    string rErrorFile = File.ReadAllText(errFile);
-
-                    if (!rErrorFile.Contains("[" + date2 + "] Weather error: "))
-                    {
-                        CLog.LogWriteError("[" + date2 + "] Weather error: " + e.ToString() + Environment.NewLine);
-                    }
-                }
-                //--------------------------------
-
-            }
-
-            //print the final weather forecast
-            return outs;
-
-        }
         /// <summary>
         /// Drag window on mouse click left
         /// </summary>
@@ -1639,7 +1546,7 @@ namespace xBot_WPF
                 }
                 else
                 {
-                    logWriter.FullLogWrite("[Random Message Error] File " + s_RandomListFile + " dose not exist!",logViewRTB,LogType.Display);
+                    logWriter.FullLogWrite("[Random Message Error] File " + s_RandomListFile + " dose not exist!", logViewRTB, LogType.Display);
                     CLog.LogWriteError("File " + s_RandomListFile + " dose not exist!");
                 }
             }
