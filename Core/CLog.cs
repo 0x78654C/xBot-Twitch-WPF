@@ -11,9 +11,9 @@ namespace Core
     public class CLog
     {
         //Declare log path file variable and StreamWriter
-        private static string logPathFile;
-        static StreamWriter lWriter;
-        static string _date;
+        private static string s_LogPathFile;
+        private static StreamWriter s_LWriter;
+        private static string s_Date;
         //----------------------
 
         /// <summary>
@@ -23,18 +23,18 @@ namespace Core
         public static void LogWrite(string data)
         {
             //grabbin the current date
-            _date = DateTime.Now.ToString("yyyy_MM_dd");
+            s_Date = DateTime.Now.ToString("yyyy_MM_dd");
 
             //declaring path using date
-            logPathFile = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\log\" + _date + "_log.txt";
+            s_LogPathFile = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\log\" + s_Date + "_log.txt";
 
             //Appending log data to file with string 
             try
             {
-                using (lWriter = new StreamWriter(logPathFile, append: true))
+                using (s_LWriter = new StreamWriter(s_LogPathFile, append: true))
                 {
-                    lWriter.Write(data + Environment.NewLine);
-                    lWriter.Close();
+                    s_LWriter.Write(data + Environment.NewLine);
+                    s_LWriter.Close();
                 }
             }
             catch
@@ -51,18 +51,18 @@ namespace Core
         public static void LogWriteError(string data)
         {
             //grabbin the current date
-            _date = DateTime.Now.ToString("yyyy_MM_dd");
+            s_Date = DateTime.Now.ToString("yyyy_MM_dd");
 
             //declaring path using date
-            logPathFile = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\log\errors\" + _date + "_log.txt";
+            s_LogPathFile = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\log\errors\" + s_Date + "_log.txt";
 
             //Appending log data to file with string 
             try
             {
-                using (lWriter = new StreamWriter(logPathFile, append: true))
+                using (s_LWriter = new StreamWriter(s_LogPathFile, append: true))
                 {
-                    lWriter.Write(data + Environment.NewLine);
-                    lWriter.Close();
+                    s_LWriter.Write(data + Environment.NewLine);
+                    s_LWriter.Close();
                 }
             }
             catch
