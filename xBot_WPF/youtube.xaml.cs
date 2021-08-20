@@ -9,7 +9,8 @@ using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using YouTubePlayList = xBot_WPF.YouTube.PlayList;
+using YouTubeList = xBot_WPF.YouTube.PlayList;
+using YouTubeDuration = xBot_WPF.YouTube.VideoStuff;
 
 namespace xBot_WPF
 {
@@ -73,7 +74,7 @@ namespace xBot_WPF
             //---------------------------
 
             // Load links from playslistfile in listbox
-            YouTubePlayList.LoadPlayListLinks(s_playListFile, playList);
+            YouTubeList.LoadPlayListLinks(s_playListFile, playList);
             //---------------------------
 
             // Start timer for play next song.
@@ -84,7 +85,7 @@ namespace xBot_WPF
             //---------------------------
 
             // Load song request in list.
-            YouTubePlayList.LoadSongsInList(s_playListRequest, listRequestedSongs);
+            YouTubeList.LoadSongsInList(s_playListRequest, listRequestedSongs);
             //---------------------------
             
             // Start timer for play requested song.
@@ -182,6 +183,12 @@ namespace xBot_WPF
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void PlayBTN_Click(object sender, RoutedEventArgs e)
+        {
+            PlayYoutubeLinks();
+        }
+
+        // Main play YouTube links method. 
+        private void PlayYoutubeLinks()
         {
             // playNext();
             if (playBTN.Content.ToString() == "Play")
@@ -319,40 +326,7 @@ namespace xBot_WPF
             }
         }
 
-        /// <summary>
-        /// Extract duration time of a YouTube video.
-        /// </summary>
-        /// <param name="url"></param>
-        private static int YTVideoDuration(string url)
-        {
-            try
-            {
-                string id = url.Split('=')[1];
-                WebClient client = new WebClient();
-                // Download youtube link source code.
-                string titleParse = client.DownloadString("https://www.youtube.com/watch?v=" + id);
-
-                // Grabing string containing elapsed time.
-                int pFrom = titleParse.IndexOf("approxDurationMs") + "approxDurationMs".Length;
-                string outs = titleParse.Substring(pFrom, 23);
-
-                // Return digits only.
-                string duration = Regex.Match(outs, @"\d+").Value;
-
-                // Convet to int32.
-                int yDuration = Int32.Parse(duration);
-
-                // Convert from milliseconds to secdons.
-                return yDuration / 1000;
-            }
-            catch
-            {
-                // We return 0 in case of live videos.
-                return 0;
-            }
-        }
-
-
+      
         /// <summary>
         /// Play next song from listbox.
         /// </summary>
@@ -370,7 +344,7 @@ namespace xBot_WPF
                         playList.SelectedIndex = 0;
                         playList.Focus();
                         ReloadVideo(playList.SelectedItem.ToString());
-                        counter = YTVideoDuration(s_playLink);
+                        counter = YouTubeDuration.YouTubeVideoDuration(s_playLink);
                         Reg.regKey_WriteSubkey(s_keyName, "YtLink", s_ytTitle + ": " + s_playLink);
 
                         //store youtube link only in registry
@@ -381,7 +355,7 @@ namespace xBot_WPF
                         playList.SelectedIndex = i + 1;
                         playList.Focus();
                         ReloadVideo(playList.SelectedItem.ToString());
-                        counter = YTVideoDuration(s_playLink);
+                        counter = YouTubeDuration.YouTubeVideoDuration(s_playLink);
                         Reg.regKey_WriteSubkey(s_keyName, "YtLink", s_ytTitle + ": " + s_playLink);
 
                         //store youtube link only in registry
@@ -428,7 +402,7 @@ namespace xBot_WPF
         private void PlayNextCKB_Checked(object sender, RoutedEventArgs e)
         {
             ReloadVideo(s_playLink);
-            counter = YTVideoDuration(s_playLink);
+            counter = YouTubeDuration.YouTubeVideoDuration(s_playLink);
             timer1.Start();
             playBTN.Content = "Stop";
             playReqCKB.IsChecked = false;
@@ -506,7 +480,7 @@ namespace xBot_WPF
                     ReloadVideo(song[1]);
 
                     // Get video duration for next song
-                    counter = YTVideoDuration(song[1]);
+                    counter = YouTubeDuration.YouTubeVideoDuration(song[1]);
 
                     // Store youtube title in registry
                     Reg.regKey_WriteSubkey(s_keyName, "YtLink", s_ytTitle + ": " + s_playLink);
@@ -541,7 +515,7 @@ namespace xBot_WPF
             {
                 string[] song = listRequestedSongs.ElementAt(0).Split('|');
                 ReloadVideo(song[1]);
-                counter = YTVideoDuration(song[1]);
+                counter = YouTubeDuration.YouTubeVideoDuration(song[1]);
                 listRequestedSongs.Remove(listRequestedSongs.ElementAt(0));
 
                 string playReqD = string.Join(Environment.NewLine, listRequestedSongs);
