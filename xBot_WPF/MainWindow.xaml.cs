@@ -13,6 +13,7 @@ using System.Windows;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
+using System.Windows.Forms;
 using TwitchLib.Client;
 using TwitchLib.Client.Enums;
 using TwitchLib.Client.Events;
@@ -23,6 +24,7 @@ using TwitchLib.Communication.Models;
 using LogType = xBot_WPF.Utils.LogWriter.LogTypeArg;
 using TimeZone = Core.Utils.TimeZone;
 using WeatherForecast = Core.Utils.WeatherForecast;
+using System.Drawing;
 
 namespace xBot_WPF
 {
@@ -127,7 +129,6 @@ namespace xBot_WPF
 
         //Define the background worker for bot start and random message
         BackgroundWorker Worker;
-        BackgroundWorker WorkerForPlayList;
         //--------------------------------
 
         //Declare mutex variable for startup instance check
@@ -384,11 +385,18 @@ namespace xBot_WPF
 
         private async void Client_OnMessageReceived(object sender, OnMessageReceivedArgs e)
         {
+            var icon = new NotifyIcon();
             //Display in logwindow the chat messages
             string date2 = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             if (e.ChatMessage.Message.Length > 0)
             {
                 logWriter.FullLogWrite("[" + date2 + "] " + e.ChatMessage.Username + " : " + e.ChatMessage.Message, logViewRTB, LogType.Both);
+                icon.Icon = new Icon(@"../../icon.ico");
+                icon.Visible = true;
+                if (!e.ChatMessage.Username.Contains("x_coding") && !e.ChatMessage.Username.Contains("xcodingbot"))
+                {
+                    icon.ShowBalloonTip(200, e.ChatMessage.Username, e.ChatMessage.Message, ToolTipIcon.None);
+                }
             }
             //--------------------------------------------
 
