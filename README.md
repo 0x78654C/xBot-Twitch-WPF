@@ -61,8 +61,9 @@ Project ongoing live on: https://www.twitch.tv/x_coding
     display raiders and shout out the streamer who raided
     display if streamer is being hosted
     hardcoded !8ball command for Magic 8Ball game. Ex: !8ball Should I get a car?
-	hardcoded !create - Ability for streamer and moderator to create commands EX: !create-!test-message
-	hardcoded !update - Ability for streamer and moderator to update commands EX: !update-!test-message2
-	hardcoded !delete - Ability for streamer and moderator to delete existing commands EX: !create-!test
+    hardcoded !create - Ability for streamer and moderator to create commands EX: !create-!test-message
+    hardcoded !update - Ability for streamer and moderator to update commands EX: !update-!test-message2
+    hardcoded !delete - Ability for streamer and moderator to delete existing commands EX: !create-!test
+    display chat message in system tray notification icon (activation from Bot Message section)
 
 (more to come)
