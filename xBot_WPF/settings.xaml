@@ -96,8 +96,8 @@
             </PasswordBox>
             <Button Name="saveBTN" Style="{DynamicResource RoundCorner2}" Content="Save" HorizontalAlignment="Center" Margin="117,209,466,0" VerticalAlignment="Top" Width="95" Height="37" Foreground="#FFE1DDEE" Click="saveBTN_Click"/>
             <CheckBox Name="weatherCKB" Content="Activate Weather Command: OFF" HorizontalAlignment="Left" Margin="69,307,0,0" VerticalAlignment="Top" Checked="weatherCKB_Checked" Unchecked="weatherCKB_Unchecked"/>
-            <CheckBox Name="joinedCKB" Content="Display user joiend chat message: OFF" HorizontalAlignment="Left" Margin="55,253,0,0" VerticalAlignment="Top" Checked="joinedCKB_Checked" Unchecked="joinedCKB_Unchecked"/>
-            <ComboBox Name="weaherUnits" IsEditable="False" Text="Celsius" HorizontalAlignment="Left" Margin="124,277,0,0" VerticalAlignment="Top" Width="83" SelectionChanged="weaherUnits_SelectionChanged">
+            <CheckBox Name="JoinedUserCheckBox" Content="Display user joiend chat message: OFF" HorizontalAlignment="Left" Margin="55,253,0,0" VerticalAlignment="Top" Checked="JoinedUserCheckBox_Checked" Unchecked="JoinedUserCheckBox_Unchecked"/>
+            <ComboBox Name="weaherUnits" IsEditable="False" Text="Celsius" HorizontalAlignment="Left" Margin="124,277,0,0" VerticalAlignment="Top" Width="83" SelectionChanged="WeaherUnits_SelectionChanged">
                 <ComboBoxItem >
                     Celsius
                 </ComboBoxItem>
@@ -105,10 +105,10 @@
                     Fahrenheit
                 </ComboBoxItem>
             </ComboBox>
-            <CheckBox x:Name="songReqCKB" Content="Activate YT Song Rquest: OFF" HorizontalAlignment="Left" Margin="79,334,0,0" VerticalAlignment="Top" Checked="songReqCKB_Checked" Unchecked="songReqCKB_Unchecked"/>
+            <CheckBox x:Name="songReqCKB" Content="Activate YT Song Rquest: OFF" HorizontalAlignment="Left" Margin="79,334,0,0" VerticalAlignment="Top" Checked="SongRequestCheckBox_Checked" Unchecked="SongRequestCheckBox_Unchecked"/>
             <ListView x:Name="modsListV" FontSize="14" HorizontalAlignment="Left" Height="185" Margin="376,83,0,0" VerticalAlignment="Top" Width="258"/>
-            <Button x:Name="addModBTN" Style="{DynamicResource RoundCorner2}" Content="Add Mods" HorizontalAlignment="Center" Margin="376,315,207,0" VerticalAlignment="Top" Width="95" Height="37" Foreground="#FFE1DDEE" Click="addModBTN_Click"/>
-            <Button x:Name="delModBTN" Style="{DynamicResource RoundCorner2}" Content="Delete Mods" HorizontalAlignment="Center" Margin="539,315,44,0" VerticalAlignment="Top" Width="95" Height="37" Foreground="#FFE1DDEE" Click="delModBTN_Click"/>
+            <Button x:Name="addModBTN" Style="{DynamicResource RoundCorner2}" Content="Add Mods" HorizontalAlignment="Center" Margin="376,315,207,0" VerticalAlignment="Top" Width="95" Height="37" Foreground="#FFE1DDEE" Click="AddModeratorButton_Click"/>
+            <Button x:Name="delModBTN" Style="{DynamicResource RoundCorner2}" Content="Delete Mods" HorizontalAlignment="Center" Margin="539,315,44,0" VerticalAlignment="Top" Width="95" Height="37" Foreground="#FFE1DDEE" Click="DeleteModeratorButton_Click"/>
             <TextBox Style="{StaticResource MyWaterMarkStyle}" FontSize="14" adorners:Watermark.Text="Type here the mod username" TextAlignment="Center" x:Name="modNameTXT" HorizontalAlignment="Left" Height="32" Margin="376,277,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="258">
                 <adorners:Watermark.TextStyle>
                     <Style TargetType="{x:Type TextBlock}">
