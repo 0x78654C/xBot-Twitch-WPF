@@ -106,7 +106,7 @@ namespace xBot_WPF
         List<string> PList = new List<string>();
         List<string> QList = new List<string>();
         List<string> RegistryKeys = new List<string>() { "UserName", "StreamKey", "WeatherAPIKey", "StartMessage", "YtLink", "YtUrl" };
-        List<string> RegistryKeysNull = new List<string>() { "WeatherMSG", "BotMSG", "BadWord", "WordBanTime", "YTControl", "YtWin", "botMSGControl", "weatherUnits", "Menu", "randomC", "rTime", "ytRequest" };
+        List<string> RegistryKeysNull = new List<string>() { "WeatherMSG", "BotMSG", "BadWord", "WordBanTime", "YTControl", "YtWin", "botMSGControl", "weatherUnits", "Menu", "randomC", "rTime", "ytRequest","notifyMessage" };
         List<string> FilesList = new List<string>() { s_ModsFile, s_BadWordDir, s_ComDirectory, s_PlayListFile, s_PlayListRequest, s_RandomListFile, s_PlayListRequest, s_RandomListFile, s_BallAnswer };
         List<string> DirectoryList = new List<string> { s_DataDirectory, s_LogDirectory, s_LogErrorDirectory };
         //-------------------------------------------------
@@ -166,6 +166,10 @@ namespace xBot_WPF
         Utils.LogWriter logWriter = new Utils.LogWriter();
         //--------------------------------
 
+        // Notification Icon variables declaration
+        NotifyIcon icon = new NotifyIcon();
+        private static string s_notifyMessage;
+        //--------------------------------
         public MainWindow()
         {
             InitializeComponent();
@@ -385,17 +389,21 @@ namespace xBot_WPF
 
         private async void Client_OnMessageReceived(object sender, OnMessageReceivedArgs e)
         {
-            var icon = new NotifyIcon();
+            
             //Display in logwindow the chat messages
             string date2 = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             if (e.ChatMessage.Message.Length > 0)
             {
                 logWriter.FullLogWrite("[" + date2 + "] " + e.ChatMessage.Username + " : " + e.ChatMessage.Message, logViewRTB, LogType.Both);
-                icon.Icon = new Icon(@"../../icon.ico");
-                icon.Visible = true;
-                if (!e.ChatMessage.Username.Contains("x_coding") && !e.ChatMessage.Username.Contains("xcodingbot"))
+
+                if (s_notifyMessage == "1")
                 {
-                    icon.ShowBalloonTip(200, e.ChatMessage.Username, e.ChatMessage.Message, ToolTipIcon.None);
+                    icon.Icon = new Icon(@"../../icon.ico");
+                    icon.Visible = true;
+                    if (!e.ChatMessage.Username.Contains("x_coding") && !e.ChatMessage.Username.Contains("xcodingbot"))
+                    {
+                        icon.ShowBalloonTip(200, e.ChatMessage.Username, e.ChatMessage.Message, ToolTipIcon.None);
+                    }
                 }
             }
             //--------------------------------------------
@@ -1713,6 +1721,7 @@ namespace xBot_WPF
             s_RandomC = Reg.regKey_Read(s_KeyName, "randomC");
             s_RTime = Reg.regKey_Read(s_KeyName, "rTime");
             s_ytRequest = Reg.regKey_Read(s_KeyName, "ytRequest");
+            s_notifyMessage = Reg.regKey_Read(s_KeyName, "notifyMessage");
         }
 
         // Set state of menu bar from small to large dependeing on status read from registry and previous stored
