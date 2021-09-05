@@ -51,10 +51,11 @@
         <ListBox  x:Name="randomList" Margin="645,55,10,10" FontSize="14" SelectionChanged="randomList_SelectionChanged"/>
         <TextBox x:Name="randomMSGtxt" Style="{StaticResource MyWaterMarkStyle}" FontSize="16" Tag="Enter here your random message..." HorizontalAlignment="Left" Height="163" Margin="330,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="295" MaxLength="254"/>
         <Button x:Name="addRandMSGbtn" Foreground="#FFE1DDEE" Style="{DynamicResource RoundCorner2}"  Content="Add Message" HorizontalAlignment="Left" Margin="396,240,0,0" VerticalAlignment="Top" Width="152" Height="41" Click="addBTNMSG_Click"/>
-        <CheckBox x:Name="randMsgCKB" Content="Display Random Message : OFF" HorizontalAlignment="Left" Margin="379,361,0,0" VerticalAlignment="Top" Checked="randMsgCKB_Checked" Unchecked="randMsgCKB_Unchecked"/>
+        <CheckBox x:Name="randMsgCKB" Content="Display Random Message: OFF" HorizontalAlignment="Left" Margin="379,361,0,0" VerticalAlignment="Top" Checked="randMsgCKB_Checked" Unchecked="randMsgCKB_Unchecked"/>
         <Button x:Name="delRandMSGbtn" Foreground="#FFE1DDEE" Style="{DynamicResource RoundCorner2}"  Content="Delete Message" HorizontalAlignment="Left" Margin="396,299,0,0" VerticalAlignment="Top" Width="152" Height="41" Click="deleteBTNMSG_Click"/>
         <TextBox x:Name="rTimetxt" TextAlignment="Center" Style="{StaticResource MyWaterMarkStyle}" FontSize="14" Tag=" Display Time(m)" HorizontalAlignment="Left" Height="25" Margin="355,405,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" MaxLength="254"/>
         <Button x:Name="rTimeBtn" Foreground="#FFE1DDEE" Style="{DynamicResource RoundCorner2}"  Content="Set Display Interval" HorizontalAlignment="Left" Margin="488,397,0,0" VerticalAlignment="Top" Width="124" Height="41" Click="rTimeBtn_Click"/>
+        <CheckBox x:Name="notifyIconCKB" Content="Activate Chat Notification Icon: OFF" HorizontalAlignment="Left" Margin="50,328,0,0" VerticalAlignment="Top" Checked="notifyIconCKB_Checked" Unchecked="notifyIconCKB_Unchecked"/>
 
     </Grid>
 </Window>

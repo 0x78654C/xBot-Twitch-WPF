@@ -19,6 +19,7 @@ namespace xBot_WPF
         private static string botMSGControl;
         readonly static string randomListFile = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\data\random_msg.txt";
         private static string randomC;
+        private static string s_notifyMessage;
 
         //-----------------------------------------
 
@@ -56,6 +57,20 @@ namespace xBot_WPF
             {
                 randMsgCKB.IsChecked = false;
                 randMsgCKB.Content = "Display Random Message : OFF";
+            }
+            //--------------------------------------------------------
+
+            // Load checkbox for notification Icon display status
+            s_notifyMessage = Reg.regKey_Read(keyName, "notifyMessage");
+            if (s_notifyMessage == "1")
+            {
+                notifyIconCKB.IsChecked = true;
+                notifyIconCKB.Content = "Activate Chat Notification Icon: ON";
+            }
+            else
+            {
+                notifyIconCKB.IsChecked = false;
+                notifyIconCKB.Content = "Activate Chat Notification Icon: OFF";
             }
             //--------------------------------------------------------
 
@@ -160,7 +175,7 @@ namespace xBot_WPF
         /// <param name="e"></param>
         private void randMsgCKB_Unchecked(object sender, RoutedEventArgs e)
         {
-            randMsgCKB.Content = "Display Random Message : OFF";
+            randMsgCKB.Content = "Display Random Message: OFF";
             Reg.regKey_WriteSubkey(keyName, "randomC", "0");
         }
 
@@ -171,7 +186,7 @@ namespace xBot_WPF
         /// <param name="e"></param>
         private void randMsgCKB_Checked(object sender, RoutedEventArgs e)
         {
-            randMsgCKB.Content = "Display Random Message : ON";
+            randMsgCKB.Content = "Display Random Message: ON";
             Reg.regKey_WriteSubkey(keyName, "randomC", "1");
         }
 
@@ -252,6 +267,18 @@ namespace xBot_WPF
             {
                 MessageBox.Show("The Display Time text box must not be empty!");
             }
+        }
+
+        private void notifyIconCKB_Checked(object sender, RoutedEventArgs e)
+        {
+            notifyIconCKB.Content = "Activate Chat Notification Icon: ON";
+            Reg.regKey_WriteSubkey(keyName, "notifyMessage", "1");
+        }
+
+        private void notifyIconCKB_Unchecked(object sender, RoutedEventArgs e)
+        {
+            notifyIconCKB.Content = "Activate Chat Notification Icon: OFF";
+            Reg.regKey_WriteSubkey(keyName, "notifyMessage", "0");
         }
     }
 }
