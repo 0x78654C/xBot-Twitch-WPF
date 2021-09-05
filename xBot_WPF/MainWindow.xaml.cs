@@ -240,6 +240,10 @@ namespace xBot_WPF
             }
             //-----------------------------------
 
+            // Load notification icon visuals
+            icon.Icon = new Icon(@"../../icon.ico");
+            icon.Visible = true;
+            //-----------------------------------
         }
 
 
@@ -395,11 +399,8 @@ namespace xBot_WPF
             if (e.ChatMessage.Message.Length > 0)
             {
                 logWriter.FullLogWrite("[" + date2 + "] " + e.ChatMessage.Username + " : " + e.ChatMessage.Message, logViewRTB, LogType.Both);
-
                 if (s_notifyMessage == "1")
                 {
-                    icon.Icon = new Icon(@"../../icon.ico");
-                    icon.Visible = true;
                     if (!e.ChatMessage.Username.Contains("x_coding") && !e.ChatMessage.Username.Contains("xcodingbot"))
                     {
                         icon.ShowBalloonTip(200, e.ChatMessage.Username, e.ChatMessage.Message, ToolTipIcon.None);
