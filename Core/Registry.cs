@@ -34,7 +34,6 @@ namespace Core
         /// <param name="keyPath"></param>
         /// <param name="keyName"></param>
         /// <param name="keyValue"></param>
-
         public static void regKey_WriteSubkey(string keyName, string subKeyName, string subKeyValue)
         {
 
