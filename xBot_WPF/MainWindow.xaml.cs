@@ -106,7 +106,7 @@ namespace xBot_WPF
         List<string> PList = new List<string>();
         List<string> QList = new List<string>();
         List<string> RegistryKeys = new List<string>() { "UserName", "StreamKey", "WeatherAPIKey", "StartMessage", "YtLink", "YtUrl" };
-        List<string> RegistryKeysNull = new List<string>() { "WeatherMSG", "BotMSG", "BadWord", "WordBanTime", "YTControl", "YtWin", "botMSGControl", "weatherUnits", "Menu", "randomC", "rTime", "ytRequest","notifyMessage" };
+        List<string> RegistryKeysNull = new List<string>() { "WeatherMSG", "BotMSG", "BadWord", "WordBanTime", "YTControl", "YtWin", "botMSGControl", "weatherUnits", "Menu", "randomC", "rTime", "ytRequest", "notifyMessage" };
         List<string> FilesList = new List<string>() { s_ModsFile, s_BadWordDir, s_ComDirectory, s_PlayListFile, s_PlayListRequest, s_RandomListFile, s_PlayListRequest, s_RandomListFile, s_BallAnswer };
         List<string> DirectoryList = new List<string> { s_DataDirectory, s_LogDirectory, s_LogErrorDirectory };
         //-------------------------------------------------
@@ -362,15 +362,23 @@ namespace xBot_WPF
         {
             client.SendMessage(e.Channel, "We are RAIDED by " + e.RaidNotification.DisplayName + ". Shoutout for @" + e.RaidNotification.DisplayName + " which is also a streamer! https://twitch.tv/" + e.RaidNotification.DisplayName);
             logWriter.FullLogWrite("[BOT] We are raided by " + e.RaidNotification.DisplayName, logViewRTB, LogType.Both);
+            if (s_notifyMessage == "1")
+            {
+                icon.ShowBalloonTip(200, e.RaidNotification.DisplayName, " is RAIDING!", ToolTipIcon.None);
+            }
         }
 
-
+        
         //disbaled untill we get respons from TwitchLib Devs
         //enabled for test only
         private void Client_OnBeingHosted(object sender, OnBeingHostedArgs e)
         {
             client.SendMessage(s_UserName, e.BeingHostedNotification.Channel + " is hosted with " + e.BeingHostedNotification.Viewers + " viewers by " + e.BeingHostedNotification.HostedByChannel);
             logWriter.FullLogWrite("[BOT] " + e.BeingHostedNotification.Channel + " is hosted with " + e.BeingHostedNotification.Viewers + " viewers by " + e.BeingHostedNotification.HostedByChannel, logViewRTB, LogType.Both);
+            if (s_notifyMessage == "1")
+            {
+                icon.ShowBalloonTip(200, e.BeingHostedNotification.HostedByChannel, $" is HOSTING with {e.BeingHostedNotification.Viewers} viewers", ToolTipIcon.None);
+            }
         }
 
         private void Client_OnConnected(object sender, OnConnectedArgs e)
@@ -393,7 +401,7 @@ namespace xBot_WPF
 
         private async void Client_OnMessageReceived(object sender, OnMessageReceivedArgs e)
         {
-            
+
             //Display in logwindow the chat messages
             string date2 = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             if (e.ChatMessage.Message.Length > 0)
@@ -401,7 +409,7 @@ namespace xBot_WPF
                 logWriter.FullLogWrite("[" + date2 + "] " + e.ChatMessage.Username + " : " + e.ChatMessage.Message, logViewRTB, LogType.Both);
                 if (s_notifyMessage == "1")
                 {
-                    if (!e.ChatMessage.Username.Contains("x_coding") && !e.ChatMessage.Username.Contains("xcodingbot"))
+                    if (!e.ChatMessage.Username.Contains(s_UserName))
                     {
                         icon.ShowBalloonTip(200, e.ChatMessage.Username, e.ChatMessage.Message, ToolTipIcon.None);
                     }
@@ -1133,11 +1141,19 @@ namespace xBot_WPF
             {
                 client.SendMessage(e.Channel, $"Welcome {e.Subscriber.DisplayName} to the substers! You just earned 500 points! So kind of you to use your Twitch Prime on this channel!");
                 logWriter.FullLogWrite(e.Channel + $":  Welcome {e.Subscriber.DisplayName} to the substers! You just earned 500 points! So kind of you to use your Twitch Prime on this channel!", logViewRTB, LogType.Both);
+                if (s_notifyMessage == "1")
+                {
+                    icon.ShowBalloonTip(200, e.Subscriber.DisplayName, " has subscried with Prime!", ToolTipIcon.None);
+                }
             }
             else
             {
                 client.SendMessage(e.Channel, $" Welcome {e.Subscriber.DisplayName} to the substers! You just earned 500 points!");
                 logWriter.FullLogWrite(e.Channel + $":  Welcome {e.Subscriber.DisplayName} to the substers! You just earned 500 points!", logViewRTB, LogType.Both);
+                if (s_notifyMessage == "1")
+                {
+                    icon.ShowBalloonTip(200, e.Subscriber.DisplayName, " has subscried!", ToolTipIcon.None);
+                }
             }
 
             //increase subs count
