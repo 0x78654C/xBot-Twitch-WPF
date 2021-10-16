@@ -260,7 +260,6 @@ namespace xBot_WPF
                 App.Current.Shutdown();
             }
         }
-
         /// <summary>
         /// Bot Start function
         /// </summary>
@@ -397,8 +396,6 @@ namespace xBot_WPF
             }
         }
 
-
-
         private async void Client_OnMessageReceived(object sender, OnMessageReceivedArgs e)
         {
 
@@ -409,7 +406,7 @@ namespace xBot_WPF
                 logWriter.FullLogWrite("[" + date2 + "] " + e.ChatMessage.Username + " : " + e.ChatMessage.Message, logViewRTB, LogType.Both);
                 if (s_notifyMessage == "1")
                 {
-                    if (!e.ChatMessage.Username.Contains(s_UserName))
+                    if (!e.ChatMessage.Username.Contains(s_UserName) && !e.ChatMessage.Message.StartsWith("!"))
                     {
                         icon.ShowBalloonTip(200, e.ChatMessage.Username, e.ChatMessage.Message, ToolTipIcon.None);
                     }
