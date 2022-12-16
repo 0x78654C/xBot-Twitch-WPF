@@ -241,7 +241,7 @@ namespace xBot_WPF
             //-----------------------------------
 
             // Load notification icon visuals
-            icon.Icon = new Icon(@"../../icon.ico");
+            icon.Icon = new Icon(System.Windows.Application.GetResourceStream(new Uri("icon.ico", UriKind.Relative)).Stream);
             icon.Visible = true;
             //-----------------------------------
         }
