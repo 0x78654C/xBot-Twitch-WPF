@@ -79,7 +79,6 @@ namespace Core.Utils
                     outs = outs.Replace("temp_max:", " Maxim Temperature: ");
                     outs = outs.Replace("humidity:", " Humidity: ");
                     outs = outs.Replace("speed:", " Wind Speed: ");
-                    //---------------------------------
                 }
                 else
                 {
@@ -113,9 +112,7 @@ namespace Core.Utils
                         CLog.LogWriteError("[" + date2 + "] Weather error: " + e.ToString() + Environment.NewLine);
                     }
                 }
-                //--------------------------------
             }
-            //print the final weather forecast
             return outs;
         }
     }
