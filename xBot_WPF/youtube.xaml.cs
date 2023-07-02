@@ -107,7 +107,7 @@ namespace xBot_WPF
             string titleParse;
             string html = "<html><head><center>";
             html += "<meta content='IE=Edge' http-equiv='X-UA-Compatible'/>";
-            html += "<iframe id='video' src= 'https://www.youtube.com/embed/{0}?rel=0&amp;&amp;showinfo=0;&controls=0;&autoplay=1' width='647' height='380' frameborder='0' allowfullscreen></iframe>";
+            html += "<iframe id='video' src= 'https://www.youtube.com/embed/{0}?rel=0&amp;&amp;showinfo=0;&autoplay=1' width='647' height='380' frameborder='0' allowfullscreen></iframe>";
             html += "</center></body></html>";
             try
             {
